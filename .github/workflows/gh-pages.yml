@@ -1,4 +1,4 @@
-name: gh-page
+name: gh-pages
 
 on:
   page_build

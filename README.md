@@ -1,4 +1,5 @@
 # jekyll-rtd-theme
+![gh-pages](https://github.com/rundocs/jekyll-rtd-theme/workflows/gh-pages/badge.svg)
 [![Gem Version](https://img.shields.io/gem/v/jekyll-rtd-theme)][gem]
 [![Gem Downloads](https://img.shields.io/gem/dt/jekyll-rtd-theme)][gem]
 [![Users](https://img.shields.io/endpoint?url=https://rundocs-analytics.glitch.me/shields)](https://github.com/rundocs/analytics)
