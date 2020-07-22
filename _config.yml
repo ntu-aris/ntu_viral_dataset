@@ -9,3 +9,4 @@ exclude:
   - Makefile
   - Gemfile
   - Gemfile.lock
+  - jekyll-rtd-theme.gemspec
