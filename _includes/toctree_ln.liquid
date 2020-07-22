@@ -1,0 +1,26 @@
+{%- include reset/workspace.liquid %}
+
+{%- assign dir = html_pages | where: "url", workspace | first -%}
+{%- if workspace_level == 2 %}
+    <p class="caption"><span class="caption-text">{{ dir.title | default: dir.url }}</span></p>
+{%- else %}
+    <a class="reference internal" href="{{ site.baseurl | append: dir.url }}">{{ dir.title | default: dir.url }}</a>
+{%- endif -%}
+
+<ul>
+    {%- for item in workspace_files -%}
+        {%- assign level = item.dir | append: "temp/" | split: "/" | size | minus: 2 -%}
+        {%- capture current -%}
+            {%- if page.url == item.url %}current{% endif -%}
+        {%- endcapture %}
+        <li class="toctree-l{{ level }} {{ current }}">
+            <a class="reference internal {{ current }}" href="{{ site.baseurl | append: item.url }}">
+                {{ item.title | default: item.url }}
+            </a>
+        </li>
+    {%- endfor -%}
+    {%- for workspace in workspace_dirs -%}
+        {%- assign level = workspace | append: "temp/" | split: "/" | size | minus: 3 %}
+        <li class="toctree-l{{ level }}">{% include toctree_ln.liquid %}</li>
+    {%- endfor -%}
+</ul>

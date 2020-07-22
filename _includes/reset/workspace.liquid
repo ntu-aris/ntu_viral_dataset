@@ -1,0 +1,17 @@
+{%- assign workspace = include.workspace | default: "/" -%}
+{%- assign workspace_level = workspace | append: "temp/" | split: "/" | size | minus: 1 -%}
+{%- assign workspace_files = html_files | where_exp: "item", "item.dir == workspace" -%}
+
+{%- capture items -%}
+    {%- for item in html_dirs -%}
+        {%- assign current_m1 = item.dir | append: "temp/" | split: "/" | size | minus: 2 -%}
+        {%- if workspace_level == current_m1 -%}
+            {%- assign temp = workspace | append: "@@" -%}
+            {%- assign dir = item.dir | replace: workspace, temp | split: "@@" | first -%}
+            {%- if workspace == dir -%}
+                {{ item.dir }}|
+            {%- endif -%}
+        {%- endif -%}
+    {%- endfor -%}
+{%- endcapture -%}
+{%- assign workspace_dirs = items | split: "|" -%}
