@@ -4,6 +4,7 @@
 [![Gem Downloads](https://img.shields.io/gem/dt/jekyll-rtd-theme)][gem]
 [![Users](https://img.shields.io/endpoint?url=https://rundocs-analytics.glitch.me/shields)](https://github.com/rundocs/analytics)
 [![Jsdelivr hits](https://data.jsdelivr.com/v1/package/gh/rundocs/static/badge)](https://cdn.jsdelivr.net/gh/rundocs/static/)
+[![CodeFactor](https://www.codefactor.io/repository/github/rundocs/jekyll-rtd-theme/badge)](https://www.codefactor.io/repository/github/rundocs/jekyll-rtd-theme)
 
 Just another Jekyll theme for GitHub Pages based on ReadtheDocs's sphinx_rtd_theme styles
 
