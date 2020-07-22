@@ -13,7 +13,9 @@ There are two ways to install: as a gem-based theme, as a remote theme (GitHub P
 1. Add the following to your github repository's `Gemfile`
     ```ruby
     source "https://rubygems.org"
+
     gem "jekyll-rtd-theme"
+
     gem "github-pages", group: :jekyll_plugins
     ```
 2. Add the following to your github repository's `_config.yml`
@@ -43,4 +45,3 @@ See the [open issues][issues] for a list of proposed features (and known issues)
 
 [gem]: https://rubygems.org/gems/jekyll-rtd-theme
 [issues]: https://github.com/rundocs/jekyll-rtd-theme/issues
-
