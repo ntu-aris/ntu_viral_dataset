@@ -1,0 +1,102 @@
+---
+layout: plugins/compress
+---
+
+{%- include reset/start.liquid -%}
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="{{ lang }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>{{ title }}</title>
+    <!-- meta -->
+    <meta name="description" content="{{ description }}">
+    <meta name="author" content="{{ author }}">
+    <meta name="revised" content="{{ commit }}">
+    <meta name="generator" content="Jekyll v{{ jekyll.version }}">
+    <!-- custom meta -->
+    {% for meta in site.meta -%}
+        <meta name="{{ meta.first }}" content="{{ meta.last }}">
+    {% endfor -%}
+    <!-- og -->
+    {% include addons/seo/og.liquid %}
+    <!-- schema -->
+    {% include addons/seo/schema.liquid %}
+    <!-- link -->
+    {% if prev -%}
+        <link rel="prev" href="{{ prev.url | absolute_url | xml_escape }}">
+    {%- endif -%}
+    {%- if next -%}
+        <link rel="next" href="{{ next.url | absolute_url | xml_escape }}">
+    {%- endif -%}
+    <link rel="canonical" href="{{ schema_url }}">
+    <!-- theme -->
+    <link rel="stylesheet" href="{{ cdn }}/css/theme.css">
+    <link rel="stylesheet" href="{{ cdn }}/css/rouge/{{ rouge_style }}.css">
+    <style>{{ site.style | default: site_style | scssify }}</style>
+    {%- if site.fluid -%}
+        <style>{{ site_fluid | scssify }}</style>
+    {%- endif %}
+    <!-- icon -->
+    <link rel="icon" href="{{ site.baseurl }}/assets/favicon.png">
+    <!-- script -->
+    <script src="{{ npm }}/jquery/dist/jquery.min.js"></script>
+    <script src="{{ cdn }}/js/theme.js"></script>
+    <script>{{ site.script | default : site_script }}</script>
+</head>
+
+<body class="wy-body-for-nav">
+    <div class="wy-grid-for-nav">
+        <!-- SIDE NAV, TOGGLES ON MOBILE -->
+        <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+            <div class="wy-side-scroll">
+                <div class="wy-side-nav-search">
+                    <a href="{{ site.baseurl }}/" class="icon icon-home">
+                        {{ site.title }}
+                    </a>
+                    {% include searchbox.liquid %}
+                </div>
+                <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                    {% include sidebar.liquid %}
+                </div>
+                {%- if site.embed -%}
+                <div class="wy-embed-wrap">
+                    <div class="wy-embed">{{ site.embed }}</div>
+                </div>
+                {%- endif -%}
+            </div>
+        </nav>
+        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+            <!-- MOBILE NAV -->
+            <nav class="wy-nav-top" aria-label="top navigation">
+                <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+                <a href="{{ site.baseurl }}/">{{ site.title }}</a>
+            </nav>
+            <div class="wy-nav-content">
+                <div class="rst-content">
+                    {% include breadcrumbs.liquid %}
+                    <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+                        <div itemprop="articleBody">
+                            {%- if page.url == "/search.html" -%}
+                                {{ content }}
+                            {%- else -%}
+                                <div class="section">{{ content }}</div>
+                            {%- endif %}
+                        </div>
+                        <div class="articleComments"></div>
+                    </div>
+                    {% include footer.liquid %}
+                </div>
+            </div>
+        </section>
+    </div>
+    {%- include versions.liquid -%}
+    <!-- analytics -->
+    {%- include addons/analytics/baidu.liquid -%}
+    {%- include addons/analytics/cnzz.liquid -%}
+    {%- include addons/analytics/google.liquid -%}
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+{%- if site.compress == false -%}
+    {{ content }}
+{%- else -%}
+    {%- assign items = content | split: "<pre" -%}
+    {%- for item in items -%}
+        {%- assign block = item | split: "</pre>" -%}
+        {%- assign block_after = block.last | split: " " | join: " " -%}
+        {%- if block.size == 1 -%}
+            {{ block_after }}
+        {%- else -%}
+            <pre{{ block.first }}</pre>{{ block_after }}
+        {%- endif -%}
+    {%- endfor -%}
+{%- endif -%}

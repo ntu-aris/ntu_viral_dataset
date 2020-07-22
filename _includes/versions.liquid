@@ -1,0 +1,22 @@
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+        <span class="fa fa-book"> {{ site.title }}</span>
+        {{ commit }}
+        <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+        {%- assign addons = "github,gems,analytics" | split: "," -%}
+        {% for name in addons -%}
+            {% include addons/source/{{ name }}.liquid %}
+        {% endfor -%}
+        <hr>
+        <small>
+            <span>
+                Built with
+                <a href="https://jekyllrb.com/">Jekyll</a>
+                using the
+                <a href="https://github.com/rundocs/jekyll-rtd-theme">jekyll-rtd-theme</a> (MIT)
+            </span>
+        </small>
+    </div>
+</div>

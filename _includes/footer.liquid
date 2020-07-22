@@ -1,0 +1,27 @@
+<footer>
+    {%- if next or prev -%}
+        <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+            {%- if next -%}
+                <a href="{{ site.baseurl | append: next.url }}" class="btn btn-neutral float-right" title="{{ next.title }}" accesskey="n" rel="next">
+                    {{- __next }} <span class="fa fa-arrow-circle-right"></span>
+                </a>
+            {%- endif -%}
+            {%- if prev -%}
+                <a href="{{ site.baseurl | append: prev.url }}" class="btn btn-neutral  float-left" title="{{ prev.title }}" accesskey="p" rel="prev">
+                    <span class="fa fa-arrow-circle-left"></span> {{ __previous -}}
+                </a>
+            {%- endif -%}
+        </div>
+    {%- endif -%}
+    <hr>
+    <div role="contentinfo" class="copyright">
+        <p>
+            <i class="fa fa-copyright"></i> {{ __copyright }}
+            {{ site.time | date: "%Y" }},
+            {{ site.copyright | default: site.github.owner_name }}
+            <span class="commit">
+                {{ __revision }} <code>{{ commit }}</code>
+            </span>
+        </p>
+    </div>
+</footer>

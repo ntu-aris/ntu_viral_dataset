@@ -1,0 +1,12 @@
+{%- include reset/html.liquid -%}
+
+[
+    {%- for page in html_pages -%}
+    {
+        "title": "{{ page.title }}",
+        "url": "{{ page.url | absolute_url }}",
+        "content": "{{ page.content | strip_newlines | split: ' ' | join: ' ' | xml_escape }}"
+    }
+    {%- if forloop.rindex != 1 %},{% endif -%}
+    {%- endfor -%}
+]

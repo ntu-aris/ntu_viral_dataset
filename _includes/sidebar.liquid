@@ -1,0 +1,52 @@
+{%- assign workspace = include.workspace | default: "/" -%}
+{%- assign workspace_level = workspace | append: "temp/" | split: "/" | size | minus: 1 -%}
+{%- assign workspace_files = html_files | where_exp: "item", "item.dir == workspace" -%}
+
+{%- capture items -%}
+    {%- for item in html_dirs -%}
+        {%- assign current_m1 = item.dir | append: "temp/" | split: "/" | size | minus: 2 -%}
+        {%- if workspace_level == current_m1 -%}
+            {%- assign temp = workspace | append: "@@" -%}
+            {%- assign dir = item.dir | replace: workspace, temp | split: "@@" | first -%}
+            {%- if workspace == dir -%}
+                {{ item.dir }}|
+            {%- endif -%}
+        {%- endif -%}
+    {%- endfor -%}
+{%- endcapture -%}
+{%- assign workspace_dirs = items | split: "|" -%}
+
+{%- if workspace_level > 1 -%}
+    {%- assign dir = html_pages | where: "url", workspace | first -%}
+    {%- if workspace_level == 2 %}
+        <p class="caption"><span class="caption-text">{{ dir.title | default: dir.url }}</span></p>
+    {%- else %}
+        <a class="reference internal" href="{{ site.baseurl | append: dir.url }}">{{ dir.title | default: dir.url }}</a>
+    {%- endif -%}
+{%- endif %}
+
+<ul>
+    {%- for item in workspace_files -%}
+        {%- assign level = item.dir | append: "temp/" | split: "/" | size | minus: 1 -%}
+        {%- capture current %}{% if page.url == item.url %}current{% endif %}{% endcapture -%}
+        {%- if level > 1 -%}
+            {%- assign level = level | minus: 1 -%}
+        {%- endif %}
+        <li class="toctree-l{{ level }} {{ current }}">
+            <a class="reference internal {{ current }}" href="{{ site.baseurl | append: item.url }}">
+                {{ item.title | default: item.url }}
+            </a>
+        </li>
+    {%- endfor -%}
+    {%- for workspace in workspace_dirs -%}
+        {%- assign level = workspace | append: "temp/" | split: "/" | size | minus: 2 -%}
+        {%- assign start = "" -%}
+        {%- assign end = "" -%}
+        {%- if level > 1 -%}
+            {%- assign level = level | minus: 1 -%}
+            {%- capture start %}<li class="toctree-l{{ level }}">{% endcapture -%}
+            {%- capture end %}</li>{% endcapture -%}
+        {%- endif -%}
+        {{ start }}{% include sidebar.liquid %}{{ end }}
+    {%- endfor -%}
+</ul>

@@ -1,0 +1,11 @@
+title: jekyll-rtd-theme
+lang: en-US
+description: Just another Jekyll theme for GitHub Pages
+
+sass:
+  style: compressed
+
+exclude:
+  - Makefile
+  - Gemfile
+  - Gemfile.lock

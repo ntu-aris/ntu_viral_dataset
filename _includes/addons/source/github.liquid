@@ -1,0 +1,12 @@
+<dl>
+    <dt>{{ __github }}</dt>
+    {%- if jekyll.environment == "production" -%}
+        <dd><a href="{{ site.github.repository_url }}"><i class="fa fa-github"></i> {{ __homepage }}</a></dd>
+        <dd><a href="{{ site.github.zip_url }}"><i class="fa fa-download"></i> {{ __download }}</a></dd>
+        <dd><a href="{{ site.github.issues_url }}"><i class="fa fa-question-circle-o"></i> {{ __issues }}</a></dd>
+    {%- else -%}
+        <dd><a href="#"><i class="fa fa-github"></i> {{ __homepage }}</a></dd>
+        <dd><a href="#"><i class="fa fa-download"></i> {{ __download }}</a></dd>
+        <dd><a href="#"><i class="fa fa-question-circle-o"></i> {{ __issues }}</a></dd>
+    {%- endif -%}
+</dl>

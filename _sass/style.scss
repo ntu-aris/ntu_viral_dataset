@@ -1,0 +1,59 @@
+@import "embed.scss";
+
+p {
+    font-size: 15px;
+}
+
+footer {
+    p {
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+.rst-versions {
+    &.shift-up {
+        overflow-y: auto;
+    }
+}
+
+.wy-nav-side {
+    padding-bottom: 3em;
+}
+
+.wy-nav-top {
+    a {
+        margin-left: -30px;
+    }
+}
+
+.rst-content {
+    ol,
+    ul {
+        overflow-x: auto;
+    }
+
+    a code.literal {
+        color: #2980b9;
+    }
+
+    code,
+    div[class^=highlight] pre,
+    pre {
+        font-family: monospace;
+        font-size: 12px;
+    }
+}
+
+#search-results {
+    li:last-child {
+        border-bottom: 0;
+    }
+}
+@media screen and (max-width: 768px) {
+    .wy-nav-content-wrap {
+        .wy-nav-content {
+            padding: 1em;
+        }
+    }
+}
