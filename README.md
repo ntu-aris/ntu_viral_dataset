@@ -9,7 +9,7 @@
 Just another Jekyll theme for GitHub Pages based on ReadtheDocs's sphinx_rtd_theme styles
 
 ## Installation
-There are three ways to install: as a gem-based theme, as a remote theme (GitHub Pages compatible)
+There are three ways to install: as a gem-based theme, as a remote theme (GitHub Pages compatible), use template
 
 #### Gem-based method
 1. Add the following to your site's `Gemfile`
@@ -32,7 +32,7 @@ There are three ways to install: as a gem-based theme, as a remote theme (GitHub
     ```
 2. Remove any other `theme` or `remote_theme` entry
 
-#### Use this template
+#### Use template
 The new repository will generate with the same files and folders from [rundocs/starter](https://github.com/rundocs/starter/generate)
 
 ## Roadmap
