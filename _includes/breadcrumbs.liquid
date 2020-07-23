@@ -22,11 +22,7 @@
                 {% endfor %}
         {% endcase %}
         <li class="wy-breadcrumbs-aside">
-            {%- if jekyll.environment == "production" -%}
-                <a href="{% github_edit_link %}" class="fa fa-github" target="_blank"> {{ __edit }}</a>
-            {%- else -%}
-                <a href="#" class="fa fa-github" target="_blank"> {{ __edit }}</a>
-            {%- endif -%}
+            <a href="{{ github_edit_link }}" class="fa fa-github" target="_blank"> {{ __edit }}</a>
         </li>
     </ul>
     <hr>
