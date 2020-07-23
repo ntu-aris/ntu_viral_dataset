@@ -25,4 +25,4 @@
     {%- capture github_edit_link %}{% github_edit_link %}{% endcapture -%}
 {%- endunless -%}
 
-{%- assign addons = site.addons | "github, gems, analytics" -%}
+{%- assign addons = site.addons | default: "github, gems, analytics" -%}
