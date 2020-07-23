@@ -18,7 +18,7 @@
         <p>
             <i class="fa fa-copyright"></i> {{ __copyright }}
             {{ site.time | date: "%Y" }},
-            {{ site.copyright | default: site.github.owner_name }}
+            {{ author }}
             <span class="commit">
                 {{ __revision }} <code>{{ commit }}</code>
             </span>
