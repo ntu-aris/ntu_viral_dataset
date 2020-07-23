@@ -1,7 +1,4 @@
-default: clean
-	@bundle exec jekyll build --profile
-
-install:
+default:
 	@bundle install
 
 update:
@@ -10,10 +7,12 @@ update:
 clean:
 	@bundle exec jekyll clean
 
+build: clean
+	@bundle exec jekyll build --profile
+
 server: clean
-	@bundle exec jekyll server --livereload --incremental
+	@bundle exec jekyll server --livereload
 
 theme:
 	@gem uninstall jekyll-rtd-theme
-	@gem build jekyll-rtd-theme.gemspec
-	@gem install jekyll-rtd-theme-*.gem
+	@gem build *.gemspec && gem install *.gem

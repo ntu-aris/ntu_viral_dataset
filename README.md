@@ -9,29 +9,31 @@
 Just another Jekyll theme for GitHub Pages based on ReadtheDocs's sphinx_rtd_theme styles
 
 ## Installation
-There are two ways to install: as a gem-based theme, as a remote theme (GitHub Pages compatible)
+There are three ways to install: as a gem-based theme, as a remote theme (GitHub Pages compatible)
 
 #### Gem-based method
-1. Add the following to your github repository's `Gemfile`
+1. Add the following to your site's `Gemfile`
     ```ruby
     source "https://rubygems.org"
-
     gem "jekyll-rtd-theme"
-
     gem "github-pages", group: :jekyll_plugins
     ```
-2. Add the following to your github repository's `_config.yml`
+2. Add the following to your site's `_config.yml`
     ```yml
     theme: jekyll-rtd-theme
+    title: Your awesome title
+    description: Write an awesome description for your new site here
     ```
 
 #### Remote theme method
-1. Add the following to your site's `_config.yml`
+1. Add the following to your github repository's `_config.yml`
     ```yml
     remote_theme: rundocs/jekyll-rtd-theme
     ```
 2. Remove any other `theme` or `remote_theme` entry
 
+#### Use this template
+The new repository will generate with the same files and folders from [rundocs/starter](https://github.com/rundocs/starter/generate)
 
 ## Roadmap
 See the [open issues][issues] for a list of proposed features (and known issues).
