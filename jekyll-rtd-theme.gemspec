@@ -1,6 +1,8 @@
+version = File.new("_includes/reset/version.spec", "r")
+
 Gem::Specification.new do |spec|
   spec.name          = "jekyll-rtd-theme"
-  spec.version       = "0.1.2"
+  spec.version       = version.sysread(20)
   spec.authors       = ["saowang"]
   spec.email         = ["saowang@outlook.com"]
 
