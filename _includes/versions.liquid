@@ -5,9 +5,9 @@
         <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
-        {%- assign addons = "github,gems,analytics" | split: "," -%}
-        {% for name in addons -%}
-            {% include addons/source/{{ name }}.liquid %}
+        {%- assign items = addons | split: ", " -%}
+        {% for item in items -%}
+            {% include addons/source/{{ item }}.liquid %}
         {% endfor -%}
         <hr>
         <small>

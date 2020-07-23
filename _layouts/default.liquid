@@ -33,18 +33,14 @@ layout: plugins/compress
     {%- endif -%}
     <link rel="canonical" href="{{ schema_url }}">
     <!-- theme -->
-    <link rel="stylesheet" href="{{ cdn }}/css/theme.css">
-    <link rel="stylesheet" href="{{ cdn }}/css/rouge/{{ rouge_style }}.css">
-    <style>{{ site.style | default: site_style | scssify }}</style>
-    {%- if site.fluid -%}
-        <style>{{ site_fluid | scssify }}</style>
-    {%- endif %}
+    <link rel="stylesheet" href="{{ cdn }}/assets/css/theme.css">
+    <style>{{ site_style | scssify }}</style>
     <!-- icon -->
     <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/assets/favicon.svg">
     <!-- script -->
-    <script src="{{ npm }}/jquery/dist/jquery.min.js"></script>
-    <script src="{{ cdn }}/js/theme.js"></script>
-    <script>{{ site.script | default : site_script }}</script>
+    <script src="{{ cdn }}/assets/js/jquery.min.js"></script>
+    <script src="{{ cdn }}/assets/js/theme.js"></script>
+    <script>{{ site_script }}</script>
 </head>
 
 <body class="wy-body-for-nav">

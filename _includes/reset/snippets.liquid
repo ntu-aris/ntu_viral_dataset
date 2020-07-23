@@ -1,3 +1,11 @@
-{%- assign  site_style = '@import "style.scss";' -%}
-{%- assign  site_fluid = '@import "fluid.scss";' -%}
-{%- capture site_script %}{% include assets/js/script.js %}{% endcapture -%}
+{%- capture site_style -%}
+    @import "style.scss";
+    @import "rougify/{{ site.rougify | default: 'github' }}.scss";
+    {%- if site.fluid -%}
+        @import "fluid.scss";
+    {%- endif -%}
+{%- endcapture -%}
+
+{%- capture site_script %}
+    {% include assets/js/script.js %}
+{%- endcapture -%}

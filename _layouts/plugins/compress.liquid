@@ -1,4 +1,4 @@
-{%- if site.compress == false -%}
+{%- if site.debug -%}
     {{ content }}
 {%- else -%}
     {%- assign items = content | split: "<pre" -%}

@@ -11,4 +11,5 @@ exclude:
   - Makefile
   - Gemfile
   - Gemfile.lock
+  - ci.sh
   - jekyll-rtd-theme.gemspec
