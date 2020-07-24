@@ -4,6 +4,11 @@ description: Just another Jekyll theme for GitHub Pages
 
 theme: null
 
+readme_index:
+  enabled: true
+  remove_originals: true
+  with_frontmatter: true
+
 sass:
   style: compressed
 
