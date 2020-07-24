@@ -3,26 +3,24 @@
 {%- assign schema_lastmod = site.time | date_to_xmlschema -%}
 {%- capture version %}{% include reset/version.spec %}{% endcapture -%}
 
+{%- assign author = site.author | default: site.github.owner_name -%}
+{%- assign commit = site.github.build_revision | slice: 0, 7 -%}
+{%- assign repository_url = site.github.repository_url -%}
+
 {%- if site.debug -%}
     {%- assign cdn = site.baseurl -%}
 {%- else -%}
     {%- assign cdn = "https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@" | append: version | strip -%}
 {%- endif -%}
 
-{%- unless jekyll.environment == "production" -%}
-    {%- assign author = site.author | default: "[author]" -%}
-    {%- assign commit = "[commit]" -%}
-    {%- assign repository_url = "[repository_url]" -%}
-    {%- assign zip_url = "[zip_url]" -%}
-    {%- assign issues_url = "[issues_url]" -%}
-    {%- assign github_edit_link = "[github_edit_link]" -%}
-{%- else -%}
-    {%- assign author = site.author | default: site.github.owner_name -%}
-    {%- assign commit = site.github.build_revision | slice: 0, 7 -%}
-    {%- assign repository_url = site.github.repository_url -%}
-    {%- assign zip_url = site.github.zip_url -%}
+{%- if jekyll.environment == "production" -%}
     {%- assign issues_url = site.github.issues_url -%}
+    {%- assign zip_url = site.github.zip_url -%}
     {%- capture github_edit_link %}{% github_edit_link %}{% endcapture -%}
-{%- endunless -%}
+{%- else -%}
+    {%- assign issues_url = "#" -%}
+    {%- assign zip_url = "#" -%}
+    {%- assign github_edit_link = "#" -%}
+{%- endif -%}
 
 {%- assign addons = site.addons | default: "github, gems, analytics" -%}
