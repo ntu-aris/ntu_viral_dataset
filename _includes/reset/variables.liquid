@@ -1,7 +1,7 @@
 {%- assign description = content | strip_html | split: " " | join: " " | escape | truncate: 150 -%}
 {%- assign schema_url = page.url | absolute_url | xml_escape -%}
 {%- assign schema_lastmod = site.time | date_to_xmlschema -%}
-{%- capture version %}{% include reset/version.spec %}{% endcapture -%}
+{%- assign version = "0.1.4" -%}
 
 {%- assign author = site.author | default: site.github.owner_name -%}
 {%- assign commit = site.github.build_revision | slice: 0, 7 -%}
@@ -10,7 +10,7 @@
 {%- if site.debug -%}
     {%- assign cdn = site.baseurl -%}
 {%- else -%}
-    {%- assign cdn = "https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@" | append: version | strip -%}
+    {%- assign cdn = "https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@" | append: version -%}
 {%- endif -%}
 
 {%- if jekyll.environment == "production" -%}
