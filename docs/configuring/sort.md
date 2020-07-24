@@ -20,4 +20,4 @@ Then add following [Front Matter](https://jekyllrb.com/docs/front-matter/) to ma
     ---
     {% endraw %}
 
-Now the sorted files will have numbers
+Now the sorted files will have numbers from your input!

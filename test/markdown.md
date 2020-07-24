@@ -2,7 +2,7 @@
 sort: 1
 ---
 
-# 1.Markdown Elements
+# Markdown Elements
 
 Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines.
 

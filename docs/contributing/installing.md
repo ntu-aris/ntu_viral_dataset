@@ -2,7 +2,7 @@
 sort: 2
 ---
 
-# 2.Installation
+# Installation
 
 1. Install a full [Ruby development environment](https://jekyllrb.com/docs/installation/)
 2. Install bundler gems

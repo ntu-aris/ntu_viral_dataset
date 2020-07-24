@@ -2,7 +2,7 @@
 sort: 2
 ---
 
-# 2.Admonitions
+# Admonitions
 
 ```note
 This is a note

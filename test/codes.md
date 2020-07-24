@@ -2,7 +2,7 @@
 sort: 3
 ---
 
-# 3.Code Blocks
+# Code Blocks
 
 `inline code`
 
