@@ -59,6 +59,7 @@ $(document).ready(function() {
         $.getJSON("{{ site.baseurl }}/data.json", search);
     }
     admonition();
+    anchors.add();
     SphinxRtdTheme.Navigation.reset = reset;
     SphinxRtdTheme.Navigation.enable(true);
 });
