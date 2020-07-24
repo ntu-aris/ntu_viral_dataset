@@ -1,3 +1,0 @@
-# test finish
-
-{{ page.path }}
