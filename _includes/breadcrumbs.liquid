@@ -1,6 +1,8 @@
 <div role="navigation" aria-label="breadcrumbs navigation">
     <ul class="wy-breadcrumbs">
-        <li><a href="{{ site.baseurl }}/" class="icon icon-home"></a>&raquo;</li>
+        <li>
+            <a href="{{ site.baseurl }}/" class="icon icon-home"></a><i class="fa fa-angle-double-right"></i>
+        </li>
         {%- case page.url -%}
             {%- when "/search.html" %}
                 <li>{{ __search }}</li>
@@ -16,11 +18,15 @@
                     {%- if forloop.last %}
                         <li>{{ page.title }}</li>
                     {%- else -%}
-                        {%- capture href %}{{ site.baseurl }}/{% for block in blocks limit: forloop.index %}{{ block | append: "/" }}{% endfor %}{% endcapture %}
-                        <li><a href="{{ href }}">{{ block | capitalize }}</a> &raquo;</li>
+                        {%- capture href -%}
+                            {{ site.baseurl }}/{% for block in blocks limit: forloop.index %}{{ block | append: "/" }}{% endfor %}
+                        {%- endcapture %}
+                        <li>
+                            <a href="{{ href }}">{{ block | split: "." | last | capitalize }}</a><i class="fa fa-angle-double-right"></i>
+                        </li>
                     {%- endif -%}
                 {%- endfor -%}
-        {%- endcase -%}
+        {%- endcase %}
         <li class="wy-breadcrumbs-aside">
             <a href="{{ github_edit_link }}" class="fa fa-github" target="_blank"> {{ __edit }}</a>
         </li>
