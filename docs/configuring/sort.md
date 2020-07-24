@@ -19,3 +19,5 @@ Then add following [Front Matter](https://jekyllrb.com/docs/front-matter/) to ma
     sort: 1 # number of relative order
     ---
     {% endraw %}
+
+Now the sorted files will have numbers
