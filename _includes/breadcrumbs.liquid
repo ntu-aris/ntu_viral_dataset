@@ -1,26 +1,26 @@
 <div role="navigation" aria-label="breadcrumbs navigation">
     <ul class="wy-breadcrumbs">
         <li><a href="{{ site.baseurl }}/" class="icon icon-home"></a>&raquo;</li>
-        {% case page.url %}
-            {% when "/search.html" %}
+        {%- case page.url -%}
+            {%- when "/search.html" %}
                 <li>{{ __search }}</li>
-            {% when "/404.html" %}
+            {%- when "/404.html" %}
                 <li>{{ __404 }}</li>
-            {% else %}
-                {% assign blocks = page.path | split: "/" %}
-                {% assign length = blocks | size %}
-                {% if page.dir == page.url and page.url != "/" %}
-                    {% assign length = blocks | size | minus: 1 %}
-                {% endif %}
-                {% for block in blocks limit: length %}
-                    {% if forloop.last %}
+            {%- else -%}
+                {%- assign blocks = page.path | split: "/" -%}
+                {%- assign length = blocks | size -%}
+                {%- if page.dir == page.url and page.url != "/" -%}
+                    {%- assign length = blocks | size | minus: 1 -%}
+                {%- endif -%}
+                {%- for block in blocks limit: length -%}
+                    {%- if forloop.last %}
                         <li>{{ page.title }}</li>
-                    {% else %}
-                        {% capture href %}{{ site.baseurl }}/{% for block in blocks limit: forloop.index %}{{ block | append: "/" }}{% endfor %}{% endcapture %}
+                    {%- else -%}
+                        {%- capture href %}{{ site.baseurl }}/{% for block in blocks limit: forloop.index %}{{ block | append: "/" }}{% endfor %}{% endcapture %}
                         <li><a href="{{ href }}">{{ block | capitalize }}</a> &raquo;</li>
-                    {% endif %}
-                {% endfor %}
-        {% endcase %}
+                    {%- endif -%}
+                {%- endfor -%}
+        {%- endcase -%}
         <li class="wy-breadcrumbs-aside">
             <a href="{{ github_edit_link }}" class="fa fa-github" target="_blank"> {{ __edit }}</a>
         </li>
