@@ -1,7 +1,6 @@
 ---
-sort: 4
+sort: 3
 ---
 
-# Contributing
-
+# Writng Related
 {% include list.liquid %}

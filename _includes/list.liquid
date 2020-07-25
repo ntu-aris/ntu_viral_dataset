@@ -2,5 +2,9 @@
 {%- include reset/workspace.liquid workspace=page.dir -%}
 
 {%- for item in workspace_files %}
-1. [{{ item.title | default: item.url }}]({{ site.baseurl | append: item.url }})
+- [{{ item.title | default: item.url }}]({{ site.baseurl | append: item.url }})
 {%- endfor -%}
+
+{%- if include.all -%}
+    {%- for workspace in workspace_dirs %}{% include extend/list.liquid %}{% endfor -%}
+{%- endif -%}

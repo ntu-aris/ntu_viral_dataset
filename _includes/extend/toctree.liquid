@@ -24,6 +24,6 @@
     {%- endfor -%}
     {%- for workspace in workspace_dirs -%}
         {%- assign level = workspace | append: "temp/" | split: "/" | size | minus: 3 %}
-        <li class="toctree-l{{ level }}">{% include toctree_ln.liquid %}</li>
+        <li class="toctree-l{{ level }}">{% include extend/toctree.liquid %}</li>
     {%- endfor -%}
 </ul>

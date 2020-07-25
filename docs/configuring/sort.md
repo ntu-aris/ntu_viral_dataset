@@ -8,7 +8,6 @@ Default sorted by `path`, If you want to further setting, add following configur
 
 ```yml
 readme_index:
-  enabled: true
   with_frontmatter: true
 ```
 
@@ -20,4 +19,4 @@ Then add following [Front Matter](https://jekyllrb.com/docs/front-matter/) to ma
     ---
     {% endraw %}
 
-Now the sorted files will have numbers from your input!
+Now the sorted files will have relative numbers from your input!

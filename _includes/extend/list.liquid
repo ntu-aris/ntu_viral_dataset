@@ -1,0 +1,15 @@
+{%- include reset/html.liquid -%}
+{%- include reset/workspace.liquid -%}
+
+{%- assign base = page.dir | append: "temp/" | split: "/" | size -%}
+{%- assign size = workspace_level | minus: base -%}
+{%- assign size_p1 = size | plus: 1 -%}
+
+{%- assign dir = html_pages | where: "url", workspace | first %}
+{% include extend/tabs.liquid size=size %}- [{{ dir.title | default: dir.url }}]({{ site.baseurl | append: dir.url }})
+
+{%- for item in workspace_files %}
+{% include extend/tabs.liquid size=size_p1 %}- [{{ item.title | default: item.url }}]({{ site.baseurl | append: item.url }})
+{%- endfor -%}
+
+{%- for workspace in workspace_dirs %}{% include extend/list.liquid %}{% endfor -%}

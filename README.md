@@ -14,7 +14,7 @@ See the [open issues][issues] for a list of proposed features (and known issues)
 
 
 ## Documents
-For complete documentation, see: [https://rundocs.github.io/jekyll-rtd-theme][site]
+For full documentation, see: [https://rundocs.github.io/jekyll-rtd-theme][site]
 
 ## The License
 The theme is available as open source under the terms of the [MIT License][license].
