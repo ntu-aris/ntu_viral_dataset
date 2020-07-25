@@ -3,10 +3,6 @@
 {%- assign schema_lastmod = site.time | date_to_xmlschema -%}
 {%- assign version = "0.1.5" -%}
 
-{%- assign author = site.author | default: site.github.owner_name -%}
-{%- assign commit = site.github.build_revision | slice: 0, 7 -%}
-{%- assign repository_url = site.github.repository_url -%}
-
 {%- if site.debug -%}
     {%- assign cdn = site.baseurl -%}
 {%- else -%}
@@ -14,10 +10,16 @@
 {%- endif -%}
 
 {%- if jekyll.environment == "production" -%}
+    {%- assign author = site.author | default: site.github.owner_name -%}
+    {%- assign commit = site.github.build_revision | slice: 0, 7 -%}
+    {%- assign repository_url = site.github.repository_url -%}
     {%- assign issues_url = site.github.issues_url -%}
     {%- assign zip_url = site.github.zip_url -%}
     {%- capture github_edit_link %}{% github_edit_link %}{% endcapture -%}
 {%- else -%}
+    {%- assign author = site.author | default: "[author]" -%}
+    {%- assign commit = "[commit]" -%}
+    {%- assign repository_url = "#" -%}
     {%- assign issues_url = "#" -%}
     {%- assign zip_url = "#" -%}
     {%- assign github_edit_link = "#" -%}
