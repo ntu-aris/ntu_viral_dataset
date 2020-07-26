@@ -86,7 +86,7 @@ layout: plugins/compress
                                 <div class="section">{{ content }}</div>
                             {%- endif %}
                         </div>
-                        <div class="articleComments"></div>
+                        {% include addons/comments/disqus.liquid %}
                     </div>
                     {% include footer.liquid %}
                 </div>

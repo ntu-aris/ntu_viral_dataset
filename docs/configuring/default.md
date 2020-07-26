@@ -13,7 +13,9 @@ addons:
   - gems
   - analytics
 
-logo: false # relative path to you img
+logo: false # relative path to your image
+
+disqus: false # your disqus username
 ```
 
 ```tip
