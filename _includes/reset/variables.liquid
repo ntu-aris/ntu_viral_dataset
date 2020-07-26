@@ -25,4 +25,4 @@
     {%- assign github_edit_link = "#" -%}
 {%- endif -%}
 
-{%- assign addons = site.addons | default: "github, gems, analytics" -%}
+{%- assign addons = "github, gems, analytics" | split: ", " -%}

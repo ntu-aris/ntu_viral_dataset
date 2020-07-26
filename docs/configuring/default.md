@@ -8,7 +8,10 @@ lang: en-US # zh-CN is also available
 
 author: # site.github.owner_name
 
-addons: github, gems, analytics
+addons:
+  - github
+  - gems
+  - analytics
 ```
 
 ```tip

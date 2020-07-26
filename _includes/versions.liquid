@@ -5,7 +5,7 @@
         <span class="fa fa-caret-down"></span>
     </span>
     <div class="rst-other-versions">
-        {%- assign items = addons | split: ", " -%}
+        {%- assign items = site.addons | default: addons -%}
         {% for item in items -%}
             {% include addons/source/{{ item }}.liquid %}
         {% endfor -%}
