@@ -12,6 +12,8 @@ addons:
   - github
   - gems
   - analytics
+
+logo: false # relative path to you img
 ```
 
 ```tip

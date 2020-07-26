@@ -50,9 +50,13 @@ layout: plugins/compress
         <nav data-toggle="wy-nav-shift" class="wy-nav-side">
             <div class="wy-side-scroll">
                 <div class="wy-side-nav-search">
-                    <a href="{{ site.baseurl }}/" class="icon icon-home">
-                        {{ site.title }}
-                    </a>
+                    {% if site.logo %}
+                        <a href="{{ site.baseurl }}/">
+                            <img src="{{ site.baseurl }}/{{ site.logo }}" class="logo" alt="{{ site.title }}">
+                        </a>
+                    {% else %}
+                        <a href="{{ site.baseurl }}/" class="icon icon-home"> {{ site.title }}</a>
+                    {% endif %}
                     {% include searchbox.liquid %}
                 </div>
                 <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
