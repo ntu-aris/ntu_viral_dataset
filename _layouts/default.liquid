@@ -8,7 +8,7 @@ layout: plugins/compress
 
 <!--
     {% if site.remote_theme -%}
-        remote_theme: {{ site.remote_theme }}
+        remote_theme: {{ site.remote_theme }}, based on v{{ version }}
     {%- else -%}
         theme: {{ site.theme | default: "jekyll-rtd-theme, based on" }} v{{ version }}
     {%- endif %}
