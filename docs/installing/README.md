@@ -4,6 +4,6 @@ sort: 1
 
 # Installation
 
-There are three ways to install:
+There are two ways to install:
 
 {% include list.liquid %}
