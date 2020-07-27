@@ -6,7 +6,7 @@
 [![](https://www.codefactor.io/repository/github/rundocs/jekyll-rtd-theme/badge)][codefactor]
 [![](https://img.shields.io/badge/featured%20on-JekyllThemes-red.svg)](https://jekyll-themes.com)
 
-Just another Jekyll theme for GitHub Pages based on ReadtheDocs's sphinx_rtd_theme styles
+Just another documentation theme compatible with GitHub Pages, based on sphinx_rtd_theme
 
 ![][demo]
 

@@ -1,6 +1,6 @@
 title: jekyll-rtd-theme
 lang: en-US
-description: Just another Jekyll theme for GitHub Pages
+description: Just another documentation theme compatible with GitHub Pages, based on sphinx_rtd_theme
 
 edit: true
 
