@@ -2,7 +2,7 @@
 sort: 8
 ---
 
-# Set up Copyright
+# Set up Site Copyright
 ```yml
 author: # default: site.github.owner_name
 

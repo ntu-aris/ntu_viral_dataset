@@ -4,7 +4,7 @@ sort: 1
 
 # Gemfile
 
-Add the following to your site's `Gemfile`
+Add the following to your site's `Gemfile`, for local preview!
 
 ```ruby
 source "https://rubygems.org" # gems.ruby-china.com

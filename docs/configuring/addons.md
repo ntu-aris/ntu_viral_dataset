@@ -2,7 +2,7 @@
 sort: 7
 ---
 
-# Set up footer of sidebar addons
+# Set up Addons
 
 ```yml
 # set the addons content, the order is avaiable

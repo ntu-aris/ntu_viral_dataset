@@ -5,6 +5,15 @@ layout: plugins/compress
 {%- include reset/start.liquid -%}
 
 <!DOCTYPE html>
+
+<!--
+    {% if site.remote_theme -%}
+        remote_theme: {{ site.remote_theme }}
+    {%- else -%}
+        theme: {{ site.theme }} v{{ version }}
+    {%- endif %}
+-->
+
 <html class="writer-html5" lang="{{ lang }}">
 
 <head>
@@ -15,7 +24,7 @@ layout: plugins/compress
     <meta name="description" content="{{ description }}">
     <meta name="author" content="{{ author }}">
     <meta name="revised" content="{{ commit }}">
-    <meta name="generator" content="Jekyll v{{ jekyll.version }}">
+    <meta name="generator" content="jekyll-rtd-theme v{{ version }}">
     <!-- custom meta -->
     {% for meta in site.meta -%}
         <meta name="{{ meta.first }}" content="{{ meta.last }}">
