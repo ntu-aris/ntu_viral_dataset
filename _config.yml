@@ -7,6 +7,13 @@ theme: null
 readme_index:
   with_frontmatter: true
 
+addons:
+  - github
+  - gems
+  - analytics
+
+addons_commit: true
+
 sass:
   style: compressed
 

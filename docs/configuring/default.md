@@ -9,6 +9,7 @@ lang: en-US # zh-CN is also available
 author: # default: site.github.owner_name
 
 addons: false
+addons_commit: false # means addons commit
 
 edit: false
 
