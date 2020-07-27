@@ -34,8 +34,8 @@ The theme is available as open source under the terms of the [MIT License][licen
 
 
 [repository]: https://github.com/rundocs/jekyll-rtd-theme
-[issues]:     https://github.com/rundocs/jekyll-rtd-theme/issues
-[license]:    https://github.com/rundocs/jekyll-rtd-theme/blob/master/LICENSE
+[issues]: https://github.com/rundocs/jekyll-rtd-theme/issues
+[license]: https://github.com/rundocs/jekyll-rtd-theme/blob/master/LICENSE
 [site]: https://rundocs.github.io/jekyll-rtd-theme
 [rubygem]: https://rubygems.org/gems/jekyll-rtd-theme
 [cdn]: https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme/
