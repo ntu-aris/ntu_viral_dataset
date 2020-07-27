@@ -93,7 +93,7 @@ layout: plugins/compress
             </div>
         </section>
     </div>
-    {%- include versions.liquid -%}
+    {%- if site.addons %}{% include addons.liquid %}{% endif %}
     <!-- analytics -->
     {%- include addons/analytics/baidu.liquid -%}
     {%- include addons/analytics/cnzz.liquid -%}

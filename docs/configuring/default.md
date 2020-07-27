@@ -6,12 +6,11 @@ sort: 2
 ```yml
 lang: en-US # zh-CN is also available
 
-author: # site.github.owner_name
+author: # default: site.github.owner_name
 
-addons:
-  - github
-  - gems
-  - analytics
+addons: false
+
+edit: false
 
 logo: false # relative path to your image
 
