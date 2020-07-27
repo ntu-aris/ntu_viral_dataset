@@ -2,6 +2,8 @@ title: jekyll-rtd-theme
 lang: en-US
 description: Just another Jekyll theme for GitHub Pages
 
+edit: true
+
 copyright:
   revision: true
 
