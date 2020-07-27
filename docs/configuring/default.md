@@ -15,6 +15,8 @@ edit: false
 
 copyright: false
 
+rougify: github
+
 logo: false # relative path to your image
 
 disqus: false # your disqus username
