@@ -14,14 +14,21 @@
         </div>
     {%- endif -%}
     <hr>
-    <div role="contentinfo" class="copyright">
-        <p>
-            <i class="fa fa-copyright"></i> {{ __copyright }}
-            {{ site.time | date: "%Y" }},
-            {{ author }}
-            <span class="commit">
-                {{ __revision }} <code>{{ commit }}</code>
-            </span>
-        </p>
-    </div>
+    {%- if site.copyright -%}
+        <div role="contentinfo" class="copyright">
+            <p>
+                <i class="fa fa-copyright"></i> {{ __copyright }}
+                {% if site.copyright.since -%}
+                    {{ site.copyright.since | append: "-" }}
+                {%- endif -%}
+                {{ site.time | date: "%Y" }},
+                {{ author }}
+                {% if site.copyright.revision -%}
+                    <span class="commit">
+                        {{ __revision }} <code>{{ commit }}</code>
+                    </span>
+                {%- endif -%}
+            </p>
+        </div>
+    {%- endif -%}
 </footer>

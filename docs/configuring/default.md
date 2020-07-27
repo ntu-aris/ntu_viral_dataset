@@ -13,6 +13,8 @@ addons_commit: false # means addons commit
 
 edit: false
 
+copyright: false
+
 logo: false # relative path to your image
 
 disqus: false # your disqus username

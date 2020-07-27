@@ -2,10 +2,8 @@ title: jekyll-rtd-theme
 lang: en-US
 description: Just another Jekyll theme for GitHub Pages
 
-theme: null
-
-readme_index:
-  with_frontmatter: true
+copyright:
+  revision: true
 
 addons:
   - github
@@ -13,6 +11,12 @@ addons:
   - analytics
 
 addons_commit: true
+
+theme: null
+
+# sort
+readme_index:
+  with_frontmatter: true
 
 sass:
   style: compressed
