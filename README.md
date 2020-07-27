@@ -9,9 +9,21 @@ Just another Jekyll theme for GitHub Pages based on ReadtheDocs's sphinx_rtd_the
 
 ![][demo]
 
+## Notable features
+- Write documents directly, like docsify!
+- Only need one file `_config.yml` to configure site
+- Bundled as a "theme gem" for easier installation/upgrading.
+- Compatible with GitHub Pages.
+- Optimized for search engines with support for Open Graph data.
+- Optimized for search engines with `robots.txt` and `sitemap.xml`.
+- Search engine support
+- Commenting support
+- Google,Baidu,CNZZ Analytics support.
+- UI localized text in English(default), Chinese(中文)
+- And many features waiting for you to discover.
+
 ## Roadmap
 See the [open issues][issues] for a list of proposed features (and known issues).
-
 
 ## Documents
 For full documentation, see: [https://rundocs.github.io/jekyll-rtd-theme][site]
