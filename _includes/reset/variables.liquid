@@ -1,7 +1,7 @@
 {%- assign description = content | strip_html | split: " " | join: " " | escape | truncate: 150 -%}
 {%- assign schema_url = page.url | absolute_url | xml_escape -%}
 {%- assign schema_lastmod = site.time | date_to_xmlschema -%}
-{%- assign version = "0.1.5" -%}
+{%- assign version = "0.1.6" -%}
 
 {%- if site.debug -%}
     {%- assign cdn = site.baseurl -%}
