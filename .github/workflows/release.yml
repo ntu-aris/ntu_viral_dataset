@@ -1,0 +1,26 @@
+name: Release
+
+on:
+  release:
+    types: [ created ]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-ruby@v1
+    - name: Publish Gems
+      run: |
+        CONFIG=${HOME}/.gem/credentials
+        mkdir -p ${HOME}/.gem && touch ${CONFIG} && chmod 0600 ${CONFIG}
+        echo "---" > ${CONFIG}
+        echo ":github: ${GITHUB_TOKEN}" >> ${CONFIG}
+        echo ":rubygems_api_key: ${RUBYGEMS_AUTH_TOKEN}" >> ${CONFIG}
+        gem build *.gemspec
+        gem push *.gem
+        gem push --KEY github --host https://rubygems.pkg.github.com/${OWNER} *.gem
+      env:
+        GITHUB_TOKEN: "Bearer ${{ secrets.GITHUB_TOKEN }}"
+        OWNER: ${{ github.repository_owner }}
+        RUBYGEMS_AUTH_TOKEN: "${{ secrets.RUBYGEMS_AUTH_TOKEN }}"
