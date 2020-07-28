@@ -1,13 +1,9 @@
 name: CI
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+on: [ push, pull_request ]
 
 jobs:
-  main:
+  checkout:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
