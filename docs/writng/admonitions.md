@@ -2,7 +2,7 @@
 sort: 3
 ---
 
-# Admonitions
+# Admonition card
 
 ## note
     {% raw %}

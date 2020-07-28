@@ -15,7 +15,7 @@
         {%- endcapture %}
         <li class="toctree-l{{ level }} {{ current }}">
             <a class="reference internal {{ current }}" href="{{ site.baseurl | append: item.url }}">
-                {%- if item.sort -%}
+                {%- if item.sort and site.show_sorted != false -%}
                     {{ item.sort }}.
                 {%- endif %}
                 {{ item.title | default: item.url }}

@@ -2,6 +2,8 @@
 sort: 3
 ---
 
-# Pull your request
+# Pull request
 
+```tip
 I am very happy to work together to improve this theme
+```

@@ -2,7 +2,7 @@
 sort: 3
 ---
 
-# Sorting Your Sidebar
+# Sorting the sidebar
 
 Default sorted by `path`, If you want to further setting, add following configuration to your `_config.yml`
 
@@ -15,8 +15,12 @@ Then add following [Front Matter](https://jekyllrb.com/docs/front-matter/) to ma
 
     {% raw %}
     ---
-    sort: 1 # number of relative order
+    sort: 1 # follow a certain sequence of letters or numbers
     ---
     {% endraw %}
 
-Now the sorted files will have relative numbers from your input!
+```note
+Now the sorted files will have certain order from your input!
+```
+
+If you want to turn off the order prefix in toctree, `show_sorted: false`

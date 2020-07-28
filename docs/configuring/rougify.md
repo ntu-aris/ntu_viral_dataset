@@ -2,7 +2,7 @@
 sort: 9
 ---
 
-# Set up Code Highlight
+# Set up code highlight
 ```yml
 rougify: github # this is default style
 ```

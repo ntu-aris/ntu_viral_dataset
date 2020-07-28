@@ -2,24 +2,20 @@
 sort: 2
 ---
 
-# Default Configuration
+# Default configuration
 ```yml
 lang: en-US # zh-CN is also available
 
 author: # default: site.github.owner_name
 
+copyright: false
+edit: false
+logo: false # relative path to your image, eg: assets/logo.png
+disqus: false # your disqus username
 addons: false
 addons_commit: false # means addons commit
 
-edit: false
-
-copyright: false
-
-rougify: github
-
-logo: false # relative path to your image
-
-disqus: false # your disqus username
+rougify: github # more options see code highlight
 ```
 
 ```tip
