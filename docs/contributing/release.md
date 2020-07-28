@@ -2,9 +2,9 @@
 sort: 4
 ---
 
-# Theme Release
+# Release theme
 
-Change both version in following files
+Change both version in following files:
 ```
 jekyll-rtd-theme.gemspec
 

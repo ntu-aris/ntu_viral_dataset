@@ -2,7 +2,7 @@
 sort: 2
 ---
 
-# List Directory
+# List directory
 
 If you want to list all `pages` in the current directory, add following code to your markdown file!
 

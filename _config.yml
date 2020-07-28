@@ -14,9 +14,9 @@ addons:
 
 addons_commit: true
 
-theme: null
+theme: null # disable pages default theme
 
-# sort
+# use front matter sort
 readme_index:
   with_frontmatter: true
 

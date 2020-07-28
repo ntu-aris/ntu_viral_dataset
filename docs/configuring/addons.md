@@ -2,7 +2,7 @@
 sort: 7
 ---
 
-# Set up Addons
+# Set up addons
 
 ```yml
 # set the addons content, the order is avaiable

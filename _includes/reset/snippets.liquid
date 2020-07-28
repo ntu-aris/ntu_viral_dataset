@@ -4,10 +4,10 @@
     {%- if site.fluid -%}
         @import "fluid.scss";
     {%- endif -%}
-    @import "custom.scss";
+    @import "custom.scss"; {{ site.scss }}
 {%- endcapture -%}
 
 {%- capture site_script %}
     {% include assets/js/core.js %}
-    {% include assets/js/custom.js %}
+    {% include assets/js/custom.js %} {{ site.script }}
 {%- endcapture -%}

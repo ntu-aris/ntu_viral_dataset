@@ -2,7 +2,7 @@
 sort: 2
 ---
 
-# Admonitions
+# Admonition Card
 
 ```note
 This is a note
