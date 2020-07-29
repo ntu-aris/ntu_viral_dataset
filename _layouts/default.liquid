@@ -2,7 +2,7 @@
 layout: plugins/compress
 ---
 
-{%- include reset/start.liquid -%}
+{%- include reset/defaults.liquid -%}
 
 <!DOCTYPE html>
 
@@ -43,7 +43,7 @@ layout: plugins/compress
     <link rel="canonical" href="{{ schema_url }}">
     <!-- theme -->
     <link rel="stylesheet" href="{{ cdn }}/assets/css/theme.css">
-    <style>{{ site_style | scssify }}</style>
+    <style>{{ site_scss | scssify }}</style>
     <!-- icon -->
     <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/assets/favicon.svg">
     <!-- script -->

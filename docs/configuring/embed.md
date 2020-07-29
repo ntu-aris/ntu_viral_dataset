@@ -2,7 +2,7 @@
 sort: 11
 ---
 
-# Custom embed html
+# Custom embed badge
 
 ```yml
 embed: |

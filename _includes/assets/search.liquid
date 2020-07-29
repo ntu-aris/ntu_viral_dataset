@@ -1,5 +1,7 @@
 {%- include reset/i18n.liquid -%}
 
-<h2>{{ __search_results }}</h2>
-
-<div id="search-results"></div>
+<div id="search-results">
+    <h2>{{ __searching }}<span>...</span></h2>
+    <p class="search-summary"></p>
+    <ul class="search"></ul>
+</div>

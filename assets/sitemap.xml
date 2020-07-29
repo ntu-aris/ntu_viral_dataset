@@ -3,12 +3,12 @@ layout: plugins/compress
 permalink: /sitemap.xml
 ---
 
-{%- include reset/html.liquid -%}
+{%- include reset/site_pages.liquid -%}
 
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    {%- for page in html_pages -%}
-        {% include reset/variables.liquid %}
+    {%- for page in site_pages -%}
+        {% include reset/schema.liquid %}
         <url>
             <loc>{{ schema_url }}</loc>
             <priority>0.{{ page.path | split: "/" | size }}</priority>
