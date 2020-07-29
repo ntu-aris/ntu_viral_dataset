@@ -4,6 +4,8 @@ sort: 3
 
 # Admonition card
 
+**Important:** At present, jekyll's best practice for this features is to put it in a code block, but there is a disadvantage that there can only be code in it! Suggestions and improvements are welcome.
+
 ## note
     {% raw %}
     ```note
