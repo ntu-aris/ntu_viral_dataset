@@ -13,7 +13,7 @@ edit: false
 logo: false # relative path to your image, eg: assets/logo.png
 disqus: false # your disqus username
 addons: false
-addons_commit: false # means addons commit
+addons_branch: false # means addons branch
 
 rougify: github # more options see code highlight
 ```

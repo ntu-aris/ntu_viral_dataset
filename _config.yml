@@ -12,7 +12,7 @@ addons:
   - gems
   - analytics
 
-addons_commit: true
+addons_branch: true
 
 theme: null # disable pages default theme
 

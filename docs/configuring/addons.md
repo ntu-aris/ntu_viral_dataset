@@ -14,7 +14,7 @@ addons:
 # set true will show the addons with blank content
 # addons: true
 
-addons_commit: true # means show addons commit
+addons_branch: true # means show addons branch
 ```
 
 ```tip
