@@ -1,20 +1,39 @@
 function search(data) {
     let text = new URL(location.href).searchParams.get("q");
     let results = [];
-    for (item of data) {
-        let [caption, context] = [item.title.match(text), item.content.match(text)];
-        if (caption || context) {
-            let result = [`<a href="${item.url}">${item.title}</a>`];
-            if (context) {
-                let min = context.index - 50;
-                let max = context.index + 50;
+    for (page of data) {
+        let [title, content] = [null, null];
+        try {
+            if (page.title) {
+                page.title = $("<div/>").html(page.title).text();
+                title = page.title.match(text);
+            } else {
+                if (page.url == "/") {
+                    page.title = "{{ site.title }}";
+                } else {
+                    page.title = page.url;
+                }
+            }
+        } catch (e) {}
+        try {
+            if (page.content) {
+                page.content = $("<div/>").html(page.content).text();
+                content = page.content.match(text);
+            }
+        } catch (e) {}
+
+        if (title || content) {
+            let result = [`<a href="{{ site.baseurl }}${page.url}">${page.title}</a>`];
+            if (content) {
+                let min = content.index - 100;
+                let max = content.index + 100;
                 if (min < 0) {
                     min = 0;
                 }
-                if (max > item.content.length) {
-                    max = item.content.length;
+                if (max > page.content.length) {
+                    max = page.content.length;
                 }
-                result.push(`<p class="context">${item.content.slice(min, max)}</p>`);
+                result.push(`<p class="context">${page.content.slice(min, max)}</p>`);
             }
             results.push(`<li>${result.join("")}</li>`);
         }
