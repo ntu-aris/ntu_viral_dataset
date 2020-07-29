@@ -1,7 +1,7 @@
-{%- include reset/workspace.liquid %}
+{%- include reset/workdir.liquid %}
 
 <ul>
-    {%- for item in workspace_files -%}
+    {%- for item in workdir_files -%}
         {%- assign level = item.dir | append: "temp/" | split: "/" | size | minus: 1 -%}
         {%- capture current -%}
             {%- if page.url == item.url %}current{% endif -%}
@@ -14,4 +14,4 @@
     {%- endfor %}
 </ul>
 
-{%- for workspace in workspace_dirs %}{% include extend/toctree.liquid %}{% endfor -%}
+{%- for workdir in workdir_dirs %}{% include extend/toctree.liquid %}{% endfor -%}

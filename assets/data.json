@@ -1,6 +1,0 @@
----
-layout: plugins/compress
-permalink: /data.json
----
-
-{%- include assets/data.liquid -%}

@@ -1,12 +1,20 @@
+function feedback(type, message) {
+    console.log(`feedback: https://github.com/rundocs/jekyll-rtd-theme/issues?q=${type}+${message}`);
+}
+
 function search(data) {
     let text = new URL(location.href).searchParams.get("q");
     let results = [];
+    let regexp = new RegExp(text, "im");
+
+    function slice(content, min, max) {
+        return content.slice(min, max).replace(regexp, (match) => `<span class="highlighted">${match}</span>`);
+    }
     for (page of data) {
         let [title, content] = [null, null];
         try {
             if (page.title) {
-                page.title = $("<div/>").html(page.title).text();
-                title = page.title.match(text);
+                title = page.title.match(regexp);
             } else {
                 if (page.url == "/") {
                     page.title = "{{ site.title }}";
@@ -14,36 +22,45 @@ function search(data) {
                     page.title = page.url;
                 }
             }
-        } catch (e) {}
+        } catch (e) {
+            feedback("search", e.message);
+        }
         try {
             if (page.content) {
                 page.content = $("<div/>").html(page.content).text();
-                content = page.content.match(text);
+                content = page.content.match(regexp);
             }
-        } catch (e) {}
-
+        } catch (e) {
+            feedback("search", e.message);
+        }
         if (title || content) {
             let result = [`<a href="{{ site.baseurl }}${page.url}">${page.title}</a>`];
             if (content) {
-                let min = content.index - 100;
-                let max = content.index + 100;
+                let [min, max] = [content.index - 100, content.index + 100];
+                let [prefix, suffix] = ["...", "..."];
+
                 if (min < 0) {
+                    prefix = "";
                     min = 0;
                 }
                 if (max > page.content.length) {
+                    suffix = "";
                     max = page.content.length;
                 }
-                result.push(`<p class="context">${page.content.slice(min, max)}</p>`);
+                result.push(`<p class="context">${prefix}${slice(page.content ,min, max)}${suffix}</p>`);
             }
             results.push(`<li>${result.join("")}</li>`);
         }
     }
     if (results.length > 0 && text.length > 0) {
-        $("#search-results").html(`<ul class="search">${results.join("")}</ul>`);
+        $("#search-results ul.search").html(results.join(""));
+        $("#search-results p.search-summary").html("{{ __search_results_found }}".replace("#", results.length));
     } else {
-        $("#search-results").html("{{ __no_results_found }}");
+        $("#search-results ul.search").empty();
+        $("#search-results p.search-summary").html("{{ __search_no_results_found }}");
     }
     $("#rtd-search-form [name='q']").val(text);
+    $("#search-results h2").html("{{ __search_results }}");
 }
 
 function reset() {
@@ -75,7 +92,12 @@ function admonition() {
 
 $(document).ready(function() {
     if (location.pathname == "{{ site.baseurl }}/search.html") {
-        $.getJSON("{{ site.baseurl }}/data.json", search);
+        $.ajax({
+                dataType: "json",
+                url: "{{ site.baseurl }}/pages.json"
+            })
+            .done(search)
+            .fail((xhr, message) => feedback("search", message));
     }
     admonition();
     anchors.add();
