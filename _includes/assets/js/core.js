@@ -2,6 +2,24 @@ function feedback(type, message) {
     console.log(`feedback: https://github.com/rundocs/jekyll-rtd-theme/issues?q=${type}+${message}`);
 }
 
+function highlight() {
+    let text = new URL(location.href).searchParams.get("highlight");
+    let regexp = new RegExp(text, "im");
+
+    if (text) {
+        $(".section").find("*").each(function() {
+            if (this.outerHTML.match(regexp)) {
+                $(this).addClass("highlighted-box");
+            }
+        });
+        $(".section").find(".highlighted-box").each(function() {
+            if (($(this).find(".highlighted-box").length > 0)) {
+                $(this).removeClass("highlighted-box");
+            }
+        });
+    }
+}
+
 function search(data) {
     let text = new URL(location.href).searchParams.get("q");
     let results = [];
@@ -34,7 +52,7 @@ function search(data) {
             feedback("search", e.message);
         }
         if (title || content) {
-            let result = [`<a href="{{ site.baseurl }}${page.url}">${page.title}</a>`];
+            let result = [`<a href="{{ site.baseurl }}${page.url}?highlight=${text}">${page.title}</a>`];
             if (content) {
                 let [min, max] = [content.index - 100, content.index + 100];
                 let [prefix, suffix] = ["...", "..."];
@@ -101,6 +119,7 @@ $(document).ready(function() {
     }
     admonition();
     anchors.add();
+    highlight();
     SphinxRtdTheme.Navigation.reset = reset;
     SphinxRtdTheme.Navigation.enable(true);
 });
