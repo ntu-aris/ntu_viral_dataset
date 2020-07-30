@@ -8,5 +8,5 @@ Change both version in following files:
 ```
 jekyll-rtd-theme.gemspec
 
-_includes/reset/variables.liquid
+_includes/reset/defaults.liquid
 ```

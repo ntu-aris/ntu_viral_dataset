@@ -1,18 +1,15 @@
 #!/bin/bash
 
-# sphinx_rtd_theme 0.5.0
-# rougify 3.19.0
-
 themes=(base16 base16.dark base16.light base16.monokai base16.monokai.dark base16.monokai.light base16.solarized base16.solarized.dark base16.solarized.light bw colorful github gruvbox gruvbox.dark gruvbox.light igorpro magritte molokai monokai monokai.sublime pastie thankful_eyes tulip)
-rougify=_sass/rougify
+dest=assets/css/rougify
 
-rm -rf ${rougify} && mkdir -p ${rougify}
+rm -rf ${dest} && mkdir -p ${dest}
 
 for theme in ${themes[@]}
 do
-    rougify style ${theme} > ${rougify}/${theme}.scss
+    rougify style ${theme} > ${theme}.scss
+    scss --sourcemap=none --style compressed ${theme}.scss ${dest}/${theme}.css
+    rm --force ${theme}.scss
 done
 
-echo rougify $(rougify version)
-
-# pip download --no-deps sphinx_rtd_theme
+# pip3 download -r requirements.txt --no-deps

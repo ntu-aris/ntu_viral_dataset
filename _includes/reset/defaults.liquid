@@ -1,5 +1,5 @@
 {%- assign description = content | strip_html | split: " " | join: " " | escape | truncate: 150 -%}
-{%- assign version = "0.1.7" -%}
+{%- assign version = "0.1.8" -%}
 {%- assign addons = "github, gems, analytics" | split: ", " -%}
 
 {%- include reset/site_pages.liquid %}
@@ -28,7 +28,6 @@
 {% comment %} scss and script {% endcomment %}
 {%- capture site_scss -%}
     @import "style.scss";
-    @import "rougify/{{ site.rougify | default: 'github' }}.scss";
     {%- if site.fluid %}
         @import "fluid.scss";
     {% endif -%}

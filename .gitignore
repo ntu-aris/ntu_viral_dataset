@@ -4,4 +4,5 @@ _site
 
 *.html
 *.gem
+*.whl
 Gemfile.lock

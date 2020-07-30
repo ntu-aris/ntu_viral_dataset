@@ -57,7 +57,7 @@ function search(data) {
         $("#search-results p.search-summary").html("{{ __search_results_found }}".replace("#", results.length));
     } else {
         $("#search-results ul.search").empty();
-        $("#search-results p.search-summary").html("{{ __search_no_results_found }}");
+        $("#search-results p.search-summary").html("{{ __search_results_not_found }}");
     }
     $("#rtd-search-form [name='q']").val(text);
     $("#search-results h2").html("{{ __search_results }}");

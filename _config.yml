@@ -1,6 +1,6 @@
 title: jekyll-rtd-theme
 lang: en-US
-description: Just another documentation theme compatible with GitHub Pages, based on sphinx_rtd_theme
+description: Just another jekyll theme
 
 edit: true
 
@@ -27,7 +27,8 @@ exclude:
   - Makefile
   - Gemfile
   - Gemfile.lock
-  - ci.sh
+  - deps.sh
   - CODE_OF_CONDUCT.md
   - LICENSE
+  - requirements.txt
   - jekyll-rtd-theme.gemspec

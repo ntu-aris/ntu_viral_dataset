@@ -15,7 +15,7 @@ via `_config.yml`:
 ```yml
 script: |
   alert("it");
-  alert("works!")
+  alert("works!");
 
 scss: |
   .wy-nav-content-wrap{background:#fcfcfc}
