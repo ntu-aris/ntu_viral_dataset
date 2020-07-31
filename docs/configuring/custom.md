@@ -6,9 +6,8 @@ sort: 10
 
 via file:
 ```yml
-_sass/custom.scss
-
-_includes/assets/js/custom.js
+_includes/assets/custom.js
+_includes/assets/custom.scss
 ```
 
 via `_config.yml`:

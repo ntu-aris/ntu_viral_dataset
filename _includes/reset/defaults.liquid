@@ -27,16 +27,16 @@
 
 {% comment %} scss and script {% endcomment %}
 {%- capture site_scss -%}
-    @import "style.scss";
+    @import "site.scss";
     {%- if site.fluid %}
         @import "fluid.scss";
     {% endif -%}
-    @import "custom.scss"; {{ site.scss }}
+    {% include assets/custom.scss %} {{ site.scss }}
 {%- endcapture -%}
 
 {%- capture site_script %}
-    {% include assets/js/core.js %}
-    {% include assets/js/custom.js %} {{ site.script }}
+    {% include assets/site.js %}
+    {% include assets/custom.js %} {{ site.script }}
 {%- endcapture -%}
 
 {%- if site.debug -%}

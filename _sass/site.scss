@@ -1,3 +1,4 @@
+@import "_album.scss";
 @import "_embed.scss";
 
 p {
@@ -47,14 +48,14 @@ footer {
         font-family: monospace;
         font-size: 12px;
     }
-}
-/* custom */
-.copyright-rtd {
-    display: none;
-}
 
-.highlighted-box {
-    border: 1px solid #f1c40f;
+    .copyright-rtd {
+        display: none;
+    }
+
+    .highlighted-box {
+        border: 1px solid #f1c40f;
+    }
 }
 
 #search-results {
