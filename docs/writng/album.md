@@ -7,11 +7,11 @@ sort: 3
 Define your data in markdown file or site's `_data/demo.yml`
     {% raw %}
     demo:
-      - name: name1
-        href: #1
+      - title: title1
+        link: https://via.placeholder.com/200
         image: https://via.placeholder.com/200
-      - name: name2
-        href: #2
+      - title: title2
+        link: https://via.placeholder.com/200
         image: https://via.placeholder.com/200
     {% endraw %}
 

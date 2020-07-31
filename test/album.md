@@ -1,20 +1,20 @@
 ---
 sort: 2
 demo:
-  - name: name
-    href: https://via.placeholder.com/200
+  - title: title
+    link: https://via.placeholder.com/200
     image: https://via.placeholder.com/200
-  - name: name
-    href: https://via.placeholder.com/200
+  - title: title
+    link: https://via.placeholder.com/200
     image: https://via.placeholder.com/200
-  - name: name
-    href: https://via.placeholder.com/200
+  - title: title
+    link: https://via.placeholder.com/200
     image: https://via.placeholder.com/200
-  - name: name
-    href: https://via.placeholder.com/200
+  - title: title
+    link: https://via.placeholder.com/200
     image: https://via.placeholder.com/200
-  - name: name
-    href: https://via.placeholder.com/200
+  - title: title
+    link: https://via.placeholder.com/200
     image: https://via.placeholder.com/200
 ---
 
