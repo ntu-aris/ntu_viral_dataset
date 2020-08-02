@@ -61,11 +61,11 @@ layout: plugins/compress
             <div class="wy-side-scroll">
                 <div class="wy-side-nav-search">
                     {% if site.logo %}
-                        <a href="{{ site.baseurl }}/">
+                        <a href="{{ site.baseurl }}/{% if site_lang != lang %}{{ lang }}/{% endif %}">
                             <img src="{{ site.baseurl }}/{{ site.logo }}" class="logo" alt="{{ site.title }}">
                         </a>
                     {% else %}
-                        <a href="{{ site.baseurl }}/" class="icon icon-home"> {{ site.title }}</a>
+                        <a href="{{ site.baseurl }}/{% if site_lang != lang %}{{ lang }}/{% endif %}" class="icon icon-home"> {{ site.title }}</a>
                     {% endif %}
                     {% include searchbox.liquid %}
                 </div>
@@ -83,7 +83,7 @@ layout: plugins/compress
             <!-- MOBILE NAV -->
             <nav class="wy-nav-top" aria-label="top navigation">
                 <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-                <a href="{{ site.baseurl }}/">{{ site.title }}</a>
+                <a href="{{ site.baseurl }}/{% if site_lang != lang %}{{ lang }}/{% endif %}">{{ site.title }}</a>
             </nav>
             <div class="wy-nav-content">
                 <div class="rst-content">

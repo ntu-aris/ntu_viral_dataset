@@ -22,7 +22,13 @@
                             {{ site.baseurl }}/{% for block in blocks limit: forloop.index %}{{ block | append: "/" }}{% endfor %}
                         {%- endcapture %}
                         <li>
-                            <a href="{{ href }}">{{ block | split: "." | last | capitalize }}</a><i class="fa fa-angle-double-right"></i>
+                            <a href="{{ href }}">
+                                {%- if block == lang -%}
+                                    {{ block }}
+                                {%- else -%}
+                                    {{ block | capitalize }}
+                                {%- endif -%}
+                            </a><i class="fa fa-angle-double-right"></i>
                         </li>
                     {%- endif -%}
                 {%- endfor -%}

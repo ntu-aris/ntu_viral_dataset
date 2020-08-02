@@ -1,4 +1,13 @@
+{% comment %} Start from the language chapter(eg: en-US) or root(/) {% endcomment %}
 {%- assign workdir = include.workdir | default: "/" -%}
+
+{%- if page.dir != "/" -%}
+    {%- assign chapter = page.dir | remove_first: "/" | split: "/" | first -%}
+    {%- if chapter contains "-" -%}
+        {%- capture workdir %}/{{ chapter }}/{% endcapture -%}
+    {%- endif -%}
+{%- endif -%}
+
 {%- assign workdir_level = workdir | append: "temp/" | split: "/" | size | minus: 1 -%}
 {%- assign workdir_files = site_files | where_exp: "item", "item.dir == workdir" -%}
 
@@ -8,8 +17,14 @@
         {%- if workdir_level == current_m1 -%}
             {%- assign temp = workdir | append: "@@" -%}
             {%- assign dir = item.dir | replace: workdir, temp | split: "@@" | first -%}
+            {% comment %} In the current subdirectory {% endcomment %}
             {%- if workdir == dir -%}
-                {{ item.dir }}|
+                {% comment %} Root directory does not display other languages {% endcomment %}
+                {%- if workdir == "/" -%}
+                    {%- unless item.dir contains "-" %}{{ item.dir }}|{% endunless -%}
+                {%- else -%}
+                    {{ item.dir }}|
+                {%- endif -%}
             {%- endif -%}
         {%- endif -%}
     {%- endfor -%}
