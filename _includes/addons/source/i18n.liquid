@@ -2,7 +2,7 @@
     <dt>{{ __translations }}</dt>
     {%- for item in site_langs -%}
         <dd>
-            {%- if item == site.lang -%}
+            {%- if item == site_lang -%}
                 {%- assign url = "" -%}
             {%- else -%}
                 {%- assign url = item | append: "/" -%}
