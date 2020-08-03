@@ -11,6 +11,7 @@
     {%- assign author = site.author | default: "[author]" -%}
     {%- assign branch = "[branch]" -%}
     {%- assign commit = "[commit]" -%}
+    {%- assign host = "" -%}
     {%- assign repository_url = "#" -%}
     {%- assign issues_url = "#" -%}
     {%- assign zip_url = "#" -%}
@@ -19,6 +20,7 @@
     {%- assign author = site.author | default: site.github.owner_name -%}
     {%- assign branch = site.github.source.branch -%}
     {%- assign commit = site.github.build_revision | slice: 0, 7 -%}
+    {%- assign host = site.github.url -%}
     {%- assign repository_url = site.github.repository_url -%}
     {%- assign issues_url = site.github.issues_url -%}
     {%- assign zip_url = site.github.zip_url -%}
