@@ -11,7 +11,7 @@ permalink: /sitemap.xml
         {% include reset/schema.liquid %}
         <url>
             <loc>{{ schema_url }}</loc>
-            <priority>0.{{ page.path | split: "/" | size }}</priority>
+            <priority>{{ schema_priority }}</priority>
             <lastmod>{{ schema_lastmod }}</lastmod>
         </url>
     {%- endfor %}
