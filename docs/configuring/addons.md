@@ -27,3 +27,7 @@ Not recommended, but available, because the nested toctree will make the constru
 
 The root subdirectory naming rules are as follows:
 If the name contains a horizontal bar(`-`), it is considered to be a language category, and the articles in it are in the corresponding language ui by default!
+
+```note
+If you have the language dir(eg: zh-CN), you must have the language file
+```
