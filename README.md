@@ -11,7 +11,7 @@ Just another documentation theme compatible with GitHub Pages, based on sphinx_r
 ![][demo]
 
 ## Notable features
-- Write documents directly, like docsify!
+- Write documents directly, automatically generate toctree based on directory
 - Only need one file `_config.yml` to configure site
 - Bundled as a "theme gem" for easier installation/upgrading.
 - Compatible with GitHub Pages.
