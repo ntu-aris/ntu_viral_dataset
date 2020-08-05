@@ -1,11 +1,8 @@
-title: jekyll-rtd-theme
+title: Jekyll-rtd-theme
 lang: en-US
-description: Just another jekyll theme
+description: Just another documentation theme compatible with GitHub Pages
 
-edit: true
-
-copyright:
-  revision: true
+theme: null # disable pages default theme
 
 addons:
   - github
@@ -14,10 +11,11 @@ addons:
   - analytics
 
 addons_branch: true
+edit: true
 
-theme: null # disable pages default theme
+copyright:
+  revision: true
 
-# use front matter sort
 readme_index:
   with_frontmatter: true
 

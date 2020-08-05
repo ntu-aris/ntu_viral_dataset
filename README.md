@@ -1,4 +1,4 @@
-# jekyll-rtd-theme
+# Jekyll-rtd-theme
 [![](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg)][repository]
 [![](https://img.shields.io/gem/v/jekyll-rtd-theme)][rubygem]
 [![](https://img.shields.io/gem/dt/jekyll-rtd-theme)][rubygem]
@@ -20,7 +20,7 @@ Just another documentation theme compatible with GitHub Pages, based on sphinx_r
 - Search engine support
 - Commenting support
 - Google,Baidu,CNZZ Analytics support.
-- UI localized text in English(default), Chinese(中文)
+- UI localized text in English(default), Chinese(中文)...
 - And many features waiting for you to discover.
 
 ## Roadmap
