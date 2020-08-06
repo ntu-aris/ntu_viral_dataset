@@ -7,7 +7,7 @@ sort: 2
 1. Install a full [Ruby development environment](https://jekyllrb.com/docs/installation/)
 2. Install bundler gems
 ```sh
-gem install bundler
+gem install jekyll bundler
 ```
 3. Change into your new directory
 ```sh

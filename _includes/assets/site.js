@@ -1,3 +1,5 @@
+/* Important tip: please do not use double slashes in code comments here, and be sure to add the semicolon(;) at the end! */
+
 function feedback(type, message) {
     console.log(`feedback: https://github.com/rundocs/jekyll-rtd-theme/issues?q=${type}+${message}`);
 }

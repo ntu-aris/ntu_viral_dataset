@@ -24,6 +24,7 @@ sass:
 
 exclude:
   - Makefile
+  - CNAME
   - Gemfile
   - Gemfile.lock
   - deps.sh

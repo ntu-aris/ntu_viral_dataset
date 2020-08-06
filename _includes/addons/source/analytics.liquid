@@ -9,8 +9,6 @@
 
 <script>
     $(document).ready(function() {
-        $.getJSON("https://rundocs-analytics.glitch.me/analytics?host=" + location.host, function(data) {
-            $("#counter").html(data.count);
-        });
+        $.getJSON("https://rundocs-analytics.glitch.me/analytics?host=" + location.host, (data) => $("#counter").html(data.count));
     });
 </script>

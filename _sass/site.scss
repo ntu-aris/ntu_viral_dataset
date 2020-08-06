@@ -1,6 +1,6 @@
 @import "_album.scss";
 @import "_embed.scss";
-
+/* custom */
 p {
     font-size: 15px;
 }
@@ -11,21 +11,21 @@ footer {
         text-align: center;
     }
 }
-
+/* breadcrumbs icon */
 .fa-angle-double-right {
     font-size: 13px;
 }
-
+/* fixed the addon overflow */
 .rst-versions {
     &.shift-up {
         overflow-y: auto;
     }
 }
-
+/* fixed the toctree padding */
 .wy-nav-side {
     padding-bottom: 3em;
 }
-
+/* mobile title margin, not the best method, flex should be better  */
 .wy-nav-top {
     a {
         margin-left: -30px;
@@ -33,31 +33,32 @@ footer {
 }
 
 .rst-content {
+    /* fixed the long list */
     ol,
     ul {
         overflow-x: auto;
     }
-
+    /* fixed link>code */
     a code.literal {
         color: #2980b9;
     }
-
+    /* custom */
     code,
     div[class^=highlight] pre,
     pre {
         font-family: monospace;
         font-size: 12px;
     }
-
+    /* theme copyright */
     .copyright-rtd {
         display: none;
     }
-
+    /* view box of search results */
     .highlighted-box {
         border: 1px solid #f1c40f;
     }
 }
-
+/* fixed the last of search results display */
 #search-results {
     li:last-child {
         border-bottom: 0;
@@ -66,12 +67,14 @@ footer {
 }
 @media screen and (max-width: 768px) {
     .wy-nav-content-wrap {
+        /* custom */
         .wy-nav-content {
             padding: 1em;
         }
     }
 }
 @media screen and (max-width: 480px) {
+    /* show edit on mobile */
     .wy-breadcrumbs li.wy-breadcrumbs-aside {
         display: initial;
     }
