@@ -1,4 +1,4 @@
-# Jekyll-rtd-theme
+# jekyll-rtd-theme
 [![](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg)][repository]
 [![](https://img.shields.io/gem/v/jekyll-rtd-theme)][rubygem]
 [![](https://img.shields.io/gem/dt/jekyll-rtd-theme)][rubygem]

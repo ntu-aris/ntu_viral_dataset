@@ -1,5 +1,5 @@
 ---
-sort: 7
+sort: 8
 ---
 
 # Set up addons
@@ -9,7 +9,7 @@ sort: 7
 addons:
   - github
   - i18n # not recommended, but available
-  - gems
+  - plugins
   - analytics
 
 # set true will show the addons with blank content
@@ -23,11 +23,4 @@ addons means the footer of sidebar, default is false
 ```
 
 ## i18n
-Not recommended, but available, because the nested toctree will make the construction of jekyll very slow!
-
-The root subdirectory naming rules are as follows:
-If the name contains a horizontal bar(`-`), it is considered to be a language category, and the articles in it are in the corresponding language ui by default!
-
-```note
-If you have the language dir(eg: zh-CN), you must have the language file
-```
+Not recommended, but available, because the nested toctree will slow down the build time of your site.

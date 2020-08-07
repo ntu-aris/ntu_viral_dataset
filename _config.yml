@@ -1,5 +1,5 @@
-title: Jekyll-rtd-theme
-lang: en-US
+title: jekyll-rtd-theme
+lang: en
 description: Just another documentation theme compatible with GitHub Pages
 
 theme: null # disable pages default theme
@@ -7,7 +7,7 @@ theme: null # disable pages default theme
 addons:
   - github
   - i18n
-  - gems
+  - plugins
   - analytics
 
 addons_branch: true

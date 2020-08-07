@@ -4,9 +4,8 @@ sort: 2
 
 # Default configuration
 ```yml
-lang: en-US # zh-CN is also available
-
 author: # default: site.github.owner_name
+lang: en
 
 copyright: false
 edit: false

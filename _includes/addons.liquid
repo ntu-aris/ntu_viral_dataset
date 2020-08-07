@@ -13,7 +13,9 @@
     <div class="rst-other-versions">
         {%- assign items = site.addons | default: addons -%}
         {% for item in items -%}
-            {% include addons/source/{{ item }}.liquid %}
+            {%- if addons contains item -%}
+                {% include addons/source/{{ item }}.liquid %}
+            {%- endif -%}
         {% endfor -%}
         <hr>
         <small>
