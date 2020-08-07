@@ -49,6 +49,21 @@ layout: plugins/compress
     <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/assets/favicon.svg">
     <!-- script -->
     <script src="{{ cdn }}/assets/js/jquery.min.js"></script>
+    <script>
+        const embed = {
+            baseurl: "{{ site.baseurl }}",
+            title: "{{ site.title }}",
+            admonition: {
+                note: "{{ __note }}",
+                tip: "{{ __tip }}",
+                warning: "{{ __warning }}",
+                danger: "{{ __danger }}"
+            },
+            search_results: "{{ __search_results }}",
+            search_results_found: "{{ __search_results_found }}",
+            search_results_not_found: "{{ __search_results_not_found }}"
+        };
+    </script>
 </head>
 
 <body class="wy-body-for-nav">

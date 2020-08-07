@@ -37,7 +37,7 @@ function search(data) {
                 title = page.title.match(regexp);
             } else {
                 if (page.url == "/") {
-                    page.title = "{{ site.title }}";
+                    page.title = embed.title;
                 } else {
                     page.title = page.url;
                 }
@@ -54,7 +54,7 @@ function search(data) {
             feedback("search", e.message);
         }
         if (title || content) {
-            let result = [`<a href="{{ site.baseurl }}${page.url}?highlight=${text}">${page.title}</a>`];
+            let result = [`<a href="${embed.baseurl}${page.url}?highlight=${text}">${page.title}</a>`];
             if (content) {
                 let [min, max] = [content.index - 100, content.index + 100];
                 let [prefix, suffix] = ["...", "..."];
@@ -74,13 +74,13 @@ function search(data) {
     }
     if (results.length > 0 && text.length > 0) {
         $("#search-results ul.search").html(results.join(""));
-        $("#search-results p.search-summary").html("{{ __search_results_found }}".replace("#", results.length));
+        $("#search-results p.search-summary").html(embed.search_results_found.replace("#", results.length));
     } else {
         $("#search-results ul.search").empty();
-        $("#search-results p.search-summary").html("{{ __search_results_not_found }}");
+        $("#search-results p.search-summary").html(embed.search_results_not_found);
     }
     $("#rtd-search-form [name='q']").val(text);
-    $("#search-results h2").html("{{ __search_results }}");
+    $("#search-results h2").html(embed.search_results);
 }
 
 function reset() {
@@ -98,23 +98,17 @@ function reset() {
 }
 
 function admonition() {
-    const items = {
-        note: "{{ __note }}",
-        tip: "{{ __tip }}",
-        warning: "{{ __warning }}",
-        danger: "{{ __danger }}"
-    };
-    for (let item in items) {
+    for (let item in embed.admonition) {
         let content = $(`.language-${item}`).html();
-        $(`.language-${item}`).replaceWith(`<div class="admonition ${item}"><p class="admonition-title">${items[item]}</p><p>${content}</p></div>`);
+        $(`.language-${item}`).replaceWith(`<div class="admonition ${item}"><p class="admonition-title">${embed.admonition[item]}</p><p>${content}</p></div>`);
     }
 }
 
 $(document).ready(function() {
-    if (location.pathname == "{{ site.baseurl }}/search.html") {
+    if (location.pathname == `${embed.baseurl}/search.html`) {
         $.ajax({
                 dataType: "json",
-                url: "{{ site.baseurl }}/pages.json"
+                url: `${embed.baseurl}/pages.json`
             })
             .done(search)
             .fail((xhr, message) => feedback("search", message));
