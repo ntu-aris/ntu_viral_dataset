@@ -20,3 +20,7 @@ scss: |
   .wy-nav-content-wrap{background:#fcfcfc}
   .wy-nav-content-wrap .wy-nav-content{max-width:none}
 ```
+
+```tip
+Please do not use double slashes in script, and be sure to add the semicolon(;) at the end!
+```

@@ -17,7 +17,7 @@ Just another documentation theme compatible with GitHub Pages, based on sphinx_r
 - Compatible with GitHub Pages.
 - Optimized for search engines with support for Open Graph data.
 - Optimized for search engines with `robots.txt` and `sitemap.xml`.
-- Search engine support
+- Search engine (RegExp supported)
 - Commenting support
 - Google,Baidu,CNZZ Analytics support.
 - Multi-language supported

@@ -53,15 +53,13 @@ layout: plugins/compress
         const ui = {
             baseurl: "{{ site.baseurl }}",
             title: "{{ site.title }}",
+            lang: "{{ lang }}",
             admonition: {
                 note: "{{ __note }}",
                 tip: "{{ __tip }}",
                 warning: "{{ __warning }}",
                 danger: "{{ __danger }}"
-            },
-            search_results: "{{ __search_results }}",
-            search_results_found: "{{ __search_results_found }}",
-            search_results_not_found: "{{ __search_results_not_found }}"
+            }
         };
     </script>
 </head>
@@ -79,7 +77,12 @@ layout: plugins/compress
                     {% else %}
                         <a href="{{ site.baseurl }}/{% if site_lang != lang %}{{ lang }}/{% endif %}" class="icon icon-home"> {{ site.title }}</a>
                     {% endif %}
-                    {% include searchbox.liquid %}
+                    <div role="search">
+                        <form id="rtd-search-form" class="wy-form" action="{{ site.baseurl }}/search.html" method="get" autocomplete="off">
+                            <input type="text" name="q" placeholder="{{ __search_docs }}...">
+                            <input type="hidden" name="lang" value="{{ lang }}">
+                        </form>
+                    </div>
                 </div>
                 <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
                     {% include toctree.liquid %}
