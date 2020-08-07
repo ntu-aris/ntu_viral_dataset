@@ -3,7 +3,7 @@
 
 {%- if page.dir != "/" -%}
     {%- assign chapter = page.dir | remove_first: "/" | split: "/" | first -%}
-    {%- if chapter contains "-" -%}
+    {%- if languages contains chapter -%}
         {%- capture workdir %}/{{ chapter }}/{% endcapture -%}
     {%- endif -%}
 {%- endif -%}
@@ -21,7 +21,8 @@
             {%- if workdir == dir -%}
                 {% comment %} Root directory does not display other languages {% endcomment %}
                 {%- if workdir == "/" -%}
-                    {%- unless item.dir contains "-" %}{{ item.dir }}|{% endunless -%}
+                    {%- assign language = item.dir | replace: "/", "" -%}
+                    {%- unless languages contains language %}{{ item.dir }}|{% endunless -%}
                 {%- else -%}
                     {{ item.dir }}|
                 {%- endif -%}

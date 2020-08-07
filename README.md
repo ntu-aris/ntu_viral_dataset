@@ -20,7 +20,7 @@ Just another documentation theme compatible with GitHub Pages, based on sphinx_r
 - Search engine support
 - Commenting support
 - Google,Baidu,CNZZ Analytics support.
-- UI localized text in English(default), Chinese(中文)...
+- Multi-language supported
 - And many features waiting for you to discover.
 
 ## Roadmap
