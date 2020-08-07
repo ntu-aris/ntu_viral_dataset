@@ -27,7 +27,7 @@ If the root subdirectory matches the above language code, will be treated as tra
 ```
 
 ```tip
-If you have the translated directory(eg: /zh-CN/), make sure the language file already exists!
+If you have the translated directory(eg: /zh-cn/), make sure the language file already exists!
 
-(eg: This site current page language is: {{ lang }}, the language file /_includes/i18n/{{ lang }}.liquid already exist)
+(eg: This site current page language is: "{{ lang }}", the language file "/_includes/i18n/{{ lang }}.liquid" already exist)
 ```
