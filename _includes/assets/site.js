@@ -37,7 +37,7 @@ function search(data) {
                 title = page.title.match(regexp);
             } else {
                 if (page.url == "/") {
-                    page.title = embed.title;
+                    page.title = ui.title;
                 } else {
                     page.title = page.url;
                 }
@@ -54,7 +54,7 @@ function search(data) {
             feedback("search", e.message);
         }
         if (title || content) {
-            let result = [`<a href="${embed.baseurl}${page.url}?highlight=${text}">${page.title}</a>`];
+            let result = [`<a href="${ui.baseurl}${page.url}?highlight=${text}">${page.title}</a>`];
             if (content) {
                 let [min, max] = [content.index - 100, content.index + 100];
                 let [prefix, suffix] = ["...", "..."];
@@ -74,13 +74,13 @@ function search(data) {
     }
     if (results.length > 0 && text.length > 0) {
         $("#search-results ul.search").html(results.join(""));
-        $("#search-results p.search-summary").html(embed.search_results_found.replace("#", results.length));
+        $("#search-results p.search-summary").html(ui.search_results_found.replace("#", results.length));
     } else {
         $("#search-results ul.search").empty();
-        $("#search-results p.search-summary").html(embed.search_results_not_found);
+        $("#search-results p.search-summary").html(ui.search_results_not_found);
     }
     $("#rtd-search-form [name='q']").val(text);
-    $("#search-results h2").html(embed.search_results);
+    $("#search-results h2").html(ui.search_results);
 }
 
 function reset() {
@@ -98,20 +98,15 @@ function reset() {
 }
 
 function admonition() {
-    for (let item in embed.admonition) {
+    for (let item in ui.admonition) {
         let content = $(`.language-${item}`).html();
-        $(`.language-${item}`).replaceWith(`<div class="admonition ${item}"><p class="admonition-title">${embed.admonition[item]}</p><p>${content}</p></div>`);
+        $(`.language-${item}`).replaceWith(`<div class="admonition ${item}"><p class="admonition-title">${ui.admonition[item]}</p><p>${content}</p></div>`);
     }
 }
 
 $(document).ready(function() {
-    if (location.pathname == `${embed.baseurl}/search.html`) {
-        $.ajax({
-                dataType: "json",
-                url: `${embed.baseurl}/pages.json`
-            })
-            .done(search)
-            .fail((xhr, message) => feedback("search", message));
+    if (location.pathname == `${ui.baseurl}/search.html`) {
+        $.ajax(`${ui.baseurl}/pages.json`).done(search).fail((xhr, message) => feedback("search", message));
     }
     admonition();
     anchors.add();
