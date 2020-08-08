@@ -1,7 +1,3 @@
-function feedback(type, message) {
-    console.log(`feedback: https://github.com/rundocs/jekyll-rtd-theme/issues?q=${type}+${message}`);
-}
-
 function search(data) {
     let text = new URL(location.href).searchParams.get("q");
     let lang = new URL(location.href).searchParams.get("lang") || ui.lang;
@@ -17,7 +13,7 @@ function search(data) {
         $(".search").empty();
         $(".search-summary").html(i18n[lang].search_results_not_found);
         $("#search-results h2").html(i18n[lang].search_results);
-        return;
+        return feedback(["search", e.message]);
     }
 
     function slice(content, min, max) {
@@ -36,7 +32,7 @@ function search(data) {
                 }
             }
         } catch (e) {
-            feedback("search", e.message);
+            feedback(["search", e.message]);
         }
         try {
             if (page.content) {
@@ -44,7 +40,7 @@ function search(data) {
                 content = page.content.match(regexp);
             }
         } catch (e) {
-            feedback("search", e.message);
+            feedback(["search", e.message]);
         }
         if (title || content) {
             let result = [`<a href="${ui.baseurl}${page.url}?highlight=${text}">${page.title}</a>`];
@@ -76,5 +72,5 @@ function search(data) {
 }
 
 $(document).ready(function() {
-    $.ajax(`${ui.baseurl}/pages.json`).done(search).fail((xhr, message) => feedback("search", message));
+    $.ajax(`${ui.baseurl}/pages.json`).done(search).fail((xhr, message) => feedback(["search", message]));
 });

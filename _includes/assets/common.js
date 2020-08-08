@@ -23,7 +23,7 @@ $(document).ready(function() {
                     $(this).addClass("highlighted-box");
                 }
             } catch (e) {
-                console.log(e.message);
+                feedback(["highlight", e.message]);
             }
         });
         $(".section").find(".highlighted-box").each(function() {
