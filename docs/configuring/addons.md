@@ -13,9 +13,9 @@ addons:
   - analytics
 
 # set true will show the addons with blank content
-# addons: true
+addons: true
 
-addons_branch: true # means show addons branch
+addons_branch: true # means show addons branch, close with false
 ```
 
 ```tip

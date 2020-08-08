@@ -33,7 +33,7 @@
                     {%- endif -%}
                 {%- endfor -%}
         {%- endcase %}
-        {%- if site.edit -%}
+        {%- if site.edit and site.github_metadata != false -%}
             <li class="wy-breadcrumbs-aside">
                 <a href="{{ github_edit_link }}" class="fa fa-edit" target="_blank"></a>
             </li>

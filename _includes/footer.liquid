@@ -23,7 +23,7 @@
                 {%- endif -%}
                 {{ site.time | date: "%Y" }},
                 {{ author }}
-                {% if site.copyright.revision -%}
+                {% if site.copyright.revision and site.github_metadata != false -%}
                     <span class="commit">
                         {{ __revision }} <code>{{ commit }}</code>
                     </span>

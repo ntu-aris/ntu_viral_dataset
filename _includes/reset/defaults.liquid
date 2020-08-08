@@ -7,22 +7,33 @@
 {%- include reset/schema.liquid -%}
 
 {% comment %} github-metadata {% endcomment %}
-{%- if jekyll.environment != "production" -%}
-    {%- assign author = site.author | default: "[author]" -%}
-    {%- assign branch = "[branch]" -%}
-    {%- assign commit = "[commit]" -%}
-    {%- assign repository_url = "#" -%}
-    {%- assign issues_url = "#" -%}
-    {%- assign zip_url = "#" -%}
-    {%- assign github_edit_link = "#" -%}
+{%- if site.github_metadata != false -%}
+    {%- if jekyll.environment == "production" -%}
+        {%- assign author = site.author | default: site.github.owner_name -%}
+        {%- assign branch = site.github.source.branch -%}
+        {%- assign commit = site.github.build_revision | slice: 0, 7 -%}
+        {%- assign repository_url = site.github.repository_url -%}
+        {%- assign issues_url = site.github.issues_url -%}
+        {%- assign zip_url = site.github.zip_url -%}
+        {%- capture github_edit_link %}{% github_edit_link %}{% endcapture -%}
+    {%- else -%}
+        {%- assign author = site.author | default: "[author]" -%}
+        {%- assign branch = "[branch]" -%}
+        {%- assign commit = "[commit]" -%}
+        {%- assign repository_url = "#" -%}
+        {%- assign issues_url = "#" -%}
+        {%- assign zip_url = "#" -%}
+        {%- assign github_edit_link = "#" -%}
+    {%- endif -%}
 {%- else -%}
-    {%- assign author = site.author | default: site.github.owner_name -%}
-    {%- assign branch = site.github.source.branch -%}
-    {%- assign commit = site.github.build_revision | slice: 0, 7 -%}
-    {%- assign repository_url = site.github.repository_url -%}
-    {%- assign issues_url = site.github.issues_url -%}
-    {%- assign zip_url = site.github.zip_url -%}
-    {%- capture github_edit_link %}{% github_edit_link %}{% endcapture -%}
+    {%- assign author = site.author | default: "[author]" -%}
+    {%- assign branch = "" -%}
+    {%- assign commit = "" -%}
+    {%- assign repository_url = "" -%}
+    {%- assign issues_url = "" -%}
+    {%- assign zip_url = "" -%}
+    {%- assign github_edit_link = "" -%}
+    {%- assign addons = "i18n, plugins, analytics" | split: ", " -%}
 {%- endif -%}
 
 {% comment %} scss and script {% endcomment %}
