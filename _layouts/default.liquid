@@ -136,8 +136,10 @@ layout: plugins/compress
         <!-- analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-174262874-1"></script>
         <script>
+            gtag("set", {
+                "user_id": location.host
+            });
             gtag("config", "UA-174262874-1");
-            gtag("set", {"user_id": location.host});
         </script>
         {%- include addons/analytics/baidu.liquid -%}
         {%- include addons/analytics/cnzz.liquid -%}
