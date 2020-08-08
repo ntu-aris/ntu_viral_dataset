@@ -25,8 +25,6 @@ By default Html is compressed and use Jsdelivr CDN
 ```yml
 debug: # if debug is true use local static files.
   compress: false # close html compress
-
-github_metadata: false # do not use plugin jekyll-github-metadata
 ```
 
 
