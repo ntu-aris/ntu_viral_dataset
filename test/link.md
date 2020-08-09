@@ -12,6 +12,7 @@ sort: 5
 
 [page.url | absolute_url]: {{ page.url | absolute_url }}
 
+[site.url]: {{ site.url }}
 
 [site.baseurl]: {{ site.baseurl }}
 
