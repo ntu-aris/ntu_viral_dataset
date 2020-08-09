@@ -8,7 +8,7 @@
         {%- assign items = site.addons | default: addons -%}
         {% for item in items -%}
             {%- if addons contains item -%}
-                {% include addons/source/{{ item }}.liquid %}
+                {% include addons/{{ item }}.liquid %}
             {%- endif -%}
         {% endfor -%}
         <hr>

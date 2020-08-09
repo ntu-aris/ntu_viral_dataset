@@ -14,13 +14,13 @@ layout: plugins/compress
     {%- endif %}
 -->
 
-<html class="writer-html5" lang="{{ lang }}">
+<html amp class="writer-html5" lang="{{ lang }}">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-    <title>{{ title }}</title>
+    <title>{{ title | truncate: 110 }}</title>
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -41,22 +41,49 @@ layout: plugins/compress
     <meta name="author" content="{{ author }}">
     <meta name="revised" content="{{ commit }}">
     <meta name="generator" content="jekyll-rtd-theme v{{ version }}">
-    <!-- custom meta -->
+    <!-- meta-og -->
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:locale" content="{{ lang }}">
+    <meta property="og:url" content="{{ schema_url }}">
+    <meta property="og:type" content="article">
+    <meta property="article:author" content="{{ author }}">
+    <meta property="article:modified_time" content="{{ schema_lastmod }}">
+    <!-- meta-custom -->
     {% for meta in site.meta -%}
         <meta name="{{ meta.first }}" content="{{ meta.last }}">
     {% endfor -%}
-    <!-- og -->
-    {% include addons/seo/og.liquid %}
     <!-- schema -->
-    {% include addons/seo/schema.liquid %}
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "{{ schema_url }}"
+            },
+            "headline": "{{ title | truncate: 110 }}",
+            "image": [{% for image in page.image %}"{{ image }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
+            "author": {
+                "@type": "Person",
+                "name": "{{ author }}"
+            },
+            "datePublished": "{{ page.date | default: site.time | date_to_xmlschema }}",
+            "dateModified": "{{ schema_lastmod }}",
+            "publisher": {
+                "@type": "Organization",
+                "name": "RunDocs",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://rundocs.io/logo.png"
+                }
+            }
+        }
+    </script>
     <!-- link -->
-    {% if prev -%}
-        <link rel="prev" href="{{ prev.url | absolute_url | replace: 'http://', 'https://' | xml_escape }}">
-    {%- endif -%}
-    {%- if next -%}
-        <link rel="next" href="{{ next.url | absolute_url | replace: 'http://', 'https://' | xml_escape }}">
-    {%- endif -%}
     <link rel="canonical" href="{{ schema_url }}">
+    {% if prev %}<link rel="prev" href="{{ prev.url | absolute_url | replace: 'http://', 'https://' }}">{% endif %}
+    {% if next %}<link rel="next" href="{{ next.url | absolute_url | replace: 'http://', 'https://' }}">{% endif %}
     <!-- theme -->
     <link rel="stylesheet" href="{{ cdn }}/assets/css/theme.css">
     <link rel="stylesheet" href="{{ cdn }}/assets/css/rougify/{{ site.rougify | default: 'github' }}.css">
@@ -64,9 +91,7 @@ layout: plugins/compress
     <!-- icon -->
     <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/assets/favicon.svg">
     <!-- script -->
-    <!--[if lt IE 9]>
-        <script src="{{ cdn }}/assets/js/html5shiv.min.js"></script>
-    <![endif]-->
+    <!--[if lt IE 9]><script src="{{ cdn }}/assets/js/html5shiv.min.js"></script><![endif]-->
     <script src="{{ cdn }}/assets/js/jquery.min.js"></script>
     <script>
         const ui = {
@@ -94,7 +119,7 @@ layout: plugins/compress
 
 <body class="wy-body-for-nav">
     <div class="wy-grid-for-nav">
-        <!-- SIDE NAV, TOGGLES ON MOBILE -->
+        <!-- NAV -->
         <nav data-toggle="wy-nav-shift" class="wy-nav-side">
             <div class="wy-side-scroll">
                 <div class="wy-side-nav-search">
@@ -112,16 +137,13 @@ layout: plugins/compress
                         </form>
                     </div>
                 </div>
-                <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                    {% include toctree.liquid %}
-                </div>
+                <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">{% include toctree.liquid %}</div>
                 {%- if site.embed -%}
-                <div class="wy-embed-wrap">
-                    <div class="wy-embed">{{ site.embed }}</div>
-                </div>
+                    <div class="wy-embed-wrap"><div class="wy-embed">{{ site.embed }}</div></div>
                 {%- endif -%}
             </div>
         </nav>
+
         <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
             <!-- MOBILE NAV -->
             <nav class="wy-nav-top" aria-label="top navigation">
@@ -131,15 +153,24 @@ layout: plugins/compress
             <div class="wy-nav-content">
                 <div class="rst-content">
                     {% include breadcrumbs.liquid %}
-                    <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-                        <div itemprop="articleBody">
-                            {%- if page.url == "/search.html" -%}
-                                {{ content }}
-                            {%- else -%}
-                                <div class="section">{{ content }}</div>
-                            {%- endif -%}
-                        </div>
-                        {% include addons/comments/disqus.liquid %}
+                    <div class="document" role="main">
+                        {%- if page.url == "/search.html" -%}
+                            {{ content }}
+                        {%- else -%}
+                            <div class="section">{{ content }}</div>
+                        {%- endif -%}
+
+                        {% comment %} comments {% endcomment %}
+                        {% if site.disqus %}
+                            <div id="disqus_thread" class="articleComments"></div>
+                            <script>
+                                (function(script) {
+                                    script.src = "https://{{ site.disqus }}.disqus.com/embed.js";
+                                    script.setAttribute("data-timestamp", +new Date());
+                                    document.head.appendChild(script);
+                                })(document.createElement("script"));
+                            </script>
+                        {% endif %}
                     </div>
                     {% include footer.liquid %}
                 </div>
@@ -150,11 +181,51 @@ layout: plugins/compress
     <!-- script -->
     <script src="{{ cdn }}/assets/js/theme.js"></script>
     <script src="{{ cdn }}/assets/js/anchor.min.js"></script>
-    <script>{{ site_script }}</script>
-    <!-- analytics -->
-    {%- include addons/analytics/baidu.liquid -%}
-    {%- include addons/analytics/cnzz.liquid -%}
-    {%- include addons/analytics/google.liquid -%}
+    <script>
+        {% include assets/common.js %}
+        {% include assets/custom.js %} {{ site.script }}
+    </script>
+
+    {% comment %} Baidu link submit {% endcomment %}
+    {%- if site.baidu.linksubmit -%}
+        <script>
+            (function(script) {
+                script.src = "https://zz.bdstatic.com/linksubmit/push.js";
+                document.head.appendChild(script);
+            })(document.createElement("script"));
+        </script>
+    {%- endif -%}
+
+    {% comment %} Baidu Analytics {% endcomment %}
+    {%- if site.baidu.hm -%}
+        <script>
+            var _hmt = _hmt || [];
+            (function(script) {
+                script.src = "https://hm.baidu.com/hm.js?{{ site.baidu.hm }}";
+                document.head.appendChild(script);
+            })(document.createElement("script"));
+        </script>
+    {%- endif -%}
+
+    {% comment %} CNZZ Analytics {% endcomment %}
+    {%- if site.cnzz -%}
+        <span id="cnzz_stat_icon_{{ site.cnzz }}" style="display: none;"></span>
+        <script async src="https://v1.cnzz.com/z_stat.php?id={{ site.cnzz }}"></script>
+    {%- endif -%}
+
+    {% comment %} Google Analytics {% endcomment %}
+    {%- if site.google.gtag -%}
+        <!--  -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google.gtag }}"></script>
+        <script>
+            gtag("config", "{{ site.google.gtag }}");
+        </script>
+    {%- endif -%}
+
+    {% comment %} Google AdSense {% endcomment %}
+    {%- if site.google.adsense -%}
+        <script data-ad-client="{{ site.google.adsense }}" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    {%- endif -%}
 </body>
 
 </html>

@@ -2,9 +2,22 @@
 {%- assign version = "1.0.3" -%}
 {%- assign addons = "github, i18n, plugins, analytics" | split: ", " -%}
 
-{%- include reset/site_pages.liquid %}
-{%- include reset/i18n.liquid -%}
-{%- include reset/schema.liquid -%}
+{%- assign schema_lastmod = site.time | date_to_xmlschema -%}
+{%- assign schema_url = page.url | absolute_url | replace: 'http://', 'https://' | xml_escape -%}
+
+{% comment %} scss {% endcomment %}
+{%- capture site_scss -%}
+    @import "site.scss";
+    {% if site.fluid %}@import "fluid.scss";{% endif %}
+    {% include assets/custom.scss %} {{ site.scss }}
+{%- endcapture -%}
+
+{% comment %} cdn {% endcomment %}
+{%- if site.debug -%}
+    {%- assign cdn = site.baseurl -%}
+{%- else -%}
+    {%- assign cdn = "https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@" | append: version -%}
+{%- endif -%}
 
 {% comment %} github-metadata {% endcomment %}
 {%- if site.github_metadata != false -%}
@@ -36,25 +49,8 @@
     {%- assign addons = "i18n, plugins, analytics" | split: ", " -%}
 {%- endif -%}
 
-{% comment %} scss and script {% endcomment %}
-{%- capture site_scss -%}
-    @import "site.scss";
-    {%- if site.fluid %}
-        @import "fluid.scss";
-    {% endif -%}
-    {% include assets/custom.scss %} {{ site.scss }}
-{%- endcapture -%}
-
-{%- capture site_script %}
-    {% include assets/common.js %}
-    {% include assets/custom.js %} {{ site.script }}
-{%- endcapture -%}
-
-{%- if site.debug -%}
-    {%- assign cdn = site.baseurl -%}
-{%- else -%}
-    {%- assign cdn = "https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@" | append: version -%}
-{%- endif -%}
+{%- include reset/site_pages.liquid %}
+{%- include reset/i18n.liquid -%}
 
 {% comment %} title {% endcomment %}
 {%- case page.url -%}

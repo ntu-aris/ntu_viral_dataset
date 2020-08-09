@@ -4,7 +4,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["saowang"]
   spec.email         = ["saowang@outlook.com"]
 
-  spec.summary       = "Just another documentation theme compatible with GitHub Pages, based on sphinx_rtd_theme"
+  spec.summary       = "Just another jekyll docs theme compatible with GitHub Pages, based on sphinx_rtd_theme"
   spec.license       = "MIT"
   spec.homepage      = "https://github.com/rundocs/jekyll-rtd-theme"
 
