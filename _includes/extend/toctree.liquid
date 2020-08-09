@@ -23,9 +23,10 @@
         <li class="toctree-l{{ level }} {{ current }}">
             <a class="reference internal {{ current }}" href="{{ item.url | relative_url }}">
                 {%- if item.sort and site.show_sorted != false -%}
-                    {{ item.sort }}.
-                {%- endif %}
-                {{ item.title | default: item.url }}
+                    {{ item.sort }}. {{ item.title | default: item.url }}
+                {%- else -%}
+                    {{ item.title | default: item.url }}
+                {%- endif -%}
             </a>
         </li>
     {%- endfor -%}
