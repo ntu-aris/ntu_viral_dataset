@@ -106,7 +106,8 @@ layout: plugins/compress
             }
         };
     </script>
-    {%- if jekyll.environment == "production" -%}
+    {% comment %} debug mode not use this {% endcomment %}
+    {%- unless site.debug -%}
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-174262874-1"></script>
         <script>
             gtag("set", {
@@ -114,7 +115,7 @@ layout: plugins/compress
             });
             gtag("config", "UA-174262874-1");
         </script>
-    {%- endif -%}
+    {%- endunless -%}
 </head>
 
 <body class="wy-body-for-nav">
