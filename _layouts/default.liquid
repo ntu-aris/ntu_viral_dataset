@@ -51,10 +51,10 @@ layout: plugins/compress
     {% include addons/seo/schema.liquid %}
     <!-- link -->
     {% if prev -%}
-        <link rel="prev" href="{{ prev.url | absolute_url | xml_escape }}">
+        <link rel="prev" href="{{ prev.url | absolute_url | replace: 'http://', 'https://' | xml_escape }}">
     {%- endif -%}
     {%- if next -%}
-        <link rel="next" href="{{ next.url | absolute_url | xml_escape }}">
+        <link rel="next" href="{{ next.url | absolute_url | replace: 'http://', 'https://' | xml_escape }}">
     {%- endif -%}
     <link rel="canonical" href="{{ schema_url }}">
     <!-- theme -->

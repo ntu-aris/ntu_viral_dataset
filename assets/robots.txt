@@ -6,4 +6,4 @@ permalink: /robots.txt
 User-agent: *
 Allow: /
 
-Sitemap: {{ "sitemap.xml" | absolute_url }}
+Sitemap: {{ "sitemap.xml" | absolute_url | replace: "http://", "https://" }}
