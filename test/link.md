@@ -21,8 +21,15 @@ sort: 5
 
 ## robots.txt
 ```
-User-agent: *
-Allow: /
-
 Sitemap [absolute_url]: {{ "sitemap.xml" | absolute_url }}
+```
+
+## prev and next
+
+```
+{% include reset/defaults.liquid -%}
+
+[prev.url]: {{ prev.url }}
+[prev.url | absolute_url]: {{ prev.url | absolute_url }}
+[prev.url | absolute_url | xml_escape]: {{ prev.url | absolute_url | xml_escape }}
 ```

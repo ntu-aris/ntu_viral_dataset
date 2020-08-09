@@ -7,7 +7,7 @@
             {%- if page.url == item.url %}current{% endif -%}
         {%- endcapture %}
         <li class="toctree-l{{ level }} {{ current }}">
-            <a class="reference internal {{ current }}" href="{{ site.baseurl | append: item.url }}">
+            <a class="reference internal {{ current }}" href="{{ item.url | relative_url }}">
                 {{ item.title | default: item.url }}
             </a>
         </li>
