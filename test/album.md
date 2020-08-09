@@ -1,6 +1,6 @@
 ---
 sort: 2
-demo:
+images:
   - title: title
     link: https://via.placeholder.com/200
     image: https://via.placeholder.com/200
@@ -20,4 +20,4 @@ demo:
 
 # Album Images
 
-{% include album.liquid data=page.demo %}
+{% include album.liquid data=page.images %}

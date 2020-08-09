@@ -1,10 +1,10 @@
 ---
 sort: 5
 
-image:
+images:
+  - https://user-images.githubusercontent.com/68011645/89736266-b4b80900-da9a-11ea-8a32-e2ddd010797a.png
   - https://user-images.githubusercontent.com/68011645/89026666-ad3a8680-d35b-11ea-9f4b-d3fe26ae12ed.png
   - https://user-images.githubusercontent.com/68011645/88376699-87980500-cdd0-11ea-8900-7bab8c811bc9.png
-  - https://user-images.githubusercontent.com/68011645/89736266-b4b80900-da9a-11ea-8a32-e2ddd010797a.png
 ---
 
 # Rich Results Test
@@ -14,7 +14,7 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 [https://search.google.com/test/rich-results?id=88lqmoKfHKx-5J7ucKYqKg](https://search.google.com/test/rich-results?id=88lqmoKfHKx-5J7ucKYqKg)
 
 
-{% for image in page.image %}
+{% for image in page.images %}
 #### test image {{ forloop.index }}
 ![test image {{ forloop.index }}]({{ image }})
 {% endfor %}

@@ -63,7 +63,7 @@ layout: plugins/compress
                 "@id": "{{ schema_url }}"
             },
             "headline": "{{ title | truncate: 110 }}",
-            "image": [{% for image in page.image %}"{{ image }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
+            "image": [{% for image in page.images %}"{{ image }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
             "author": {
                 "@type": "Person",
                 "name": "{{ author }}"
