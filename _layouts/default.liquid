@@ -14,7 +14,7 @@ layout: plugins/compress
     {%- endif %}
 -->
 
-<html amp class="writer-html5" lang="{{ lang }}">
+<html class="writer-html5" lang="{{ lang }}">
 
 <head>
     <meta charset="utf-8">
@@ -145,13 +145,14 @@ layout: plugins/compress
             <div class="wy-nav-content">
                 <div class="rst-content">
                     {% include breadcrumbs.liquid %}
-                    <div class="document" role="main">
-                        {%- if page.url == "/search.html" -%}
-                            {{ content }}
-                        {%- else -%}
-                            <div class="section">{{ content }}</div>
-                        {%- endif -%}
-
+                    <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+                        <div itemprop="articleBody">
+                            {%- if page.url == "/search.html" -%}
+                                {{ content }}
+                            {%- else -%}
+                                <div class="section">{{ content }}</div>
+                            {%- endif -%}
+                        </div>
                         {% comment %} comments {% endcomment %}
                         {% if site.disqus %}
                             <div id="disqus_thread" class="articleComments"></div>
