@@ -8,36 +8,28 @@
 
 Just another documentation theme compatible with GitHub Pages, based on sphinx_rtd_theme
 
-![][demo]
+![](https://user-images.githubusercontent.com/68011645/89026666-ad3a8680-d35b-11ea-9f4b-d3fe26ae12ed.png)
 
-## Notable features
-- Write documents directly, automatically generate toctree based on directory
+## Features
+- Automatically generate sidebar based on directory
 - Only need one file `_config.yml` to configure site
-- Bundled as a "theme gem" for easier installation/upgrading.
-- Compatible with GitHub Pages.
-- Optimized for search engines with support for Open Graph data.
-- Optimized for search engines with `robots.txt` and `sitemap.xml`.
-- Search engine (RegExp supported)
-- Commenting support
-- Google,Baidu,CNZZ Analytics support.
+- Search engine optimized
 - Multi-language supported
-- And many features waiting for you to discover.
+- Document search (RegExp supported)
+- Support third-party comments
+- Google, Baidu, CNZZ Analytics support
 
 ## Roadmap
-See the [open issues][issues] for a list of proposed features (and known issues).
+See the [open issues](https://github.com/rundocs/jekyll-rtd-theme/issues) for a list of proposed features (and known issues)
 
 ## Documents
-For full documentation, see: [https://jekyll-rtd-theme.rundocs.io][site]
+You can view theme related [tests](https://jekyll-rtd-theme.rundocs.io), For full documentation, please refer to [https://rundocs.io](https://rundocs.io)
 
 ## The License
-The theme is available as open source under the terms of the [MIT License][license].
+The theme is available as open source under the terms of the [MIT License](https://github.com/rundocs/jekyll-rtd-theme/blob/master/LICENSE).
 
 
 [repository]: https://github.com/rundocs/jekyll-rtd-theme
-[issues]: https://github.com/rundocs/jekyll-rtd-theme/issues
-[license]: https://github.com/rundocs/jekyll-rtd-theme/blob/master/LICENSE
-[site]: https://jekyll-rtd-theme.rundocs.io
 [rubygem]: https://rubygems.org/gems/jekyll-rtd-theme
 [cdn]: https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme/
 [codefactor]: https://www.codefactor.io/repository/github/rundocs/jekyll-rtd-theme
-[demo]: https://user-images.githubusercontent.com/68011645/88376699-87980500-cdd0-11ea-8900-7bab8c811bc9.png
