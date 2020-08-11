@@ -23,7 +23,7 @@ Just another documentation theme compatible with GitHub Pages, based on sphinx_r
 See the [open issues](https://github.com/rundocs/jekyll-rtd-theme/issues) for a list of proposed features (and known issues)
 
 ## Documents
-You can view theme related [tests](https://jekyll-rtd-theme.rundocs.io), For full documentation, please refer to [https://rundocs.io](https://rundocs.io)
+You can view theme related [tests](https://rundocs.github.io/jekyll-rtd-theme), For full documentation, please refer to [https://rundocs.io](https://rundocs.io)
 
 ## The License
 The theme is available as open source under the terms of the [MIT License](https://github.com/rundocs/jekyll-rtd-theme/blob/master/LICENSE).
