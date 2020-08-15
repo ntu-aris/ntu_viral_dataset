@@ -12,4 +12,4 @@ do
     rm --force ${theme}.scss
 done
 
-# pip3 download -r requirements.txt --no-deps
+# pip3 download sphinx-rtd-theme --no-deps

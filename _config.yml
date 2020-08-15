@@ -26,8 +26,6 @@ exclude:
   - CNAME
   - Gemfile
   - Gemfile.lock
-  - deps.sh
-  - CODE_OF_CONDUCT.md
   - LICENSE
   - requirements.txt
   - jekyll-rtd-theme.gemspec

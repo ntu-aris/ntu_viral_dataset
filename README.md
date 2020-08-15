@@ -17,7 +17,7 @@ Just another documentation theme compatible with GitHub Pages, based on sphinx_r
 - Multi-language supported
 - Document search (RegExp supported)
 - Support third-party comments
-- Google, Baidu, CNZZ Analytics support
+- Google, Baidu, CNZZ Analytics supported
 
 ## Roadmap
 See the [open issues](https://github.com/rundocs/jekyll-rtd-theme/issues) for a list of proposed features (and known issues)
