@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    let analytics = new URL("https://rundocs-analytics.glitch.me/collect?v={{ version }}&lang={{ lang }}");
     let highlight = new URL(location.href).searchParams.get("highlight");
 
     SphinxRtdTheme.Navigation.reset = function() {
@@ -37,4 +38,9 @@ $(document).ready(function() {
         $(`.language-${item}`).replaceWith(`<div class="admonition ${item}"><p class="admonition-title">${ui.admonition[item]}</p><p>${content}</p></div>`);
     }
     anchors.add();
+
+    analytics.searchParams.append("user_lang", navigator.language);
+    analytics.searchParams.append("host", location.host);
+    analytics.searchParams.append("platform", navigator.platform);
+    $.getJSON(analytics.toString(), (data) => $("#counter").html(data.count));
 });

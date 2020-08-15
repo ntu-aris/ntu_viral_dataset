@@ -6,9 +6,3 @@
         </a>
     </dd>
 </dl>
-
-<script>
-    $(document).ready(function() {
-        $.getJSON("https://rundocs-analytics.glitch.me/analytics?host=" + location.host, (data) => $("#counter").html(data.count));
-    });
-</script>
