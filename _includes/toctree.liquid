@@ -1,5 +1,6 @@
 {%- include reset/workdir.liquid %}
 
+{% comment %} list the root files {% endcomment %}
 <ul>
     {%- for item in workdir_files -%}
         {%- assign level = item.dir | append: "temp/" | split: "/" | size | minus: 1 -%}
@@ -14,4 +15,5 @@
     {%- endfor %}
 </ul>
 
+{% comment %} list the root dirs {% endcomment %}
 {%- for workdir in workdir_dirs %}{% include extend/toctree.liquid %}{% endfor -%}

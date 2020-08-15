@@ -41,14 +41,16 @@ layout: plugins/compress
     <meta name="author" content="{{ author }}">
     <meta name="revised" content="{{ commit }}">
     <meta name="generator" content="jekyll-rtd-theme v{{ version }}">
-    <!-- meta-og -->
+    <!-- meta-ogp -->
+    {% comment %} https://ogp.me {% endcomment %}
     <meta property="og:title" content="{{ title }}">
     <meta property="og:description" content="{{ description }}">
     <meta property="og:locale" content="{{ lang }}">
-    <meta property="og:url" content="{{ schema_url }}">
+    <meta property="og:url" content="{{ schema_surl }}">
     <meta property="og:type" content="article">
     <meta property="article:author" content="{{ author }}">
-    <meta property="article:modified_time" content="{{ schema_lastmod }}">
+    <meta property="article:published_time" content="{{ schema_date }}">
+    <meta property="article:modified_time" content="{{ schema_modi }}">
     <!-- meta-custom -->
     {% for meta in site.meta -%}
         <meta name="{{ meta.first }}" content="{{ meta.last }}">
@@ -60,7 +62,7 @@ layout: plugins/compress
             "@type": "Article",
             "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": "{{ schema_url }}"
+                "@id": "{{ schema_surl }}"
             },
             "headline": "{{ title | truncate: 110 }}",
             "image": [{% for image in page.images %}"{{ image }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
@@ -68,8 +70,8 @@ layout: plugins/compress
                 "@type": "Person",
                 "name": "{{ author }}"
             },
-            "datePublished": "{{ page.date | default: site.time | date_to_xmlschema }}",
-            "dateModified": "{{ schema_lastmod }}",
+            "datePublished": "{{ schema_date }}",
+            "dateModified": "{{ schema_modi }}",
             "publisher": {
                 "@type": "Organization",
                 "name": "RunDocs",
@@ -82,7 +84,7 @@ layout: plugins/compress
         }
     </script>
     <!-- link -->
-    <link rel="canonical" href="{{ schema_url }}">
+    <link rel="canonical" href="{{ schema_surl }}">
     {% if prev %}<link rel="prev" href="{{ prev.url | absolute_url | replace: 'http://', 'https://' }}">{% endif %}
     {% if next %}<link rel="next" href="{{ next.url | absolute_url | replace: 'http://', 'https://' }}">{% endif %}
     <!-- theme -->

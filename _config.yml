@@ -9,6 +9,7 @@ addons_branch: true
 
 addons:
   - github
+  - i18n
   - plugins
   - analytics
 
