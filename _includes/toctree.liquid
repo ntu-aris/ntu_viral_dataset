@@ -3,7 +3,7 @@
 {% comment %} list the root files {% endcomment %}
 <ul>
     {%- for item in workdir_files -%}
-        {%- assign level = item.dir | append: "temp/" | split: "/" | size | minus: 1 -%}
+        {%- assign level = item.dir | append: "temp" | replace_first: "/", "" | split: "/" | size -%}
         {%- capture current -%}
             {%- if page.url == item.url %}current{% endif -%}
         {%- endcapture %}

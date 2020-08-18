@@ -16,7 +16,7 @@
 <ul>
     {% comment %} list file {% endcomment %}
     {%- for item in workdir_files -%}
-        {%- assign level = item.dir | append: "temp/" | split: "/" | size | minus: 2 -%}
+        {%- assign level = item.dir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 1 -%}
         {%- capture current -%}
             {%- if page.url == item.url %}current{% endif -%}
         {%- endcapture %}
@@ -37,7 +37,7 @@
 
     {% comment %} list dirs {% endcomment %}
     {%- for workdir in workdir_dirs -%}
-        {%- assign level = workdir | append: "temp/" | split: "/" | size | minus: 3 %}
+        {%- assign level = workdir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 2 %}
         {%- if site_lang != lang -%}
             {%- assign level = level | minus: 1 -%}
         {%- endif -%}
