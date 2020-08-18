@@ -4,6 +4,9 @@
 <ul>
     {%- for item in workdir_files -%}
         {%- assign level = item.dir | append: "temp" | replace_first: "/", "" | split: "/" | size -%}
+        {%- if site_lang != lang -%}
+            {%- assign level = level | minus: 1 -%}
+        {%- endif -%}
         {%- capture current -%}
             {%- if page.url == item.url %}current{% endif -%}
         {%- endcapture %}
