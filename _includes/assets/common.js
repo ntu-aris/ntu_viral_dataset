@@ -34,8 +34,9 @@ $(document).ready(function() {
         });
     }
     for (let item in ui.admonition) {
-        let content = $(`.language-${item}`).html();
-        $(`.language-${item}`).replaceWith(`<div class="admonition ${item}"><p class="admonition-title">${ui.admonition[item]}</p><p>${content}</p></div>`);
+        $(`.language-${item}`).each(function() {
+            $(this).replaceWith(`<div class="admonition ${item}"><p class="admonition-title">${ui.admonition[item]}</p><p>${$(this).html()}</p></div>`);
+        });
     }
     anchors.add();
 
