@@ -8,8 +8,20 @@ sort: 3
 This is a note
 ```
 
+```note
+This is note2
+```
+
+```note
+This is note3
+```
+
 ```tip
 It’s bigger than a bread box.
+```
+
+```tip
+It’s tip 2
 ```
 
 ```warning
