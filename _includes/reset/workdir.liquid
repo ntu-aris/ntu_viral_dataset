@@ -9,26 +9,25 @@
 {%- endif -%}
 
 {%- assign workdir_level = workdir | append: "temp" | replace_first: "/", "" | split: "/" | size -%}
-{%- assign workdir_dirs  = "" | split: "//" -%}
 {%- assign workdir_files = site_files | where_exp: "item", "item.dir == workdir" -%}
 
-{%- for item in site_dirs -%}
-    {%- assign current_m1 = item.dir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 1 -%}
-    {% comment %} Same level subdirectory {% endcomment %}
-    {%- if workdir_level == current_m1 -%}
-        {%- assign temp = workdir | append: "@@" -%}
-        {%- assign dir = item.dir | replace: workdir, temp | split: "@@" | first -%}
-        {% comment %} In the current subdirectory {% endcomment %}
-        {%- if workdir == dir -%}
-            {% comment %} Root directory does not display other languages {% endcomment %}
-            {%- if workdir == "/" -%}
-                {%- assign language = item.dir | replace: "/", "" -%}
-                {%- unless languages contains language -%}
-                    {%- assign workdir_dirs = item.dir | split: "//" | concat: workdir_dirs | sort -%}
-                {%- endunless -%}
-            {%- else -%}
-                {%- assign workdir_dirs = item.dir | split: "//" | concat: workdir_dirs | sort -%}
+{%- capture items -%}
+    {%- for item in site_dirs -%}
+        {%- assign current_m1 = item.dir | append: "temp" | replace_first: "/", "" | split: "/" | size | minus: 1 -%}
+        {%- if workdir_level == current_m1 -%}
+            {%- assign temp = workdir | append: "@@" -%}
+            {%- assign dir = item.dir | replace: workdir, temp | split: "@@" | first -%}
+            {% comment %} In the current subdirectory {% endcomment %}
+            {%- if workdir == dir -%}
+                {% comment %} Root directory does not display other languages {% endcomment %}
+                {%- if workdir == "/" -%}
+                    {%- assign language = item.dir | replace: "/", "" -%}
+                    {%- unless languages contains language %}{{ item.dir }}|{% endunless -%}
+                {%- else -%}
+                    {{ item.dir }}|
+                {%- endif -%}
             {%- endif -%}
         {%- endif -%}
-    {%- endif -%}
-{%- endfor -%}
+    {%- endfor -%}
+{%- endcapture -%}
+{%- assign workdir_dirs = items | split: "|" -%}
