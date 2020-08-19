@@ -4,7 +4,8 @@
 [![](https://img.shields.io/gem/dt/jekyll-rtd-theme)][rubygem]
 [![](https://data.jsdelivr.com/v1/package/gh/rundocs/jekyll-rtd-theme/badge)][cdn]
 [![](https://www.codefactor.io/repository/github/rundocs/jekyll-rtd-theme/badge)][codefactor]
-[![](https://img.shields.io/badge/featured%20on-JekyllThemes-red.svg)](https://jekyll-themes.com) [![Join the chat at https://gitter.im/rundocs/jekyll-rtd-theme](https://badges.gitter.im/rundocs/jekyll-rtd-theme.svg)](https://gitter.im/rundocs/jekyll-rtd-theme?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![](https://img.shields.io/badge/featured%20on-JekyllThemes-red.svg)](https://jekyll-themes.com)
+[![](https://badges.gitter.im/rundocs/jekyll-rtd-theme.svg)][gitter]
 
 Just another documentation theme compatible with GitHub Pages, based on sphinx_rtd_theme
 
@@ -33,3 +34,4 @@ The theme is available as open source under the terms of the [MIT License](https
 [rubygem]: https://rubygems.org/gems/jekyll-rtd-theme
 [cdn]: https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme/
 [codefactor]: https://www.codefactor.io/repository/github/rundocs/jekyll-rtd-theme
+[gitter]: https://gitter.im/rundocs/jekyll-rtd-theme?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
