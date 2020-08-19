@@ -1,5 +1,5 @@
 {%- assign description = content | strip_html | split: " " | join: " " | escape | truncate: 150 -%}
-{%- assign version = "1.1.0" -%}
+{%- assign version = "1.1.1" -%}
 {%- assign addons = "github, i18n, plugins, analytics" | split: ", " -%}
 
 {%- assign schema_date = page.date | default: site.time | date_to_xmlschema -%}
