@@ -2,7 +2,7 @@
 
 version: 2
 updates:
-  - package-ecosystem: "mix"
+  - package-ecosystem: "pip"
     directory: "/"
     schedule:
       interval: "weekly"
