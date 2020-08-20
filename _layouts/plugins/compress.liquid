@@ -8,7 +8,18 @@
         {%- if block.size == 1 -%}
             {{ block_after }}
         {%- else -%}
-            <pre{{ block.first }}</pre>{{ block_after }}
+            {%- assign blocks = block.first | replace_first: ">", "```<temp>```" | split: "```<temp>```" -%}
+            {%- assign admonitions = "note, tip, warning, danger" | split: ", " -%}
+            {%- assign type = blocks.first | replace: '"', '' | replace: " class=language-", ""  -%}
+            {%- comment %} admonitions card {% endcomment -%}
+            {%- if admonitions contains type -%}
+                <div class="admonition {{ type }}">
+                    {%- comment %} title will be translated via ui {% endcomment -%}
+                    <p class="admonition-title" ui="{{ type }}"><span class="progress"></span></p>{{ blocks.last | markdownify | strip_newlines -}}
+                </div>{{ block_after -}}
+            {%- else -%}
+                <pre{{ block.first }}</pre>{{ block_after -}}
+            {%- endif -%}
         {%- endif -%}
     {%- endfor -%}
 {%- endif -%}
