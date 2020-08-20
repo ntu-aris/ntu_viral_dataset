@@ -15,16 +15,16 @@ Just another jekyll docs theme compatible with GitHub Pages, based on sphinx_rtd
 ```yml
 remote_theme: rundocs/jekyll-rtd-theme
 ```
-You can [generate](https://github.com/rundocs/starter/generate) with the same files and folders from [rundocs/starter-slim](https://github.com/rundocs/starter-slim/)
+You can [generate](https://github.com/rundocs/starter-slim/generate) with the same files and folders from [rundocs/starter-slim](https://github.com/rundocs/starter-slim/)
 
 ## Features
 - Automatically generate sidebar based on directory
-- Just need one file `_config.yml` to configure site
-- Search engine optimized
 - Multi-language supported
+- Search engine optimized
 - Document search (RegExp supported)
 - Support third-party comments
 - Google, Baidu, CNZZ Analytics supported
+- Just need one file `_config.yml` to configure site
 
 ## Documents
 For full documentation, please refer to [rundocs.io](https://rundocs.io/), You can also view [the theme related tests documentation](https://rundocs.github.io/jekyll-rtd-theme)
