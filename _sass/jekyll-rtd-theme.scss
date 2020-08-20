@@ -67,9 +67,12 @@ footer {
             font-size: 20px;
         }
 
-        a {
+        .wy-nav-title {
             flex: auto;
-            padding-right: 30px;
+
+            a {
+                padding-right: 30px;
+            }
         }
     }
 }

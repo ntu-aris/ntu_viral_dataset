@@ -143,7 +143,9 @@ layout: plugins/compress
             <nav class="wy-nav-top" aria-label="top navigation">
                 <div class="flex">
                     <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-                    <a href="{{ site.baseurl }}/{% if site_lang != lang %}{{ lang }}/{% endif %}">{{ site.title }}</a>
+                    <div class="wy-nav-title">
+                        <a href="{{ site.baseurl }}/{% if site_lang != lang %}{{ lang }}/{% endif %}">{{ site.title }}</a>
+                    </div>
                 </div>
             </nav>
             <div class="wy-nav-content">
