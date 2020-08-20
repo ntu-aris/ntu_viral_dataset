@@ -141,8 +141,10 @@ layout: plugins/compress
         <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
             <!-- MOBILE NAV -->
             <nav class="wy-nav-top" aria-label="top navigation">
-                <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-                <a href="{{ site.baseurl }}/{% if site_lang != lang %}{{ lang }}/{% endif %}">{{ site.title }}</a>
+                <div class="flex">
+                    <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+                    <a href="{{ site.baseurl }}/{% if site_lang != lang %}{{ lang }}/{% endif %}">{{ site.title }}</a>
+                </div>
             </nav>
             <div class="wy-nav-content">
                 <div class="rst-content">

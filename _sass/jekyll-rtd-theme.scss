@@ -39,10 +39,23 @@ footer {
 .wy-nav-side {
     padding-bottom: 3em;
 }
-/* mobile title margin, not the best method, flex should be better  */
+/* mobile button and title */
 .wy-nav-top {
-    a {
-        margin-left: -30px;
+    padding: 0;
+
+    .flex {
+        align-items: center;
+
+        i {
+            /* for better touch experience */
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        a {
+            flex: auto;
+            padding-right: 10px;
+        }
     }
 }
 
