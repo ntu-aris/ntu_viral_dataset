@@ -1,3 +1,4 @@
+{%- comment %} content is html {% endcomment -%}
 {%- if site.debug.compress == false -%}
     {{ content }}
 {%- else -%}
@@ -6,6 +7,7 @@
         {%- assign block = item | split: "</pre>" -%}
         {%- assign block_after = block.last | split: " " | join: " " -%}
         {%- if block.size == 1 -%}
+            {%- comment %} block_after is same as item {% endcomment -%}
             {{ block_after }}
         {%- else -%}
             {%- assign blocks = block.first | replace_first: ">", "```<temp>```" | split: "```<temp>```" -%}
@@ -17,6 +19,8 @@
                     {%- comment %} title will be translated via ui {% endcomment -%}
                     <p class="admonition-title" ui="{{ type }}"><span class="progress"></span></p>{{ blocks.last | markdownify | strip_newlines -}}
                 </div>{{ block_after -}}
+            {%- elsif type == "mermaid" -%}
+                <div class="mermaid">{{ blocks.last }}</div>{{ block_after }}
             {%- else -%}
                 <pre{{ block.first }}</pre>{{ block_after -}}
             {%- endif -%}
