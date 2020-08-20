@@ -33,11 +33,9 @@ $(document).ready(function() {
             }
         });
     }
-    for (let item in ui.admonition) {
-        $(".admonition-title").each(function() {
-            $(this).html(ui.admonition[$(this).attr("ui")]);
-        });
-    }
+    $(".admonition-title").each(function() {
+        $(this).html(ui.admonition[$(this).attr("ui")]);
+    });
     anchors.add();
 
     analytics.searchParams.append("user_lang", navigator.language);
