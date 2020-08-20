@@ -9,7 +9,7 @@
 
 Just another documentation theme compatible with GitHub Pages, based on sphinx_rtd_theme
 
-![](https://user-images.githubusercontent.com/68011645/89026666-ad3a8680-d35b-11ea-9f4b-d3fe26ae12ed.png)
+![jekyll-rtd-theme](https://user-images.githubusercontent.com/68011645/89026666-ad3a8680-d35b-11ea-9f4b-d3fe26ae12ed.png){: .shadow-box }
 
 ## Features
 - Automatically generate sidebar based on directory

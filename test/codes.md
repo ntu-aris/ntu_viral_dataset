@@ -25,7 +25,7 @@ sort: 4
 }
 ```
 
-## Highlight
+## Code highlight
 ```css
 .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
