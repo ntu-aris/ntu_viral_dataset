@@ -7,9 +7,9 @@
 [![](https://img.shields.io/badge/featured%20on-JekyllThemes-red.svg)](https://jekyll-themes.com)
 [![](https://badges.gitter.im/rundocs/jekyll-rtd-theme.svg)][gitter]
 
-Just another documentation theme compatible with GitHub Pages, based on sphinx_rtd_theme
+Just another jekyll docs theme compatible with GitHub Pages, based on sphinx_rtd_theme
 
-![jekyll-rtd-theme](https://user-images.githubusercontent.com/68011645/89026666-ad3a8680-d35b-11ea-9f4b-d3fe26ae12ed.png)
+<img class="shadow-box" width="50%" alt="jekyll-rtd-theme" src="https://user-images.githubusercontent.com/68011645/89026666-ad3a8680-d35b-11ea-9f4b-d3fe26ae12ed.png">
 
 ## Quick start
 ```yml
@@ -27,9 +27,9 @@ You can [generate](https://github.com/rundocs/starter/generate) with the same fi
 - Google, Baidu, CNZZ Analytics supported
 
 ## Documents
-You can view [theme related tests](https://rundocs.github.io/jekyll-rtd-theme), For full documentation, please refer to [https://rundocs.io/](https://rundocs.io/)
+For full documentation, please refer to [rundocs.io](https://rundocs.io/), You can also view [the theme related tests documentation](https://rundocs.github.io/jekyll-rtd-theme)
 
-## The License
+## License
 The theme is available as open source under the terms of the [MIT License](https://github.com/rundocs/jekyll-rtd-theme/blob/master/LICENSE).
 
 [repository]: https://github.com/rundocs/jekyll-rtd-theme
