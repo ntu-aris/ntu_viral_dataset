@@ -1,6 +1,6 @@
 title: jekyll-rtd-theme
 lang: en
-description: Just another jekyll docs theme compatible with GitHub Pages
+description: GitHub-flavored docs theme for Jekyll
 
 theme: null
 
@@ -21,6 +21,9 @@ readme_index:
 
 sass:
   style: compressed
+
+plugins:
+  - jemoji
 
 exclude:
   - Makefile

@@ -7,7 +7,7 @@
 [![](https://img.shields.io/badge/featured%20on-JekyllThemes-red.svg)](https://jekyll-themes.com)
 [![](https://badges.gitter.im/rundocs/jekyll-rtd-theme.svg)][gitter]
 
-Just another jekyll docs theme compatible with GitHub Pages, based on sphinx_rtd_theme
+GitHub-flavored docs theme for Jekyll, based on sphinx_rtd_theme
 
 <img class="shadow-box" width="50%" alt="jekyll-rtd-theme" src="https://user-images.githubusercontent.com/68011645/89026666-ad3a8680-d35b-11ea-9f4b-d3fe26ae12ed.png">
 
@@ -18,7 +18,7 @@ remote_theme: rundocs/jekyll-rtd-theme
 You can [generate](https://github.com/rundocs/starter-slim/generate) with the same files and folders from [rundocs/starter-slim](https://github.com/rundocs/starter-slim/)
 
 ## Features
-- Automatically generate sidebar based on directory
+- Automatically generate nested sidebar based on directory
 - Multi-language supported
 - Search engine optimized
 - Document search (RegExp supported)
