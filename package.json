@@ -1,0 +1,8 @@
+{
+    "devDependencies": {
+        "anchor-js": "^4.2.2",
+        "html5shiv": "^3.7.3",
+        "jquery": "^3.5.1",
+        "mermaid": "^8.7.0"
+    }
+}
