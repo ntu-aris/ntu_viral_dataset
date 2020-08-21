@@ -2,6 +2,23 @@ $(document).ready(function() {
     let analytics = new URL("https://rundocs-analytics.glitch.me/collect?v={{ version }}&lang={{ lang }}");
     let highlight = new URL(location.href).searchParams.get("highlight");
 
+    /* content toc */
+    $(".wy-menu-vertical li.current").append(function() {
+        let level = parseInt($(this).attr("class").match(/toctree-l(\d)/)[1]) + 1;
+        let toc = ["<ul>"];
+
+        $(".document").find("h2,h3,h4,h5,h6").each(function() {
+            toc.push(`<li class="toctree-l${level}"><a class="reference internal" href="#${this.id}">${$(this).html()}</a></li>`);
+        });
+        toc.push("</ul>");
+        /* return is apend */
+        if (toc.length == 2) {
+            return "";
+        } else {
+            return toc.join("");
+        }
+    });
+
     SphinxRtdTheme.Navigation.reset = function() {
         const link = $(".wy-menu-vertical").find(`[href="${location.pathname}"]`);
         if (link.length > 0) {
