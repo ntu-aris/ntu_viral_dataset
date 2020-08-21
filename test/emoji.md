@@ -4,6 +4,10 @@ sort: 6
 
 # Emoji Test
 
+```
+I give this theme two :+1:!
+```
+
 I give this theme two :+1:!
 
 ```tip

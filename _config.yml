@@ -24,6 +24,8 @@ sass:
 
 plugins:
   - jemoji
+  - jekyll-avatar
+  - jekyll-mentions
 
 exclude:
   - Makefile
