@@ -24,7 +24,7 @@
             {%- assign level = level | minus: 1 -%}
         {%- endif -%}
 
-        <li class="toctree-l{{ level }} {{ current }}">
+        <li class="toctree-l{{ level }} {{ current }}" data-sort="{{ item.sort }}">
             <a class="reference internal {{ current }}" href="{{ item.url | relative_url }}">
                 {%- if item.sort and site.show_sorted != false -%}
                     {{ item.sort }}. {{ item.title | default: item.url }}

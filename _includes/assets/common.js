@@ -1,10 +1,21 @@
 $(document).ready(function() {
     let analytics = new URL("https://rundocs-analytics.glitch.me/collect?v={{ version }}&lang={{ lang }}");
     let highlight = new URL(location.href).searchParams.get("highlight");
+    let current = $(".wy-menu-vertical").find(`[href="${location.pathname}"]`);
 
+    /* directory toc */
+    if (current.length > 0) {
+        current.closest("li.toctree-l1").parent().addClass("current");
+        current.closest("li.toctree-l1").addClass("current");
+        current.closest("li.toctree-l2").addClass("current");
+        current.closest("li.toctree-l3").addClass("current");
+        current.closest("li.toctree-l4").addClass("current");
+        current.closest("li.toctree-l5").addClass("current");
+        current[0].scrollIntoView();
+    }
     /* content toc */
     $(".wy-menu-vertical li.current").append(function() {
-        let level = parseInt($(this).attr("class").match(/toctree-l(\d)/)[1]) + 1;
+        let level = parseInt(this.dataset.sort) + 1;
         let toc = ["<ul>"];
 
         $(".document").find("h2,h3,h4,h5,h6").each(function() {
@@ -18,22 +29,10 @@ $(document).ready(function() {
             return toc.join("");
         }
     });
-
-    SphinxRtdTheme.Navigation.reset = function() {
-        const link = $(".wy-menu-vertical").find(`[href="${location.pathname}"]`);
-        if (link.length > 0) {
-            $(".wy-menu-vertical .current").removeClass("current");
-            link.addClass("current");
-            link.closest("li.toctree-l1").parent().addClass("current");
-            link.closest("li.toctree-l1").addClass("current");
-            link.closest("li.toctree-l2").addClass("current");
-            link.closest("li.toctree-l3").addClass("current");
-            link.closest("li.toctree-l4").addClass("current");
-            link.closest("li.toctree-l5").addClass("current");
-        }
-    };
+    /* native nav */
     SphinxRtdTheme.Navigation.enable(true);
 
+    /* search highlight */
     if (highlight) {
         $(".section").find("*").each(function() {
             try {
@@ -50,11 +49,14 @@ $(document).ready(function() {
             }
         });
     }
+    /* admonition */
     $(".admonition-title").each(function() {
         $(this).html(ui.admonition[$(this).attr("ui")]);
     });
+    /* anchors */
     anchors.add();
 
+    /* analytics */
     analytics.searchParams.append("user_lang", navigator.language);
     analytics.searchParams.append("host", location.host);
     analytics.searchParams.append("platform", navigator.platform);
