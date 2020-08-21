@@ -15,8 +15,9 @@ $(document).ready(function() {
     }
     /* content toc */
     $(".wy-menu-vertical li.current").append(function() {
-        let level = parseInt(this.dataset.sort) + 1;
+        let level = parseInt($(this).attr("class").match(/toctree-l(\d+)/)[1]) + 1;
         let toc = ["<ul>"];
+        let sort = parseInt(this.dataset.sort);
 
         $(".document").find("h2,h3,h4,h5,h6").each(function() {
             toc.push(`<li class="toctree-l${level}"><a class="reference internal" href="#${this.id}">${$(this).text()}</a></li>`);

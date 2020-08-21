@@ -6,14 +6,14 @@ image: https://user-images.githubusercontent.com/68011645/89026666-ad3a8680-d35b
 # Shadow-box Test
 Add a class `shadow-box` with `{: .shadow-box }`
 
-## With `{: .shadow-box }`
+## With shadow-box
 ```
 ![]({{ page.image }}){: .shadow-box }
 ```
 ![]({{ page.image }}){: .shadow-box }
 
 
-## Without `{: .shadow-box }`
+## Without shadow-box
 ```
 ![]({{ page.image }})
 ```
