@@ -8,7 +8,7 @@ $(document).ready(function() {
         let toc = ["<ul>"];
 
         $(".document").find("h2,h3,h4,h5,h6").each(function() {
-            toc.push(`<li class="toctree-l${level}"><a class="reference internal" href="#${this.id}">${$(this).html()}</a></li>`);
+            toc.push(`<li class="toctree-l${level}"><a class="reference internal" href="#${this.id}">${$(this).text()}</a></li>`);
         });
         toc.push("</ul>");
         /* return is apend */
