@@ -1,29 +1,18 @@
-{%- comment %} content is html {% endcomment -%}
+---
+layout: plugins/extension
+---
+
 {%- if site.debug.compress == false -%}
     {{ content }}
 {%- else -%}
-    {%- assign items = content | split: "<pre" -%}
-    {%- for item in items -%}
-        {%- assign block = item | split: "</pre>" -%}
-        {%- assign block_after = block.last | split: " " | join: " " -%}
-        {%- if block.size == 1 -%}
-            {%- comment %} block_after is same as item {% endcomment -%}
-            {{ block_after }}
+    {%- assign blocks = content | split: "<pre" -%}
+    {%- for block in blocks -%}
+        {%- assign child_blocks = block | split: "</pre>" -%}
+        {%- if child_blocks.size == 1 -%}
+            {{ block | split: " " | join: " " }}
         {%- else -%}
-            {%- assign blocks = block.first | replace_first: ">", "```<temp>```" | split: "```<temp>```" -%}
-            {%- assign admonitions = "note, tip, warning, danger" | split: ", " -%}
-            {%- assign type = blocks.first | replace: '"', '' | replace: " class=language-", ""  -%}
-            {%- comment %} admonitions card {% endcomment -%}
-            {%- if admonitions contains type -%}
-                <div class="admonition {{ type }}">
-                    {%- comment %} title will be translated via ui {% endcomment -%}
-                    <p class="admonition-title" ui="{{ type }}"><span class="progress"></span></p>{{ blocks.last | markdownify | strip_newlines -}}
-                </div>{{ block_after -}}
-            {%- elsif type == "mermaid" -%}
-                <div class="mermaid">{{ blocks.last }}</div>{{ block_after }}
-            {%- else -%}
-                <pre{{ block.first }}</pre>{{ block_after -}}
-            {%- endif -%}
+            {%- comment %} current nested pre not support {% endcomment -%}
+            <pre{{ child_blocks.first }}</pre> {{ child_blocks.last | split: " " | join: " " -}}
         {%- endif -%}
     {%- endfor -%}
 {%- endif -%}

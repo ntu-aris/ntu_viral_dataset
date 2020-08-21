@@ -90,7 +90,7 @@ layout: plugins/compress
     <!-- theme -->
     <link rel="stylesheet" href="{{ cdn }}/assets/css/theme.css">
     <link rel="stylesheet" href="{{ cdn }}/assets/css/rougify/{{ site.rougify | default: 'github' }}.css">
-    <style>{{ site_scss | scssify }}</style>
+    <style>{{ site_scss | scssify | strip_newlines }}</style>
     <!-- icon -->
     <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/favicon.svg">
     <!-- script -->
@@ -182,7 +182,7 @@ layout: plugins/compress
     <script src="{{ cdn }}/assets/js/anchor.min.js"></script>
     {% comment %} mermaid {% endcomment %}
     {%- if content contains '<pre class="language-mermaid">' -%}
-        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+        <script src="{{ cdn }}/assets/js/mermaid.min.js"></script>
         <script>mermaid.initialize({startOnLoad: true});</script>
     {%- endif -%}
     <script>
