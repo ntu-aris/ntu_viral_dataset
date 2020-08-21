@@ -184,7 +184,11 @@ layout: plugins/compress
     <script src="{{ cdn }}/assets/js/anchor.min.js"></script>
     {% comment %} mermaid {% endcomment %}
     {%- if content contains '<pre class="language-mermaid">' -%}
-        <script src="{{ cdn }}/assets/js/mermaid.min.js"></script>
+        {%- if site.mermaid.src -%}
+            <script src="{{ site.mermaid.src }}"></script>
+        {%- else -%}
+            <script src="{{ cdn }}/assets/js/mermaid.min.js"></script>
+        {%- endif -%}
         <script>mermaid.initialize({startOnLoad: true});</script>
     {%- endif -%}
     <script>
