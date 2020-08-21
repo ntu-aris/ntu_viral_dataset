@@ -109,7 +109,7 @@ layout: plugins/compress
             }
         };
     </script>
-    {% include head.custom.html %}
+    {% include extra/head.html %}
 </head>
 
 <body class="wy-body-for-nav">
@@ -178,7 +178,7 @@ layout: plugins/compress
         </section>
     </div>
     {%- if site.addons %}{% include addons.liquid %}{% endif %}
-    {% include footer.custom.html %}
+    {% include extra/footer.html %}
     <!-- script -->
     <script src="{{ cdn }}/assets/js/theme.js"></script>
     <script src="{{ cdn }}/assets/js/anchor.min.js"></script>
