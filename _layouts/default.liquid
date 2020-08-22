@@ -36,6 +36,13 @@ layout: plugins/compress
 
         gtag("js", new Date());
     </script>
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("{{ site.baseurl }}/assets/js/sw.js");
+        }else{
+            console.log("Service Worker not supported!");
+        }
+    </script>
     <!-- meta -->
     <meta name="description" content="{{ description }}">
     <meta name="author" content="{{ author }}">
