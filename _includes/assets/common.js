@@ -1,18 +1,13 @@
 $(document).ready(function() {
-    let highlight = new URL(location.href).searchParams.get("highlight");
-    let link = $(".wy-menu-vertical").find(`[href="${location.pathname}"]`);
-
-    /* directory toc */
-    if (link.length > 0) {
-        link.closest("li.toctree-l1").parent().addClass("current");
-        link.closest("li.toctree-l1").addClass("current");
-        link.closest("li.toctree-l2").addClass("current");
-        link.closest("li.toctree-l3").addClass("current");
-        link.closest("li.toctree-l4").addClass("current");
-        link.closest("li.toctree-l5").addClass("current");
-        link[0].scrollIntoView();
+    function set(name, value) {
+        return localStorage.setItem(name, value);
     }
-    /* content toc */
+
+    function get(name) {
+        return localStorage.getItem(name) || false;
+    }
+
+    /* generate content toc */
     $(".wy-menu-vertical li.current").append(function() {
         let level = parseInt($(this).attr("class").match(/toctree-l(\d+)/)[1]) + 1;
         let toc = ["<ul>"];
@@ -29,10 +24,39 @@ $(document).ready(function() {
             return toc.join("");
         }
     });
+
+    /* display current file in TOC */
+    let link = $(".wy-menu-vertical").find(`[href="${location.pathname}"]`);
+    if (link.length > 0) {
+        link.closest("li.toctree-l1").parent().addClass("current");
+        link.closest("li.toctree-l1").addClass("current");
+        link.closest("li.toctree-l2").addClass("current");
+        link.closest("li.toctree-l3").addClass("current");
+        link.closest("li.toctree-l4").addClass("current");
+        link.closest("li.toctree-l5").addClass("current");
+    }
+
+    /* restore sidebar scroll within 10 minutes */
+    let scroll = get("scroll");
+    let scrollTime = get("scrollTime");
+    let scrollHost = get("scrollHost");
+
+    if (scroll && scrollTime && scrollHost) {
+        if (scrollHost == location.host && (Date.now() - scrollTime < 6e5)) {
+            $(".wy-side-scroll").scrollTop(scroll);
+        }
+    }
+    $(".wy-side-scroll").scroll(function() {
+        set("scroll", this.scrollTop);
+        set("scrollTime", Date.now());
+        set("scrollHost", location.host);
+    });
+
     /* native nav */
     SphinxRtdTheme.Navigation.enable(true);
 
     /* search highlight */
+    let highlight = new URL(location.href).searchParams.get("highlight");
     if (highlight) {
         $(".section").find("*").each(function() {
             try {
