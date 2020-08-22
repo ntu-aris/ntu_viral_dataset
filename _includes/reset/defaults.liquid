@@ -4,7 +4,7 @@
 
 {%- assign schema_date = page.date | default: site.time | date_to_xmlschema -%}
 {%- assign schema_modi = site.time | date_to_xmlschema -%}
-{%- assign schema_surl = page.url | absolute_url | replace: 'http://', 'https://' | xml_escape -%}
+{%- assign schema_surl = page.url | absolute_url | xml_escape -%}
 
 {% comment %} scss {% endcomment %}
 {%- capture site_scss -%}

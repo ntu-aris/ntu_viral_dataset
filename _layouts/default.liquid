@@ -85,8 +85,8 @@ layout: plugins/compress
     </script>
     <!-- link -->
     <link rel="canonical" href="{{ schema_surl }}">
-    {% if prev %}<link rel="prev" href="{{ prev.url | absolute_url | replace: 'http://', 'https://' }}">{% endif %}
-    {% if next %}<link rel="next" href="{{ next.url | absolute_url | replace: 'http://', 'https://' }}">{% endif %}
+    {% if prev %}<link rel="prev" href="{{ prev.url | absolute_url }}">{% endif %}
+    {% if next %}<link rel="next" href="{{ next.url | absolute_url }}">{% endif %}
     <!-- theme -->
     <link rel="stylesheet" href="{{ cdn }}/assets/css/theme.css">
     <link rel="stylesheet" href="{{ cdn }}/assets/css/rougify/{{ site.rougify | default: 'github' }}.css">
