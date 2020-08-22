@@ -188,9 +188,11 @@ layout: plugins/compress
             <script src="{{ site.mermaid.src }}"></script>
         {%- else -%}
             <script src="{{ cdn }}/assets/js/mermaid.min.js"></script>
-        {%- endif -%}
-        <script>mermaid.initialize({startOnLoad: true});</script>
-    {%- endif -%}
+        {%- endif %}
+        <script>
+            mermaid.initialize({% if site.mermaid.config %}{{ site.mermaid.config | jsonify }}{% endif %});
+        </script>
+    {%- endif %}
     <script>
         {% include assets/common.js %}
         {% include assets/custom.js %} {{ site.script }}
