@@ -182,6 +182,7 @@ layout: plugins/compress
     <!-- script -->
     <script src="{{ cdn }}/assets/js/theme.js"></script>
     <script src="{{ cdn }}/assets/js/anchor.min.js"></script>
+
     {% comment %} mermaid {% endcomment %}
     {%- if content contains '<pre class="language-mermaid">' -%}
         {%- if site.mermaid.custom -%}
@@ -190,7 +191,7 @@ layout: plugins/compress
             <script src="{{ cdn }}/assets/js/mermaid.min.js"></script>
         {%- endif %}
         <script>
-            mermaid.initialize({% if site.mermaid.initialize %}{{ site.mermaid.initialize | jsonify }}{% endif %});
+            mermaid.initialize({% if site.mermaid.initialize %}{{ site.mermaid.initialize | jsonify }}{% else %}{}{% endif %});
         </script>
     {%- endif %}
     <script>
