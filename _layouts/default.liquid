@@ -28,19 +28,17 @@ layout: plugins/compress
             dataLayer.push(arguments);
         }
 
-        function feedback(messages) {
-            gtag("event", "exception", {
-                "description": messages.join(":")
-            });
+        function debug() {
+            console.debug.apply(console, arguments);
         }
 
         gtag("js", new Date());
     </script>
     <script>
         if ("serviceWorker" in navigator) {
-            navigator.serviceWorker.register("{{ site.baseurl }}/assets/js/sw.js");
-        }else{
-            console.log("Service Worker not supported!");
+            navigator.serviceWorker.register("{{ site.baseurl }}/assets/js/sw.js").then(debug).catch(debug);
+        } else {
+            debug("Service Worker not supported!");
         }
     </script>
     <!-- meta -->

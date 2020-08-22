@@ -64,7 +64,7 @@ $(document).ready(function() {
                     $(this).addClass("highlighted-box");
                 }
             } catch (e) {
-                feedback(["highlight", e.message]);
+                debug(e.message);
             }
         });
         $(".section").find(".highlighted-box").each(function() {

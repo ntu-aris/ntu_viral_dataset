@@ -10,7 +10,7 @@ self.addEventListener("fetch", function(event) {
                         cache.put(event.request, resp);
                     });
                     return response;
-                }).catch(console.log);
+                }).catch(debug);
             }
         })
     );

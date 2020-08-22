@@ -13,7 +13,7 @@ function search(data) {
         $(".search").empty();
         $(".search-summary").html(i18n[lang].search_results_not_found);
         $("#search-results h2").html(i18n[lang].search_results);
-        return feedback(["search", e.message]);
+        return debug(e.message);
     }
 
     function slice(content, min, max) {
@@ -32,7 +32,7 @@ function search(data) {
                 }
             }
         } catch (e) {
-            feedback(["search", e.message]);
+            debug(e.message);
         }
         try {
             if (page.content) {
@@ -40,7 +40,7 @@ function search(data) {
                 content = page.content.match(regexp);
             }
         } catch (e) {
-            feedback(["search", e.message]);
+            debug(e.message);
         }
         if (title || content) {
             let result = [`<a href="${ui.baseurl}${page.url}?highlight=${text}">${page.title}</a>`];
@@ -72,5 +72,5 @@ function search(data) {
 }
 
 $(document).ready(function() {
-    $.ajax(`${ui.baseurl}/pages.json`).done(search).fail((xhr, message) => feedback(["search", message]));
+    $.ajax(`${ui.baseurl}/pages.json`).done(search).fail((xhr, message) => debug(message));
 });
