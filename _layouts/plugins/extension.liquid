@@ -8,7 +8,7 @@
         {%- assign admonitions = "note, tip, warning, danger" | split: ", " -%}
         {%- comment %} get pre code and type {% endcomment -%}
         {%- assign pre_blocks = child_blocks.first | replace_first: ">", "```<temp>```" | split: "```<temp>```" -%}
-        {%- assign pre_type = pre_blocks.first | replace: '"', '' | replace: " class=language-", ""  -%}
+        {%- assign pre_type = pre_blocks.first | replace: '"', '' | replace: " class=notranslate language-", ""  -%}
 
         {%- if admonitions contains pre_type -%}
             <div class="admonition {{ pre_type }}">

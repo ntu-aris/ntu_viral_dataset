@@ -58,8 +58,8 @@
 {% comment %} content {% endcomment %}
 {%- assign content = content
     | replace: '’', "'"
-    | replace: '<pre class="highlight"><code>', "<pre>"
-    | replace: '<pre><code class=', "<pre class="
+    | replace: '<pre class="highlight"><code>', '<pre class="notranslate">'
+    | replace: '<pre><code class="', '<pre class="notranslate '
     | replace: "</code></pre>", "</pre>"
     | replace: '<code class="language-plaintext highlighter-rouge">', '<code class="literal">'
     | replace: "<table>", '<table class="docutils align-default">' -%}

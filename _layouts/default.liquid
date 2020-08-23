@@ -188,7 +188,7 @@ layout: plugins/compress
     <script src="{{ cdn }}/assets/js/anchor.min.js"></script>
 
     {% comment %} mermaid {% endcomment %}
-    {%- if content contains '<pre class="language-mermaid">' -%}
+    {%- if content contains '<pre class="notranslate language-mermaid">' -%}
         {%- if site.mermaid.custom -%}
             <script src="{{ site.mermaid.custom }}"></script>
         {%- else -%}
