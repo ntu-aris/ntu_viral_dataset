@@ -134,11 +134,38 @@ $(document).ready(function() {
             scrollTop: $(this.hash).offset().top
         }, 500);
     });
+    $(document).on("scroll", function() {
+        let start = $(this).scrollTop();
+        let items = [];
+
+        $(".document").find("h1,h2,h3,h4,h5,h6").each(function() {
+            items.push({
+                offset: $(this).offset().top,
+                id: this.id,
+                level: parseInt(this.tagName.slice(1))
+            });
+        });
+        for (let i = 0; i < items.length; i++) {
+            if (start > items[i].offset) {
+                if (i < items.length - 1) {
+                    if (start < items[i + 1].offset) {
+                        if (items[i].level == 1) {
+                            initialize(location.pathname);
+                        } else {
+                            initialize("#" + items[i].id);
+                        }
+                    }
+                } else {
+                    initialize("#" + items[i].id);
+                }
+            }
+        }
+    });
     $(document).on("click", '[data-toggle="rst-current-version"]', function() {
         $('[data-toggle="rst-versions"]').toggleClass("shift-up");
     });
     $(window).bind("resize", function() {
         requestAnimationFrame(function() {});
     });
-    $(window).bind("hashchange", (e) => initialize(window.location.hash || "#"));
+    $(window).bind("hashchange", (e) => initialize(location.hash || location.pathname));
 });

@@ -80,9 +80,9 @@ footer {
 
 .rst-content {
     /* fixed the long list */
+    .mermaid,
     ol,
-    ul,
-    .mermaid {
+    ul {
         overflow-x: auto;
     }
     /* fixed link>code */
