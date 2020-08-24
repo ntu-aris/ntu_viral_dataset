@@ -64,6 +64,8 @@ $(document).ready(function() {
         set("scrollTime", Date.now());
         set("scrollHost", location.host);
     });
+    /* turn off toc scrolling temporarily */
+    Element.prototype.scrollIntoView = function() {};
 
     /* native nav */
     SphinxRtdTheme.Navigation.enable(true);
