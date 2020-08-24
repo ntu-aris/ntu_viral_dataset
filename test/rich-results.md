@@ -12,6 +12,6 @@ Google Rich Results [documents is here](https://developers.google.com/search/ref
 
 
 {% for image in page.images %}
-#### test image {{ forloop.index }}
+## test image {{ forloop.index }}
 ![test image {{ forloop.index }}]({{ image }}){: .shadow-box }
 {% endfor %}
