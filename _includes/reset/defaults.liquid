@@ -62,6 +62,7 @@
     | replace: '<pre><code class="', '<pre class="notranslate '
     | replace: "</code></pre>", "</pre>"
     | replace: '<code class="language-plaintext highlighter-rouge">', '<code class="literal">'
+    | replace: "<dl>", '<dl class="definition">'
     | replace: "<table>", '<div class="wy-table-responsive"><table class="docutils align-default">'
     | replace: "</table>", '</table></div>' -%}
 
