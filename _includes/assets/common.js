@@ -7,21 +7,35 @@ $(document).ready(function() {
         return localStorage.getItem(name) || false;
     }
 
-    /* generate content toc */
-    $(".wy-menu-vertical li.current").append(function() {
-        let level = parseInt($(this).attr("class").match(/toctree-l(\d+)/)[1]) + 1;
-        let toc = ["<ul>"];
-        /* let sort = parseInt(this.dataset.sort); */
+    /* anchors */
+    anchors.add();
+
+    /* generate content TOC (id from anchors) */
+    $(".wy-menu-vertical li.current").append('<ul class="content-toc"></ul>').html(function() {
+        let level = parseInt(this.dataset.level);
+        let temp = 0;
+        let stack = [$(this).find(".content-toc")];
 
         $(".document").find("h2,h3,h4,h5,h6").each(function() {
-            toc.push(`<li class="toctree-l${level}"><a class="reference internal" href="#${this.id}">${$(this).text()}</a></li>`);
+            let anchor = $("<a/>").addClass("reference internal").text($(this).text()).attr("href", `#${this.id}`);
+            let heading = $(this);
+            let tagLevel = parseInt(this.tagName.slice(1)) - 1;
+
+            if (tagLevel > temp) {
+                let parent = stack[0].children("li:last")[0];
+                if (parent) {
+                    stack.unshift($("<ul/>").appendTo(parent));
+                }
+            } else {
+                stack.splice(0, Math.min(temp - tagLevel, Math.max(stack.length - 1, 0)));
+            }
+            temp = tagLevel;
+
+            $("<li/>").addClass(`toctree-l${level + tagLevel}`).append(anchor).appendTo(stack[0]);
         });
-        toc.push("</ul>");
-        /* return is apend */
-        if (toc.length == 2) {
-            return "";
-        } else {
-            return toc.join("");
+        /* if TOC is empty remove ul */
+        if (!stack[0].html()) {
+            stack[0].remove();
         }
     });
 
@@ -73,9 +87,6 @@ $(document).ready(function() {
             }
         });
     }
-
-    /* anchors */
-    anchors.add();
 
     /* admonition */
     $(".admonition-title").each(function() {

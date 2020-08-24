@@ -10,9 +10,13 @@
         {%- capture current -%}
             {%- if page.url == item.url %}current{% endif -%}
         {%- endcapture %}
-        <li class="toctree-l{{ level }} {{ current }}">
+        <li class="toctree-l{{ level }} {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
             <a class="reference internal {{ current }}" href="{{ item.url | relative_url }}">
-                {{ item.title | default: item.url }}
+                {%- if item.sort and site.show_sorted != false -%}
+                    {{ item.sort }}. {{ item.title | default: item.url }}
+                {%- else -%}
+                    {{ item.title | default: item.url }}
+                {%- endif -%}
             </a>
         </li>
     {%- endfor %}
