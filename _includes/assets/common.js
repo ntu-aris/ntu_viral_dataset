@@ -18,7 +18,6 @@ $(document).ready(function() {
 
         $(".document").find("h2,h3,h4,h5,h6").each(function() {
             let anchor = $("<a/>").addClass("reference internal").text($(this).text()).attr("href", `#${this.id}`);
-            let heading = $(this);
             let tagLevel = parseInt(this.tagName.slice(1)) - 1;
 
             if (tagLevel > temp) {
