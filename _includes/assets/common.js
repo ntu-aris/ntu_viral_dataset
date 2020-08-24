@@ -137,5 +137,8 @@ $(document).ready(function() {
     $(document).on("click", '[data-toggle="rst-current-version"]', function() {
         $('[data-toggle="rst-versions"]').toggleClass("shift-up");
     });
+    $(window).bind("resize", function() {
+        requestAnimationFrame(function() {});
+    });
     $(window).bind("hashchange", (e) => initialize(window.location.hash || "#"));
 });
