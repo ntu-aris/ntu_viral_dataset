@@ -62,7 +62,8 @@
     | replace: '<pre><code class="', '<pre class="notranslate '
     | replace: "</code></pre>", "</pre>"
     | replace: '<code class="language-plaintext highlighter-rouge">', '<code class="literal">'
-    | replace: "<table>", '<table class="docutils align-default">' -%}
+    | replace: "<table>", '<div class="wy-table-responsive"><table class="docutils align-default">'
+    | replace: "</table>", '</table></div>' -%}
 
 {% comment %} prev and next {% endcomment %}
 {%- assign workdir_files = site_files | where_exp: "item", "item.dir == page.dir" -%}
