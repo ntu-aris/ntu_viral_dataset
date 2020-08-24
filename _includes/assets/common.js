@@ -135,7 +135,7 @@ $(document).ready(function() {
         }, 500);
     });
     $(document).on("scroll", function() {
-        let start = $(this).scrollTop();
+        let start = $(this).scrollTop() + ($(window).height() * 0.382);
         let items = [];
 
         $(".document").find("h1,h2,h3,h4,h5,h6").each(function() {
