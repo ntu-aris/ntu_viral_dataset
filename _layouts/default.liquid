@@ -159,8 +159,8 @@ layout: plugins/compress
             <div class="wy-nav-content">
                 <div class="rst-content">
                     {% include breadcrumbs.liquid %}
-                    <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-                        <div itemprop="articleBody">
+                    <div role="main" itemscope="itemscope" itemtype="http://schema.org/Article">
+                        <div class="document" itemprop="articleBody">
                             {%- if page.url == "/search.html" -%}
                                 {{ content }}
                             {%- else -%}
