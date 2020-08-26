@@ -110,6 +110,12 @@ footer {
         font-family: monospace;
         font-size: 12px;
     }
+
+    blockquote {
+        padding: 0 1em;
+        color: #6a737d;
+        border-left: 0.25em solid #dfe2e5;
+    }
     /* theme copyright */
     .rundocs {
         display: none;
