@@ -119,6 +119,12 @@ footer {
         border: 1px solid #f1c40f;
     }
 }
+
+.wy-table-responsive {
+    table td {
+        white-space: initial;
+    }
+}
 /* fixed search results */
 #search-results {
     .context {
