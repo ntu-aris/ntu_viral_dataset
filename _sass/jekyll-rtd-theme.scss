@@ -77,6 +77,20 @@ footer {
         }
     }
 }
+/* fixed toctree-expand icon align */
+.wy-menu-vertical {
+    @for $toc_level from 1 through 10 {
+        li.toctree-l#{$toc_level}.current li.toctree-l#{$toc_level + 1} > a {
+            display: -webkit-flex;
+            display: flex;
+            align-items: center;
+
+            span {
+                padding-right: 3px;
+            }
+        }
+    }
+}
 
 .rst-content {
     /* fixed the long list */
