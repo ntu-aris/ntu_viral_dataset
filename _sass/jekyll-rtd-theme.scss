@@ -105,8 +105,12 @@ footer {
         border: 1px solid #f1c40f;
     }
 }
-/* fixed the last of search results display */
+/* fixed search results */
 #search-results {
+    .context {
+        word-break: break-all;
+    }
+
     li:last-child {
         border-bottom: 0;
         padding-bottom: 0;

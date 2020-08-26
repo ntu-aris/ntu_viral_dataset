@@ -129,13 +129,9 @@ $(document).ready(function() {
         $('[data-toggle="wy-nav-shift"]').removeClass("shift");
         $('[data-toggle="rst-versions"]').toggleClass("shift");
         toggleCurrent($(this));
-
-        $("html,body").animate({
-            scrollTop: $(this.hash).offset().top
-        }, 500);
     });
     $(document).on("scroll", function() {
-        let start = $(this).scrollTop() + ($(window).height() * 0.382);
+        let start = $(this).scrollTop() + 5;
         let items = [];
 
         $(".document").find("h1,h2,h3,h4,h5,h6").each(function() {
@@ -167,5 +163,5 @@ $(document).ready(function() {
     $(window).bind("resize", function() {
         requestAnimationFrame(function() {});
     });
-    $(window).bind("hashchange", (e) => initialize(location.hash || location.pathname));
+    $(window).bind("hashchange", () => initialize(location.hash || location.pathname));
 });

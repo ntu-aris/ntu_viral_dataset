@@ -1,17 +1,19 @@
 <footer>
-    {%- if next or prev -%}
-        <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-            {%- if next -%}
-                <a href="{{ next.url | relative_url }}" class="btn btn-neutral float-right" title="{{ next.title }}" accesskey="n" rel="next">
-                    {{- __next }} <span class="fa fa-arrow-circle-right"></span>
-                </a>
-            {%- endif -%}
-            {%- if prev -%}
-                <a href="{{ prev.url | relative_url }}" class="btn btn-neutral  float-left" title="{{ prev.title }}" accesskey="p" rel="prev">
-                    <span class="fa fa-arrow-circle-left"></span> {{ __previous -}}
-                </a>
-            {%- endif -%}
-        </div>
+    {%- if page.url != "/search.html" and page.url != "/404.html" -%}
+        {%- if next or prev -%}
+            <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+                {%- if next -%}
+                    <a href="{{ next.url | relative_url }}" class="btn btn-neutral float-right" title="{{ next.title }}" accesskey="n" rel="next">
+                        {{- __next }} <span class="fa fa-arrow-circle-right"></span>
+                    </a>
+                {%- endif -%}
+                {%- if prev -%}
+                    <a href="{{ prev.url | relative_url }}" class="btn btn-neutral  float-left" title="{{ prev.title }}" accesskey="p" rel="prev">
+                        <span class="fa fa-arrow-circle-left"></span> {{ __previous -}}
+                    </a>
+                {%- endif -%}
+            </div>
+        {%- endif -%}
     {%- endif -%}
     <hr>
     {%- if site.copyright -%}
