@@ -13,7 +13,10 @@
         {%- if admonitions contains pre_type -%}
             <div class="admonition {{ pre_type }}">
                 {%- comment %} title will be translated via ui {% endcomment -%}
-                <p class="admonition-title" ui="{{ pre_type }}"><span class="progress"></span></p>{{ pre_blocks.last | markdownify | strip_newlines -}}
+                <p class="admonition-title" ui="{{ pre_type }}">
+                    <i class="fas fa-exclamation-circle"></i> <span class="progress"></span>
+                </p>
+                {{ pre_blocks.last | markdownify | strip_newlines -}}
             </div>{{ child_blocks.last -}}
         {%- elsif pre_type == "mermaid" -%}
             <div class="mermaid">{{ pre_blocks.last }}</div>{{ child_blocks.last }}

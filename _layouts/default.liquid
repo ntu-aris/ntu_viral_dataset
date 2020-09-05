@@ -14,32 +14,13 @@ layout: plugins/compress
     {%- endif %}
 -->
 
-<html class="writer-html5" lang="{{ lang }}">
+<html lang="{{ lang }}">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta content="IE=Edge" http-equiv="X-UA-Compatible">
     <title>{{ title | truncate: 110 }}</title>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        function debug() {
-            console.debug.apply(console, arguments);
-        }
-
-        gtag("js", new Date());
-
-        if ("serviceWorker" in navigator) {
-            navigator.serviceWorker.register("{{ site.baseurl }}/sw.caches.js");
-        } else {
-            debug("Service Worker not supported!");
-        }
-    </script>
     <!-- meta -->
     <meta name="description" content="{{ description }}">
     <meta name="author" content="{{ author }}">
@@ -92,119 +73,102 @@ layout: plugins/compress
     {% if prev %}<link rel="prev" href="{{ prev.url | absolute_url }}">{% endif %}
     {% if next %}<link rel="next" href="{{ next.url | absolute_url }}">{% endif %}
     <!-- theme -->
-    <link rel="stylesheet" href="{{ cdn }}/assets/css/theme.css">
-    <link rel="stylesheet" href="{{ cdn }}/assets/css/rougify/{{ site.rougify | default: 'github' }}.css">
-    <style>{{ site_scss | scssify | strip_newlines }}</style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@primer/css/dist/primer.css">
+    <link rel="stylesheet" href="{{ cdn }}/assets/css/theme{% if site.debug %}.debug{% endif %}.css">
+    <link rel="stylesheet" href="{{ cdn }}/assets/rougify/{{ site.rougify | default: 'github' }}.css">
+    <style>{{ scss_custom | scssify | strip_newlines }}</style>
     <!-- icon -->
     <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/favicon.svg">
     <!-- script -->
-    <!--[if lt IE 9]><script src="{{ cdn }}/assets/js/html5shiv.min.js"></script><![endif]-->
-    <script src="{{ cdn }}/assets/js/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="{{ cdn }}/assets/npm/html5shiv.min.js"></script><![endif]-->
     <script>
-        const ui = {
+        window.ui = {
             baseurl: "{{ site.baseurl }}",
             title: "{{ site.title }}",
-            lang: "{{ lang }}",
             admonition: {
                 note: "{{ __note }}",
                 tip: "{{ __tip }}",
                 warning: "{{ __warning }}",
                 danger: "{{ __danger }}"
-            }
+            },
+            mode: "{{ jekyll.environment }}",
+            lang: "{{ lang }}",
+            version: "{{ version }}"
         };
     </script>
     {% include extra/head.html %}
 </head>
 
-<body class="wy-body-for-nav">
-    <div class="wy-grid-for-nav">
-        <!-- NAV -->
-        <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-            <div class="wy-side-scroll">
-                <div class="wy-side-nav-search">
+<body class="container">
+    <div class="sidebar-wrap overflow-hidden">
+        <div class="sidebar height-full overflow-y-scroll">
+            <div class="header text-center">
+                <div class="title">
                     {% if site.logo %}
                         <a href="{{ site.baseurl }}/{% if site_lang != lang %}{{ lang }}/{% endif %}">
                             <img src="{{ site.baseurl }}/{{ site.logo }}" class="logo" alt="{{ site.title }}">
                         </a>
                     {% else %}
-                        <a href="{{ site.baseurl }}/{% if site_lang != lang %}{{ lang }}/{% endif %}" class="icon icon-home"> {{ site.title }}</a>
+                        <a class="text-white" href="{{ site.baseurl }}/{% if site_lang != lang %}{{ lang }}/{% endif %}"><i class="fas fa-home"></i></i> {{ site.title }}</a>
                     {% endif %}
-                    {% if site.nav_version and site.github_metadata != false %}
-                      <div class="version">{{ site.github.latest_release.name }}</div>
-                    {% endif %}
-                    <div role="search">
-                        <form id="rtd-search-form" class="wy-form" action="{{ site.baseurl }}/search.html" method="get" autocomplete="off">
-                            <input type="text" name="q" placeholder="{{ __search_docs }}...">
-                            <input type="hidden" name="lang" value="{{ lang }}">
-                        </form>
-                    </div>
                 </div>
-                <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">{% include toctree.liquid %}</div>
-                {%- if site.embed -%}
-                    <div class="wy-embed-wrap"><div class="wy-embed">{{ site.embed }}</div></div>
-                {%- endif -%}
+                {% if site.nav_version and site.github_metadata != false %}
+                    <div class="version">{{ site.github.latest_release.name }}</div>
+                {% endif %}
+                <form class="search" action="{{ site.baseurl }}/search.html" method="get" autocomplete="off">
+                    <input class="form-control input-block input-sm" type="text" name="q" placeholder="{{ __search_docs }}...">
+                    <input type="hidden" name="lang" value="{{ lang }}">
+                </form>
             </div>
-        </nav>
-
-        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-            <!-- MOBILE NAV -->
-            <nav class="wy-nav-top" aria-label="top navigation">
-                <div class="flex">
-                    <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-                    <div class="wy-nav-title">
-                        <a href="{{ site.baseurl }}/{% if site_lang != lang %}{{ lang }}/{% endif %}">{{ site.title }}</a>
-                    </div>
-                </div>
-            </nav>
-            <div class="wy-nav-content">
-                <div class="rst-content">
-                    {% include breadcrumbs.liquid %}
-                    <div role="main" itemscope="itemscope" itemtype="http://schema.org/Article">
-                        <div class="document" itemprop="articleBody">
-                            {%- if page.url == "/search.html" -%}
-                                {{ content }}
-                            {%- else -%}
-                                <div class="section">{{ content }}</div>
-                            {%- endif -%}
-                        </div>
-                        {% comment %} comments {% endcomment %}
-                        {% if site.disqus %}
-                            <div id="disqus_thread" class="articleComments"></div>
-                            <script>
-                                (function(script) {
-                                    script.src = "https://{{ site.disqus }}.disqus.com/embed.js";
-                                    script.setAttribute("data-timestamp", +new Date());
-                                    document.head.appendChild(script);
-                                })(document.createElement("script"));
-                            </script>
-                        {% endif %}
-                    </div>
-                    {% include footer.liquid %}
-                </div>
+            <div class="toc mb-8" data-spy="affix" role="navigation" aria-label="main navigation">
+                {% include tree.liquid %}
             </div>
-        </section>
+            {%- if site.embed -%}
+                <div class="embed-wrap"><div class="embed">{{ site.embed }}</div></div>
+            {%- endif -%}
+        </div>
     </div>
-    {%- if site.addons %}{% include addons.liquid %}{% endif %}
+
+    <div class="content-wrap">
+        <div class="header-sm d-flex flex-justify-between p-2 hide-lg hide-xl" aria-label="top navigation">
+            <button id="toggle" class="btn-octicon p-2 m-0 text-white" type="button">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a class="p-2 mr-3 text-white" href="{{ site.baseurl }}/{% if site_lang != lang %}{{ lang }}/{% endif %}">{{ site.title }}</a>
+            <div></div>
+        </div>
+        <div class="content p-5">
+            {% include breadcrumbs.liquid %}
+            <hr>
+            <div role="main" itemscope="itemscope" itemtype="http://schema.org/Article">
+                <div class="markdown-body" itemprop="articleBody">
+                    {{ content }}
+                </div>
+            </div>
+            {% include footer.liquid %}
+        </div>
+    </div>
+    {% include addons.liquid %}
     {% include extra/footer.html %}
     <!-- script -->
-    <script src="{{ cdn }}/assets/js/anchor.min.js"></script>
+    <script src="{{ cdn }}/assets/npm/jquery.min.js"></script>
+    <script src="{{ cdn }}/assets/npm/anchor.min.js"></script>
 
     {% comment %} mermaid {% endcomment %}
     {%- if content contains '<pre class="notranslate language-mermaid">' -%}
         {%- if site.mermaid.custom -%}
             <script src="{{ site.mermaid.custom }}"></script>
         {%- else -%}
-            <script src="{{ cdn }}/assets/js/mermaid.min.js"></script>
+            <script src="{{ cdn }}/assets/npm/mermaid.min.js"></script>
         {%- endif %}
         <script>
             mermaid.initialize({% if site.mermaid.initialize %}{{ site.mermaid.initialize | jsonify }}{% else %}{}{% endif %});
         </script>
     {%- endif %}
+    <script src="{{ cdn }}/assets/js/theme{% if site.debug %}.debug{% endif %}.js"></script>
     <script>
-        {% include assets/common.js %}
         {% include assets/custom.js %} {{ site.script }}
     </script>
-
     {% comment %} Baidu link submit {% endcomment %}
     {%- if site.baidu.linksubmit -%}
         <script>
@@ -236,6 +200,11 @@ layout: plugins/compress
     {%- if site.google.gtag -%}
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google.gtag }}"></script>
         <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
             gtag("config", "{{ site.google.gtag }}");
         </script>
     {%- endif -%}

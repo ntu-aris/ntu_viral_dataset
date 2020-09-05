@@ -6,13 +6,3 @@
         </a>
     </dd>
 </dl>
-
-<script>
-    $(document).ready(function() {
-        let analytics = new URL("https://rundocs-analytics.glitch.me/collect?v={{ version }}&lang={{ lang }}");
-        analytics.searchParams.append("user_lang", navigator.language);
-        analytics.searchParams.append("host", location.host);
-        analytics.searchParams.append("platform", navigator.platform);
-        $.getJSON(analytics.toString(), (data) => $("#counter").html(data.count));
-    });
-</script>

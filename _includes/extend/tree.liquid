@@ -24,7 +24,7 @@
             {%- assign level = level | minus: 1 -%}
         {%- endif -%}
 
-        <li class="toctree-l{{ level }} {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
+        <li class="tree-{{ level }} {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
             <a class="reference internal {{ current }}" href="{{ item.url | relative_url }}">
                 {%- if item.sort and site.show_sorted != false -%}
                     {{ item.sort }}. {{ item.title | default: item.url }}
@@ -41,6 +41,6 @@
         {%- if site_lang != lang -%}
             {%- assign level = level | minus: 1 -%}
         {%- endif -%}
-        <li class="toctree-l{{ level }}">{% include extend/toctree.liquid %}</li>
+        <li class="tree-{{ level }}">{% include extend/tree.liquid %}</li>
     {%- endfor -%}
 </ul>

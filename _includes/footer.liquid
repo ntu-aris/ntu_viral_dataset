@@ -1,39 +1,57 @@
-<footer>
-    {%- if page.url != "/search.html" and page.url != "/404.html" -%}
-        {%- if next or prev -%}
-            <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-                {%- if next -%}
-                    <a href="{{ next.url | relative_url }}" class="btn btn-neutral float-right" title="{{ next.title }}" accesskey="n" rel="next">
-                        {{- __next }} <span class="fa fa-arrow-circle-right"></span>
-                    </a>
-                {%- endif -%}
-                {%- if prev -%}
-                    <a href="{{ prev.url | relative_url }}" class="btn btn-neutral  float-left" title="{{ prev.title }}" accesskey="p" rel="prev">
-                        <span class="fa fa-arrow-circle-left"></span> {{ __previous -}}
-                    </a>
-                {%- endif -%}
-            </div>
-        {%- endif -%}
-    {%- endif -%}
-    <hr>
-    {%- if site.copyright -%}
-        <div role="contentinfo" class="copyright">
-            <p>
-                <i class="fa fa-copyright"></i> {{ __copyright }}
-                {% if site.copyright.since -%}
-                    {{ site.copyright.since | append: "-" }}
-                {%- endif -%}
-                {{ site.time | date: "%Y" }},
-                {{ author }}
-                {% if site.copyright.revision and site.github_metadata != false -%}
-                    <span class="commit">
-                        {{ __revision }} <code>{{ commit }}</code>
-                    </span>
-                {%- endif -%}
-            </p>
+{% comment %} comments {% endcomment %}
+{% if site.disqus %}
+    <div id="disqus_thread" class="comments"></div>
+    <script>
+        (function(script) {
+            script.src = "https://{{ site.disqus }}.disqus.com/embed.js";
+            script.setAttribute("data-timestamp", +new Date());
+            document.head.appendChild(script);
+        })(document.createElement("script"));
+    </script>
+{% endif %}
+
+{% comment %} prev and next {% endcomment %}
+{%- if page.url != "/search.html" and page.url != "/404.html" -%}
+    {%- if next or prev -%}
+        <div class="d-flex flex-justify-between py-3" role="navigation" aria-label="footer navigation">
+            {%- if prev -%}
+                <a href="{{ prev.url | relative_url }}" class="btn btn-neutral  float-left" title="{{ prev.title }}" accesskey="p" rel="prev">
+                    <span class="fa fa-arrow-circle-left"></span> {{ __previous -}}
+                </a>
+            {%- else -%}
+                <div></div>
+            {%- endif -%}
+            {%- if next -%}
+                <a href="{{ next.url | relative_url }}" class="btn btn-neutral float-right" title="{{ next.title }}" accesskey="n" rel="next">
+                    {{- __next }} <span class="fa fa-arrow-circle-right"></span>
+                </a>
+            {%- else -%}
+                <div></div>
+            {%- endif -%}
         </div>
     {%- endif -%}
-    <div role="contentinfo" class="copyright rundocs">
-        <p>Powered by <a href="https://rundocs.io">rundocs.io</a> using the jekyll docs theme <a href="https://rundocs.github.io/jekyll-rtd-theme">jekyll-rtd-theme</a></p>
+{%- endif -%}
+
+<hr>
+
+{%- if site.copyright -%}
+    <div role="contentinfo" class="copyright text-center">
+        <p>
+            <i class="fas fa-copyright"></i> {{ __copyright }}
+            {% if site.copyright.since -%}
+                {{ site.copyright.since | append: "-" }}
+            {%- endif -%}
+            {{ site.time | date: "%Y" }},
+            {{ author }}
+            {% if site.copyright.revision and site.github_metadata != false -%}
+                <span class="commit">
+                    {{ __revision }} <code>{{ commit }}</code>
+                </span>
+            {%- endif -%}
+        </p>
     </div>
-</footer>
+{%- endif -%}
+
+<div role="contentinfo" class="copyright d-none">
+    <p>Powered by <a href="https://rundocs.io">rundocs.io</a> using the jekyll docs theme <a href="https://rundocs.github.io/jekyll-rtd-theme">jekyll-rtd-theme</a></p>
+</div>

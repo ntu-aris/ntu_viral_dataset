@@ -1,0 +1,5 @@
+debug:
+  compress: false
+
+sass:
+  style: compact

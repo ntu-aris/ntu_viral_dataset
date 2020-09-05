@@ -10,7 +10,7 @@
         {%- capture current -%}
             {%- if page.url == item.url %}current{% endif -%}
         {%- endcapture %}
-        <li class="toctree-l{{ level }} {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
+        <li class="tree-{{ level }} {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
             <a class="reference internal {{ current }}" href="{{ item.url | relative_url }}">
                 {%- if item.sort and site.show_sorted != false -%}
                     {{ item.sort }}. {{ item.title | default: item.url }}
@@ -23,4 +23,4 @@
 </ul>
 
 {% comment %} list the root dirs {% endcomment %}
-{%- for workdir in workdir_dirs %}{% include extend/toctree.liquid %}{% endfor -%}
+{%- for workdir in workdir_dirs %}{% include extend/tree.liquid %}{% endfor -%}

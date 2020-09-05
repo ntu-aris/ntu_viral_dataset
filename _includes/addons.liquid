@@ -1,10 +1,14 @@
-<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-        <span class="fa fa-book"> {{ site.title }}</span>
-        {% if site.addons_branch and site.github_metadata != false %}{{ branch }}{% endif %}
-        <span class="fa fa-caret-down"></span>
+<div class="addons d-flex flex-column overflow-y-auto" role="note" aria-label="addons">
+    <span class="status d-flex flex-justify-between p-2">
+        <div class="title p-1">
+            <i class="fa fa-book"></i> {{ site.title }}
+        </div>
+        <div class="branch p-1">
+            {% if site.addons_branch and site.github_metadata != false %}{{ branch }}{% endif %}
+            <i class="fa fa-caret-down"></i>
+        </div>
     </span>
-    <div class="rst-other-versions">
+    <div class="details d-flex flex-column height-full p-2 d-none">
         {%- assign items = site.addons | default: addons -%}
         {% for item in items -%}
             {%- if addons contains item -%}

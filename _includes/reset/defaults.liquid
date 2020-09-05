@@ -7,9 +7,7 @@
 {%- assign schema_surl = page.url | absolute_url | xml_escape -%}
 
 {% comment %} scss {% endcomment %}
-{%- capture site_scss -%}
-    @import "jekyll-rtd-theme.scss";
-    {% if site.fluid %}@import "fluid.scss";{% endif %}
+{%- capture scss_custom -%}
     {% include assets/custom.scss %} {{ site.scss }}
 {%- endcapture -%}
 

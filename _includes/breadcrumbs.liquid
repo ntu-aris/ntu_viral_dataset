@@ -1,13 +1,13 @@
-<div role="navigation" aria-label="breadcrumbs navigation">
-    <ul class="wy-breadcrumbs">
-        <li>
-            <a href="{{ site.baseurl }}/" class="icon icon-home"></a><i class="fa fa-angle-double-right"></i>
+<div class="d-flex flex-justify-between" role="navigation" aria-label="breadcrumbs navigation">
+    <ul>
+        <li class="breadcrumb-item">
+            <a href="{{ site.baseurl }}/"><i class="fas fa-home"></i></i></a>
         </li>
         {%- case page.url -%}
             {%- when "/search.html" %}
-                <li>{{ __search }}</li>
+                <li class="breadcrumb-item" aria-current="page">{{ __search }}</li>
             {%- when "/404.html" %}
-                <li>{{ __404 }}</li>
+                <li class="breadcrumb-item" aria-current="page">{{ __404 }}</li>
             {%- else -%}
                 {%- assign blocks = page.path | split: "/" -%}
                 {%- assign length = blocks | size -%}
@@ -16,28 +16,25 @@
                 {%- endif -%}
                 {%- for block in blocks limit: length -%}
                     {%- if forloop.last %}
-                        <li>{{ page.title }}</li>
+                        <li class="breadcrumb-item" aria-current="page">{{ page.title }}</li>
                     {%- else -%}
                         {%- capture href -%}
                             {{ site.baseurl }}/{% for block in blocks limit: forloop.index %}{{ block | append: "/" }}{% endfor %}
                         {%- endcapture %}
-                        <li>
+                        <li class="breadcrumb-item">
                             <a href="{{ href }}">
                                 {%- if block == lang -%}
                                     {{ block }}
                                 {%- else -%}
                                     {{ block | capitalize }}
                                 {%- endif -%}
-                            </a><i class="fa fa-angle-double-right"></i>
+                            </a>
                         </li>
                     {%- endif -%}
                 {%- endfor -%}
         {%- endcase %}
-        {%- if site.edit and site.github_metadata != false -%}
-            <li class="wy-breadcrumbs-aside">
-                <a href="{{ github_edit_link }}" class="fa fa-edit" target="_blank"></a>
-            </li>
-        {%- endif -%}
     </ul>
-    <hr>
+    {%- if site.edit and site.github_metadata != false -%}
+        <a href="{{ github_edit_link }}" class="fa fa-edit" target="_blank"></a>
+    {%- endif -%}
 </div>

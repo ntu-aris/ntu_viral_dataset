@@ -1,0 +1,71 @@
+.fixed-sm {
+  position: fixed;
+  bottom: 0;
+  left: -85%;
+  width: 85%;
+  max-height: 100%;
+
+  &.shift {
+    left: 0;
+  }
+}
+
+.sidebar-wrap {
+  top: 0;
+
+  @extend .fixed-sm;
+}
+
+.addons {
+  @extend .fixed-sm;
+}
+
+.content-wrap {
+  &.shift {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 85%;
+    min-width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .fixed-md {
+    left: 0;
+    width: 300px;
+  }
+
+  .sidebar-wrap {
+    @extend .fixed-md;
+  }
+
+  .addons {
+    @extend .fixed-md;
+  }
+
+  .header,
+  .toc {
+    width: 300px;
+  }
+
+  .sidebar {
+    width: 300px + 20px;
+  }
+
+  .content-wrap {
+    margin-left: 300px;
+
+    &.shift {
+      position: relative;
+      left: 0;
+      min-width: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .content-wrap {
+    max-width: 1280px - 300px;
+  }
+}

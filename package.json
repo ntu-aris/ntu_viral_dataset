@@ -1,9 +1,20 @@
 {
+    "scripts": {
+        "build": "babel src -d lib"
+    },
     "devDependencies": {
+        "@babel/cli": "^7.11.5",
+        "@babel/core": "^7.11.5",
+        "@babel/preset-env": "^7.11.5",
+        "@primer/css": "^15.1.0",
         "anchor-js": "^4.2.2",
+        "font-awesome": "^4.7.0",
         "html5shiv": "^3.7.3",
         "jquery": "^3.5.1",
         "jquery.toc": "^0.4.0",
-        "mermaid": "^8.7.0"
+        "lato-font": "^3.0.0",
+        "mermaid": "^8.7.0",
+        "roboto-fontface": "^0.10.0",
+        "uglify-js": "^3.10.3"
     }
 }
