@@ -1,21 +1,19 @@
 default:
-	@bundle install
+	@gem install jekyll bundler && bundle install
 
 update:
 	@bundle update
 
 clean:
-	@bundle exec jekyll clean
-
-build: clean
-	@bundle exec jekyll build --profile --config _config.yml,.debug.yml
+	@rm -f *.gem && bundle exec jekyll clean
 
 server: clean
-	@bundle exec jekyll server --config _config.yml,.debug.yml
+	@bundle exec jekyll server
 
 theme: clean
 	@gem uninstall jekyll-rtd-theme
 	@gem build *.gemspec && gem install *.gem
 
-format:
-	@sass-convert -R _sass --from scss --to scss -i
+build: clean
+	@bundle exec jekyll build
+	@sass-convert -R _sass --from scss --to scss -i && npm run build

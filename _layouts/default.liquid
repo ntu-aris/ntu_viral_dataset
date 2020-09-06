@@ -74,7 +74,7 @@ layout: plugins/compress
     {% if next %}<link rel="next" href="{{ next.url | absolute_url }}">{% endif %}
     <!-- theme -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@primer/css/dist/primer.css">
-    <link rel="stylesheet" href="{{ cdn }}/assets/css/theme{% if site.debug %}.debug{% endif %}.css">
+    <link rel="stylesheet" href="{{ cdn }}/assets/css/{{ jekyll.environment }}.css">
     <link rel="stylesheet" href="{{ cdn }}/assets/rougify/{{ site.rougify | default: 'github' }}.css">
     <style>{{ scss_custom | scssify | strip_newlines }}</style>
     <!-- icon -->
@@ -165,7 +165,7 @@ layout: plugins/compress
             mermaid.initialize({% if site.mermaid.initialize %}{{ site.mermaid.initialize | jsonify }}{% else %}{}{% endif %});
         </script>
     {%- endif %}
-    <script src="{{ cdn }}/assets/js/theme{% if site.debug %}.debug{% endif %}.js"></script>
+    <script src="{{ cdn }}/assets/js/{{ jekyll.environment }}.js"></script>
     <script>
         {% include assets/custom.js %} {{ site.script }}
     </script>

@@ -1,11 +1,8 @@
 {
     "scripts": {
-        "build": "babel src -d lib"
+        "build": "webpack --mode production"
     },
-    "devDependencies": {
-        "@babel/cli": "^7.11.5",
-        "@babel/core": "^7.11.5",
-        "@babel/preset-env": "^7.11.5",
+    "dependencies": {
         "@primer/css": "^15.1.0",
         "anchor-js": "^4.2.2",
         "font-awesome": "^4.7.0",
@@ -14,7 +11,17 @@
         "jquery.toc": "^0.4.0",
         "lato-font": "^3.0.0",
         "mermaid": "^8.7.0",
-        "roboto-fontface": "^0.10.0",
-        "uglify-js": "^3.10.3"
+        "roboto-fontface": "^0.10.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.11.6",
+        "@babel/preset-env": "^7.11.5",
+        "babel-loader": "^8.1.0",
+        "css-loader": "^4.2.2",
+        "mini-css-extract-plugin": "^0.11.0",
+        "sass": "^1.26.10",
+        "sass-loader": "^10.0.2",
+        "webpack": "^4.44.1",
+        "webpack-cli": "^3.3.12"
     }
 }

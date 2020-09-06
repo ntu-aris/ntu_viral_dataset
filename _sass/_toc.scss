@@ -1,45 +1,47 @@
 .d-none {
-    display: none;
+  display: none;
 }
 
 .d-block {
-    display: block;
+  display: block;
 }
 
 .toc {
-    a {
-        display: block;
-        padding: 0.5em;
-    }
+  a {
+    display: block;
+    padding: 0.5em;
+  }
 
-    .current {
-        > a {
-            color: black;
-            background: #fcfcfc;
-        }
+  .current {
+    > a {
+      color: black;
+      background: #fcfcfc;
     }
+  }
 }
+
 $gutter: 1.5em;
 $section-bg: hsl(0, 0%, 99%);
+
 @for $level from 1 through 10 {
-    .tree-#{$level} {
-        > ul {
-            @extend .d-none;
-        }
-
-        &.current {
-            > ul {
-                @extend .d-block;
-            }
-
-            > a {
-                padding-left: $gutter * ($level - 1 + 0.5);
-                background: var(--tree-#{$level});
-            }
-
-            .tree-#{$level + 1} > a {
-                padding-left: $gutter * ($level + 0.5);
-            }
-        }
+  .tree-#{$level} {
+    > ul {
+      @extend .d-none;
     }
+
+    &.current {
+      > ul {
+        @extend .d-block;
+      }
+
+      > a {
+        padding-left: $gutter * ($level - 1 + 0.5);
+        background: var(--tree-#{$level});
+      }
+
+      .tree-#{$level + 1} > a {
+        padding-left: $gutter * ($level + 0.5);
+      }
+    }
+  }
 }
