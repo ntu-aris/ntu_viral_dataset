@@ -2,7 +2,7 @@
 layout: plugins/extension
 ---
 
-{%- if jekyll.environment != "production" -%}
+{%- if site.debug.compress == false -%}
     {{ content }}
 {%- else -%}
     {%- assign blocks = content | split: "<pre" -%}

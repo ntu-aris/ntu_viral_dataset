@@ -1,0 +1,8 @@
+baseurl: /debug
+
+sass:
+  style: compact
+
+debug:
+  compress: false
+  development: true

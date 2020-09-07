@@ -74,7 +74,7 @@ layout: plugins/compress
     {% if next %}<link rel="next" href="{{ next.url | absolute_url }}">{% endif %}
     <!-- theme -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@primer/css/dist/primer.css">
-    <link rel="stylesheet" href="{{ cdn }}/assets/css/{{ jekyll.environment }}.css">
+    <link rel="stylesheet" href="{{ cdn }}/assets/css/theme{% if site.debug.development %}.debug{% endif %}.css">
     <link rel="stylesheet" href="{{ cdn }}/assets/rougify/{{ site.rougify | default: 'github' }}.css">
     <style>{{ scss_custom | scssify | strip_newlines }}</style>
     <!-- icon -->
@@ -153,8 +153,7 @@ layout: plugins/compress
     <!-- script -->
     <script src="{{ cdn }}/assets/npm/jquery.min.js"></script>
     <script src="{{ cdn }}/assets/npm/anchor.min.js"></script>
-
-    {% comment %} mermaid {% endcomment %}
+    {%- comment %} mermaid {% endcomment -%}
     {%- if content contains '<pre class="notranslate language-mermaid">' -%}
         {%- if site.mermaid.custom -%}
             <script src="{{ site.mermaid.custom }}"></script>
@@ -165,7 +164,7 @@ layout: plugins/compress
             mermaid.initialize({% if site.mermaid.initialize %}{{ site.mermaid.initialize | jsonify }}{% else %}{}{% endif %});
         </script>
     {%- endif %}
-    <script src="{{ cdn }}/assets/js/{{ jekyll.environment }}.js"></script>
+    <script src="{{ cdn }}/assets/js/theme{% if site.debug.development %}.debug{% endif %}.js"></script>
     <script>
         {% include assets/custom.js %} {{ site.script }}
     </script>
