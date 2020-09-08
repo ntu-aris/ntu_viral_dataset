@@ -6,42 +6,46 @@
   display: block;
 }
 
-.toc {
+.toctree {
   a {
-    display: block;
+    color: #d9d9d9;
     padding: 0.5em;
-  }
-
-  .current {
-    > a {
-      color: black;
-      background: #fcfcfc;
-    }
   }
 }
 
-$gutter: 1.5em;
-$section-bg: hsl(0, 0%, 99%);
-
-@for $level from 1 through 10 {
-  .tree-#{$level} {
-    > ul {
-      @extend .d-none;
-    }
-
-    &.current {
-      > ul {
-        @extend .d-block;
-      }
-
+.toc {
+  @for $level from 1 through 11 {
+    &.level-#{$level}.current {
       > a {
         padding-left: $gutter * ($level - 1 + 0.5);
-        background: var(--tree-#{$level});
+        background: var(--toc-#{$level});
       }
 
-      .tree-#{$level + 1} > a {
+      > ul {
+        @extend .d-block;
+        background: var(--toc-#{$level + 1});
+      }
+
+      .level-#{$level + 1} > a {
         padding-left: $gutter * ($level + 0.5);
       }
     }
+  }
+
+  &.current {
+    a {
+      color: #404040;
+
+      &.current {
+        font-weight: bold;
+        background: $white;
+        border-top: 1px solid var(--toc-2);
+        border-bottom: 1px solid var(--toc-2);
+      }
+    }
+  }
+
+  > ul {
+    @extend .d-none;
   }
 }

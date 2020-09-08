@@ -120,8 +120,8 @@ layout: plugins/compress
                     <input type="hidden" name="lang" value="{{ lang }}">
                 </form>
             </div>
-            <div class="toc mb-8" data-spy="affix" role="navigation" aria-label="main navigation">
-                {% include tree.liquid %}
+            <div class="toctree mb-8" data-spy="affix" role="navigation" aria-label="main navigation">
+                {% include toctree.liquid %}
             </div>
             {%- if site.embed -%}
                 <div class="embed-wrap"><div class="embed">{{ site.embed }}</div></div>

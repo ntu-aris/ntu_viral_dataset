@@ -1,22 +1,22 @@
 $white: hsl(0, 0%, 99%);
+$gutter: 1.5em;
 
 :root {
-  @for $level from 0 through 10 {
-    @if $level == 0 {
-      --tree-#{$level}: #{$white};
-    }
-    @else {
-      --tree-#{$level}: #{darken($white, ($level * 5 + 20) % 50%)};
+  @for $level from 1 through 12 {
+    @if $level % 4 == 0 {
+      --toc-#{$level}: #{darken($white, 4 * 8.8%)};
+    } @else {
+      --toc-#{$level}: #{darken($white, $level % 4 * 8.8%)};
     }
   }
 }
 
 .container {
-  background: #fcfcfc;
+  background: $white;
 }
 
 .header {
-  color: #fcfcfc;
+  color: $white;
   background: #2980b9;
   padding: 0.809em;
 
@@ -52,7 +52,7 @@ $white: hsl(0, 0%, 99%);
     a {
       display: inline-block;
       padding: 6px;
-      color: #fcfcfc;
+      color: $white;
     }
   }
 }
@@ -60,7 +60,6 @@ $white: hsl(0, 0%, 99%);
 .markdown-body {
   font-weight: 400;
   color: #404040;
-  font-family: "Roboto Slab", serif;
 }
 
 .sidebar {
@@ -71,24 +70,32 @@ $white: hsl(0, 0%, 99%);
   color: #d9d9d9;
 }
 
+.caption {
+  color: #55a5d9;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 32px;
+  white-space: nowrap;
+}
+
 .addons {
   background: #272525;
 }
 
 .header-sm {
-  color: #fcfcfc;
+  color: $white;
   background: #2980b9;
 }
 
 .content-wrap {
-  background: #fcfcfc;
+  background: $white;
 }
 
 .status {
   cursor: pointer;
 
   .title {
-    color: #fcfcfc;
+    color: $white;
   }
 
   .branch {
@@ -100,7 +107,6 @@ $white: hsl(0, 0%, 99%);
   color: grey;
   background: #1f1d1d;
 }
-
 @media screen and (min-width: 1280px) {
   .container {
     background: rgba(0, 0, 0, 0.05);

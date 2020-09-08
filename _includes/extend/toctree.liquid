@@ -10,7 +10,7 @@
     {% comment %} display the root sub-directory as "p.caption" {% endcomment %}
     <p class="caption"><span class="caption-text">{{ dir.title | default: dir.url }}</span></p>
 {%- else %}
-    <a class="reference internal" href="{{ dir.url | relative_url }}">{{ dir.title | default: dir.url }}</a>
+    <a class="d-flex" href="{{ dir.url | relative_url }}">{{ dir.title | default: dir.url }}</a>
 {%- endif -%}
 
 <ul>
@@ -24,8 +24,8 @@
             {%- assign level = level | minus: 1 -%}
         {%- endif -%}
 
-        <li class="tree-{{ level }} {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
-            <a class="reference internal {{ current }}" href="{{ item.url | relative_url }}">
+        <li class="toc level-{{ level }} {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
+            <a class="d-flex {{ current }}" href="{{ item.url | relative_url }}">
                 {%- if item.sort and site.show_sorted != false -%}
                     {{ item.sort }}. {{ item.title | default: item.url }}
                 {%- else -%}
@@ -41,6 +41,6 @@
         {%- if site_lang != lang -%}
             {%- assign level = level | minus: 1 -%}
         {%- endif -%}
-        <li class="tree-{{ level }}">{% include extend/tree.liquid %}</li>
+        <li class="toc level-{{ level }}">{% include extend/toctree.liquid %}</li>
     {%- endfor -%}
 </ul>

@@ -15,18 +15,24 @@ $(document).ready(function() {
     $.getJSON(analytics.toString(), (data) => $("#counter").html(data.count));
 
     function initialize(name) {
-        let link = $(".toc").find(`[href="${decodeURI(name)}"]`);
+
+        let link = $(".toctree").find(`[href="${decodeURI(name)}"]`);
+
         if (link.length > 0) {
-            $(".toc .current").removeClass("current");
+
+            $(".toctree .current").removeClass("current");
             link.addClass("current");
-            link.closest(".tree-1").parent().addClass("current");
-            for (let i = 1; i <= 20; i++) {
-                link.closest(`.tree-${i}`).addClass("current");
+            link.closest(".level-1").parent().addClass("current");
+            for (let i = 1; i <= 11; i++) {
+                link.closest(`.level-${i}`).addClass("current");
             }
             /* need debug */
-            $(".toc a").children("span").html(`<i class="far fa-plus-square"></i>`)
-            $(".toc a.current").children("span").html(`<i class="far fa-minus-square"></i>`);
+            $(".toctree a").children("span").html(`<i class="far fa-plus-square"></i>`)
+            $(".toctree a.current").children("span").html(`<i class="far fa-minus-square"></i>`);
         }
+        // if(/^#/.test(name) && $(name).length >0){
+        //     $(name)[0].scrollIntoView();
+        // }
     }
 
     function toggleCurrent(link) {
@@ -38,13 +44,13 @@ $(document).ready(function() {
     }
 
     function toc() {
-        $(".toc li.current").append('<ul class="content-toc"></ul>').html(function() {
+        $(".toctree li.current").append('<ul class="content-toc"></ul>').html(function() {
             let level = parseInt(this.dataset.level);
             let temp = 0;
             let stack = [$(this).find(".content-toc")];
 
             $(".markdown-body").find("h2,h3,h4,h5,h6").each(function() {
-                let anchor = $("<a/>").addClass("reference internal").text($(this).text()).attr("href", `#${this.id}`);
+                let anchor = $("<a/>").addClass("d-flex").text($(this).text()).attr("href", `#${this.id}`);
                 let tagLevel = parseInt(this.tagName.slice(1)) - 1;
 
                 if (tagLevel > temp) {
@@ -57,7 +63,7 @@ $(document).ready(function() {
                 }
                 temp = tagLevel;
 
-                $("<li/>").addClass(`tree-${level + tagLevel}`).append(anchor).appendTo(stack[0]);
+                $("<li/>").addClass(`toc level-${level + tagLevel}`).append(anchor).appendTo(stack[0]);
             });
             if (!stack[0].html()) {
                 stack[0].remove();
@@ -80,7 +86,7 @@ $(document).ready(function() {
 
         if (scroll && scrollTime && scrollHost) {
             if (scrollHost == location.host && (Date.now() - scrollTime < 6e5)) {
-                $(".wy-side-scroll").scrollTop(scroll);
+                $(".sidebar").scrollTop(scroll);
             }
         }
         $(".sidebar").scroll(function() {
@@ -115,6 +121,7 @@ $(document).ready(function() {
     anchors.add();
     toc();
     initialize(location.pathname);
+    initialize(location.hash);
     restore();
     highlight();
 
