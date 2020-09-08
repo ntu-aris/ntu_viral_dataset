@@ -23,6 +23,7 @@
 
       > ul {
         @extend .d-block;
+
         background: var(--toc-#{$level + 1});
       }
 

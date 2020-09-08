@@ -11,6 +11,12 @@ $gutter: 1.5em;
   }
 }
 
+body {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+}
+
 .container {
   background: $white;
 }
@@ -60,6 +66,24 @@ $gutter: 1.5em;
 .markdown-body {
   font-weight: 400;
   color: #404040;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+
+  h1,
+  h1,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Roboto-Slab";
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  table {
+    font-size: 90%;
+  }
 }
 
 .sidebar {
