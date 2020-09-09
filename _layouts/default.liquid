@@ -75,7 +75,7 @@ layout: plugins/compress
     <!-- theme -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@primer/css/dist/primer.css">
     <link rel="stylesheet" href="{{ cdn }}/assets/css/theme{% if site.debug.development %}.debug{% endif %}.css">
-    <link rel="stylesheet" href="{{ cdn }}/assets/rougify/{{ site.rougify | default: 'github' }}.css">
+    <link rel="stylesheet" href="{{ cdn }}/assets/css/rougify/{{ site.rougify | default: 'github' }}.css">
     <style>{{ scss_custom | scssify | strip_newlines }}</style>
     <!-- icon -->
     <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/favicon.svg">
@@ -95,7 +95,7 @@ layout: plugins/compress
             version: "{{ version }}"
         };
     </script>
-    {% include extra/head.html %}
+    {% include extra/head.liquid %}
 </head>
 
 <body class="container">
@@ -148,16 +148,16 @@ layout: plugins/compress
         </div>
     </div>
     {% include addons.liquid %}
-    {% include extra/footer.html %}
+    {% include extra/footer.liquid %}
     <!-- script -->
-    <script src="{{ cdn }}/assets/npm/jquery.min.js"></script>
-    <script src="{{ cdn }}/assets/npm/anchor.min.js"></script>
+    <script src="{{ cdn }}/assets/js/jquery.min.js"></script>
+    <script src="{{ cdn }}/assets/js/anchor.min.js"></script>
     {%- comment %} mermaid {% endcomment -%}
     {%- if content contains '<code class="language-mermaid">' -%}
         {%- if site.mermaid.custom -%}
             <script src="{{ site.mermaid.custom }}"></script>
         {%- else -%}
-            <script src="{{ cdn }}/assets/npm/mermaid.min.js"></script>
+            <script src="{{ cdn }}/assets/js/mermaid.min.js"></script>
         {%- endif %}
         <script>
             mermaid.initialize({% if site.mermaid.initialize %}{{ site.mermaid.initialize | jsonify }}{% else %}{}{% endif %});
