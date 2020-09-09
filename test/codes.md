@@ -6,7 +6,7 @@ sort: 4
 
 `inline code`
 
-[`inline code inside link`](#)
+[`inline code inside link`](./)
 
 ```
 .highlight table td { padding: 5px; }

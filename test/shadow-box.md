@@ -8,13 +8,13 @@ Add a class `shadow-box` with `{: .shadow-box }`
 
 ## With shadow-box
 ```
-![]({{ page.image }}){: .shadow-box }
+![test image]({{ page.image }}){: .shadow-box }
 ```
-![]({{ page.image }}){: .shadow-box }
+![test image]({{ page.image }}){: .shadow-box }
 
 
 ## Without shadow-box
 ```
-![]({{ page.image }})
+![test image]({{ page.image }})
 ```
-![]({{ page.image }})
+![test image]({{ page.image }})

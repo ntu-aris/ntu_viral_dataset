@@ -1,11 +1,11 @@
 # jekyll-rtd-theme
-[![](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg)][repository]
-[![](https://img.shields.io/gem/v/jekyll-rtd-theme)][rubygem]
-[![](https://img.shields.io/gem/dt/jekyll-rtd-theme)][rubygem]
-[![](https://data.jsdelivr.com/v1/package/gh/rundocs/jekyll-rtd-theme/badge)][cdn]
-[![](https://www.codefactor.io/repository/github/rundocs/jekyll-rtd-theme/badge)][codefactor]
-[![](https://img.shields.io/badge/featured%20on-JekyllThemes-red.svg)](https://jekyll-themes.com)
-[![](https://badges.gitter.im/rundocs/jekyll-rtd-theme.svg)][gitter]
+[![CI](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg)][repository]
+[![gem version](https://img.shields.io/gem/v/jekyll-rtd-theme)][rubygem]
+[![gem downloads](https://img.shields.io/gem/dt/jekyll-rtd-theme)][rubygem]
+[![jsDelivr](https://data.jsdelivr.com/v1/package/gh/rundocs/jekyll-rtd-theme/badge)][cdn]
+[![codefactor](https://www.codefactor.io/repository/github/rundocs/jekyll-rtd-theme/badge)][codefactor]
+[![featured themes](https://img.shields.io/badge/featured%20on-JekyllThemes-red.svg)](https://jekyll-themes.com)
+[![gitter](https://badges.gitter.im/rundocs/jekyll-rtd-theme.svg)][gitter]
 
 GitHub-flavored docs theme for Jekyll, based on sphinx_rtd_theme
 

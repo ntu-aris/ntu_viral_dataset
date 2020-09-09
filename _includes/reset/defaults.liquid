@@ -6,9 +6,14 @@
 {%- assign schema_modi = site.time | date_to_xmlschema -%}
 {%- assign schema_surl = page.url | absolute_url | xml_escape -%}
 
+{% comment %} script {% endcomment %}
+{%- capture custom_script -%}
+    {%- include assets/custom.js -%} {{- site.script -}}
+{%- endcapture -%}
+
 {% comment %} scss {% endcomment %}
-{%- capture scss_custom -%}
-    {% include assets/custom.scss %} {{ site.scss }}
+{%- capture custom_scss -%}
+    {%- include assets/custom.scss -%} {{- site.scss -}}
 {%- endcapture -%}
 
 {% comment %} cdn {% endcomment %}

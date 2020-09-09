@@ -76,7 +76,9 @@ layout: plugins/compress
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@primer/css/dist/primer.css">
     <link rel="stylesheet" href="{{ cdn }}/assets/css/theme{% if site.debug.development %}.debug{% endif %}.css">
     <link rel="stylesheet" href="{{ cdn }}/assets/css/rougify/{{ site.rougify | default: 'github' }}.css">
-    <style>{{ scss_custom | scssify | strip_newlines }}</style>
+    {%- if custom_scss.size > 0 -%}
+        <style>{{ custom_scss | scssify | strip_newlines }}</style>
+    {%- endif -%}
     <!-- icon -->
     <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/favicon.svg">
     <!-- script -->
@@ -164,9 +166,9 @@ layout: plugins/compress
         </script>
     {%- endif %}
     <script src="{{ cdn }}/assets/js/theme{% if site.debug.development %}.debug{% endif %}.js"></script>
-    <script>
-        {% include assets/custom.js %} {{ site.script }}
-    </script>
+    {%- if custom_script.size > 0 -%}
+        <script>{{ custom_script }}</script>
+    {%- endif -%}
     {% comment %} Baidu link submit {% endcomment %}
     {%- if site.baidu.linksubmit -%}
         <script>
