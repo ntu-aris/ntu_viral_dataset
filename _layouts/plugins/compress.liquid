@@ -1,18 +1,31 @@
----
-layout: plugins/extension
----
+{%- include safe/shortcodes.liquid -%}
 
 {%- if site.debug.compress == false -%}
     {{ content }}
 {%- else -%}
-    {%- assign blocks = content | split: "<pre" -%}
-    {%- for block in blocks -%}
-        {%- assign child_blocks = block | split: "</pre>" -%}
-        {%- if child_blocks.size == 1 -%}
-            {{ block | split: " " | join: " " }}
-        {%- else -%}
-            {%- comment %} current nested pre not support {% endcomment -%}
-            <pre{{ child_blocks.first }}</pre> {{ child_blocks.last | split: " " | join: " " -}}
-        {%- endif -%}
-    {%- endfor -%}
+    {%- if content contains "<pre" -%}
+        {%- assign blocks = content | split: "<pre" -%}
+        {%- for block in blocks -%}
+            {%- if block contains "</pre>" -%}
+                {%- if block contains '><code class="language-' -%}
+                    {%- comment %} shortcodes {% endcomment -%}
+                    {%- assign items = block | replace_first: '><code class="language-', "" | replace_first: '">', "<temp/>" | split: "<temp/>" -%}
+                    {%- assign lang  = items.first -%}
+                    {%- assign codes = items.last | split: "</code></pre>" | first -%}
+
+                    {%- if shortcodes contains lang -%}
+                        {%- include shortcodes/{{ lang }}.liquid -%} {{- items.last | split: "</code></pre>" | last | split: " " | join: " " -}}
+                    {%- else -%}
+                        <pre{{ block | split: "</pre>" | first }}</pre> {{ block | split: "</pre>" | last | split: " " | join: " " }}
+                    {%- endif -%}
+                {%- else -%}
+                    <pre{{ block | split: "</pre>" | first }}</pre> {{ block | split: "</pre>" | last | split: " " | join: " " -}}
+                {%- endif -%}
+            {%- else -%}
+                {{- block | split: " " | join: " " -}}
+            {%- endif -%}
+        {%- endfor -%}
+    {%- else -%}
+        {{- content | split: " " | join: " " -}}
+    {%- endif -%}
 {%- endif -%}

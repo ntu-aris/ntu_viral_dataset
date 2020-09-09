@@ -1,6 +1,5 @@
 {% comment %} https://cloud.google.com/translate/docs/languages ISO-639-1 {% endcomment %}
-{% comment %} https://github.com/matheuss/google-translate-api/blob/master/languages.js {% endcomment %}
-{%- capture iso_codes -%}
+{%- capture safe_list -%}
 af
 sq
 am
@@ -107,4 +106,4 @@ yo
 zu
 {%- endcapture -%}
 
-{%- assign languages = iso_codes | split: " " -%}
+{%- assign languages = safe_list | split: " " -%}

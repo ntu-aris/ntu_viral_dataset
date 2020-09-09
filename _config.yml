@@ -17,7 +17,9 @@ addons:
 copyright:
   revision: true
 
-debug: true
+debug:
+  compress: true
+  development: true
 
 readme_index:
   with_frontmatter: true
