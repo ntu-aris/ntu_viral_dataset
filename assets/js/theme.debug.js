@@ -27,8 +27,8 @@ $(document).ready(function() {
                 link.closest(`.level-${i}`).addClass("current");
             }
             /* need debug */
-            $(".toctree a").children("span").html(`<i class="far fa-plus-square"></i>`)
-            $(".toctree a.current").children("span").html(`<i class="far fa-minus-square"></i>`);
+            $(".toctree a").children("span").html(`<i class="fa fa-plus-square-o"></i>`)
+            $(".toctree a.current").children("span").html(`<i class="fa fa-minus-square-o"></i>`);
         }
         // if(/^#/.test(name) && $(name).length >0){
         //     $(name)[0].scrollIntoView();
@@ -128,7 +128,7 @@ $(document).ready(function() {
     /* nested ul */
     $(".toc ul").siblings("a").each(function() {
         let link = $(this);
-        let expand = $('<span class="toctree-expand"><i class="far fa-plus-square"></i></span>');
+        let expand = $('<span class="toctree-expand"><i class="fa fa-plus-square-o"></i></span>');
 
         expand.on("click", function(e) {
             e.stopPropagation();

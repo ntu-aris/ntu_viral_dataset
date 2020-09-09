@@ -1,0 +1,60 @@
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 "FontAwesome";
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-edit:before {
+  content: "\f044";
+}
+
+.fa-home:before {
+  content: "\f015";
+}
+
+.fa-copyright:before {
+  content: "\f1f9";
+}
+
+.fa-book:before {
+  content: "\f02d";
+}
+
+.fa-caret-down:before {
+  content: "\f0d7";
+}
+
+.fa-plus-square-o:before {
+  content: "\f196";
+}
+
+.fa-minus-square-o:before {
+  content: "\f147";
+}
+
+.fa-github:before {
+  content: "\f09b";
+}
+
+.fa-question-circle-o:before {
+  content: "\f29c";
+}
+
+.fa-download:before {
+  content: "\f019";
+}
+
+.fa-language:before {
+  content: "\f1ab";
+}
+
+.fa-cog:before {
+  content: "\f013";
+}
+
+.fa-eye:before {
+  content: "\f06e";
+}

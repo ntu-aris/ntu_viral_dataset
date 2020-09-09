@@ -1,7 +1,7 @@
 <div class="d-flex flex-justify-between" role="navigation" aria-label="breadcrumbs navigation">
     <ul>
         <li class="breadcrumb-item">
-            <a href="{{ site.baseurl }}/"><i class="fas fa-home"></i></i></a>
+            <a href="{{ site.baseurl }}/"><i class="fa fa-home"></i></a>
         </li>
         {%- case page.url -%}
             {%- when "/search.html" %}
@@ -35,6 +35,6 @@
         {%- endcase %}
     </ul>
     {%- if site.edit and site.github_metadata != false -%}
-        <a href="{{ github_edit_link }}" class="fa fa-edit" target="_blank"></a>
+        <a href="{{ github_edit_link }}" target="_blank"><i class="fa fa-edit"></i></a>
     {%- endif -%}
 </div>
