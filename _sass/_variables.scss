@@ -1,0 +1,13 @@
+$white: hsl(0, 0%, 99%);
+$gutter: 1.5em;
+
+:root {
+  @for $level from 1 through 12 {
+    @if $level % 4 == 0 {
+      --toc-#{$level}: #{darken($white, 4 * 8.8%)};
+    }
+    @else {
+      --toc-#{$level}: #{darken($white, $level % 4 * 8.8%)};
+    }
+  }
+}
