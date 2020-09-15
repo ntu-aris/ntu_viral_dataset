@@ -4,7 +4,9 @@
             <i class="fa fa-book"></i> {{ site.title }}
         </div>
         <div class="branch p-1">
-            {% if site.addons_branch and site.github_metadata != false %}{{ branch }}{% endif %}
+            <span class="name">
+                {% if site.addons_branch and site.github_metadata != false %}{{ branch }}{% endif %}
+            </span>
             <i class="fa fa-caret-down"></i>
         </div>
     </span>

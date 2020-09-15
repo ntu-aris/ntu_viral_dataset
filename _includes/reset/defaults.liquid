@@ -1,5 +1,5 @@
 {%- assign description = content | strip_html | split: " " | join: " " | escape | truncate: 150 -%}
-{%- assign version = "1.1.7" -%}
+{%- assign version = "1.2.0-debug" -%}
 {%- assign addons = "github, i18n, plugins, analytics" | split: ", " -%}
 
 {%- assign schema_date = page.date | default: site.time | date_to_xmlschema -%}
@@ -62,6 +62,7 @@
 {%- assign content = content
     | replace: '’', "'"
     | replace: "highlighter-rouge", "highlighter-rouge notranslate" -%}
+
 
 {% comment %} prev and next {% endcomment %}
 {%- assign workdir_files = site_files | where_exp: "item", "item.dir == page.dir" -%}

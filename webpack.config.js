@@ -14,12 +14,25 @@ module.exports = {
             test: /\.scss$/,
             use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
         }, {
+            test: /\.(woff(2)?|ttf|eot|svg)$/,
+            use: [{
+                loader: "file-loader",
+                options: {
+                    emitFile: false,
+                    name: "fonts/[name].[ext]"
+                }
+            }]
+        }, {
             test: /\.js$/,
             use: {
                 loader: "babel-loader",
-                options: { presets: ["@babel/preset-env"] }
+                options: {
+                    presets: ["@babel/preset-env"]
+                }
             }
         }]
     },
-    plugins: [new MiniCssExtractPlugin({ filename: "css/[name].css" })]
+    plugins: [new MiniCssExtractPlugin({
+        filename: "css/[name].css"
+    })]
 };

@@ -4,25 +4,26 @@
     {{ content }}
 {%- else -%}
     {%- if content contains "<pre" -%}
-        {%- assign blocks = content | split: "<pre" -%}
-        {%- for block in blocks -%}
-            {%- if block contains "</pre>" -%}
-                {%- if block contains '><code class="language-' -%}
-                    {%- comment %} shortcodes {% endcomment -%}
-                    {%- assign items = block | replace_first: '><code class="language-', "" | replace_first: '">', "<temp/>" | split: "<temp/>" -%}
-                    {%- assign lang  = items.first -%}
-                    {%- assign codes = items.last | split: "</code></pre>" | first -%}
-
+        {%- assign content_blocks = content | split: "<pre" -%}
+        {%- for content_block in content_blocks -%}
+            {%- if content_block contains "</pre>" -%}
+                {%- assign pre_blocks = content_block | split: "</pre>" -%}
+                {%- if content_block contains '><code class="language-' -%}
+                    {%- comment %} shortcodes: <pre><code class="language-**"> {% endcomment -%}
+                    {%- assign custom = content_block | replace_first: '><code class="language-', "" | replace_first: '">', "<temp/>" | split: "<temp/>" -%}
+                    {%- assign lang   = custom.first -%}
+                    {%- assign codes  = custom.last | split: "</code>" | first -%}
+                    {%- assign others = custom.last | split: "</code>" | last  -%}
                     {%- if shortcodes contains lang -%}
-                        {%- include shortcodes/{{ lang }}.liquid -%} {{- items.last | split: "</code></pre>" | last | split: " " | join: " " -}}
+                        {%- include shortcodes/{{ lang }}.liquid -%} {{- others | split: " " | join: " " -}}
                     {%- else -%}
-                        <pre{{ block | split: "</pre>" | first }}</pre> {{ block | split: "</pre>" | last | split: " " | join: " " }}
+                        <pre{{ pre_blocks.first }}</pre> {{ pre_blocks.last | split: " " | join: " " }}
                     {%- endif -%}
                 {%- else -%}
-                    <pre{{ block | split: "</pre>" | first }}</pre> {{ block | split: "</pre>" | last | split: " " | join: " " -}}
+                    <pre{{ pre_blocks.first }}</pre> {{ pre_blocks.last | split: " " | join: " " -}}
                 {%- endif -%}
             {%- else -%}
-                {{- block | split: " " | join: " " -}}
+                {{- content_block | split: " " | join: " " -}}
             {%- endif -%}
         {%- endfor -%}
     {%- else -%}

@@ -13,7 +13,7 @@ permalink: /search.html
 </div>
 
 <script>
-    const i18n = {
+    window.i18n = {
         {%- for lang in site_langs -%}
             {%- include i18n/{{ lang }}.liquid %}
             "{{ lang }}": {

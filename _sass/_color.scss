@@ -112,7 +112,13 @@ body {
   }
 
   .branch {
-    color: #27ae60;
+    .fa {
+      color: $white;
+    }
+
+    .name {
+      color: #27ae60;
+    }
   }
 }
 

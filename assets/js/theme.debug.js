@@ -118,7 +118,6 @@ $(document).ready(function() {
         }
     }
 
-    anchors.add();
     toc();
     initialize(location.pathname);
     initialize(location.hash);
