@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     entry: {
-        theme: ["./assets/js/theme.debug.js", "./_sass/index.scss"]
+        theme: ["./assets/js/theme.debug.js", "./_sass/theme.debug.scss"]
     },
     output: {
         filename: "js/[name].js",
@@ -12,16 +12,14 @@ module.exports = {
     module: {
         rules: [{
             test: /\.scss$/,
-            use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
-        }, {
-            test: /\.(woff(2)?|ttf|eot|svg)$/,
-            use: [{
-                loader: "file-loader",
-                options: {
-                    emitFile: false,
-                    name: "fonts/[name].[ext]"
-                }
-            }]
+            use: [
+                MiniCssExtractPlugin.loader, {
+                    loader: "css-loader",
+                    options: {
+                        url: false
+                    }
+                }, "sass-loader"
+            ]
         }, {
             test: /\.js$/,
             use: {
@@ -32,7 +30,9 @@ module.exports = {
             }
         }]
     },
-    plugins: [new MiniCssExtractPlugin({
-        filename: "css/[name].css"
-    })]
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: "css/[name].css"
+        })
+    ]
 };

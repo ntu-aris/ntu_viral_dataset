@@ -13,7 +13,9 @@ help:
 
 
 install:
-	@gem install jekyll bundler && bundle install
+	@gem install jekyll bundler
+	@npm install
+	@bundle install
 
 dest:
 	@sass-convert -R _sass --from scss --to scss -i
