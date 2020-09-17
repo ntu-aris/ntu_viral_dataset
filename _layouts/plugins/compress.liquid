@@ -1,4 +1,6 @@
-{%- include safe/shortcodes.liquid -%}
+---
+layout: plugins/extension
+---
 
 {%- if site.debug.compress == false -%}
     {{ content }}
@@ -8,20 +10,7 @@
         {%- for content_block in content_blocks -%}
             {%- if content_block contains "</pre>" -%}
                 {%- assign pre_blocks = content_block | split: "</pre>" -%}
-                {%- if content_block contains '><code class="language-' -%}
-                    {%- comment %} shortcodes: <pre><code class="language-**"> {% endcomment -%}
-                    {%- assign custom = content_block | replace_first: '><code class="language-', "" | replace_first: '">', "<temp/>" | split: "<temp/>" -%}
-                    {%- assign lang   = custom.first -%}
-                    {%- assign codes  = custom.last | split: "</code>" | first -%}
-                    {%- assign others = custom.last | split: "</code>" | last  -%}
-                    {%- if shortcodes contains lang -%}
-                        {%- include shortcodes/{{ lang }}.liquid -%} {{- others | split: " " | join: " " -}}
-                    {%- else -%}
-                        <pre{{ pre_blocks.first }}</pre> {{ pre_blocks.last | split: " " | join: " " }}
-                    {%- endif -%}
-                {%- else -%}
-                    <pre{{ pre_blocks.first }}</pre> {{ pre_blocks.last | split: " " | join: " " -}}
-                {%- endif -%}
+                <pre{{ pre_blocks.first }}</pre> {{ pre_blocks.last | split: " " | join: " " -}}
             {%- else -%}
                 {{- content_block | split: " " | join: " " -}}
             {%- endif -%}

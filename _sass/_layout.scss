@@ -1,4 +1,4 @@
-.fixed-sm {
+.menu-sm {
   position: fixed;
   bottom: 0;
   left: -85%;
@@ -13,11 +13,11 @@
 .sidebar-wrap {
   top: 0;
 
-  @extend .fixed-sm;
+  @extend .menu-sm;
 }
 
 .addons {
-  @extend .fixed-sm;
+  @extend .menu-sm;
 }
 
 .content-wrap {
@@ -31,26 +31,26 @@
 }
 
 @media screen and (min-width: 768px) {
-  .fixed-md {
+  .menu-md {
     left: 0;
     width: 300px;
   }
 
   .sidebar-wrap {
-    @extend .fixed-md;
+    @extend .menu-md;
+
+    .sidebar {
+      width: 300px + 20px;
+
+      .header,
+      .toctree {
+        width: 300px;
+      }
+    }
   }
 
   .addons {
-    @extend .fixed-md;
-  }
-
-  .header,
-  .toc {
-    width: 300px;
-  }
-
-  .sidebar {
-    width: 300px + 20px;
+    @extend .menu-md;
   }
 
   .content-wrap {

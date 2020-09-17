@@ -10,7 +10,6 @@ sort: 8
 
 {% avatar saowang %}
 
-
 ```tip
 Set config `plugins: [jekyll-avatar]`
 

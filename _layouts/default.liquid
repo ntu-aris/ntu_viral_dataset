@@ -73,9 +73,8 @@ layout: plugins/compress
     {% if prev %}<link rel="prev" href="{{ prev.url | absolute_url }}">{% endif %}
     {% if next %}<link rel="next" href="{{ next.url | absolute_url }}">{% endif %}
     <!-- theme -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@primer/css/dist/primer.css">
-    <link rel="stylesheet" href="{{ cdn }}/assets/css/theme{% if site.debug.development %}.debug{% endif %}.css">
-    <link rel="stylesheet" href="{{ cdn }}/assets/css/rougify/{{ site.rougify | default: 'github' }}.css">
+    <link rel="stylesheet" href="{{ cdn }}/assets/css/theme{% if site.debug.dist != false %}.min{% endif %}.css">
+    <link rel="stylesheet" href="{{ cdn }}/assets/css/rougify/{{ site.rougify | default: 'github' }}.min.css">
     {%- if custom_scss.size > 0 -%}
         <style>{{ custom_scss | scssify | strip_newlines }}</style>
     {%- endif -%}
@@ -97,6 +96,12 @@ layout: plugins/compress
             version: "{{ version }}"
         };
     </script>
+    <!-- script -->
+    <script src="{{ cdn }}/assets/js/jquery.min.js"></script>
+    <script src="{{ cdn }}/assets/js/theme{% if site.debug.dist != false %}.min{% endif %}.js"></script>
+    {%- if custom_script.size > 0 -%}
+        <script>{{ custom_script }}</script>
+    {%- endif -%}
     {% include extra/head.liquid %}
 </head>
 
@@ -121,7 +126,7 @@ layout: plugins/compress
                     <input type="hidden" name="lang" value="{{ lang }}">
                 </form>
             </div>
-            <div class="toctree mb-8" data-spy="affix" role="navigation" aria-label="main navigation">
+            <div class="toctree" data-spy="affix" role="navigation" aria-label="main navigation">
                 {% include toctree.liquid %}
             </div>
             {%- if site.embed -%}
@@ -151,8 +156,7 @@ layout: plugins/compress
     </div>
     {% include addons.liquid %}
     {% include extra/footer.liquid %}
-    <!-- script -->
-    <script src="{{ cdn }}/assets/js/jquery.min.js"></script>
+
     {%- comment %} mermaid {% endcomment -%}
     {%- if content contains '<code class="language-mermaid">' -%}
         {%- if site.mermaid.custom -%}
@@ -164,10 +168,6 @@ layout: plugins/compress
             mermaid.initialize({% if site.mermaid.initialize %}{{ site.mermaid.initialize | jsonify }}{% else %}{}{% endif %});
         </script>
     {%- endif %}
-    <script src="{{ cdn }}/assets/js/theme{% if site.debug.development %}.debug{% endif %}.js"></script>
-    {%- if custom_script.size > 0 -%}
-        <script>{{ custom_script }}</script>
-    {%- endif -%}
     {% comment %} Baidu link submit {% endcomment %}
     {%- if site.baidu.linksubmit -%}
         <script>

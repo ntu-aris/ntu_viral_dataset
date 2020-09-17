@@ -1,4 +1,5 @@
 # jekyll-rtd-theme
+
 [![CI](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg)][repository]
 [![gem version](https://img.shields.io/gem/v/jekyll-rtd-theme)][rubygem]
 [![gem downloads](https://img.shields.io/gem/dt/jekyll-rtd-theme)][rubygem]
@@ -7,17 +8,20 @@
 [![featured themes](https://img.shields.io/badge/featured%20on-JekyllThemes-red.svg)](https://jekyll-themes.com)
 [![gitter](https://badges.gitter.im/rundocs/jekyll-rtd-theme.svg)][gitter]
 
-GitHub-flavored docs theme for Jekyll, based on sphinx_rtd_theme
+GitHub flavored documentation theme for all open source projects
 
 <img class="shadow-box" width="50%" alt="jekyll-rtd-theme" src="https://user-images.githubusercontent.com/68011645/89026666-ad3a8680-d35b-11ea-9f4b-d3fe26ae12ed.png">
 
 ## Quick start
+
 ```yml
 remote_theme: rundocs/jekyll-rtd-theme
 ```
+
 You can [generate](https://github.com/rundocs/starter-slim/generate) with the same files and folders from [rundocs/starter-slim](https://github.com/rundocs/starter-slim/)
 
 ## Features
+
 - Automatically generate nested sidebar based on directory
 - Multi-language supported
 - Search engine optimized
@@ -27,13 +31,16 @@ You can [generate](https://github.com/rundocs/starter-slim/generate) with the sa
 - Just need one file `_config.yml` to configure site
 
 ## Documents
+
 For full documentation, please refer to our website ([rundocs.io](https://rundocs.io/)) for details
 
 ### test
+
 - Latest test document: [rundocs.github.io/jekyll-rtd-theme](https://rundocs.github.io/jekyll-rtd-theme)
 - Preview debug branch, please refer to [rundocs.github.io/debug](https://rundocs.github.io/debug)
 
 ## The license
+
 The theme is available as open source under the terms of the MIT License
 
 [repository]: https://github.com/rundocs/jekyll-rtd-theme

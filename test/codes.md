@@ -26,9 +26,14 @@ sort: 4
 ```
 
 ## Code highlight
+
 ```css
-.highlight table td { padding: 5px; }
-.highlight table pre { margin: 0; }
+.highlight table td {
+  padding: 5px;
+}
+.highlight table pre {
+  margin: 0;
+}
 .highlight .cm {
   color: #999988;
   font-style: italic;

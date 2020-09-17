@@ -1,6 +1,6 @@
 title: jekyll-rtd-theme
 lang: en
-description: GitHub-flavored docs theme for Jekyll
+description: GitHub flavored documentation theme for all open source projects
 
 theme: null
 
@@ -19,7 +19,8 @@ copyright:
 
 debug:
   compress: true
-  development: true
+  dist: false
+  extension: false
 
 readme_index:
   with_frontmatter: true

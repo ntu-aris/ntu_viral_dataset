@@ -4,7 +4,6 @@ sort: 5
 
 # Mermaid Test
 
-
     ```mermaid
     graph TB
         c1-->a2
