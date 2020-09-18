@@ -213,10 +213,10 @@ $(document).ready(function () {
   // });
 
   $("#toggle").click(function () {
-    $(".sidebar-wrap,.content-wrap,.addons").toggleClass("shift");
+    $(".sidebar-wrap,.content-wrap,.addons-wrap").toggleClass("shift");
   });
   $(".status").click(function () {
-    $(".details").toggleClass("d-none");
+    $(".addons").toggleClass("d-none");
   });
 
   $(window).bind("resize", function () {

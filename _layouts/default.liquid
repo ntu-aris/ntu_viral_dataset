@@ -5,15 +5,6 @@ layout: plugins/compress
 {%- include reset/defaults.liquid -%}
 
 <!DOCTYPE html>
-
-<!--
-    {% if site.remote_theme -%}
-        rundocs.io, remote_theme: {{ site.remote_theme }}, based on v{{ version }}
-    {%- else -%}
-        rundocs.io, theme: {{ site.theme | default: "jekyll-rtd-theme, based on" }} v{{ version }}
-    {%- endif %}
--->
-
 <html lang="{{ lang }}">
 
 <head>
@@ -134,7 +125,6 @@ layout: plugins/compress
             {%- endif -%}
         </div>
     </div>
-
     <div class="content-wrap">
         <div class="header-sm d-flex flex-justify-between p-2 hide-lg hide-xl" aria-label="top navigation">
             <button id="toggle" class="btn-octicon p-2 m-0 text-white" type="button">
@@ -154,7 +144,38 @@ layout: plugins/compress
             {% include footer.liquid %}
         </div>
     </div>
-    {% include addons.liquid %}
+    <div class="addons-wrap d-flex flex-column overflow-y-auto">
+        <div class="status d-flex flex-justify-between p-2">
+            <div class="title p-1">
+                <i class="fa fa-book"></i> {{ site.title }}
+            </div>
+            <div class="branch p-1">
+                <span class="name">
+                    {% if site.addons_branch and site.github_metadata != false %}{{ branch }}{% endif %}
+                </span>
+                <i class="fa fa-caret-down"></i>
+            </div>
+        </div>
+        <div class="addons d-flex flex-column height-full p-2 d-none">
+            {%- assign items = site.addons | default: addons -%}
+            {% for item in items -%}
+                {%- if addons contains item -%}
+                    {% include addons/{{ item }}.liquid %}
+                {%- else -%}
+                    {%- if item.github -%}
+                        {% include addons/github.liquid items=item.github %}
+                    {%- endif -%}
+                {%- endif -%}
+            {% endfor -%}
+            <hr>
+            <div class="copyright f6 pb-2">
+                Built with
+                <a href="https://jekyllrb.com/">Jekyll</a>
+                using the
+                <a href="https://github.com/rundocs/jekyll-rtd-theme" target="_blank">jekyll-rtd-theme</a> (MIT)
+            </div>
+        </div>
+    </div>
     {% include extra/footer.liquid %}
 
     {%- comment %} mermaid {% endcomment -%}

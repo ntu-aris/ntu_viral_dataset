@@ -64,7 +64,7 @@ body {
   }
 }
 
-.addons {
+.addons-wrap {
   background-color: darken($gray, 8%);
 
   .status {
@@ -86,7 +86,7 @@ body {
     }
   }
 
-  .details {
+  .addons {
     color: grey;
 
     dl {
@@ -126,7 +126,6 @@ body {
   h6 {
     font-family: "Roboto-Slab", sans-serif;
     font-style: normal;
-    font-weight: 700;
   }
 
   table {

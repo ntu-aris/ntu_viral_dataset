@@ -15,6 +15,7 @@ addons:
   - analytics
 
 copyright:
+  license: true
   revision: true
 
 debug:
@@ -25,8 +26,9 @@ debug:
 readme_index:
   with_frontmatter: true
 
+# https://github.com/jekyll/jekyll-sass-converter
 sass:
-  style: compressed
+  style: compact
 
 plugins:
   - jemoji
