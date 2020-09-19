@@ -30,21 +30,21 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $width-md) {
   .menu-md {
     left: 0;
-    width: 300px;
+    width: $theme-menu-width;
   }
 
   .sidebar-wrap {
     @extend .menu-md;
 
     .sidebar {
-      width: 300px + 20px;
+      width: $theme-menu-width + 20px;
 
       .header,
       .toctree {
-        width: 300px;
+        width: $theme-menu-width;
       }
     }
   }
@@ -54,7 +54,7 @@
   }
 
   .content-wrap {
-    margin-left: 300px;
+    margin-left: $theme-menu-width;
 
     &.shift {
       position: relative;
@@ -64,8 +64,8 @@
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: $width-xl) {
   .content-wrap {
-    max-width: 1280px - 300px;
+    max-width: $width-xl - $theme-menu-width;
   }
 }

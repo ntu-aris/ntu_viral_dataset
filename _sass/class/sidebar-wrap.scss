@@ -1,0 +1,72 @@
+.sidebar {
+  color: $theme-white;
+  background: $theme-menu-background;
+
+  a {
+    text-decoration: none;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  .toctree {
+    color: #9b9b9b;
+
+    a {
+      color: #d9d9d9;
+      padding: 0.5em;
+
+      &:hover {
+        background: $theme-mask-white;
+      }
+      &:active {
+        background: $theme-menu-active-background;
+      }
+    }
+
+    .caption {
+      color: lighten($theme-blue, 15%);
+      font-weight: $font-weight-bold;
+      line-height: 32px;
+    }
+  }
+}
+
+.toc {
+  @for $level from 1 through 11 {
+    &.level-#{$level}.current {
+      > a {
+        padding-left: 1.5em * ($level - 1 + 0.5);
+        background: var(--toc-#{$level});
+      }
+
+      > ul {
+        @extend .d-block;
+
+        background: var(--toc-#{$level + 1});
+      }
+
+      .level-#{$level + 1} > a {
+        padding-left: 1.5em * ($level + 0.5);
+      }
+    }
+  }
+
+  &.current {
+    a {
+      color: #404040;
+
+      &.current {
+        font-weight: bold;
+        background: $theme-white;
+        border-top: 1px solid var(--toc-2);
+        border-bottom: 1px solid var(--toc-2);
+      }
+    }
+  }
+
+  > ul {
+    @extend .d-none;
+  }
+}

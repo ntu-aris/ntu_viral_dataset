@@ -1,0 +1,49 @@
+.markdown-body {
+  // 400
+  font-weight: $font-weight-normal;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $head-font;
+  }
+
+  table {
+    // 14px
+    font-size: $body-font-size;
+  }
+
+  // ruby highlight fixed
+  figure {
+    margin: 0;
+  }
+
+  // code
+  code,
+  tt {
+    font-size: $font-size-small;
+    border: $border;
+    color: $theme-red;
+    background-color: rgba($black, 0.05);
+  }
+  a {
+    code,
+    tt {
+      color: $theme-blue;
+    }
+  }
+
+  pre {
+    font-size: $font-size-small;
+    border: $border;
+  }
+
+  pre code,
+  pre tt {
+    border: 0;
+    background-color: transparent;
+  }
+}

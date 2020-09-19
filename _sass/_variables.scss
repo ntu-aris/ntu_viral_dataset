@@ -1,20 +1,26 @@
 /* fonts */
 $body-font: "Lato", sans-serif;
 $mono-font: monospace;
+$head-font: "Roboto-Slab", sans-serif;
 
 /* color */
-$white: hsl(0, 0%, 99%);
-$green: #27ae60;
-$blue: #2980b9;
-$gray: rgb(52, 49, 49);
-$gutter: 1.5em;
+$theme-blue: #2980b9;
+$theme-red: #e74c3c;
+$theme-white: darken($white, 1%);
+$theme-black: lighten($black, 15%);
 
-:root {
-  @for $level from 1 through 12 {
-    @if $level % 4 == 0 {
-      --toc-#{$level}: #{darken($white, 4 * 8.8%)};
-    } @else {
-      --toc-#{$level}: #{darken($white, $level % 4 * 8.8%)};
-    }
-  }
-}
+/* link */
+$theme-link: $blue;
+$theme-link-hover: lighten($blue, 10%);
+$theme-link-visited: lighten($purple, 10%);
+
+/* code */
+
+/* mask */
+$theme-mask-white: transparentize($theme-white, 0.9);
+$theme-mask-black: transparentize($theme-black, 0.9);
+
+/* menu */
+$theme-menu-width: 300px;
+$theme-menu-background: darken($theme-black, 8%);
+$theme-menu-active-background: darken($theme-blue, 20%);

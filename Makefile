@@ -16,6 +16,7 @@ help:
 	@echo "    format    Format all files"
 	@echo "    clean     Clean the workspace"
 	@echo "    dist      Build the theme css and script"
+	@echo "    status    Display status before push"
 	@echo "    theme     Make theme as gem and install"
 	@echo "    site      Build the test site"
 	@echo "    server    Make a livereload jekyll server to development"
@@ -47,11 +48,14 @@ format:
 	@npx prettier . --check --write
 
 clean:
-	@git clean -xf
 	@bundle exec jekyll clean
 
 dist: format clean
 	@npx webpack --mode production
+
+status: format clean checkout
+	@git add .
+	@git status
 
 theme: dist
 	@gem uninstall jekyll-rtd-theme

@@ -99,18 +99,18 @@ layout: plugins/compress
 <body class="container">
     <div class="sidebar-wrap overflow-hidden">
         <div class="sidebar height-full overflow-y-scroll overflow-x-hidden">
-            <div class="header text-center">
-                <div class="title">
-                    {% if site.logo %}
-                        <a href="{{ site.baseurl }}/{% if site_lang != lang %}{{ lang }}/{% endif %}">
-                            <img src="{{ site.baseurl }}/{{ site.logo }}" class="logo" alt="{{ site.title }}">
-                        </a>
-                    {% else %}
-                        <a class="text-white" href="{{ site.baseurl }}/{% if site_lang != lang %}{{ lang }}/{% endif %}"><i class="fa fa-home"></i> {{ site.title }}</a>
-                    {% endif %}
+            <div class="header d-flex flex-column p-3 text-center">
+                <div class="title no-underline">
+                    <a class="h4 py-1 px-2 rounded-1" href="{{ site.baseurl }}/{% if site_lang != lang %}{{ lang }}/{% endif %}">
+                        {% if site.logo %}
+                            <img class="logo" src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.title }}">
+                        {% else %}
+                            <i class="fa fa-home"></i> {{ site.title }}
+                        {% endif %}
+                    </a>
                 </div>
                 {% if site.nav_version and site.github_metadata != false %}
-                    <div class="version">{{ site.github.latest_release.name }}</div>
+                    <span class="version text-gray">1.1.1{{ site.github.latest_release.name }}</span>
                 {% endif %}
                 <form class="search" action="{{ site.baseurl }}/search.html" method="get" autocomplete="off">
                     <input class="form-control input-block input-sm" type="text" name="q" placeholder="{{ __search_docs }}...">
@@ -126,12 +126,13 @@ layout: plugins/compress
         </div>
     </div>
     <div class="content-wrap">
-        <div class="header-sm d-flex flex-justify-between p-2 hide-lg hide-xl" aria-label="top navigation">
+        <div class="header d-flex flex-justify-between p-2 hide-lg hide-xl" aria-label="top navigation">
             <button id="toggle" class="btn-octicon p-2 m-0 text-white" type="button">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="p-2 mr-3 text-white" href="{{ site.baseurl }}/{% if site_lang != lang %}{{ lang }}/{% endif %}">{{ site.title }}</a>
-            <div></div>
+            <div class="title flex-1 no-underline d-flex flex-justify-center">
+                <a class="h4 py-1 px-2 rounded-1" href="{{ site.baseurl }}/{% if site_lang != lang %}{{ lang }}/{% endif %}">{{ site.title }}</a>
+            </div>
         </div>
         <div class="content p-5">
             {% include breadcrumbs.liquid %}

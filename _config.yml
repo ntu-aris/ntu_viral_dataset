@@ -19,7 +19,7 @@ copyright:
   revision: true
 
 debug:
-  compress: true
+  compress: false
   dist: false
   extension: false
 
