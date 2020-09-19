@@ -1,39 +1,36 @@
-<footer>
-    {%- if page.url != "/search.html" and page.url != "/404.html" -%}
-        {%- if next or prev -%}
-            <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-                {%- if next -%}
-                    <a href="{{ next.url | relative_url }}" class="btn btn-neutral float-right" title="{{ next.title }}" accesskey="n" rel="next">
-                        {{- __next }} <span class="fa fa-arrow-circle-right"></span>
-                    </a>
-                {%- endif -%}
+{% comment %} prev and next {% endcomment %}
+{%- if page.url != "/search.html" and page.url != "/404.html" -%}
+    {%- if next or prev -%}
+        <div class="navigation-bottom d-flex flex-justify-between py-3" role="navigation" aria-label="footer navigation">
+            <div class="prev">
                 {%- if prev -%}
-                    <a href="{{ prev.url | relative_url }}" class="btn btn-neutral  float-left" title="{{ prev.title }}" accesskey="p" rel="prev">
-                        <span class="fa fa-arrow-circle-left"></span> {{ __previous -}}
+                    <a href="{{ prev.url | relative_url }}" class="btn" title="{{ prev.title }}" accesskey="p" rel="prev">
+                        <i class="fa fa-arrow-circle-left"></i> {{ site.data.translate.previous | default: "Previous" }}
                     </a>
                 {%- endif -%}
             </div>
-        {%- endif -%}
-    {%- endif -%}
-    <hr>
-    {%- if site.copyright -%}
-        <div role="contentinfo" class="copyright">
-            <p>
-                <i class="fa fa-copyright"></i> {{ __copyright }}
-                {% if site.copyright.since -%}
-                    {{ site.copyright.since | append: "-" }}
+            <div class="next">
+                {%- if next -%}
+                    <a href="{{ next.url | relative_url }}" class="btn" title="{{ next.title }}" accesskey="n" rel="next">
+                        {{ site.data.translate.next | default: "Next" }} <i class="fa fa-arrow-circle-right"></i>
+                    </a>
                 {%- endif -%}
-                {{ site.time | date: "%Y" }},
-                {{ author }}
-                {% if site.copyright.revision and site.github_metadata != false -%}
-                    <span class="commit">
-                        {{ __revision }} <code>{{ commit }}</code>
-                    </span>
-                {%- endif -%}
-            </p>
+            </div>
         </div>
     {%- endif -%}
-    <div role="contentinfo" class="copyright rundocs">
-        <p>Powered by <a href="https://rundocs.io">rundocs.io</a> using the jekyll docs theme <a href="https://rundocs.github.io/jekyll-rtd-theme">jekyll-rtd-theme</a></p>
-    </div>
-</footer>
+{%- endif -%}
+
+<hr>
+
+<div class="copyright text-center text-gray" role="contentinfo">
+    <i class="fa fa-copyright"></i>
+    {%- if site.rundocs.since %}{{ site.rundocs.since }}-{% endif -%}
+    {{- site.time | date: "%Y" }},
+    <a class="text-gray" href="{{ site.github.owner_url }}" target="_blank">
+        {{ site.github.owner_name }}
+    </a>
+    {{ site.data.translate.revision | default: "Revision" }}
+    <a class="text-gray" href="{{ site.github.repository_url }}/commit/{{ site.github.build_revision }}" title="{{ site.github.build_revision }}" target="_blank">
+        {{ site.github.build_revision | slice: 0, 7 }}
+    </a>
+</div>

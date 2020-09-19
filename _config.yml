@@ -1,27 +1,23 @@
 title: jekyll-rtd-theme
 lang: en
-description: GitHub-flavored docs theme for Jekyll
+description: Opinionated github flavored documentation theme for open source projects
 
 theme: null
 
-nav_version: true
-edit: true
-addons_branch: true
+rundocs:
+  edit: true
+  since: 1998
 
-addons:
-  - github
-  - i18n
-  - plugins
-  - analytics
-
-copyright:
-  revision: true
+debug:
+  compress: false
+  dist: false
+  extension: false
 
 readme_index:
   with_frontmatter: true
 
 sass:
-  style: compressed
+  style: compress
 
 plugins:
   - jemoji
@@ -38,4 +34,5 @@ exclude:
   - node_modules
   - package.json
   - package-lock.json
+  - webpack.config.js
   - jekyll-rtd-theme.gemspec

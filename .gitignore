@@ -1,9 +1,11 @@
 .jekyll-metadata
-node_modules
-_site
 .sass-cache
+_site
+node_modules
 
 *.gem
 *.whl
 Gemfile.lock
 package-lock.json
+
+_sass/@primer/**/*.md

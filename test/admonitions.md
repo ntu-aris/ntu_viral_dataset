@@ -11,7 +11,7 @@ Markdown is supported, Text can be **bold**, _italic_, or ~~strikethrough~~. [Li
 
 `inline code`
 
-[`inline code inside link`](#)
+[`inline code inside link`](./)
 ```
 
 ```note

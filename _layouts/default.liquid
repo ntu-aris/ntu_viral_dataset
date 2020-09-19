@@ -5,54 +5,26 @@ layout: plugins/compress
 {%- include reset/defaults.liquid -%}
 
 <!DOCTYPE html>
-
-<!--
-    {% if site.remote_theme -%}
-        rundocs.io, remote_theme: {{ site.remote_theme }}, based on v{{ version }}
-    {%- else -%}
-        rundocs.io, theme: {{ site.theme | default: "jekyll-rtd-theme, based on" }} v{{ version }}
-    {%- endif %}
--->
-
-<html class="writer-html5" lang="{{ lang }}">
+<html lang="{{ site.lang }}">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta content="IE=Edge" http-equiv="X-UA-Compatible">
     <title>{{ title | truncate: 110 }}</title>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
-        function debug() {
-            console.debug.apply(console, arguments);
-        }
-
-        gtag("js", new Date());
-
-        if ("serviceWorker" in navigator) {
-            navigator.serviceWorker.register("{{ site.baseurl }}/sw.caches.js");
-        } else {
-            debug("Service Worker not supported!");
-        }
-    </script>
     <!-- meta -->
     <meta name="description" content="{{ description }}">
-    <meta name="author" content="{{ author }}">
-    <meta name="revised" content="{{ commit }}">
+    <meta name="author" content="{{ site.github.owner_name }}">
+    <meta name="revised" content="{{ site.github.build_revision }}">
     <meta name="generator" content="jekyll-rtd-theme v{{ version }}">
     <!-- meta-ogp -->
     {% comment %} https://ogp.me {% endcomment %}
     <meta property="og:title" content="{{ title }}">
     <meta property="og:description" content="{{ description }}">
-    <meta property="og:locale" content="{{ lang }}">
+    <meta property="og:locale" content="{{ site.lang }}">
     <meta property="og:url" content="{{ schema_surl }}">
     <meta property="og:type" content="article">
-    <meta property="article:author" content="{{ author }}">
+    <meta property="article:author" content="{{ site.github.owner_name }}">
     <meta property="article:published_time" content="{{ schema_date }}">
     <meta property="article:modified_time" content="{{ schema_modi }}">
     <!-- meta-custom -->
@@ -72,7 +44,7 @@ layout: plugins/compress
             "image": [{% for image in page.images %}"{{ image }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
             "author": {
                 "@type": "Person",
-                "name": "{{ author }}"
+                "name": "{{ site.github.owner_name }}"
             },
             "datePublished": "{{ schema_date }}",
             "dateModified": "{{ schema_modi }}",
@@ -92,105 +64,107 @@ layout: plugins/compress
     {% if prev %}<link rel="prev" href="{{ prev.url | absolute_url }}">{% endif %}
     {% if next %}<link rel="next" href="{{ next.url | absolute_url }}">{% endif %}
     <!-- theme -->
-    <link rel="stylesheet" href="{{ cdn }}/assets/css/theme.css">
-    <link rel="stylesheet" href="{{ cdn }}/assets/css/rougify/{{ site.rougify | default: 'github' }}.css">
-    <style>{{ site_scss | scssify | strip_newlines }}</style>
+    <link rel="stylesheet" href="{{ cdn }}/assets/css/theme{% if site.debug.dist != false %}.min{% endif %}.css">
     <!-- icon -->
     <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/favicon.svg">
     <!-- script -->
-    <!--[if lt IE 9]><script src="{{ cdn }}/assets/js/html5shiv.min.js"></script><![endif]-->
-    <script src="{{ cdn }}/assets/js/jquery.min.js"></script>
     <script>
-        const ui = {
+        window.ui = {
             baseurl: "{{ site.baseurl }}",
             title: "{{ site.title }}",
-            lang: "{{ lang }}",
             admonition: {
                 note: "{{ __note }}",
                 tip: "{{ __tip }}",
                 warning: "{{ __warning }}",
                 danger: "{{ __danger }}"
-            }
+            },
+            lang: "{{ site.lang }}",
+            version: "{{ version }}"
         };
     </script>
-    {% include extra/head.html %}
+    <!-- script -->
+    <script src="{{ cdn }}/assets/js/jquery.min.js"></script>
+    <script src="{{ cdn }}/assets/js/theme{% if site.debug.dist != false %}.min{% endif %}.js"></script>
+
 </head>
 
-<body class="wy-body-for-nav">
-    <div class="wy-grid-for-nav">
-        <!-- NAV -->
-        <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-            <div class="wy-side-scroll">
-                <div class="wy-side-nav-search">
-                    {% if site.logo %}
-                        <a href="{{ site.baseurl }}/{% if site_lang != lang %}{{ lang }}/{% endif %}">
-                            <img src="{{ site.baseurl }}/{{ site.logo }}" class="logo" alt="{{ site.title }}">
-                        </a>
-                    {% else %}
-                        <a href="{{ site.baseurl }}/{% if site_lang != lang %}{{ lang }}/{% endif %}" class="icon icon-home"> {{ site.title }}</a>
-                    {% endif %}
-                    {% if site.nav_version and site.github_metadata != false %}
-                      <div class="version">{{ site.github.latest_release.name }}</div>
-                    {% endif %}
-                    <div role="search">
-                        <form id="rtd-search-form" class="wy-form" action="{{ site.baseurl }}/search.html" method="get" autocomplete="off">
-                            <input type="text" name="q" placeholder="{{ __search_docs }}...">
-                            <input type="hidden" name="lang" value="{{ lang }}">
-                        </form>
-                    </div>
-                </div>
-                <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">{% include toctree.liquid %}</div>
-                {%- if site.embed -%}
-                    <div class="wy-embed-wrap"><div class="wy-embed">{{ site.embed }}</div></div>
-                {%- endif -%}
-            </div>
-        </nav>
-
-        <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-            <!-- MOBILE NAV -->
-            <nav class="wy-nav-top" aria-label="top navigation">
-                <div class="flex">
-                    <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-                    <div class="wy-nav-title">
-                        <a href="{{ site.baseurl }}/{% if site_lang != lang %}{{ lang }}/{% endif %}">{{ site.title }}</a>
-                    </div>
-                </div>
-            </nav>
-            <div class="wy-nav-content">
-                <div class="rst-content">
-                    {% include breadcrumbs.liquid %}
-                    <div role="main" itemscope="itemscope" itemtype="http://schema.org/Article">
-                        <div class="document" itemprop="articleBody">
-                            {%- if page.url == "/search.html" -%}
-                                {{ content }}
-                            {%- else -%}
-                                <div class="section">{{ content }}</div>
-                            {%- endif -%}
-                        </div>
-                        {% comment %} comments {% endcomment %}
-                        {% if site.disqus %}
-                            <div id="disqus_thread" class="articleComments"></div>
-                            <script>
-                                (function(script) {
-                                    script.src = "https://{{ site.disqus }}.disqus.com/embed.js";
-                                    script.setAttribute("data-timestamp", +new Date());
-                                    document.head.appendChild(script);
-                                })(document.createElement("script"));
-                            </script>
+<body class="container">
+    <div class="sidebar-wrap overflow-hidden">
+        <div class="sidebar d-flex flex-column height-full overflow-y-scroll overflow-x-hidden">
+            <div class="header d-flex flex-column p-3 text-center">
+                <div class="title pb-1 no-underline">
+                    <a class="h4 py-1 px-2 rounded-1" href="{{ site.baseurl }}/">
+                        {% if site.logo %}
+                            <img class="logo" src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.title }}">
+                        {% else %}
+                            <i class="fa fa-home"></i> {{ site.title }}
                         {% endif %}
-                    </div>
-                    {% include footer.liquid %}
+                    </a>
+                </div>
+                <span class="version text-gray">{{ site.github.latest_release.name }}</span>
+                <form class="search pt-2" action="{{ site.baseurl }}/search.html" method="get" autocomplete="off">
+                    <input class="form-control input-block input-sm" type="text" name="q" placeholder="{{ site.data.translate.search_docs | default: 'Search docs' }}...">
+                </form>
+            </div>
+            <div class="toctree py-2" data-spy="affix" role="navigation" aria-label="main navigation">
+                {% include toctree.liquid %}
+            </div>
+            <div class="embed-wrap">
+                <div class="embed p-2 m-3 rounded-2 text-blue bg-white">
+                    {{ site.embed }}
                 </div>
             </div>
-        </section>
+        </div>
     </div>
-    {%- if site.addons %}{% include addons.liquid %}{% endif %}
-    {% include extra/footer.html %}
-    <!-- script -->
-    <script src="{{ cdn }}/assets/js/anchor.min.js"></script>
+    <div class="content-wrap">
+        <div class="header d-flex flex-justify-between p-2 hide-lg hide-xl" aria-label="top navigation">
+            <button id="toggle" class="btn-octicon p-2 m-0 text-white" type="button">
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="title flex-1 no-underline d-flex flex-justify-center">
+                <a class="h4 py-1 px-2 rounded-1" href="{{ site.baseurl }}/">{{ site.title }}</a>
+            </div>
+        </div>
+        <div class="content p-5">
+            {% include breadcrumbs.liquid %}
+            <hr>
+            <div role="main" itemscope="itemscope" itemtype="http://schema.org/Article">
+                <div class="markdown-body" itemprop="articleBody">
+                    {{ content }}
+                </div>
+            </div>
+            {% include footer.liquid %}
+        </div>
+    </div>
+    <div class="addons-wrap d-flex flex-column overflow-y-auto">
+        <div class="status d-flex flex-justify-between p-2">
+            <div class="title p-1">
+                <i class="fa fa-book"></i> {{ site.title }}
+            </div>
+            <div class="branch p-1">
+                <span class="name">
+                    {{ site.github.source.branch }}
+                </span>
+                <i class="fa fa-caret-down"></i>
+            </div>
+        </div>
+        <div class="addons d-flex flex-column height-full p-2 d-none">
+            {%- assign items = "github, analytics" | split: ", " -%}
+            {% for item in items -%}
+                {% include addons/{{ item }}.liquid %}
+            {% endfor -%}
+            <hr>
+            <div class="generator f6 pb-2">
+                Built with
+                <a href="https://github.com/rundocs/jekyll-rtd-theme" target="_blank" title="{% if site.remote_theme %}remote{% endif %} theme v{{ version }}">jekyll-rtd-theme</a>
+                provided by
+                <a href="https://rundocs.io" target="_blank">RunDocs</a>
+            </div>
+        </div>
+    </div>
 
-    {% comment %} mermaid {% endcomment %}
-    {%- if content contains '<pre class="notranslate language-mermaid">' -%}
+    {%- comment %} mermaid {% endcomment -%}
+    {%- if content contains '<code class="language-mermaid">' -%}
         {%- if site.mermaid.custom -%}
             <script src="{{ site.mermaid.custom }}"></script>
         {%- else -%}
@@ -200,49 +174,18 @@ layout: plugins/compress
             mermaid.initialize({% if site.mermaid.initialize %}{{ site.mermaid.initialize | jsonify }}{% else %}{}{% endif %});
         </script>
     {%- endif %}
-    <script>
-        {% include assets/common.js %}
-        {% include assets/custom.js %} {{ site.script }}
-    </script>
-
-    {% comment %} Baidu link submit {% endcomment %}
-    {%- if site.baidu.linksubmit -%}
-        <script>
-            (function(script) {
-                script.src = "https://zz.bdstatic.com/linksubmit/push.js";
-                document.head.appendChild(script);
-            })(document.createElement("script"));
-        </script>
-    {%- endif -%}
-
-    {% comment %} Baidu Analytics {% endcomment %}
-    {%- if site.baidu.hm -%}
-        <script>
-            var _hmt = _hmt || [];
-            (function(script) {
-                script.src = "https://hm.baidu.com/hm.js?{{ site.baidu.hm }}";
-                document.head.appendChild(script);
-            })(document.createElement("script"));
-        </script>
-    {%- endif -%}
-
-    {% comment %} CNZZ Analytics {% endcomment %}
-    {%- if site.cnzz -%}
-        <span id="cnzz_stat_icon_{{ site.cnzz }}" style="display: none;"></span>
-        <script async src="https://v1.cnzz.com/z_stat.php?id={{ site.cnzz }}"></script>
-    {%- endif -%}
 
     {% comment %} Google Analytics {% endcomment %}
     {%- if site.google.gtag -%}
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google.gtag }}"></script>
         <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
             gtag("config", "{{ site.google.gtag }}");
         </script>
-    {%- endif -%}
-
-    {% comment %} Google AdSense {% endcomment %}
-    {%- if site.google.adsense -%}
-        <script data-ad-client="{{ site.google.adsense }}" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     {%- endif -%}
 </body>
 

@@ -4,7 +4,6 @@ permalink: /search.html
 ---
 
 {%- include reset/site_pages.liquid -%}
-{%- include reset/i18n.liquid -%}
 
 <div id="search-results">
     <h2>{{ __searching }}<span class="progress"></span></h2>
@@ -13,16 +12,10 @@ permalink: /search.html
 </div>
 
 <script>
-    const i18n = {
-        {%- for lang in site_langs -%}
-            {%- include i18n/{{ lang }}.liquid %}
-            "{{ lang }}": {
-                search_docs: "{{ __search_docs }}",
-                search_results: "{{ __search_results }}",
-                search_results_found: "{{ __search_results_found }}",
-                search_results_not_found: "{{ __search_results_not_found }}"
-            }{% unless forloop.last %},{% endunless %}
-        {%- endfor -%}
+    window.i18n = {
+        search_docs: "{{ __search_docs }}",
+        search_results: "{{ __search_results }}",
+        search_results_found: "{{ __search_results_found }}",
+        search_results_not_found: "{{ __search_results_not_found }}"
     };
 </script>
-<script>{% include assets/search.js %}</script>

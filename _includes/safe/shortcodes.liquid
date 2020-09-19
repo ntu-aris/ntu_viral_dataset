@@ -1,0 +1,9 @@
+{%- capture safe_list -%}
+mermaid
+note
+tip
+warning
+danger
+{%- endcapture -%}
+
+{%- assign shortcodes = safe_list | split: " " -%}
