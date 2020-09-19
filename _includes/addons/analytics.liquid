@@ -1,8 +1,11 @@
 <dl>
-    <dt>{{ __statistics }}</dt>
+    <dt>{{ site.data.translate.statistics | default: "Statistics" }}</dt>
     <dd>
         <a href="https://github.com/rundocs/analytics" target="_blank">
-            {{ __total_visits }} <span id="counter"><span class="progress"></span></span> <i class="fa fa-eye"></i>
+            {{ site.data.translate.total_visits | default: "Total visits" }}:
+            <span id="counter">
+                <span class="progress"></span>
+            </span>
         </a>
     </dd>
 </dl>

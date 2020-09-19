@@ -1,23 +1,12 @@
-.fa-edit:before {
-  content: "\f044";
-}
-
+// header
 .fa-home:before {
   content: "\f015";
 }
-
-.fa-copyright:before {
-  content: "\f1f9";
+.fa-bars:before {
+  content: "\f0c9";
 }
 
-.fa-book:before {
-  content: "\f02d";
-}
-
-.fa-caret-down:before {
-  content: "\f0d7";
-}
-
+// toctree
 .fa-plus-square-o:before {
   content: "\f196";
 }
@@ -27,6 +16,13 @@
 }
 
 // addons
+.fa-book:before {
+  content: "\f02d";
+}
+
+.fa-caret-down:before {
+  content: "\f0d7";
+}
 .fa-github:before {
   content: "\f09b";
 }
@@ -39,20 +35,9 @@
   content: "\f019";
 }
 
-.fa-language:before {
-  content: "\f1ab";
-}
-
-.fa-cog:before {
-  content: "\f013";
-}
-
-.fa-eye:before {
-  content: "\f06e";
-}
-
-.fa-bars:before {
-  content: "\f0c9";
+// breadcrumb
+.fa-edit:before {
+  content: "\f044";
 }
 
 // footer
@@ -62,4 +47,7 @@
 
 .fa-arrow-circle-right:before {
   content: "\f0a9";
+}
+.fa-copyright:before {
+  content: "\f1f9";
 }

@@ -1,20 +1,18 @@
 <dl>
-    <dt>GitHub</dt>
-    {%- if include.items -%}
-        {% for item in include.items -%}
-            {% case item %}
-                {% when "homepage" %}
-                    <dd><a href="{{ repository_url }}"><i class="fa fa-github"></i> {{ __homepage }}</a></dd>
-                {% when "issues" %}
-                    <dd><a href="{{ issues_url }}"><i class="fa fa-question-circle-o"></i> {{ __issues }}</a></dd>
-                {% when "download" %}
-                    <dd><a href="{{ zip_url }}"><i class="fa fa-download"></i> {{ __download }}</a></dd>
-                {% else %}
-            {% endcase %}
-        {% endfor -%}
-    {%- else -%}
-        <dd><a href="{{ repository_url }}"><i class="fa fa-github"></i> {{ __homepage }}</a></dd>
-        <dd><a href="{{ issues_url }}"><i class="fa fa-question-circle-o"></i> {{ __issues }}</a></dd>
-        <dd><a href="{{ zip_url }}"><i class="fa fa-download"></i> {{ __download }}</a></dd>
-    {%- endif -%}
+    <dt>{{ site.data.translate.github | default: "GitHub" }}</dt>
+    <dd>
+        <a href="{{ site.github.repository_url }}">
+            <i class="fa fa-github"></i> {{ site.data.translate.homepage | default: "HomePage" }}
+        </a>
+    </dd>
+    <dd>
+        <a href="{{ site.github.issues_url }}">
+            <i class="fa fa-question-circle-o"></i> {{ site.data.translate.issues | default: "Issues" }}
+        </a>
+    </dd>
+    <dd>
+        <a href="{{ site.github.zip_url }}">
+            <i class="fa fa-download"></i> {{ site.data.translate.download | default: "Download" }}
+        </a>
+    </dd>
 </dl>

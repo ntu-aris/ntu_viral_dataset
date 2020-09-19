@@ -1,20 +1,9 @@
 {%- assign description = content | strip_html | split: " " | join: " " | escape | truncate: 150 -%}
 {%- assign version = "1.2.0-debug" -%}
-{%- assign addons = "github, i18n, plugins, analytics" | split: ", " -%}
 
 {%- assign schema_date = page.date | default: site.time | date_to_xmlschema -%}
 {%- assign schema_modi = site.time | date_to_xmlschema -%}
 {%- assign schema_surl = page.url | absolute_url | xml_escape -%}
-
-{% comment %} script {% endcomment %}
-{%- capture custom_script -%}
-    {%- include assets/custom.js -%} {{- site.script -}}
-{%- endcapture -%}
-
-{% comment %} scss {% endcomment %}
-{%- capture custom_scss -%}
-    {%- include assets/custom.scss -%} {{- site.scss -}}
-{%- endcapture -%}
 
 {% comment %} cdn {% endcomment %}
 {%- if site.debug -%}
@@ -23,28 +12,7 @@
     {%- assign cdn = "https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@" | append: version -%}
 {%- endif -%}
 
-{% comment %} github-metadata {% endcomment %}
-{%- if site.github_metadata != false -%}
-    {%- assign author = site.author | default: site.github.owner_name -%}
-    {%- assign branch = site.github.source.branch -%}
-    {%- assign commit = site.github.build_revision | slice: 0, 7 -%}
-    {%- assign repository_url = site.github.repository_url -%}
-    {%- assign issues_url = site.github.issues_url -%}
-    {%- assign zip_url = site.github.zip_url -%}
-    {%- capture github_edit_link %}{% github_edit_link %}{% endcapture -%}
-{%- else -%}
-    {%- assign author = site.author -%}
-    {%- assign branch = "" -%}
-    {%- assign commit = "" -%}
-    {%- assign repository_url = "" -%}
-    {%- assign issues_url = "" -%}
-    {%- assign zip_url = "" -%}
-    {%- assign github_edit_link = "" -%}
-    {%- assign addons = "i18n, plugins, analytics" | split: ", " -%}
-{%- endif -%}
-
 {%- include reset/site_pages.liquid %}
-{%- include reset/i18n.liquid -%}
 
 {% comment %} title {% endcomment %}
 {%- case page.url -%}

@@ -14,6 +14,10 @@
   top: 0;
 
   @extend .menu-sm;
+
+  .sidebar > :last-child {
+    margin-bottom: 5em;
+  }
 }
 
 .addons-wrap {
@@ -43,7 +47,8 @@
       width: $theme-menu-width + 20px;
 
       .header,
-      .toctree {
+      .toctree,
+      .embed-wrap {
         width: $theme-menu-width;
       }
     }

@@ -1,13 +1,6 @@
 {% comment %} Start from the language chapter(eg: en-us) or root(/) {% endcomment %}
 {%- assign workdir = include.workdir | default: "/" -%}
 
-{%- if page.dir != "/" -%}
-    {%- assign chapter = page.dir | remove_first: "/" | split: "/" | first -%}
-    {%- if languages contains chapter -%}
-        {%- capture workdir %}/{{ chapter }}/{% endcapture -%}
-    {%- endif -%}
-{%- endif -%}
-
 {%- assign workdir_level = workdir | append: "temp" | replace_first: "/", "" | split: "/" | size -%}
 {%- assign workdir_files = site_files | where_exp: "item", "item.dir == workdir" -%}
 
@@ -19,13 +12,7 @@
             {%- assign dir = item.dir | replace: workdir, temp | split: "@@" | first -%}
             {% comment %} In the current subdirectory {% endcomment %}
             {%- if workdir == dir -%}
-                {% comment %} Root directory does not display other languages {% endcomment %}
-                {%- if workdir == "/" -%}
-                    {%- assign language = item.dir | replace: "/", "" -%}
-                    {%- unless languages contains language %}{{ item.dir }}|{% endunless -%}
-                {%- else -%}
-                    {{ item.dir }}|
-                {%- endif -%}
+                {{ item.dir }}|
             {%- endif -%}
         {%- endif -%}
     {%- endfor -%}

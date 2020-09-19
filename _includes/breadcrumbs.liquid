@@ -1,40 +1,27 @@
 <div class="navigation-top d-flex flex-justify-between">
     <ul class="breadcrumb" role="navigation" aria-label="breadcrumbs navigation">
         <li class="breadcrumb-item">
-            <a href="{{ site.baseurl }}/"><i class="fa fa-home"></i></a>
+            <a href="{{ site.baseurl }}/" title="{{ site.github.source.branch }}"><i class="fa fa-home"></i></a>
         </li>
         {%- case page.url -%}
-            {%- when "/search.html" %}
-                <li class="breadcrumb-item" aria-current="page">{{ __search }}</li>
-            {%- when "/404.html" %}
-                <li class="breadcrumb-item" aria-current="page">{{ __404 }}</li>
+            {%- when "/search.html" -%}
+                <li class="breadcrumb-item" aria-current="page">{{ site.data.translate.search | default: "Search" }}</li>
+            {%- when "/404.html" -%}
+                <li class="breadcrumb-item" aria-current="page">404</li>
             {%- else -%}
                 {%- assign blocks = page.path | split: "/" -%}
-                {%- assign length = blocks | size -%}
-                {%- if page.dir == page.url and page.url != "/" -%}
-                    {%- assign length = blocks | size | minus: 1 -%}
-                {%- endif -%}
-                {%- for block in blocks limit: length -%}
-                    {%- if forloop.last %}
-                        <li class="breadcrumb-item" aria-current="page">{{ page.title }}</li>
-                    {%- else -%}
-                        {%- capture href -%}
-                            {{ site.baseurl }}/{% for block in blocks limit: forloop.index %}{{ block | append: "/" }}{% endfor %}
-                        {%- endcapture %}
-                        <li class="breadcrumb-item">
-                            <a href="{{ href }}">
-                                {%- if block == lang -%}
-                                    {{ block }}
-                                {%- else -%}
-                                    {{ block | capitalize }}
-                                {%- endif -%}
-                            </a>
-                        </li>
-                    {%- endif -%}
+                {%- for block in blocks -%}
+                    <li class="breadcrumb-item" {% if forloop.last %}aria-current{% endif %}>
+                        {%- if forloop.last -%}
+                            {{ page.name }}
+                        {%- else -%}
+                            <a href="{{ site.baseurl }}/{% for block in blocks limit: forloop.index %}{{ block }}/{% endfor %}">{{ block }}</a>
+                        {%- endif -%}
+                    </li>
                 {%- endfor -%}
-        {%- endcase %}
+        {%- endcase -%}
     </ul>
-    {%- if site.edit and site.github_metadata != false -%}
-        <a class="edit" href="{{ github_edit_link }}" target="_blank"><i class="fa fa-edit"></i></a>
-    {%- endif -%}
+    <a class="edit" href="{% github_edit_link %}" title="{{ site.data.translate.edit | default: 'Edit on GitHub'}}" target="_blank">
+        <i class="fa fa-edit"></i>
+    </a>
 </div>

@@ -1,5 +1,4 @@
 {
-  "prettier": {},
   "dependencies": {
     "@primer/css": "^15.1.0",
     "font-awesome": "^4.7.0",

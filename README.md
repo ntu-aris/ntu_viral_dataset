@@ -1,16 +1,9 @@
 # jekyll-rtd-theme
 
 [![CI](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg)][repository]
-[![gem version](https://img.shields.io/gem/v/jekyll-rtd-theme)][rubygem]
-[![gem downloads](https://img.shields.io/gem/dt/jekyll-rtd-theme)][rubygem]
 [![jsDelivr](https://data.jsdelivr.com/v1/package/gh/rundocs/jekyll-rtd-theme/badge)][cdn]
-[![codefactor](https://www.codefactor.io/repository/github/rundocs/jekyll-rtd-theme/badge)][codefactor]
-[![featured themes](https://img.shields.io/badge/featured%20on-JekyllThemes-red.svg)](https://jekyll-themes.com)
-[![gitter](https://badges.gitter.im/rundocs/jekyll-rtd-theme.svg)][gitter]
 
-GitHub flavored documentation theme for all open source projects
-
-<img class="shadow-box" width="50%" alt="jekyll-rtd-theme" src="https://user-images.githubusercontent.com/68011645/89026666-ad3a8680-d35b-11ea-9f4b-d3fe26ae12ed.png">
+Opinionated github flavored documentation theme for open source projects
 
 ## Quick start
 

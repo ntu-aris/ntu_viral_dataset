@@ -5,7 +5,7 @@ layout: plugins/compress
 {%- include reset/defaults.liquid -%}
 
 <!DOCTYPE html>
-<html lang="{{ lang }}">
+<html lang="{{ site.lang }}">
 
 <head>
     <meta charset="utf-8">
@@ -14,17 +14,17 @@ layout: plugins/compress
     <title>{{ title | truncate: 110 }}</title>
     <!-- meta -->
     <meta name="description" content="{{ description }}">
-    <meta name="author" content="{{ author }}">
-    <meta name="revised" content="{{ commit }}">
+    <meta name="author" content="{{ site.github.owner_name }}">
+    <meta name="revised" content="{{ site.github.build_revision }}">
     <meta name="generator" content="jekyll-rtd-theme v{{ version }}">
     <!-- meta-ogp -->
     {% comment %} https://ogp.me {% endcomment %}
     <meta property="og:title" content="{{ title }}">
     <meta property="og:description" content="{{ description }}">
-    <meta property="og:locale" content="{{ lang }}">
+    <meta property="og:locale" content="{{ site.lang }}">
     <meta property="og:url" content="{{ schema_surl }}">
     <meta property="og:type" content="article">
-    <meta property="article:author" content="{{ author }}">
+    <meta property="article:author" content="{{ site.github.owner_name }}">
     <meta property="article:published_time" content="{{ schema_date }}">
     <meta property="article:modified_time" content="{{ schema_modi }}">
     <!-- meta-custom -->
@@ -44,7 +44,7 @@ layout: plugins/compress
             "image": [{% for image in page.images %}"{{ image }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
             "author": {
                 "@type": "Person",
-                "name": "{{ author }}"
+                "name": "{{ site.github.owner_name }}"
             },
             "datePublished": "{{ schema_date }}",
             "dateModified": "{{ schema_modi }}",
@@ -65,10 +65,6 @@ layout: plugins/compress
     {% if next %}<link rel="next" href="{{ next.url | absolute_url }}">{% endif %}
     <!-- theme -->
     <link rel="stylesheet" href="{{ cdn }}/assets/css/theme{% if site.debug.dist != false %}.min{% endif %}.css">
-    <link rel="stylesheet" href="{{ cdn }}/assets/css/rougify/{{ site.rougify | default: 'github' }}.min.css">
-    {%- if custom_scss.size > 0 -%}
-        <style>{{ custom_scss | scssify | strip_newlines }}</style>
-    {%- endif -%}
     <!-- icon -->
     <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/favicon.svg">
     <!-- script -->
@@ -82,26 +78,22 @@ layout: plugins/compress
                 warning: "{{ __warning }}",
                 danger: "{{ __danger }}"
             },
-            mode: "{{ jekyll.environment }}",
-            lang: "{{ lang }}",
+            lang: "{{ site.lang }}",
             version: "{{ version }}"
         };
     </script>
     <!-- script -->
     <script src="{{ cdn }}/assets/js/jquery.min.js"></script>
     <script src="{{ cdn }}/assets/js/theme{% if site.debug.dist != false %}.min{% endif %}.js"></script>
-    {%- if custom_script.size > 0 -%}
-        <script>{{ custom_script }}</script>
-    {%- endif -%}
-    {% include extra/head.liquid %}
+
 </head>
 
 <body class="container">
     <div class="sidebar-wrap overflow-hidden">
-        <div class="sidebar height-full overflow-y-scroll overflow-x-hidden">
+        <div class="sidebar d-flex flex-column height-full overflow-y-scroll overflow-x-hidden">
             <div class="header d-flex flex-column p-3 text-center">
-                <div class="title no-underline">
-                    <a class="h4 py-1 px-2 rounded-1" href="{{ site.baseurl }}/{% if site_lang != lang %}{{ lang }}/{% endif %}">
+                <div class="title pb-1 no-underline">
+                    <a class="h4 py-1 px-2 rounded-1" href="{{ site.baseurl }}/">
                         {% if site.logo %}
                             <img class="logo" src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.title }}">
                         {% else %}
@@ -109,20 +101,19 @@ layout: plugins/compress
                         {% endif %}
                     </a>
                 </div>
-                {% if site.nav_version and site.github_metadata != false %}
-                    <span class="version text-gray">1.1.1{{ site.github.latest_release.name }}</span>
-                {% endif %}
-                <form class="search" action="{{ site.baseurl }}/search.html" method="get" autocomplete="off">
-                    <input class="form-control input-block input-sm" type="text" name="q" placeholder="{{ __search_docs }}...">
-                    <input type="hidden" name="lang" value="{{ lang }}">
+                <span class="version text-gray">{{ site.github.latest_release.name }}</span>
+                <form class="search pt-2" action="{{ site.baseurl }}/search.html" method="get" autocomplete="off">
+                    <input class="form-control input-block input-sm" type="text" name="q" placeholder="{{ site.data.translate.search_docs | default: 'Search docs' }}...">
                 </form>
             </div>
-            <div class="toctree" data-spy="affix" role="navigation" aria-label="main navigation">
+            <div class="toctree py-2" data-spy="affix" role="navigation" aria-label="main navigation">
                 {% include toctree.liquid %}
             </div>
-            {%- if site.embed -%}
-                <div class="embed-wrap"><div class="embed">{{ site.embed }}</div></div>
-            {%- endif -%}
+            <div class="embed-wrap">
+                <div class="embed p-2 m-3 rounded-2 text-blue bg-white">
+                    {{ site.embed }}
+                </div>
+            </div>
         </div>
     </div>
     <div class="content-wrap">
@@ -131,7 +122,7 @@ layout: plugins/compress
                 <i class="fa fa-bars"></i>
             </button>
             <div class="title flex-1 no-underline d-flex flex-justify-center">
-                <a class="h4 py-1 px-2 rounded-1" href="{{ site.baseurl }}/{% if site_lang != lang %}{{ lang }}/{% endif %}">{{ site.title }}</a>
+                <a class="h4 py-1 px-2 rounded-1" href="{{ site.baseurl }}/">{{ site.title }}</a>
             </div>
         </div>
         <div class="content p-5">
@@ -152,32 +143,25 @@ layout: plugins/compress
             </div>
             <div class="branch p-1">
                 <span class="name">
-                    {% if site.addons_branch and site.github_metadata != false %}{{ branch }}{% endif %}
+                    {{ site.github.source.branch }}
                 </span>
                 <i class="fa fa-caret-down"></i>
             </div>
         </div>
         <div class="addons d-flex flex-column height-full p-2 d-none">
-            {%- assign items = site.addons | default: addons -%}
+            {%- assign items = "github, analytics" | split: ", " -%}
             {% for item in items -%}
-                {%- if addons contains item -%}
-                    {% include addons/{{ item }}.liquid %}
-                {%- else -%}
-                    {%- if item.github -%}
-                        {% include addons/github.liquid items=item.github %}
-                    {%- endif -%}
-                {%- endif -%}
+                {% include addons/{{ item }}.liquid %}
             {% endfor -%}
             <hr>
-            <div class="copyright f6 pb-2">
+            <div class="generator f6 pb-2">
                 Built with
-                <a href="https://jekyllrb.com/">Jekyll</a>
-                using the
-                <a href="https://github.com/rundocs/jekyll-rtd-theme" target="_blank">jekyll-rtd-theme</a> (MIT)
+                <a href="https://github.com/rundocs/jekyll-rtd-theme" target="_blank" title="{% if site.remote_theme %}remote{% endif %} theme v{{ version }}">jekyll-rtd-theme</a>
+                provided by
+                <a href="https://rundocs.io" target="_blank">RunDocs</a>
             </div>
         </div>
     </div>
-    {% include extra/footer.liquid %}
 
     {%- comment %} mermaid {% endcomment -%}
     {%- if content contains '<code class="language-mermaid">' -%}
@@ -190,32 +174,6 @@ layout: plugins/compress
             mermaid.initialize({% if site.mermaid.initialize %}{{ site.mermaid.initialize | jsonify }}{% else %}{}{% endif %});
         </script>
     {%- endif %}
-    {% comment %} Baidu link submit {% endcomment %}
-    {%- if site.baidu.linksubmit -%}
-        <script>
-            (function(script) {
-                script.src = "https://zz.bdstatic.com/linksubmit/push.js";
-                document.head.appendChild(script);
-            })(document.createElement("script"));
-        </script>
-    {%- endif -%}
-
-    {% comment %} Baidu Analytics {% endcomment %}
-    {%- if site.baidu.hm -%}
-        <script>
-            var _hmt = _hmt || [];
-            (function(script) {
-                script.src = "https://hm.baidu.com/hm.js?{{ site.baidu.hm }}";
-                document.head.appendChild(script);
-            })(document.createElement("script"));
-        </script>
-    {%- endif -%}
-
-    {% comment %} CNZZ Analytics {% endcomment %}
-    {%- if site.cnzz -%}
-        <span id="cnzz_stat_icon_{{ site.cnzz }}" style="display: none;"></span>
-        <script async src="https://v1.cnzz.com/z_stat.php?id={{ site.cnzz }}"></script>
-    {%- endif -%}
 
     {% comment %} Google Analytics {% endcomment %}
     {%- if site.google.gtag -%}
@@ -228,11 +186,6 @@ layout: plugins/compress
             gtag("js", new Date());
             gtag("config", "{{ site.google.gtag }}");
         </script>
-    {%- endif -%}
-
-    {% comment %} Google AdSense {% endcomment %}
-    {%- if site.google.adsense -%}
-        <script data-ad-client="{{ site.google.adsense }}" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     {%- endif -%}
 </body>
 

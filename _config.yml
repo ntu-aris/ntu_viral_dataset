@@ -1,22 +1,12 @@
 title: jekyll-rtd-theme
 lang: en
-description: GitHub flavored documentation theme for all open source projects
+description: Opinionated github flavored documentation theme for open source projects
 
 theme: null
 
-nav_version: true
-edit: true
-addons_branch: true
-
-addons:
-  - github
-  - i18n
-  - plugins
-  - analytics
-
-copyright:
-  license: true
-  revision: true
+rundocs:
+  edit: true
+  since: 1998
 
 debug:
   compress: false
@@ -26,9 +16,8 @@ debug:
 readme_index:
   with_frontmatter: true
 
-# https://github.com/jekyll/jekyll-sass-converter
 sass:
-  style: compact
+  style: compress
 
 plugins:
   - jemoji

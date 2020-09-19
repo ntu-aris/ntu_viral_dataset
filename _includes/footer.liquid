@@ -1,15 +1,3 @@
-{% comment %} comments {% endcomment %}
-{% if site.disqus %}
-    <div id="disqus_thread" class="comments"></div>
-    <script>
-        (function(script) {
-            script.src = "https://{{ site.disqus }}.disqus.com/embed.js";
-            script.setAttribute("data-timestamp", +new Date());
-            document.head.appendChild(script);
-        })(document.createElement("script"));
-    </script>
-{% endif %}
-
 {% comment %} prev and next {% endcomment %}
 {%- if page.url != "/search.html" and page.url != "/404.html" -%}
     {%- if next or prev -%}
@@ -17,14 +5,14 @@
             <div class="prev">
                 {%- if prev -%}
                     <a href="{{ prev.url | relative_url }}" class="btn" title="{{ prev.title }}" accesskey="p" rel="prev">
-                        <i class="fa fa-arrow-circle-left"></i> {{ __previous -}}
+                        <i class="fa fa-arrow-circle-left"></i> {{ site.data.translate.previous | default: "Previous" }}
                     </a>
                 {%- endif -%}
             </div>
             <div class="next">
                 {%- if next -%}
                     <a href="{{ next.url | relative_url }}" class="btn" title="{{ next.title }}" accesskey="n" rel="next">
-                        {{- __next }} <i class="fa fa-arrow-circle-right"></i>
+                        {{ site.data.translate.next | default: "Next" }} <i class="fa fa-arrow-circle-right"></i>
                     </a>
                 {%- endif -%}
             </div>
@@ -35,36 +23,14 @@
 <hr>
 
 <div class="copyright text-center text-gray" role="contentinfo">
-    {%- if site.copyright -%}
-        <p class="content">
-            <i class="fa fa-copyright"></i>
-            {%- if site.copyright.since -%}
-                {{ site.copyright.since | append: "-" }}
-            {%- endif -%}
-            {{- site.time | date: "%Y" }},
-            {{ author }}
-            {% if site.github_metadata != false -%}
-                {% if site.copyright.license %}
-                    <span class="license">
-                        {{ site.github.license.name }}
-                    </span>
-                {% endif %}
-                {% if site.copyright.revision %}
-                    <span class="commit">
-                        {{ __revision }} <code>{{ commit }}</code>
-                    </span>
-                {% endif %}
-            {% endif %}
-        </p>
-    {%- endif -%}
-    {%- if site.copyright.theme != false -%}
-        <p class="theme">
-            Powered by
-            <a href="https://rundocs.io" target="_blank">rundocs</a>
-            using the
-            {% if site.remote_theme %}remote{% endif %}
-            theme
-            <a href="https://github.com/rundocs/jekyll-rtd-theme" target="_blank" title="v{{ version }}">jekyll-rtd-theme</a>
-        </p>
-    {%- endif -%}
+    <i class="fa fa-copyright"></i>
+    {%- if site.rundocs.since %}{{ site.rundocs.since }}-{% endif -%}
+    {{- site.time | date: "%Y" }},
+    <a class="text-gray" href="{{ site.github.owner_url }}" target="_blank">
+        {{ site.github.owner_name }}
+    </a>
+    {{ site.data.translate.revision | default: "Revision" }}
+    <a class="text-gray" href="{{ site.github.repository_url }}/commit/{{ site.github.build_revision }}" title="{{ site.github.build_revision }}" target="_blank">
+        {{ site.github.build_revision | slice: 0, 7 }}
+    </a>
 </div>
