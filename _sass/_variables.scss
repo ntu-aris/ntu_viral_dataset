@@ -6,7 +6,7 @@ $head-font: "Roboto-Slab", sans-serif;
 /* color */
 $theme-blue: #2980b9;
 $theme-red: #e74c3c;
-$theme-white: darken($white, 1%);
+$theme-white: lighten($black, 99%);
 $theme-black: lighten($black, 15%);
 
 /* link */
@@ -22,5 +22,5 @@ $theme-mask-black: transparentize($theme-black, 0.9);
 
 /* menu */
 $theme-menu-width: 300px;
-$theme-menu-background: darken($theme-black, 8%);
+$theme-menu-background: darken($theme-black, 10%);
 $theme-menu-active-background: darken($theme-blue, 20%);
