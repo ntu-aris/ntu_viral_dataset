@@ -43,7 +43,8 @@ status: format clean checkout
 
 theme: dist
 	@gem uninstall jekyll-rtd-theme
-	@gem build *.gemspec && gem install *.gem
+	@gem build *.gemspec
+	@gem install *.gem && rm -f *.gem
 
 site: dist
 	@${DEBUG} bundle exec jekyll build --safe --profile
