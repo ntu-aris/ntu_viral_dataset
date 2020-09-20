@@ -20,7 +20,7 @@ title: Your awesome title
 lang: en
 description: Write an awesome description for your new site here
 
-# plugin
+# plugin options
 readme_index:
   with_frontmatter: true
 
