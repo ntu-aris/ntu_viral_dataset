@@ -13,10 +13,34 @@ remote_theme: rundocs/jekyll-rtd-theme
 
 You can [generate](https://github.com/rundocs/starter-slim/generate) with the same files and folders from [rundocs/starter-slim](https://github.com/rundocs/starter-slim/)
 
-## Documents
+## Options
 
-[jekyll-rtd-theme.rundocs.io](https://jekyll-rtd-theme.rundocs.io)
+```yml
+title: Your awesome title
+lang: en
+description: Write an awesome description for your new site here
 
+# optional settings
+mermaid:
+  custom: # custom mermaid link
+  initialize: # mermaid options
+
+google:
+  gtag:
+  adsense:
+
+meta:
+
+# optional front matter
+readme_index:
+  with_frontmatter: true
+
+# optional plugins
+plugins:
+  - jemoji
+  - jekyll-avatar
+  - jekyll-mentions
+```
 
 ## The license
 

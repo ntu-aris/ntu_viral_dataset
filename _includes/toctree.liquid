@@ -9,7 +9,7 @@
         {%- endcapture %}
         <li class="toc level-{{ level }} {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
             <a class="d-flex flex-items-baseline {{ current }}" href="{{ item.url | relative_url }}">
-                {%- if item.sort and site.show_sorted != false -%}
+                {%- if item.sort -%}
                     {{ item.sort }}. {{ item.title | default: item.url }}
                 {%- else -%}
                     {{ item.title | default: item.url }}
