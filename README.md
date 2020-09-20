@@ -5,6 +5,8 @@
 
 Opinionated github flavored documentation theme for open source projects, with few options, just use it!
 
+# Waiting for your contribution 2.0
+
 ## Quick start
 
 ```yml
