@@ -3,7 +3,7 @@
 ![CI](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg)
 ![jsDelivr](https://data.jsdelivr.com/v1/package/gh/rundocs/jekyll-rtd-theme/badge)
 
-Opinionated github flavored documentation theme for open source projects, with no options, just use it!
+Opinionated github flavored documentation theme for open source projects, with few options, just use it!
 
 ## Quick start
 
@@ -20,20 +20,24 @@ title: Your awesome title
 lang: en
 description: Write an awesome description for your new site here
 
+readme_index:
+  with_frontmatter: true
+
 # optional settings
-mermaid:
-  custom: # custom mermaid link
-  initialize: # mermaid options
+meta:
+  key1: value1
+  key2: value2
+  .
+  .
+  .
 
 google:
   gtag:
   adsense:
 
-meta:
-
-# optional front matter
-readme_index:
-  with_frontmatter: true
+mermaid:
+  custom: # mermaid link
+  initialize: # mermaid options
 
 # optional plugins
 plugins:
