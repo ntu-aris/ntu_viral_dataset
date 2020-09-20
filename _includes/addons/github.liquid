@@ -1,19 +1,19 @@
 <dl>
     <dt>{{ site.data.translate.github | default: "GitHub" }}</dt>
     <dd>
-        <a href="{{ site.github.repository_url }}" title="{{ rest.stargazers_count }}">
+        <a href="{{ site.github.repository_url }}" title="{{ site.data.translate.star | default: 'Star' }}: {{ rest.stargazers_count }}">
             <i class="fa fa-github"></i>
             {{ site.data.translate.homepage | default: "HomePage" }}
         </a>
     </dd>
     <dd>
-        <a href="{{ site.github.issues_url }}" title="{{ rest.open_issues }}">
+        <a href="{{ site.github.issues_url }}" title="{{ site.data.translate.count | default: 'Count' }}: {{ rest.open_issues }}">
             <i class="fa fa-question-circle-o"></i>
             {{ site.data.translate.issues | default: "Issues" }}
         </a>
     </dd>
     <dd>
-        <a href="{{ site.github.zip_url }}" title="{{ rest.size }}">
+        <a href="{{ site.github.zip_url }}" title="{{ site.data.translate.size | default: 'Size' }}: {{ rest.size }}">
             <i class="fa fa-download"></i>
             {{ site.data.translate.download | default: "Download" }}
         </a>
