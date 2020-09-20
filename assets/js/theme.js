@@ -26,13 +26,6 @@ $(document).ready(function () {
       for (let i = 1; i <= 11; i++) {
         link.closest(`.level-${i}`).addClass("current");
       }
-      /* need debug */
-      $(".toctree a")
-        .children("span")
-        .html(`<i class="fa fa-plus-square-o"></i>`);
-      $(".toctree a.current")
-        .children("span")
-        .html(`<i class="fa fa-minus-square-o"></i>`);
     }
     // if(/^#/.test(name) && $(name).length >0){
     //     $(name)[0].scrollIntoView();
@@ -59,7 +52,7 @@ $(document).ready(function () {
           .find("h2,h3,h4,h5,h6")
           .each(function () {
             let anchor = $("<a/>")
-              .addClass("d-flex")
+              .addClass("d-flex flex-items-baseline")
               .text($(this).text())
               .attr("href", `#${this.id}`);
             let tagLevel = parseInt(this.tagName.slice(1)) - 1;
@@ -150,9 +143,7 @@ $(document).ready(function () {
     .siblings("a")
     .each(function () {
       let link = $(this);
-      let expand = $(
-        '<span class="toctree-expand"><i class="fa fa-plus-square-o"></i></span>'
-      );
+      let expand = $('<i class="fa fa-plus-square-o"></i>');
 
       expand.on("click", function (e) {
         e.stopPropagation();

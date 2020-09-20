@@ -9,6 +9,10 @@
 @import "@primer/forms";
 @import "@primer/markdown";
 
+/* fonts */
+@import "font-face";
+@import "icons";
+
 /* theme */
 @import "layout";
 @import "reset";
@@ -20,10 +24,6 @@
 @import "class/title";
 @import "class/markdown-body";
 @import "class/highlight";
-
-/* fonts */
-@import "font-face";
-@import "icons";
 
 /* utilities */
 @import "@primer/utilities";

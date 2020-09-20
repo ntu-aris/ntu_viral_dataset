@@ -8,7 +8,7 @@
             {%- if page.url == item.url %}current{% endif -%}
         {%- endcapture %}
         <li class="toc level-{{ level }} {{ current }}" data-sort="{{ item.sort }}" data-level="{{ level }}">
-            <a class="d-flex {{ current }}" href="{{ item.url | relative_url }}">
+            <a class="d-flex flex-items-baseline {{ current }}" href="{{ item.url | relative_url }}">
                 {%- if item.sort and site.show_sorted != false -%}
                     {{ item.sort }}. {{ item.title | default: item.url }}
                 {%- else -%}
