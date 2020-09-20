@@ -4,10 +4,6 @@ description: Opinionated github flavored documentation theme for open source pro
 
 theme: null
 
-rundocs:
-  edit: true
-  since: 1998
-
 debug:
   compress: false
   dist: false

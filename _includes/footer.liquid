@@ -24,8 +24,13 @@
 
 <div class="copyright text-center text-gray" role="contentinfo">
     <i class="fa fa-copyright"></i>
-    {%- if site.rundocs.since %}{{ site.rundocs.since }}-{% endif -%}
-    {{- site.time | date: "%Y" }},
+    {%- assign created_time = rest.created_at | default: site.time | date: "%Y" -%}
+    {%- assign updated_time = site.time | date: "%Y" -%}
+    {%- if created_time == updated_time -%}
+        {{ created_time }},
+    {%- else -%}
+        {{ created_time }}-{{ updated_time }},
+    {%- endif %}
     <a class="text-gray" href="{{ site.github.owner_url }}" target="_blank">
         {{ site.github.owner_name }}
     </a>

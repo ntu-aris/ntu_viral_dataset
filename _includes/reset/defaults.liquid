@@ -1,6 +1,8 @@
 {%- assign description = content | strip_html | split: " " | join: " " | escape | truncate: 150 -%}
 {%- assign version = "2.0.0-beta" -%}
 
+{%- assign rest = site.github.public_repositories | where: "html_url", site.github.repository_url | first -%}
+
 {%- assign schema_date = page.date | default: site.time | date_to_xmlschema -%}
 {%- assign schema_modi = site.time | date_to_xmlschema -%}
 {%- assign schema_surl = page.url | absolute_url | xml_escape -%}
@@ -29,6 +31,8 @@
 {% comment %} content {% endcomment %}
 {%- assign content = content
     | replace: '’', "'"
+    | replace: "“", '"'
+    | replace: '”', '"'
     | replace: "highlighter-rouge", "highlighter-rouge notranslate" -%}
 
 
