@@ -20,8 +20,10 @@ title: Your awesome title
 lang: en
 description: Write an awesome description for your new site here
 
+# plugin
 readme_index:
   with_frontmatter: true
+
 
 # optional settings
 meta:
@@ -38,6 +40,7 @@ google:
 mermaid:
   custom: # mermaid link
   initialize: # mermaid options
+
 
 # optional plugins
 plugins:
