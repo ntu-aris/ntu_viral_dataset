@@ -25,7 +25,7 @@ sort: 4
 }
 ```
 
-## Code highlight
+## highlight
 
 ```css
 .highlight table td {

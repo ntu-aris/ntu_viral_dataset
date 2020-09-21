@@ -21,29 +21,30 @@
     margin: 0;
   }
 
-  // code
+  // improved
   code,
   tt {
     font-size: $font-size-small;
     border: $border;
     color: $theme-red;
-    background-color: rgba($black, 0.05);
   }
+
   a {
     code,
     tt {
-      color: $theme-blue;
+      color: $text-blue;
     }
   }
 
   pre {
-    font-size: $font-size-small;
-    border: $border;
+    > code {
+      color: $theme-black;
+    }
   }
 
-  pre code,
-  pre tt {
-    border: 0;
-    background-color: transparent;
+  .highlight pre,
+  pre {
+    font-size: $font-size-small;
+    border: $border;
   }
 }
