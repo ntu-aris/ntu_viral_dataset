@@ -1,0 +1,47 @@
+.admonition {
+  // fixed note
+  font-size: $h4-size;
+
+  // fixed
+  .content {
+    :first-child {
+      margin-top: 0;
+    }
+
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &.note {
+    background-color: lighten($theme-blue, 50%);
+
+    .title {
+      background: lighten($theme-blue, 20%);
+    }
+  }
+
+  &.tip {
+    background-color: lighten($theme-offgreen, 50%);
+
+    .title {
+      background: lighten($theme-offgreen, 0%);
+    }
+  }
+
+  &.warning {
+    background-color: lighten($theme-orange, 40%);
+
+    .title {
+      background: lighten($theme-orange, 20%);
+    }
+  }
+
+  &.danger {
+    background-color: lighten($theme-red, 40%);
+
+    .title {
+      background: lighten($theme-red, 20%);
+    }
+  }
+}

@@ -1,4 +1,5 @@
 {%- include assets/site_pages.liquid -%}
+{%- include assets/i18n.liquid -%}
 
 {%- comment %} variables {% endcomment -%}
 {%- assign version = "2.0.0-beta" -%}
@@ -15,9 +16,6 @@
 {%- assign schema_date = page.date | default: rest_created_at | date_to_xmlschema -%}
 {%- assign schema_modi = site.time | date_to_xmlschema -%}
 {%- assign schema_surl = page.url  | absolute_url | xml_escape -%}
-
-{%- comment %} i18n {% endcomment -%}
-{%- assign __ = site.translate | default: site.data.translate -%}
 
 {%- comment %} title {% endcomment -%}
 {%- case page.url -%}

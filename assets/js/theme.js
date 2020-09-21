@@ -153,11 +153,6 @@ $(document).ready(function () {
       link.prepend(expand);
     });
 
-  /* admonition */
-  $(".admonition-title").each(function () {
-    $(this).children(".progress").replaceWith(ui.i18n[$(this).attr("ui")]);
-  });
-
   /* bind */
   $(document).on("click", '[data-toggle="wy-nav-top"]', function () {
     $('[data-toggle="wy-nav-shift"]').toggleClass("shift");

@@ -1,7 +1,9 @@
-<div class="admonition note">
-    <p class="admonition-title" ui="note">
-        <i class="fas fa-exclamation-circle"></i>
-        <span class="progress"></span>
-    </p>
-    {{ codes | markdownify | strip_newlines -}}
+<div class="admonition note box-shadow mb-3">
+    <div class="title px-2 py-1">
+        <i class="fa fa-exclamation-circle"></i>
+        {{ __.note | default: "Note" }}
+    </div>
+    <div class="content p-2">
+        {{ codes | markdownify | strip_newlines -}}
+    </div>
 </div>

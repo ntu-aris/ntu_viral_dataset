@@ -1,7 +1,7 @@
 <dl>
     <dt>{{ __.github | default: "GitHub" }}</dt>
     <dd>
-        <a href="{{ docs.repository_url }}" title="{{ __.star | default: 'Star' }}: {{ rest.stargazers_count }}">
+        <a href="{{ docs.repository_url }}" title="{{ __.stars | default: 'Stars' }}: {{ rest.stargazers_count }}">
             <i class="fa fa-github"></i>
             {{ __.homepage | default: "Homepage" }}
         </a>
@@ -13,7 +13,7 @@
         </a>
     </dd>
     <dd>
-        <a href="{{ docs.zip_url }}" title="{{ __.size | default: 'Size' }}: {{ rest.size }}Kb">
+        <a href="{{ docs.zip_url }}" title="{{ __.size | default: 'Size' }}: {{ rest.size }} Kb">
             <i class="fa fa-download"></i>
             {{ __.download | default: "Download" }}
         </a>
