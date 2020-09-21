@@ -3,7 +3,7 @@ function search(data) {
   let lang = new URL(location.href).searchParams.get("lang") || ui.lang;
 
   $("input[name='q']").val(text);
-  $("input[name='q']").attr("placeholder", i18n[lang].search_docs + "...");
+  $("input[name='q']").attr("placeholder", ui.i18n.search_docs);
 
   let results = [];
   let regexp = new RegExp();
@@ -11,8 +11,8 @@ function search(data) {
     regexp = new RegExp(text, "im");
   } catch (e) {
     $(".search").empty();
-    $(".search-summary").html(i18n[lang].search_results_not_found);
-    $("#search-results h2").html(i18n[lang].search_results);
+    $(".search-summary").html(ui.i18n.search_results_not_found);
+    $("#search-results h2").html(ui.i18n.search_results);
     return debug(e.message);
   }
 
@@ -74,13 +74,13 @@ function search(data) {
   if (results.length > 0 && text.length > 0) {
     $(".search").html(results.join(""));
     $(".search-summary").html(
-      i18n[lang].search_results_found.replace("#", results.length)
+      ui.i18n.search_results_found.replace("#", results.length)
     );
   } else {
     $(".search").empty();
-    $(".search-summary").html(i18n[lang].search_results_not_found);
+    $(".search-summary").html(ui.i18n.search_results_not_found);
   }
-  $("#search-results h2").html(i18n[lang].search_results);
+  $("#search-results h2").html(ui.i18n.search_results);
 }
 
 $(document).ready(function () {

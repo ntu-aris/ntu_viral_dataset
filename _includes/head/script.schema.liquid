@@ -6,20 +6,20 @@
             "@type": "WebPage",
             "@id": "{{ schema_surl }}"
         },
-        "headline": "{{ title | truncate: 110 }}",
+        "headline": "{{ title }}",
         "image": [{% for image in page.images %}"{{ image }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
         "author": {
             "@type": "Person",
-            "name": "{{ site.github.owner_name }}"
+            "name": "{{ author }}"
         },
         "datePublished": "{{ schema_date }}",
         "dateModified": "{{ schema_modi }}",
         "publisher": {
-            "@type": "Organization",
-            "name": "RunDocs",
+            "@type": "{{ docs.owner.type }}",
+            "name": "{{ author }}",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://rundocs.io/logo.png"
+                "url": "{{ docs.owner.avatar_url }}"
             }
         },
         "description": "{{ description }}"

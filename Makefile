@@ -38,7 +38,6 @@ dist: format clean
 	@npx webpack --mode production
 
 status: format clean checkout
-	@git add .
 	@git status
 
 theme: dist

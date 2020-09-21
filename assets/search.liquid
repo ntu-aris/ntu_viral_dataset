@@ -6,16 +6,7 @@ permalink: /search.html
 {%- include assets/site_pages.liquid -%}
 
 <div id="search-results">
-    <h2>{{ __searching }}<span class="progress"></span></h2>
+    <h2>{{ __.searching | default: "Searching"}}<span class="progress"></span></h2>
     <p class="search-summary"></p>
     <ul class="search"></ul>
 </div>
-
-<script>
-    window.i18n = {
-        search_docs: "{{ __search_docs }}",
-        search_results: "{{ __search_results }}",
-        search_results_found: "{{ __search_results_found }}",
-        search_results_not_found: "{{ __search_results_not_found }}"
-    };
-</script>

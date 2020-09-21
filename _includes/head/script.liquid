@@ -1,15 +1,19 @@
 <script>
     window.ui = {
-        baseurl: "{{ site.baseurl }}",
         title: "{{ site.title }}",
-        admonition: {
-            note: "{{ __note }}",
-            tip: "{{ __tip }}",
-            warning: "{{ __warning }}",
-            danger: "{{ __danger }}"
-        },
         lang: "{{ site.lang }}",
-        version: "{{ version }}"
+        version: "{{ version }}",
+        baseurl: "{{ site.baseurl }}/",
+        i18n: {
+            warning: "{{ __.warning | default: 'Warning' }}",
+            note: "{{ __.note | default: 'Note' }}",
+            tip: "{{ __.tip | default: 'Tip' }}",
+            danger: "{{ __.danger | default: 'Danger' }}",
+            search_docs: "{{ __.search_docs | default: 'Search Docs' }}",
+            search_results: "{{ __.search_results | default: 'Search Results' }}",
+            search_results_found: "{{ __.search_results_found | default: 'Search finished, found # page(s) matching the search query.' }}",
+            search_results_not_found: "{{ __.search_results_not_found | default: 'Your search did not match any documents, please make sure that all characters are spelled correctly!' }}"
+        }
     };
 </script>
 <script src="{{ cdn }}/assets/js/jquery.min.js"></script>

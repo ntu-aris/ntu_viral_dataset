@@ -1,32 +1,45 @@
-{%- assign description = content | strip_html | split: " " | join: " " | escape | truncate: 150 -%}
+{%- include assets/site_pages.liquid -%}
+
+{%- comment %} variables {% endcomment -%}
 {%- assign version = "2.0.0-beta" -%}
+{%- assign docs = site.github -%}
+{%- assign rest = docs.public_repositories | where: "html_url", docs.repository_url | first -%}
 
-{%- assign rest = site.github.public_repositories | where: "html_url", site.github.repository_url | first -%}
+{%- assign rest_created_at = rest.created_at | default: site.time -%}
+{%- assign rest_updated_at = rest.updated_at | default: site.time -%}
 
-{%- assign schema_date = page.date | default: site.time | date_to_xmlschema -%}
+{%- assign lang = site.lang | default: "en" -%}
+{%- assign author = docs.owner.name | default: docs.owner_name -%}
+
+{%- comment %} schema {% endcomment -%}
+{%- assign schema_date = page.date | default: rest_created_at | date_to_xmlschema -%}
 {%- assign schema_modi = site.time | date_to_xmlschema -%}
-{%- assign schema_surl = page.url | absolute_url | xml_escape -%}
+{%- assign schema_surl = page.url  | absolute_url | xml_escape -%}
 
-{% comment %} cdn {% endcomment %}
+{%- comment %} i18n {% endcomment -%}
+{%- assign __ = site.translate | default: site.data.translate -%}
+
+{%- comment %} title {% endcomment -%}
+{%- case page.url -%}
+    {%- when "/" -%}
+        {%- assign title = site.title | append: " · " | append: site.description | truncate: 110 -%}
+    {%- when "/search.html" -%}
+        {%- assign title = __.search  | append: " · " | append: site.title | truncate: 110 -%}
+    {%- when "/404.html" -%}
+        {%- assign title = "404"      | append: " · " | append: site.title | truncate: 110 -%}
+    {%- else -%}
+        {%- assign title = page.title | default: page.url | append: " · " | append: site.title | truncate: 110 -%}
+{%- endcase -%}
+
+{%- comment %} description {% endcomment -%}
+{%- assign description = content | strip_html | split: " " | join: " " | escape | truncate: 150 -%}
+
+{% comment %} debug {% endcomment %}
 {%- if site.debug -%}
     {%- assign cdn = site.baseurl -%}
 {%- else -%}
     {%- assign cdn = "https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@" | append: version -%}
 {%- endif -%}
-
-{%- include assets/site_pages.liquid %}
-
-{% comment %} title {% endcomment %}
-{%- case page.url -%}
-    {%- when "/" -%}
-        {%- assign title = site.title | append: " · " | append: site.description -%}
-    {%- when "/search.html" -%}
-        {%- assign title = __search   | append: " · " | append: site.title -%}
-    {%- when "/404.html" -%}
-        {%- assign title = __404      | append: " · " | append: site.title -%}
-    {%- else -%}
-        {%- assign title = page.title | default: page.url | append: " · " | append: site.title -%}
-{%- endcase -%}
 
 {% comment %} content {% endcomment %}
 {%- assign content = content
@@ -39,20 +52,20 @@
 {% comment %} prev and next {% endcomment %}
 {%- assign workdir_files = site_files | where_exp: "item", "item.dir == page.dir" -%}
 
-{%- assign _index = 0 -%}
+{%- assign index = 0 -%}
 {%- for item in workdir_files %}
     {%- if item.url == page.url %}
-        {%- assign _index = forloop.index -%}
+        {%- assign index = forloop.index -%}
     {%- endif %}
 {%- endfor -%}
 
 {%- for item in workdir_files -%}
-    {%- assign _index_prev = _index | minus: 1 -%}
-    {%- assign _index_next = _index | plus: 1 -%}
-    {%- if forloop.index == _index_prev -%}
+    {%- assign index_prev = index | minus: 1 -%}
+    {%- assign index_next = index | plus: 1 -%}
+    {%- if forloop.index == index_prev -%}
         {%- assign prev = item -%}
     {%- endif %}
-    {%- if forloop.index == _index_next and page.url != page.dir -%}
+    {%- if forloop.index == index_next and page.url != page.dir -%}
         {%- assign next = item -%}
     {%- endif %}
 {%- endfor -%}

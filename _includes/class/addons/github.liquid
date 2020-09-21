@@ -1,21 +1,21 @@
 <dl>
-    <dt>{{ site.data.translate.github | default: "GitHub" }}</dt>
+    <dt>{{ __.github | default: "GitHub" }}</dt>
     <dd>
-        <a href="{{ site.github.repository_url }}" title="{{ site.data.translate.star | default: 'Star' }}: {{ rest.stargazers_count }}">
+        <a href="{{ docs.repository_url }}" title="{{ __.star | default: 'Star' }}: {{ rest.stargazers_count }}">
             <i class="fa fa-github"></i>
-            {{ site.data.translate.homepage | default: "HomePage" }}
+            {{ __.homepage | default: "Homepage" }}
         </a>
     </dd>
     <dd>
-        <a href="{{ site.github.issues_url }}" title="{{ site.data.translate.count | default: 'Count' }}: {{ rest.open_issues }}">
+        <a href="{{ docs.issues_url }}" title="{{ __.open_issues | default: 'Open issues' }}: {{ rest.open_issues }}">
             <i class="fa fa-question-circle-o"></i>
-            {{ site.data.translate.issues | default: "Issues" }}
+            {{ __.issues | default: "Issues" }}
         </a>
     </dd>
     <dd>
-        <a href="{{ site.github.zip_url }}" title="{{ site.data.translate.size | default: 'Size' }}: {{ rest.size }}">
+        <a href="{{ docs.zip_url }}" title="{{ __.size | default: 'Size' }}: {{ rest.size }}Kb">
             <i class="fa fa-download"></i>
-            {{ site.data.translate.download | default: "Download" }}
+            {{ __.download | default: "Download" }}
         </a>
     </dd>
 </dl>

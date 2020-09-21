@@ -3,5 +3,7 @@ layout: default
 permalink: /404.html
 ---
 
+{%- include assets/defaults.liquid -%}
+
 <h2>404</h2>
-<p>{{ site.data.translate.not_found | default: "Not Found"}}</p>
+<p>{{ __.not_found | default: "Not Found"}}</p>

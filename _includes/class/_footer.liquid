@@ -5,14 +5,14 @@
             <div class="prev">
                 {%- if prev -%}
                     <a href="{{ prev.url | relative_url }}" class="btn" title="{{ prev.title }}" accesskey="p" rel="prev">
-                        <i class="fa fa-arrow-circle-left"></i> {{ site.data.translate.previous | default: "Previous" }}
+                        <i class="fa fa-arrow-circle-left"></i> {{ __.previous | default: "Previous" }}
                     </a>
                 {%- endif -%}
             </div>
             <div class="next">
                 {%- if next -%}
                     <a href="{{ next.url | relative_url }}" class="btn" title="{{ next.title }}" accesskey="n" rel="next">
-                        {{ site.data.translate.next | default: "Next" }} <i class="fa fa-arrow-circle-right"></i>
+                        {{ __.next | default: "Next" }} <i class="fa fa-arrow-circle-right"></i>
                     </a>
                 {%- endif -%}
             </div>
@@ -24,18 +24,18 @@
 
 <div class="copyright text-center text-gray" role="contentinfo">
     <i class="fa fa-copyright"></i>
-    {%- assign created_time = rest.created_at | default: site.time | date: "%Y" -%}
-    {%- assign updated_time = site.time | date: "%Y" -%}
+    {%- assign created_time = rest_created_at | date: "%Y" -%}
+    {%- assign updated_time = rest_updated_at | date: "%Y" -%}
     {%- if created_time == updated_time -%}
         {{ created_time }},
     {%- else -%}
         {{ created_time }}-{{ updated_time }},
     {%- endif %}
-    <a class="text-gray" href="{{ site.github.owner_url }}" target="_blank">
-        {{ site.github.owner_name }}
+    <a class="text-gray" href="{{ docs.owner_url }}" target="_blank">
+        {{ author }}
     </a>
-    {{ site.data.translate.revision | default: "Revision" }}
-    <a class="text-gray" href="{{ site.github.repository_url }}/commit/{{ site.github.build_revision }}" title="{{ site.github.build_revision }}" target="_blank">
-        {{ site.github.build_revision | slice: 0, 7 }}
+    {{ __.revision | default: "Revision" }}
+    <a class="text-gray" href="{{ docs.repository_url }}/commit/{{ docs.build_revision }}" title="{{ docs.build_revision }}" target="_blank">
+        {{ docs.build_revision | slice: 0, 7 }}
     </a>
 </div>

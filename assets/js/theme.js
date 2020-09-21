@@ -155,9 +155,7 @@ $(document).ready(function () {
 
   /* admonition */
   $(".admonition-title").each(function () {
-    $(this)
-      .children(".progress")
-      .replaceWith(ui.admonition[$(this).attr("ui")]);
+    $(this).children(".progress").replaceWith(ui.i18n[$(this).attr("ui")]);
   });
 
   /* bind */
