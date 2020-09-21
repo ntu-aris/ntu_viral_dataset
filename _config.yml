@@ -4,10 +4,10 @@ description: Opinionated github flavored documentation theme for open source pro
 
 theme: null
 
-debug:
-  compress: true
-  dist: false
-  extension: true
+# debug:
+#   compress: true
+#   dist: true
+#   extension: true
 
 readme_index:
   with_frontmatter: true
