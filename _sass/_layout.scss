@@ -34,7 +34,7 @@
   }
 }
 
-@media screen and (min-width: $width-md) {
+@include breakpoint(md) {
   .menu-md {
     left: 0;
     width: $theme-menu-width;
@@ -68,7 +68,7 @@
   }
 }
 
-@media screen and (min-width: $width-xl) {
+@include breakpoint(xl) {
   .content-wrap {
     max-width: $width-xl - $theme-menu-width;
   }

@@ -4,7 +4,7 @@
   background: $theme-white;
 }
 
-@media screen and (min-width: $width-xl) {
+@include breakpoint(xl) {
   .container {
     background: $theme-mask-black;
   }
