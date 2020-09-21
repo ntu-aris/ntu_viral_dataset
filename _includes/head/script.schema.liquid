@@ -1,0 +1,27 @@
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{ schema_surl }}"
+        },
+        "headline": "{{ title | truncate: 110 }}",
+        "image": [{% for image in page.images %}"{{ image }}"{% unless forloop.last %},{% endunless %}{% endfor %}],
+        "author": {
+            "@type": "Person",
+            "name": "{{ site.github.owner_name }}"
+        },
+        "datePublished": "{{ schema_date }}",
+        "dateModified": "{{ schema_modi }}",
+        "publisher": {
+            "@type": "Organization",
+            "name": "RunDocs",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://rundocs.io/logo.png"
+            }
+        },
+        "description": "{{ description }}"
+    }
+</script>

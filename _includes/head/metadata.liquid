@@ -1,0 +1,21 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="{{ description }}">
+<meta name="revised" content="{{ site.github.build_revision }}">
+<meta name="author" content="{{ site.github.owner_name }}">
+<meta name="generator" content="jekyll-rtd-theme v{{ version }}">
+
+{%- comment %} custom {% endcomment %}
+{% for meta in site.meta -%}
+    <meta name="{{ meta.first }}" content="{{ meta.last }}">
+{% endfor -%}
+
+{% comment %} https://ogp.me {% endcomment %}
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:locale" content="{{ site.lang }}">
+<meta property="og:url" content="{{ schema_surl }}">
+<meta property="og:type" content="article">
+<meta property="article:author" content="{{ site.github.owner_name }}">
+<meta property="article:published_time" content="{{ schema_date }}">
+<meta property="article:modified_time" content="{{ schema_modi }}">

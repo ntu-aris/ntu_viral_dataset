@@ -1,4 +1,4 @@
-/* core */
+// core
 @import "@primer/support";
 @import "variables";
 @import "root";
@@ -9,11 +9,11 @@
 @import "@primer/forms";
 @import "@primer/markdown";
 
-/* fonts */
+// fonts
 @import "font-face";
 @import "icons";
 
-/* theme */
+// theme
 @import "layout";
 @import "reset";
 @import "class/container";
@@ -25,5 +25,5 @@
 @import "class/markdown-body";
 @import "class/highlight";
 
-/* utilities */
+// utilities
 @import "@primer/utilities";

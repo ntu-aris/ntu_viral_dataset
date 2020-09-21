@@ -1,4 +1,4 @@
-{%- include safe/shortcodes.liquid -%}
+{%- assign shortcodes = "mermaid, note, tip, warning, danger" | split: ", " -%}
 
 {%- if site.debug.extension == false -%}
     {{ content }}

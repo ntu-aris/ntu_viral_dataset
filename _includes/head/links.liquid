@@ -1,0 +1,16 @@
+{%- comment %} canonical link {% endcomment %}
+<link rel="canonical" href="{{ schema_surl }}">
+
+{%- if prev -%}
+    <link rel="prev" href="{{ prev.url | absolute_url }}">
+{%- endif -%}
+
+{%- if next -%}
+    <link rel="next" href="{{ next.url | absolute_url }}">
+{%- endif -%}
+
+{% comment %} theme {% endcomment %}
+<link rel="stylesheet" href="{{ cdn }}/assets/css/theme{% if site.debug.dist != false %}.min{% endif %}.css">
+
+{% comment %} icon {% endcomment %}
+<link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/favicon.svg">

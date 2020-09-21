@@ -1,0 +1,16 @@
+<script>
+    window.ui = {
+        baseurl: "{{ site.baseurl }}",
+        title: "{{ site.title }}",
+        admonition: {
+            note: "{{ __note }}",
+            tip: "{{ __tip }}",
+            warning: "{{ __warning }}",
+            danger: "{{ __danger }}"
+        },
+        lang: "{{ site.lang }}",
+        version: "{{ version }}"
+    };
+</script>
+<script src="{{ cdn }}/assets/js/jquery.min.js"></script>
+<script src="{{ cdn }}/assets/js/theme{% if site.debug.dist != false %}.min{% endif %}.js"></script>
