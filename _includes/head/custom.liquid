@@ -9,13 +9,9 @@
 {%- endcapture -%}
 
 {%- if custom_script.size > 0 -%}
-    <script>
-        {{ custom_script }}
-    </script>
+    <script>{{ custom_script }}</script>
 {%- endif -%}
 
 {%- if custom_scss.size > 0 -%}
-    <style>
-        {{ custom_scss | scssify | strip_newlines }}
-    </style>
+    <style>{{ custom_scss | scssify | strip_newlines }}</style>
 {%- endif -%}
