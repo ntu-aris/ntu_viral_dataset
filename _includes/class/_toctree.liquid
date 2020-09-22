@@ -1,4 +1,4 @@
-{%- include assets/workdir.liquid %}
+{%- include rest/workdir.liquid %}
 
 {% comment %} list the root files {% endcomment %}
 <ul>
@@ -20,4 +20,4 @@
 </ul>
 
 {% comment %} list the root dirs {% endcomment %}
-{%- for workdir in workdir_dirs %}{% include class/_toctree.extend.liquid %}{% endfor -%}
+{%- for workdir in workdir_dirs %}{% include extend/toctree.liquid %}{% endfor -%}

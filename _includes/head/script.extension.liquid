@@ -22,3 +22,8 @@
         gtag("config", "{{ site.google.gtag }}");
     </script>
 {%- endif -%}
+
+{% comment %} Google AdSense {% endcomment %}
+{%- if site.google.adsense -%}
+    <script data-ad-client="{{ site.google.adsense }}" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+{%- endif -%}

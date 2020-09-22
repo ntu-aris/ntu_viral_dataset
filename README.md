@@ -3,9 +3,7 @@
 ![CI](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg)
 ![jsDelivr](https://data.jsdelivr.com/v1/package/gh/rundocs/jekyll-rtd-theme/badge)
 
-Opinionated github flavored documentation theme for open source projects, with few options, just use it!
-
-# Waiting for your contribution 2.0
+Opinionated github flavored standard document theme for open source projects, with few options, just use it!
 
 ## Quick start
 
@@ -50,6 +48,10 @@ plugins:
   - jekyll-avatar
   - jekyll-mentions
 ```
+
+## Waiting
+
+Document writing specifications, please refer to [rundocs.io](https://rundocs.io) for details
 
 ## The license
 

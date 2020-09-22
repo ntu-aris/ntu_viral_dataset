@@ -1,0 +1,19 @@
+{%- capture custom_script -%}
+    {% include assets/custom.js %} {{ site.script }}
+{%- endcapture -%}
+
+{%- capture custom_scss -%}
+    {% include assets/custom.scss %} {{ site.scss }}
+{%- endcapture -%}
+
+{%- if custom_script -%}
+    <script>
+        {{ custom_script }}
+    </script>
+{%- endif -%}
+
+{%- if custom_scss -%}
+    <style>
+        {{ custom_scss | scssify | strip_newlines }}
+    </style>
+{%- endif -%}

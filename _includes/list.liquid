@@ -1,10 +1,10 @@
-{%- include assets/site_pages.liquid -%}
-{%- include assets/workdir.liquid workdir=page.dir -%}
+{%- include rest/site_pages.liquid -%}
+{%- include rest/workdir.liquid workdir=page.dir -%}
 
 {%- for item in workdir_files %}
 - [{{ item.title | default: item.url }}]({{ item.url | relative_url }})
 {%- endfor -%}
 
 {%- if include.all -%}
-    {%- for workdir in workdir_dirs %}{% include list.extend.liquid %}{% endfor -%}
+    {%- for workdir in workdir_dirs %}{% include extend/list.liquid %}{% endfor -%}
 {%- endif -%}

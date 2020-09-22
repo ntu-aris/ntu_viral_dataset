@@ -1,13 +1,13 @@
 title: jekyll-rtd-theme
 lang: en
-description: Opinionated github flavored documentation theme for open source projects
+description: Opinionated github flavored standard document theme for open source projects, with few options, just use it!
 
 theme: null
 
-# debug:
-#   compress: true
-#   dist: false
-#   extension: true
+debug:
+  compress: true
+  dist: false
+  extension: true
 
 readme_index:
   with_frontmatter: true

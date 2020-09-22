@@ -1,4 +1,3 @@
-{% comment %} Start from the language chapter(eg: en-us) or root(/) {% endcomment %}
 {%- assign workdir = include.workdir | default: "/" -%}
 
 {%- assign workdir_level = workdir | append: "temp" | replace_first: "/", "" | split: "/" | size -%}

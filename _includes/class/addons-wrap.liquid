@@ -13,7 +13,7 @@
     <div class="addons d-flex flex-column height-full p-2 d-none">
         {%- assign items = "github, analytics" | split: ", " -%}
         {% for item in items -%}
-            {% include class/addons/{{ item }}.liquid %}
+            {% include addons/{{ item }}.liquid %}
         {% endfor -%}
         <hr>
         <div class="generator f6 pb-2">
