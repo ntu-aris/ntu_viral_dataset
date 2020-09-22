@@ -12,21 +12,9 @@
 }
 
 .toctree {
-  color: #9b9b9b;
-
   a {
-    color: #d9d9d9;
+    color: $theme-white;
     padding: 0.5em;
-
-    &:hover {
-      background: $theme-mask-white;
-    }
-    &:active {
-      background: $theme-menu-active-background;
-    }
-  }
-  .fa {
-    margin-right: 2px;
   }
 
   .caption {
@@ -34,9 +22,52 @@
     font-weight: $font-weight-bold;
     line-height: 32px;
   }
+
+  .fa {
+    margin-right: 2px;
+  }
+
+  > ul {
+    // the first level links
+    > .toc:not(.current) > a {
+      &:hover {
+        background: $theme-mask-white;
+      }
+      &:active {
+        background: $theme-menu-active-background;
+      }
+    }
+
+    .toc.current {
+      // all expanded links
+      a {
+        color: #404040;
+
+        &:hover {
+          background: $theme-mask-white;
+        }
+        &.current {
+          font-weight: bold;
+          background: $theme-white;
+          border-top: 1px solid var(--toc-2);
+          border-bottom: 1px solid var(--toc-2);
+        }
+      }
+      // parent links
+      > a {
+        .fa-plus-square-o {
+          @extend .fa-minus-square-o;
+        }
+      }
+    }
+    // fixed level-1's hover mask
+    > .toc.current {
+      background: var(--toc-1);
+    }
+  }
 }
 
-// layout
+// toc layout
 .toc {
   > ul {
     @extend .d-none;
@@ -50,33 +81,11 @@
 
       > ul {
         @extend .d-block;
-
         background: var(--toc-#{$level + 1});
       }
 
       .level-#{$level + 1} > a {
         padding-left: 1.5em * ($level + 0.5);
-      }
-    }
-  }
-}
-
-.toc {
-  &.current {
-    & > a {
-      .fa-plus-square-o {
-        @extend .fa-minus-square-o;
-      }
-    }
-
-    a {
-      color: #404040;
-
-      &.current {
-        font-weight: bold;
-        background: $theme-white;
-        border-top: 1px solid var(--toc-2);
-        border-bottom: 1px solid var(--toc-2);
       }
     }
   }

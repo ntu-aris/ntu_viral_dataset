@@ -63,7 +63,7 @@
     {%- if forloop.index == index_prev -%}
         {%- assign prev = item -%}
     {%- endif %}
-    {%- if forloop.index == index_next and page.url != page.dir -%}
+    {%- if forloop.index == index_next -%}
         {%- assign next = item -%}
     {%- endif %}
 {%- endfor -%}

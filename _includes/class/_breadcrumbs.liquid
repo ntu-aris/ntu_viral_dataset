@@ -1,7 +1,7 @@
 <div class="navigation-top d-flex flex-justify-between">
     <ul class="breadcrumb" role="navigation" aria-label="breadcrumbs navigation">
         <li class="breadcrumb-item">
-            <a href="{{ site.baseurl }}/">
+            <a class="no-underline" href="{{ site.baseurl }}/">
                 <i class="fa fa-home"></i>
             </a>
         </li>
@@ -17,7 +17,7 @@
             {%- else -%}
                 {%- assign blocks = page.path | split: "/" -%}
                 {%- for block in blocks -%}
-                    <li class="breadcrumb-item" {% if forloop.last %}aria-current{% endif %}>
+                    <li class="breadcrumb-item" {% if forloop.last %}aria-current="page"{% endif %}>
                         {%- if forloop.last -%}
                             {{ page.name }}
                         {%- else -%}

@@ -2,6 +2,19 @@
   // 400
   font-weight: $font-weight-normal;
 
+  a {
+    color: $theme-link;
+
+    &:hover {
+      color: $theme-link-hover;
+    }
+
+    code,
+    tt {
+      color: $theme-link;
+    }
+  }
+
   h1,
   h2,
   h3,
@@ -27,13 +40,6 @@
     font-size: $font-size-small;
     border: $border;
     color: $theme-red;
-  }
-
-  a {
-    code,
-    tt {
-      color: $text-blue;
-    }
   }
 
   pre {

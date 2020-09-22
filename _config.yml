@@ -6,7 +6,7 @@ theme: null
 
 # debug:
 #   compress: true
-#   dist: true
+#   dist: false
 #   extension: true
 
 readme_index:
