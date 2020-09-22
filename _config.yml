@@ -5,8 +5,8 @@ description: Opinionated github flavored standard document theme for open source
 theme: null
 
 # debug:
-#   compress: true
-#   dist: true
+#   compress: false
+#   dist: false
 #   extension: true
 
 readme_index:
