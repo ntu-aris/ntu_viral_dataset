@@ -21,7 +21,6 @@ $(document).ready(function () {
     let lang = new URL(location.href).searchParams.get("lang") || ui.lang;
 
     $("input[name='q']").val(text);
-    $("input[name='q']").attr("placeholder", ui.i18n.search_docs);
 
     let results = [];
     let regexp = new RegExp();
