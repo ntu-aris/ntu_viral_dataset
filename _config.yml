@@ -12,9 +12,6 @@ theme: null
 readme_index:
   with_frontmatter: true
 
-sass:
-  style: compress
-
 plugins:
   - jemoji
   - jekyll-avatar

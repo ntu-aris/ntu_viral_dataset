@@ -3,7 +3,21 @@
 ![CI](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg)
 ![jsDelivr](https://data.jsdelivr.com/v1/package/gh/rundocs/jekyll-rtd-theme/badge)
 
-Opinionated github flavored standard document theme for open source projects, with few options, just use it!
+Opinionated github flavored standard document theme for open source projects, with few options, but everything!
+
+## What it does?
+
+This theme is inspired by [sphinx-rtd-theme](https://github.com/readthedocs/sphinx_rtd_theme) and refactored with:
+
+- [github-pages](https://github.com/github/pages-gem)
+- [@primer/css](https://github.com/primer/css)
+
+Give you a native GitHub experience and solved the issue of open source project documentation site
+
+- No need to learn other programming languages for building documentation
+- No need to care about the site SEO
+- Markdown syntax extended
+- Native support for mermaid chart plugin
 
 ## Quick start
 
@@ -17,15 +31,13 @@ You can [generate](https://github.com/rundocs/starter-slim/generate) with the sa
 
 ```yml
 title: Your awesome title
-lang: en
+lang: # default: en
 description: Write an awesome description for your new site here
 
-# plugin options
 readme_index:
   with_frontmatter: true
 
-
-# optional settings
+## optional settings ##
 meta:
   key1: value1
   key2: value2
@@ -39,10 +51,32 @@ google:
 
 mermaid:
   custom: # mermaid link
-  initialize: # mermaid options
+  initialize: # mermaid options, default: {}
 
+# also available via file: _include/assets/custom.scss
+scss:
 
-# optional plugins
+# also available via file: _include/assets/custom.js
+script:
+
+# also available via file: _data/translate.yml
+translate:
+  # shortcodes
+  danger:
+  note:
+  tip:
+  warning:
+  # 404
+  not_found:
+  # search
+  searching:
+  search:
+  search_docs:
+  search_results:
+  search_results_found: # the "#" in this translate will replaced with results size!
+  search_results_not_found:
+
+## optional plugins ##
 plugins:
   - jemoji
   - jekyll-avatar

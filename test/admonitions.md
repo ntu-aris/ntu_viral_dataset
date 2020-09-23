@@ -1,10 +1,13 @@
 ---
-sort: 3
+sort: 2
 ---
 
 # Admonition Card
 
-THIS IS TOO LONG, NEED UPDATE!
+THIS IS TOO LONG, NEED UPDATE! HERE IS SOME IDEAS:
+
+- https://primer.style/css/components/box
+- https://primer.style/css/components/toasts
 
 ```note
 ## This is a note
