@@ -54,6 +54,10 @@
     border: $border;
   }
 
+  .highlight pre {
+    background-color: transparent;
+  }
+
   // search
   .search-results {
     li {

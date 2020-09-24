@@ -7,6 +7,7 @@ help:
 	@echo "Subcommands:"
 	@echo "    install   Install the theme dependencies"
 	@echo "    format    Format all files"
+	@echo "    report    Make a report from Google lighthouse"
 	@echo "    clean     Clean the workspace"
 	@echo "    dist      Build the theme css and script"
 	@echo "    status    Display status before push"
@@ -30,6 +31,9 @@ install: hooks
 
 format:
 	@npx prettier . --check --write
+
+report:
+	@npx lighthouse http://127.0.0.1:4000
 
 clean:
 	@bundle exec jekyll clean

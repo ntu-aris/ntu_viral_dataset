@@ -3,6 +3,7 @@
 _site
 node_modules
 
+*.report.html
 *.gem
 *.whl
 Gemfile.lock
