@@ -40,6 +40,7 @@
     font-size: $font-size-small;
     border: $border;
     color: $theme-red;
+    background-color: darken($theme-white, 2%);
   }
 
   pre {
