@@ -1,6 +1,6 @@
 # jekyll-rtd-theme
 
-![CI](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg)
+![CI](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg?branch=v2)
 ![jsDelivr](https://data.jsdelivr.com/v1/package/gh/rundocs/jekyll-rtd-theme/badge)
 
 Opinionated github flavored standard document theme for open source projects, with few options, but everything!
