@@ -1,7 +1,7 @@
 DEBUG=JEKYLL_GITHUB_TOKEN=blank PAGES_API_URL=http://0.0.0.0
 
 help:
-	@echo "jekyll-rtd-theme -- GitHub flavored documentation theme for all open source projects\n"
+	@echo "jekyll-rtd-theme -- Opinionated github flavored standard document theme for open source projects\n"
 	@echo "Usage:"
 	@echo "    make [subcommand]\n"
 	@echo "Subcommands:"
@@ -14,7 +14,7 @@ help:
 	@echo "    theme     Make theme as gem and install"
 	@echo "    site      Build the test site"
 	@echo "    server    Make a livereload jekyll server to development"
-	@echo "    rougify   Build the rouge skins"
+	@echo "    rougify   Build the rouge scss"
 	@echo "    checkout  Reset the theme minified css and script to last commit"
 
 checkout:
