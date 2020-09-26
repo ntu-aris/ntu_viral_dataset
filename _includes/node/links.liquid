@@ -13,17 +13,17 @@
     <link rel="next" href="{{ next.url | absolute_url }}">
 {%- endif -%}
 
-{% comment %} theme {% endcomment %}
-<link rel="stylesheet" href="{{ cdn }}/assets/css/theme{% if site.debug.dist != false %}.min{% endif %}.css">
-
-
-{% comment %} rtl theme {% endcomment %}
+{% comment %} conditional direction {% endcomment %}
 {% if site.rtl == true %}
-{% if site.debug.dist != false %}
-<link rel="stylesheet" href="/assets/css/theme-rtl.css">
+    {% comment %} rtl theme {% endcomment %}
+    {% if site.debug.dist != false %}
+        <link rel="stylesheet" href="/assets/css/theme-rtl.css">
+    {% else %}
+        <link rel="stylesheet" href="{{ cdn }}/assets/css/theme-rtl{% if site.debug.dist != false %}.min{% endif %}.css">
+    {% endif %}
 {% else %}
-<link rel="stylesheet" href="{{ cdn }}/assets/css/theme-rtl{% if site.debug.dist != false %}.min{% endif %}.css">
-{% endif %}
+    {% comment %} theme {% endcomment %}
+    <link rel="stylesheet" href="{{ cdn }}/assets/css/theme{% if site.debug.dist != false %}.min{% endif %}.css">
 {% endif %}
 
 

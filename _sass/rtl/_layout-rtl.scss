@@ -1,4 +1,73 @@
+body {
+    direction: rtl;
+}
 
 .container-rtl {
     direction: rtl;
+}
+
+.menu-sm {
+    right: -85%;
+    left: auto;
+    width: 85%;
+
+    &.shift {
+        right: 0;
+        left: auto;
+    }
+}
+
+.sidebar-wrap {
+    right: 0;
+    left: auto;
+}
+
+@include breakpoint(md) {
+    .menu-md {
+        right: 0;
+        left: auto;
+    }
+
+    .content-wrap {
+        margin-right: $theme-menu-width;
+
+        &.shift {
+            right: 0;
+            left: auto;
+        }
+    }
+}
+
+.content-wrap {
+    &.shift {
+        right: 85%;
+        left: auto;
+    }
+}
+
+// toc layout
+.toc {
+    > ul {
+        @extend .d-none;
+    }
+
+    @for $level from 1 through 11 {
+        &.level-#{$level}.current {
+            > a {
+                padding-right: 1.5em * ($level - 1 + 0.5);
+                padding-left: 0;
+                background: var(--toc-#{$level});
+            }
+
+            > ul {
+                @extend .d-block;
+                background: var(--toc-#{$level + 1});
+            }
+
+            .level-#{$level + 1} > a {
+                padding-right: 1.5em * ($level + 0.5);
+                padding-left: 0;
+            }
+        }
+    }
 }
