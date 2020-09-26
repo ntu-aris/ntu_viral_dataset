@@ -16,5 +16,9 @@
 {% comment %} theme {% endcomment %}
 <link rel="stylesheet" href="{{ cdn }}/assets/css/theme{% if site.debug.dist != false %}.min{% endif %}.css">
 
+{%- if custom_scss.size > 0 -%}
+    <style>{{ custom_scss | scssify | strip_newlines }}</style>
+{%- endif -%}
+
 {% comment %} icon {% endcomment %}
 <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/favicon.svg">

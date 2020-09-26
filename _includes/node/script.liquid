@@ -12,4 +12,9 @@
     };
 </script>
 <script src="{{ cdn }}/assets/js/jquery.min.js"></script>
+
+{%- if custom_script.size > 0 -%}
+    <script>{{ custom_script }}</script>
+{%- endif -%}
+
 <script src="{{ cdn }}/assets/js/theme{% if site.debug.dist != false %}.min{% endif %}.js"></script>

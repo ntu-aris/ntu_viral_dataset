@@ -67,3 +67,14 @@
         {%- assign next = item -%}
     {%- endif %}
 {%- endfor -%}
+
+{% comment %} custom {% endcomment %}
+{%- capture custom_script -%}
+    {%- include assets/custom.js -%}
+    {{- site.script -}}
+{%- endcapture -%}
+
+{%- capture custom_scss -%}
+    {%- include assets/custom.scss -%}
+    {{- site.scss -}}
+{%- endcapture -%}
