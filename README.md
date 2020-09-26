@@ -5,7 +5,7 @@
 
 Opinionated github flavored standard document theme for open source projects, with few options, but everything!
 
-## What it does?
+## What it does?f
 
 This theme is inspired by [sphinx-rtd-theme](https://github.com/readthedocs/sphinx_rtd_theme) and refactored with:
 
