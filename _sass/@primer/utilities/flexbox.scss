@@ -23,6 +23,9 @@
     .flex#{$variant}-nowrap {
       flex-wrap: nowrap !important;
     }
+    .flex#{$variant}-wrap-reverse {
+      flex-wrap: wrap-reverse !important;
+    }
 
     .flex#{$variant}-justify-start {
       justify-content: flex-start !important;
