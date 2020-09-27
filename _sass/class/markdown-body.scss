@@ -49,6 +49,10 @@
     }
   }
 
+  .anchor {
+    padding-right: 0;
+    margin-left: -15px;
+  }
   .highlight pre,
   pre {
     font-size: $font-size-small;
