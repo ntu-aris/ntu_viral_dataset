@@ -80,7 +80,7 @@ plugins:
   - jekyll-mentions
 ```
 
-## Waiting
+## Writing
 
 Document writing specifications, please refer to [rundocs.io](https://rundocs.io) for details
 

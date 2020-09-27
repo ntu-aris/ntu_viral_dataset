@@ -9,19 +9,19 @@ Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com
 {:.text-red}
 Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
 
-{:.bg-red}
+{:.bg-yellow-dark}
 Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
 
-{:.bg-red.text-white}
+{:.bg-yellow-dark.text-white}
 Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
 
-{:.bg-red.text-white.m-5}
+{:.bg-yellow-dark.text-white.m-5}
 Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
 
-{:.bg-red.text-white.p-5.mb-6}
+{:.bg-yellow-dark.text-white.p-5.mb-6}
 Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
 
-{:.bg-red.text-white.p-5.mb-6}
+{:.bg-yellow-dark.text-white.p-5.mb-6}
 Text can be **bold**{:.h1}, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
 
 {:.bg-yellow-dark.text-white.p-2.box-shadow-large}

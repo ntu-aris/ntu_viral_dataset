@@ -1,12 +1,15 @@
-# https://docs.github.com/en/github/administering-a-repository/configuration-options-for-dependency-updates
-
 version: 2
+
 updates:
   - package-ecosystem: "pip"
     directory: "/"
     schedule:
       interval: "daily"
+    target-branch: "v2"
+    versioning-strategy: "lockfile-only"
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "daily"
+    target-branch: "v2"
+    versioning-strategy: "increase"
