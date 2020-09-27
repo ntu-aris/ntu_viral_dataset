@@ -2,6 +2,7 @@
 {%- include reset/i18n.liquid -%}
 
 {%- comment %} variables {% endcomment -%}
+{%- assign collect = "https://rundocs-analytics.glitch.me/collect" -%}
 {%- assign version = "2.0.2" -%}
 {%- assign docs = site.github -%}
 {%- assign rest = docs.public_repositories | where: "html_url", docs.repository_url | first -%}
