@@ -240,6 +240,18 @@ $(".status").click(function () {
   $(".addons").toggleClass("d-none");
 });
 
+if (location.pathname == `${ui.baseurl}/search.html`) {
+  $.ajax(`${ui.baseurl}/pages.json`)
+    .done(search)
+    .fail((xhr, message) => debug(message));
+}
+
+toc();
+initialize(location.pathname);
+initialize(location.hash);
+restore();
+highlight();
+
 /* nested ul */
 $(".toc ul")
   .siblings("a")
@@ -254,18 +266,6 @@ $(".toc ul")
     });
     link.prepend(expand);
   });
-
-if (location.pathname == `${ui.baseurl}/search.html`) {
-  $.ajax(`${ui.baseurl}/pages.json`)
-    .done(search)
-    .fail((xhr, message) => debug(message));
-}
-
-toc();
-initialize(location.pathname);
-initialize(location.hash);
-restore();
-highlight();
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register(`${ui.baseurl}/sw.caches.js`);
