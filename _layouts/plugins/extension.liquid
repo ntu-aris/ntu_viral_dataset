@@ -18,7 +18,7 @@
                     {%- if shortcodes contains lang -%}
                         {%- include shortcodes/{{ lang }}.liquid -%} {{- pre_blocks.last -}}
                     {%- else -%}
-                        <pre{{ pre_blocks.first }}++{{lang}}</pre> {{ pre_blocks.last }}
+                        <pre{{ pre_blocks.first }}</pre> {{ pre_blocks.last }}
                     {%- endif -%}
                 {%- else -%}
                     <pre{{ pre_blocks.first }}</pre> {{ pre_blocks.last -}}
