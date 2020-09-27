@@ -18,7 +18,7 @@ function search(data) {
   function slice(content, min, max) {
     return content
       .slice(min, max)
-      .replace(regexp, (match) => `<span class="highlighted">${match}</span>`);
+      .replace(regexp, (match) => `<span class="bg-yellow">${match}</span>`);
   }
   for (page of data) {
     let [title, content] = [null, null];
@@ -175,7 +175,6 @@ function restore() {
 
 function highlight() {
   let text = new URL(location.href).searchParams.get("highlight");
-  let box = ".highlighted-box";
 
   if (text) {
     $(".markdown-body")
@@ -183,21 +182,90 @@ function highlight() {
       .each(function () {
         try {
           if (this.outerHTML.match(new RegExp(text, "im"))) {
-            $(this).addClass("highlighted-box");
+            $(this).addClass("search-result");
+            $(this).parentsUntil(".markdown-body").removeClass("search-result");
           }
         } catch (e) {
           debug(e.message);
         }
       });
-    $(".markdown-body")
-      .find(box)
-      .each(function () {
-        if ($(this).find(box).length > 0) {
-          $(this).removeClass(box);
-        }
+    // last node
+    $(".search-result").each(function () {
+      $(this).html(function (i, html) {
+        return html.replace(text, `<span class="bg-yellow">${text}</span>`);
       });
+    });
+    $(".search input").val(text);
   }
 }
+
+$(window).bind("hashchange", () =>
+  initialize(location.hash || location.pathname)
+);
+
+$(document).on("scroll", function () {
+  let start = $(this).scrollTop() + 5;
+  let items = [];
+
+  $(".markdown-body")
+    .find("h1,h2,h3,h4,h5,h6")
+    .each(function () {
+      items.push({
+        offset: $(this).offset().top,
+        id: this.id,
+        level: parseInt(this.tagName.slice(1)),
+      });
+    });
+  for (let i = 0; i < items.length; i++) {
+    if (start > items[i].offset) {
+      if (i < items.length - 1) {
+        if (start < items[i + 1].offset) {
+          if (items[i].level == 1) {
+            initialize(location.pathname);
+          } else {
+            initialize("#" + items[i].id);
+          }
+        }
+      } else {
+        initialize("#" + items[i].id);
+      }
+    }
+  }
+});
+
+$("#toggle").click(function () {
+  $(".sidebar-wrap,.content-wrap,.addons-wrap").toggleClass("shift");
+});
+$(".status").click(function () {
+  $(".addons").toggleClass("d-none");
+});
+
+/* nested ul */
+$(".toc ul")
+  .siblings("a")
+  .each(function () {
+    let link = $(this);
+    let expand = $('<i class="fa fa-plus-square-o"></i>');
+
+    expand.on("click", function (e) {
+      e.stopPropagation();
+      toggleCurrent(link);
+      return false;
+    });
+    link.prepend(expand);
+  });
+
+if (location.pathname == `${ui.baseurl}/search.html`) {
+  $.ajax(`${ui.baseurl}/pages.json`)
+    .done(search)
+    .fail((xhr, message) => debug(message));
+}
+
+toc();
+initialize(location.pathname);
+initialize(location.hash);
+restore();
+highlight();
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register(`${ui.baseurl}/sw.caches.js`);
@@ -205,77 +273,7 @@ if ("serviceWorker" in navigator) {
   debug("Service Worker not supported!");
 }
 
-$(document).ready(function () {
-  if (location.pathname == `${ui.baseurl}/search.html`) {
-    $.ajax(`${ui.baseurl}/pages.json`)
-      .done(search)
-      .fail((xhr, message) => debug(message));
-  }
-  toc();
-  initialize(location.pathname);
-  initialize(location.hash);
-  restore();
-  highlight();
-
-  /* nested ul */
-  $(".toc ul")
-    .siblings("a")
-    .each(function () {
-      let link = $(this);
-      let expand = $('<i class="fa fa-plus-square-o"></i>');
-
-      expand.on("click", function (e) {
-        e.stopPropagation();
-        toggleCurrent(link);
-        return false;
-      });
-      link.prepend(expand);
-    });
-
-  /* bind */
-  $(document).on("scroll", function () {
-    let start = $(this).scrollTop() + 5;
-    let items = [];
-
-    $(".markdown-body")
-      .find("h1,h2,h3,h4,h5,h6")
-      .each(function () {
-        items.push({
-          offset: $(this).offset().top,
-          id: this.id,
-          level: parseInt(this.tagName.slice(1)),
-        });
-      });
-    for (let i = 0; i < items.length; i++) {
-      if (start > items[i].offset) {
-        if (i < items.length - 1) {
-          if (start < items[i + 1].offset) {
-            if (items[i].level == 1) {
-              initialize(location.pathname);
-            } else {
-              initialize("#" + items[i].id);
-            }
-          }
-        } else {
-          initialize("#" + items[i].id);
-        }
-      }
-    }
-  });
-
-  $("#toggle").click(function () {
-    $(".sidebar-wrap,.content-wrap,.addons-wrap").toggleClass("shift");
-  });
-  $(".status").click(function () {
-    $(".addons").toggleClass("d-none");
-  });
-
-  $(window).bind("hashchange", () =>
-    initialize(location.hash || location.pathname)
-  );
-
-  ui.collect.searchParams.append("host", location.host);
-  ui.collect.searchParams.append("user_lang", navigator.language);
-  ui.collect.searchParams.append("platform", navigator.platform);
-  $.getJSON(ui.collect.toString(), (data) => $("#counter").html(data.count));
-});
+ui.collect.searchParams.append("host", location.host);
+ui.collect.searchParams.append("user_lang", navigator.language);
+ui.collect.searchParams.append("platform", navigator.platform);
+$.getJSON(ui.collect.toString(), (data) => $("#counter").html(data.count));
