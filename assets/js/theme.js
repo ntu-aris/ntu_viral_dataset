@@ -267,7 +267,7 @@ $(".toc ul")
     link.prepend(expand);
   });
 
-$(".markdown-body :header").prepend(function () {
+$(".markdown-body :header").append(function () {
   return `<a href="#${this.id}" class="anchor"><i class="octicon-link fa fa-link text-blue"></i></a>`;
 });
 

@@ -50,9 +50,12 @@
   }
 
   .anchor {
+    // overwrite
+    float: none;
     padding-right: 0;
-    margin-left: -15px;
+    margin-left: 3px;
   }
+
   .highlight pre,
   pre {
     font-size: $font-size-small;
