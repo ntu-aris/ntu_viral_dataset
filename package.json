@@ -14,7 +14,7 @@
     "babel-loader": "^8.1.0",
     "css-loader": "^4.2.2",
     "lighthouse": "^6.3.0",
-    "mini-css-extract-plugin": "^0.11.0",
+    "mini-css-extract-plugin": "^0.11.2",
     "prettier": "^2.1.2",
     "sass": "^1.26.10",
     "sass-loader": "^10.0.2",
