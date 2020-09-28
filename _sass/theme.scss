@@ -11,6 +11,7 @@
 @import "@primer/css/forms";
 @import "@primer/css/loaders";
 @import "@primer/css/markdown";
+@import "rougify/github";
 
 // fonts
 @import "font-face";
@@ -26,7 +27,6 @@
 @import "class/header";
 @import "class/title";
 @import "class/markdown-body";
-@import "class/highlight";
 @import "class/admonition";
 
 // utilities

@@ -1,4 +1,19 @@
 .markdown-body {
+  @mixin d-language() {
+    position: relative;
+
+    &:after {
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-family: $mono-font;
+      font-size: $font-size-small;
+      content: attr(data-lang);
+      padding: 0 5px;
+      color: lighten($text-gray-light, 30%);
+    }
+  }
+
   // 400
   font-weight: $font-weight-normal;
 
@@ -20,7 +35,8 @@
   h3,
   h4,
   h5,
-  h6 {
+  h6,
+  dt {
     font-family: $head-font;
   }
 
@@ -29,9 +45,16 @@
     font-size: $body-font-size;
   }
 
-  // ruby highlight fixed
+  // ruby highlight fixed, TODO: line number display
   figure {
     margin: 0;
+  }
+
+  .anchor {
+    // overwrite to right
+    float: none;
+    padding-right: 0;
+    margin-left: 3px;
   }
 
   // improved
@@ -39,44 +62,25 @@
   tt {
     font-size: $font-size-small;
     border: $border;
-    color: $theme-red;
-    background-color: darken($theme-white, 2%);
+    color: $theme-code-inline;
+    background-color: $theme-code-inline-background;
   }
 
   pre {
     > code {
-      color: $theme-black;
+      color: $theme-code;
     }
-  }
-
-  .anchor {
-    // overwrite
-    float: none;
-    padding-right: 0;
-    margin-left: 3px;
   }
 
   .highlight pre,
   pre {
     font-size: $font-size-small;
     border: $border;
-    // from rouge highlight
-    background-color: #f8f8f8;
+    background-color: $theme-code-background;
   }
 
   div.highlighter-rouge {
-    position: relative;
-
-    &:after {
-      position: absolute;
-      right: 0;
-      top: 0;
-      font-family: $mono-font;
-      font-size: $font-size-small;
-      content: attr(data-lang);
-      padding: 2px 5px 0px;
-      color: lighten($text-gray-light, 25%);
-    }
+    @include d-language();
   }
 
   // search
@@ -84,5 +88,19 @@
     li {
       list-style: none;
     }
+  }
+
+  // improved checkbox
+  .task-list-item-checkbox {
+    margin-right: 3px;
+  }
+
+  // improved mermaid
+  .mermaid {
+    font-family: $mono-font;
+    font-size: $font-size-small;
+    white-space: pre;
+    @include shadow-2dp();
+    @include d-language();
   }
 }

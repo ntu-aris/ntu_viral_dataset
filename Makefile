@@ -23,7 +23,7 @@ checkout:
 	@git checkout assets/css/theme.min.css
 
 rougify:
-	@rougify style github | sass-convert --to scss > _sass/class/highlight.scss
+	@rougify style github | sass-convert --to scss > _sass/rougify/github.scss
 
 install:
 	@gem install jekyll bundler
