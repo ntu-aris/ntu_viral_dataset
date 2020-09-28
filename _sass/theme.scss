@@ -1,14 +1,16 @@
 // core
-@import "@primer/support";
+@import "material-design-lite/variables";
+@import "material-design-lite/mixins";
+@import "@primer/css/support";
 @import "variables";
 @import "root";
 
-@import "@primer/base";
-@import "@primer/breadcrumb";
-@import "@primer/buttons";
-@import "@primer/forms";
-@import "@primer/loaders";
-@import "@primer/markdown";
+@import "@primer/css/base";
+@import "@primer/css/breadcrumb";
+@import "@primer/css/buttons";
+@import "@primer/css/forms";
+@import "@primer/css/loaders";
+@import "@primer/css/markdown";
 
 // fonts
 @import "font-face";
@@ -28,4 +30,4 @@
 @import "class/admonition";
 
 // utilities
-@import "@primer/utilities";
+@import "@primer/css/utilities";

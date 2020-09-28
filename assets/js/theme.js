@@ -271,6 +271,15 @@ $(".markdown-body :header").append(function () {
   return `<a href="#${this.id}" class="anchor"><i class="octicon-link fa fa-link text-blue"></i></a>`;
 });
 
+$("div.highlighter-rouge").each(function () {
+  const match = $(this)
+    .attr("class")
+    .match(/language-(\w+)/);
+  if (match) {
+    $(this).attr("data-lang", match[1]);
+  }
+});
+
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register(`${ui.baseurl}/sw.caches.js`);
 } else {

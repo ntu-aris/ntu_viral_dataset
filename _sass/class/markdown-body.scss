@@ -60,10 +60,23 @@
   pre {
     font-size: $font-size-small;
     border: $border;
+    // from rouge highlight
+    background-color: #f8f8f8;
   }
 
-  .highlight pre {
-    background-color: transparent;
+  div.highlighter-rouge {
+    position: relative;
+
+    &:after {
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-family: $mono-font;
+      font-size: $font-size-small;
+      content: attr(data-lang);
+      padding: 2px 5px 0px;
+      color: lighten($text-gray-light, 25%);
+    }
   }
 
   // search

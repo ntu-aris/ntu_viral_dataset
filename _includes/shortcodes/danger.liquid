@@ -1,9 +1,9 @@
-<div class="admonition danger mb-3">
+<div class="admonition danger mb-4">
     <div class="title px-2 py-1">
         <i class="fa fa-exclamation-circle"></i>
         {{ __.danger | default: "Danger" }}
     </div>
-    <div class="content p-2">
+    <div class="content px-2 py-3">
         {{ codes | markdownify | strip_newlines -}}
     </div>
 </div>
