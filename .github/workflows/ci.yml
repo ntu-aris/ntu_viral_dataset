@@ -17,7 +17,7 @@ jobs:
       - name: Match the commit message whether to Release!
         run: |
           MESSAGE=$(git log -1 --format="%s")
-          if [[ ${MESSAGE} =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+          if [[ ${MESSAGE} =~ ^v[0-9]+\.[0-9]+\.[0-9]+ ]]; then
               echo "::set-output name=version::${MESSAGE:1}"
           fi
         id: matching
