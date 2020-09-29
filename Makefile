@@ -31,16 +31,16 @@ install:
 	@bundle install
 
 format:
-	@npx prettier . --check --write
+	@npm run checkout
 
 report:
-	@npx lighthouse http://127.0.0.1:4000
+	@npm run report
 
 clean:
 	@bundle exec jekyll clean
 
 dist: format clean
-	@npx webpack --mode production
+	@npm run build
 
 status: format clean checkout
 	@git status

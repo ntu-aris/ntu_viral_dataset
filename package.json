@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "report": "lighthouse http://127.0.0.1:4000",
+    "build": "webpack --mode production",
+    "checkout": "prettier . --check --write"
+  },
   "dependencies": {
     "@primer/css": "^15.2.0",
     "font-awesome": "^4.7.0",
