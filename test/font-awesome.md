@@ -2,7 +2,7 @@
 sort: 10
 ---
 
-# Font Awesome Test
+# Font Awesome Test - beta
 
 ```
 {:.fa.fa-check-circle.text-green}
@@ -25,3 +25,7 @@ battery
 
 <i class="fa fa-check-circle text-green">checked</i>
 <i class="fa fa-battery-quarter text-red">battery</i>
+
+```note
+MAYBE `material-design-icons` IS BETTER!
+```
