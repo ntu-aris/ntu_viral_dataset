@@ -11,11 +11,12 @@
 @import "@primer/css/forms";
 @import "@primer/css/loaders";
 @import "@primer/css/markdown";
-@import "rougify/github";
+@import "rouge/github";
 
 // fonts
 @import "font-face";
-@import "icons";
+@import "font-awesome/variables";
+@import "font-awesome/icons";
 
 // theme
 @import "layout";
@@ -27,7 +28,7 @@
 @import "class/header";
 @import "class/title";
 @import "class/markdown-body";
-@import "class/admonition";
+@import "class/toasts";
 
 // utilities
 @import "@primer/css/utilities";

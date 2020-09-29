@@ -14,7 +14,7 @@ help:
 	@echo "    theme     Make theme as gem and install"
 	@echo "    site      Build the test site"
 	@echo "    server    Make a livereload jekyll server to development"
-	@echo "    rougify   Build the rouge scss"
+	@echo "    rouge     Build the rouge scss"
 	@echo "    checkout  Reset the theme minified css and script to last commit"
 
 checkout:
@@ -22,7 +22,7 @@ checkout:
 	@git checkout assets/js/theme.min.js
 	@git checkout assets/css/theme.min.css
 
-rougify:
+rouge:
 	@rougify style github | sass-convert --to scss > _sass/rougify/github.scss
 
 install:

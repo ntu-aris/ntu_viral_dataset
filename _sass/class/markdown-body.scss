@@ -1,5 +1,5 @@
 .markdown-body {
-  @mixin d-language() {
+  @mixin d-lang() {
     position: relative;
 
     &:after {
@@ -80,7 +80,7 @@
   }
 
   div.highlighter-rouge {
-    @include d-language();
+    @include d-lang();
   }
 
   // search
@@ -96,11 +96,13 @@
   }
 
   // improved mermaid
+  // .mermaid:not([data-processed="true"])
   .mermaid {
-    font-family: $mono-font;
     font-size: $font-size-small;
+    font-family: $mono-font;
     white-space: pre;
+    @include d-lang();
+    // mdl
     @include shadow-2dp();
-    @include d-language();
   }
 }
