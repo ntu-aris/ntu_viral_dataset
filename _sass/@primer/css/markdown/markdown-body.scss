@@ -86,7 +86,11 @@
     padding: 0 1em;
     color: $text-gray-light;
     // stylelint-disable-next-line primer/borders
-    @include rtl_set_property(border-left, border-right, 0.25em $border-style lighten($gray-300, 5%));
+    @include rtl_set_property(
+      border-left,
+      border-right,
+      0.25em $border-style lighten($gray-300, 5%)
+    );
 
     > :first-child {
       margin-top: 0;

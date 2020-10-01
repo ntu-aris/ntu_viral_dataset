@@ -10,7 +10,9 @@
   padding-top: 6px;
   padding-bottom: 6px;
   @include padding_start($spacer-3);
-  @include padding_end($spacer-3 + 12px + $spacer-2); // 12px is the size of the radio-input
+  @include padding_end(
+    $spacer-3 + 12px + $spacer-2
+  ); // 12px is the size of the radio-input
   // stylelint-disable-next-line primer/spacing
   @include margin_start(-1px);
   font-size: $body-font-size;
@@ -28,13 +30,29 @@
 
   &:first-of-type {
     @include margin_start(0);
-    @include rtl_set_property(border-top-left-radius, border-top-right-radius, $border-radius);
-    @include rtl_set_property(border-bottom-left-radius, border-bottom-right-radius, $border-radius);
+    @include rtl_set_property(
+      border-top-left-radius,
+      border-top-right-radius,
+      $border-radius
+    );
+    @include rtl_set_property(
+      border-bottom-left-radius,
+      border-bottom-right-radius,
+      $border-radius
+    );
   }
 
   &:last-of-type {
-    @include rtl_set_property(border-top-right-radius, border-top-left-radius, $border-radius);
-    @include rtl_set_property(border-bottom-right-radius, border-bottom-left-radius, $border-radius);
+    @include rtl_set_property(
+      border-top-right-radius,
+      border-top-left-radius,
+      $border-radius
+    );
+    @include rtl_set_property(
+      border-bottom-right-radius,
+      border-bottom-left-radius,
+      $border-radius
+    );
   }
 }
 

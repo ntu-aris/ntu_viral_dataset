@@ -178,8 +178,16 @@
 .social-count {
   @include rtl(float, left, right);
   @include rtl_set_property(border-left, border-right, 0);
-  @include rtl_set_property(border-top-right-radius, border-top-left-radius, $border-radius);
-  @include rtl_set_property(border-bottom-right-radius, border-bottom-left-radius, $border-radius);
+  @include rtl_set_property(
+    border-top-right-radius,
+    border-top-left-radius,
+    $border-radius
+  );
+  @include rtl_set_property(
+    border-bottom-right-radius,
+    border-bottom-left-radius,
+    $border-radius
+  );
 
   position: relative;
   // stylelint-disable-next-line primer/spacing

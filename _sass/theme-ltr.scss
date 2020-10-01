@@ -1,4 +1,3 @@
-
 $site-direction: ltr;
 $is-rtl: false;
 $is-ltr: true;
@@ -6,39 +5,36 @@ $is-ltr: true;
 $dir-start: left;
 $dir-end: right;
 
-
 @mixin rtl($property, $ltr-value, $rtl-value) {
-    #{$property}: $ltr-value;
+  #{$property}: $ltr-value;
 }
 
 @mixin rtl_set_property($property-ltr, $property-rtl, $value) {
-    #{$property-ltr}: $value;
+  #{$property-ltr}: $value;
 }
 
-
 @mixin start($value) {
-    left: $value;
+  left: $value;
 }
 
 @mixin end($value) {
-    right: $value;
+  right: $value;
 }
 
 @mixin margin_start($value) {
-    margin-left: $value;
+  margin-left: $value;
 }
 
 @mixin margin_end($value) {
-    margin-right: $value;
+  margin-right: $value;
 }
 
 @mixin padding_start($value) {
-    padding-left: $value;
+  padding-left: $value;
 }
 
 @mixin padding_end($value) {
-    padding-right: $value;
+  padding-right: $value;
 }
-
 
 @import "./theme.scss";

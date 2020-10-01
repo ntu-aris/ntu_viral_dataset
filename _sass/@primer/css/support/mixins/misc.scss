@@ -21,13 +21,21 @@
 
   &::after {
     @include margin_start(2px);
-    @include rtl_set_property(border-right-color, border-left-color, $foreground);
+    @include rtl_set_property(
+      border-right-color,
+      border-left-color,
+      $foreground
+    );
     margin-top: 1px;
     border-width: 7px;
   }
 
   &::before {
-    @include rtl_set_property(border-right-color, border-left-color, $background);
+    @include rtl_set_property(
+      border-right-color,
+      border-left-color,
+      $background
+    );
     border-width: 8px;
   }
 }

@@ -33,7 +33,11 @@
 .input-group .form-control:first-child,
 .input-group-button:first-child .btn {
   @include rtl_set_property(border-top-right-radius, border-top-left-radius, 0);
-  @include rtl_set_property(border-bottom-right-radius, border-bottom-left-radius, 0);
+  @include rtl_set_property(
+    border-bottom-right-radius,
+    border-bottom-left-radius,
+    0
+  );
 }
 
 .input-group-button:first-child .btn {
@@ -44,7 +48,11 @@
 .input-group .form-control:last-child,
 .input-group-button:last-child .btn {
   @include rtl_set_property(border-top-left-radius, border-top-right-radius, 0);
-  @include rtl_set_property(border-bottom-left-radius, border-bottom-right-radius, 0);
+  @include rtl_set_property(
+    border-bottom-left-radius,
+    border-bottom-right-radius,
+    0
+  );
 }
 
 .input-group-button:last-child .btn {
