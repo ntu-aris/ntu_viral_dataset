@@ -59,11 +59,12 @@
 //
 // Icon-only buttons
 .btn-octicon {
+  // stylelint-disable-next-line primer/spacing
+  @include margin_start(5px);
+
   display: inline-block;
   // stylelint-disable-next-line primer/spacing
   padding: 5px;
-  // stylelint-disable-next-line primer/spacing
-  margin-left: 5px;
   line-height: $lh-condensed-ultra;
   color: $text-gray;
   vertical-align: middle;
@@ -110,11 +111,12 @@
   display: block;
 
   &.inline {
+    // stylelint-disable-next-line primer/spacing
+    @include margin_start(5px);
+
     position: relative;
     top: -1px;
     display: inline-block;
-    // stylelint-disable-next-line primer/spacing
-    margin-left: 5px;
     line-height: 0;
   }
 }
@@ -123,8 +125,12 @@
 .ellipsis-expander {
   display: inline-block;
   height: 12px;
+
   // stylelint-disable-next-line primer/spacing
-  padding: 0 5px 5px;
+  padding: 0 0 5px;
+  // stylelint-disable-next-line primer/spacing
+  @include padding_end(5px);
+
   font-size: $font-size-small;
   font-weight: $font-weight-bold;
   // stylelint-disable-next-line primer/typography
@@ -156,7 +162,7 @@
 // TODO: Deprecate? Use BtnGroup instead?
 
 .btn-with-count {
-  float: left;
+  @include rtl(float, left, right);
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 
@@ -170,8 +176,12 @@
 // A container that is used for social bubbles counts.
 
 .social-count {
+  @include rtl(float, left, right);
+  @include rtl_set_property(border-left, border-right, 0);
+  @include rtl_set_property(border-top-right-radius, border-top-left-radius, $border-radius);
+  @include rtl_set_property(border-bottom-right-radius, border-bottom-left-radius, $border-radius);
+
   position: relative;
-  float: left;
   // stylelint-disable-next-line primer/spacing
   padding: 3px 12px;
   font-size: $font-size-small;
@@ -182,9 +192,6 @@
   vertical-align: middle;
   background-color: $bg-white;
   border: $border-width $border-style $border-color-button;
-  border-left: 0;
-  border-top-right-radius: $border-radius;
-  border-bottom-right-radius: $border-radius;
   box-shadow: $box-shadow, $box-shadow-highlight;
 
   &:hover,

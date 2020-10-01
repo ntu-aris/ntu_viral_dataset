@@ -335,9 +335,11 @@ button:-moz-focusring,
  */
 
 fieldset {
+  @include padding_end(0.625em);
+
   border: $border-width $border-style #c0c0c0;
   margin: 0 2px;
-  padding: 0.35em 0.625em $em-spacer-6;
+  padding: 0.35em 0 $em-spacer-6;
 }
 
 /**

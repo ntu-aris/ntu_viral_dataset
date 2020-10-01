@@ -4,10 +4,13 @@ description: Opinionated github flavored standard document theme for open source
 
 theme: null
 
-# debug:
-#   compress: true
-#   dist: false
-#   extension: true
+debug:
+  compress: true
+  dist: false
+  in_develop: true
+  extension: true
+
+rtl: true
 
 readme_index:
   with_frontmatter: true

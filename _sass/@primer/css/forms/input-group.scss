@@ -10,7 +10,7 @@
     }
 
     + .btn {
-      margin-left: 0;
+      @include margin_start(0);
     }
   }
 
@@ -32,22 +32,22 @@
 
 .input-group .form-control:first-child,
 .input-group-button:first-child .btn {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+  @include rtl_set_property(border-top-right-radius, border-top-left-radius, 0);
+  @include rtl_set_property(border-bottom-right-radius, border-bottom-left-radius, 0);
 }
 
 .input-group-button:first-child .btn {
   // stylelint-disable-next-line primer/spacing
-  margin-right: -1px;
+  @include margin_end(-1px);
 }
 
 .input-group .form-control:last-child,
 .input-group-button:last-child .btn {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+  @include rtl_set_property(border-top-left-radius, border-top-right-radius, 0);
+  @include rtl_set_property(border-bottom-left-radius, border-bottom-right-radius, 0);
 }
 
 .input-group-button:last-child .btn {
   // stylelint-disable-next-line primer/spacing
-  margin-left: -1px;
+  @include margin_start(-1px);
 }

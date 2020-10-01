@@ -51,10 +51,11 @@
   }
 
   .anchor {
+    @include margin_start(3px);
+    @include margin_end(0);
+
     // overwrite to right
     float: none;
-    padding-right: 0;
-    margin-left: 3px;
   }
 
   // improved
@@ -92,7 +93,7 @@
 
   // improved checkbox
   .task-list-item-checkbox {
-    margin-right: 3px;
+    @include margin_end(3px);
   }
 
   // improved mermaid

@@ -6,9 +6,10 @@
   &::after,
   &::before {
     position: absolute;
+    @include start(-16px);
+    @include end(100%);
+
     top: 11px;
-    right: 100%;
-    left: -16px;
     display: block;
     width: 0;
     height: 0;
@@ -19,14 +20,14 @@
   }
 
   &::after {
+    @include margin_start(2px);
+    @include rtl_set_property(border-right-color, border-left-color, $foreground);
     margin-top: 1px;
-    margin-left: 2px;
     border-width: 7px;
-    border-right-color: $foreground;
   }
 
   &::before {
+    @include rtl_set_property(border-right-color, border-left-color, $background);
     border-width: 8px;
-    border-right-color: $background;
   }
 }

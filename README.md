@@ -34,6 +34,8 @@ title: Your awesome title
 lang: # default: en
 description: Write an awesome description for your new site here
 
+rtl: true
+
 readme_index:
   with_frontmatter: true
 

@@ -11,25 +11,26 @@
   // Proper spacing for multiple button groups (a la, gollum editor)
   + .BtnGroup,
   + .btn {
-    margin-left: $spacer-1;
+    @include margin_start($spacer-1);
   }
 }
 
 .BtnGroup-item {
+  @include rtl(float, left, right);
+
   position: relative;
-  float: left;
   border-right-width: 0;
   border-radius: 0;
 
   &:first-child {
-    border-top-left-radius: $border-radius;
-    border-bottom-left-radius: $border-radius;
+    @include rtl_set_property(border-top-left-radius, border-top-right-radius, $border-radius);
+    @include rtl_set_property(border-bottom-left-radius, border-bottom-right-radius, $border-radius);
   }
 
   &:last-child {
-    border-right-width: $border-width;
-    border-top-right-radius: $border-radius;
-    border-bottom-right-radius: $border-radius;
+    @include rtl_set_property(border-right-width, border-left-width, $border-width);
+    @include rtl_set_property(border-top-right-radius, border-top-left-radius, $border-radius);
+    @include rtl_set_property(border-bottom-right-radius, border-bottom-left-radius, $border-radius);
   }
 
   &.selected,
@@ -37,31 +38,31 @@
   &:focus,
   &:active,
   &:hover {
-    border-right-width: $border-width;
+    @include rtl_set_property(border-right-width, border-left-width, $border-width);
 
     + .BtnGroup-item,
     + .BtnGroup-parent .BtnGroup-item {
-      border-left-width: 0;
+      @include rtl_set_property(border-left-width, border-right-width, 0);
     }
   }
 }
 
 .BtnGroup-parent {
-  float: left;
+  @include rtl(float, left, right);
 
   &:first-child .BtnGroup-item {
-    border-top-left-radius: $border-radius;
-    border-bottom-left-radius: $border-radius;
+    @include rtl_set_property(border-top-left-radius, border-top-right-radius, $border-radius);
+    @include rtl_set_property(border-bottom-left-radius, border-bottom-right-radius, $border-radius);
   }
 
   &:last-child .BtnGroup-item {
-    border-right-width: $border-width;
-    border-top-right-radius: $border-radius;
-    border-bottom-right-radius: $border-radius;
+    @include rtl_set_property(border-right-width, border-left-width, $border-width);
+    @include rtl_set_property(border-top-right-radius, border-top-left-radius, $border-radius);
+    @include rtl_set_property(border-bottom-right-radius, border-bottom-left-radius, $border-radius);
   }
 
   .BtnGroup-item {
-    border-right-width: 0;
+    @include rtl_set_property(border-right-width, border-left-width, 0);
     border-radius: 0;
   }
 
@@ -71,12 +72,12 @@
   &:active,
   &:hover {
     .BtnGroup-item {
-      border-right-width: $border-width;
+      @include rtl_set_property(border-right-width, border-left-width, $border-width);
     }
 
     + .BtnGroup-item,
     + .BtnGroup-parent .BtnGroup-item {
-      border-left-width: 0;
+      @include rtl_set_property(border-left-width, border-right-width, 0);
     }
   }
 }

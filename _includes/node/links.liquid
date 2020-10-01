@@ -13,8 +13,23 @@
     <link rel="next" href="{{ next.url | absolute_url }}">
 {%- endif -%}
 
-{% comment %} theme {% endcomment %}
-<link rel="stylesheet" href="{{ cdn }}/assets/css/theme{% if site.debug.dist != false %}.min{% endif %}.css">
+{% comment %} conditional direction {% endcomment %}
+{% if site.rtl == true %}
+    {% comment %} theme {% endcomment %}
+    {% if site.debug.in_develop == true %}
+        <link rel="stylesheet" href="/assets/css/theme-rtl.css">
+    {% else %}
+        <link rel="stylesheet" href="{{ cdn }}/assets/css/theme-rtl{% if site.debug.dist != false %}.min{% endif %}.css">
+    {% endif %}
+{% else %}
+    {% if site.debug.in_develop == true %}
+        <link rel="stylesheet" href="/assets/css/theme-ltr.css">
+    {% else %}
+        {% comment %} theme {% endcomment %}
+        <link rel="stylesheet" href="{{ cdn }}/assets/css/theme-ltr{% if site.debug.dist != false %}.min{% endif %}.css">
+    {% endif %}
+{% endif %}
+
 
 {%- if custom_scss.size > 0 -%}
     <style>{{ custom_scss | scssify | strip_newlines }}</style>

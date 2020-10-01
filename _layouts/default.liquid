@@ -15,7 +15,7 @@ layout: plugins/compress
 
         {%- include extra/head.html -%}
     </head>
-    <body class="container">
+    <body class="container {% if site.rtl == true %}container-rtl{% endif %}">
         {%- include class/sidebar-wrap.liquid -%}
         {%- include class/content-wrap.liquid -%}
         {%- include class/addons-wrap.liquid  -%}

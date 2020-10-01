@@ -16,10 +16,11 @@
 
   // Text fields
   .form-control {
+    // stylelint-disable-next-line primer/spacing
+    @include margin_end(5px);
+
     width: 440px;
     max-width: 100%;
-    // stylelint-disable-next-line primer/spacing
-    margin-right: 5px;
     background-color: $bg-gray-light;
 
     &:focus {
@@ -57,7 +58,9 @@
   dt, // TODO: Deprecate
   .form-group-header {
     // stylelint-disable-next-line primer/spacing
-    margin: 0 0 6px;
+    margin-top: 0;
+    margin-bottom: 6px;
+    @include margin_end(0);
   }
 
   label {
@@ -66,7 +69,7 @@
 
   &.flattened dt, // TODO: Deprecate
   &.flattened .form-group-header {
-    float: left;
+    @include rtl(float, left, right);
     margin: 0;
     // stylelint-disable-next-line primer/typography
     line-height: 32px;
@@ -110,7 +113,7 @@
     dt label::after, // TODO: Deprecate
     .form-group-header label::after {
       // stylelint-disable-next-line primer/spacing
-      padding-left: 5px;
+      @include padding_start(5px);
       color: $text-red;
       content: "*";
     }
@@ -163,7 +166,9 @@
       display: block; // Show up in errored/warn state
       max-width: 450px; // Keep our long errors readable
       padding: $spacer-1 $spacer-2;
-      margin: $spacer-2 0 0;
+      @include margin_end(0);
+      margin-top: $spacer-2;
+      margin-bottom: 0;
       font-size: $font-size-small;
       font-weight: $font-weight-normal;
       border-style: $border-style;
@@ -172,9 +177,9 @@
 
       &::after,
       &::before {
+        @include start(10px);
         position: absolute;
         bottom: 100%;
-        left: 10px;
         z-index: 15;
         width: 0;
         height: 0;
@@ -191,7 +196,7 @@
 
       &::before {
         // stylelint-disable-next-line primer/spacing
-        margin-left: -1px;
+        @include margin_start(-1px);
         // stylelint-disable-next-line primer/borders
         border-width: 6px;
       }
@@ -266,14 +271,16 @@
 }
 
 .note {
+  @include margin_end(0);
   min-height: 17px;
-  margin: $spacer-1 0 2px;
+  margin-top: $spacer-1;
+  margin-bottom: 2px;
   font-size: $font-size-small;
   color: $text-gray;
 
   .spinner {
     // stylelint-disable-next-line primer/spacing
-    margin-right: 3px;
+    @include margin_end(3px);
     vertical-align: middle;
   }
 }

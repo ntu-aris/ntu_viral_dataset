@@ -166,14 +166,16 @@
   letter-spacing: 0.08em;
 
   &:before {
+    @include start(-0.5em);
+
     position: absolute;
-    left: -0.5em;
     content: "“";
   }
 
   &:after {
+    @include margin_start(-0.05em);
+
     content: "”";
-    margin-left: -0.05em;
   }
 
   @if $colorContrast {

@@ -7,14 +7,16 @@
     overflow: hidden;
     font-size: $font-size-small;
     line-height: $lh-condensed-ultra;
-    text-align: left;
+    @include rtl(text-align, left, right);
     white-space: nowrap;
   }
 
   .blob-num {
     // stylelint-disable-next-line primer/spacing
-    padding: 10px $spacer-2 9px;
-    text-align: right;
+    padding-top: 10px;
+    padding-bottom: 9px;
+    @include padding_end($spacer-2);
+    @include rtl(text-align, right, left);
     background: $bg-white;
     border: 0;
   }
