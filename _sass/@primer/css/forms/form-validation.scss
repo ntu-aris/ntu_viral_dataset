@@ -7,7 +7,7 @@ dl.form-group > dd, // TODO: Deprecate
     &.is-autocheck-successful,
     &.is-autocheck-errored {
       // stylelint-disable-next-line primer/spacing
-      padding-right: 30px; // Leave some space for our validation icons
+      @include padding_end(30px); // Leave some space for our validation icons
     }
 
     &.is-autocheck-loading {
@@ -57,7 +57,7 @@ dl.form-group > dd, // TODO: Deprecate
   width: 16px;
   height: 16px;
   // stylelint-disable-next-line primer/spacing
-  margin-left: 5px;
+  @include margin_start(5px);
 
   .octicon {
     display: none;
@@ -133,6 +133,7 @@ dl.form-group > dd, // TODO: Deprecate
   // stylelint-disable-next-line primer/borders
   border: $border-width $border-style darken($gray-300, 5%);
   border-top: 0;
+
   border-bottom-right-radius: $border-radius;
   border-bottom-left-radius: $border-radius;
 
@@ -202,12 +203,13 @@ dl.form-group > dd, // TODO: Deprecate
 }
 
 .manual-file-chooser {
+  // stylelint-disable-next-line primer/spacing
+  @include margin_start(-80px);
+
   position: absolute;
   width: 240px;
   // stylelint-disable-next-line primer/spacing
   padding: 5px;
-  // stylelint-disable-next-line primer/spacing
-  margin-left: -80px;
   cursor: pointer;
   opacity: 0.0001;
 }
@@ -325,7 +327,9 @@ div.composer {
 
 // stylelint-disable-next-line primer/spacing
 .composer .tabnav {
-  margin: 0 0 10px;
+  @include margin_end(0);
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 
 // Misc CSS
@@ -334,7 +338,9 @@ div.composer {
 
 h2.account {
   // stylelint-disable-next-line primer/spacing
-  margin: 15px 0 0;
+  margin-top: 15px;
+  margin-bottom: 0;
+  @include margin_end(0);
   // stylelint-disable-next-line primer/typography
   font-size: 18px;
   font-weight: $font-weight-normal;
@@ -352,14 +358,14 @@ p.explain {
 
   .octicon {
     // stylelint-disable-next-line primer/spacing
-    margin-right: 5px;
+    @include margin_end(5px);
     // stylelint-disable-next-line primer/colors
     color: $gray-400;
   }
 
   .minibutton {
+    @include rtl(float, right, left);
     top: -4px;
-    float: right;
   }
 }
 

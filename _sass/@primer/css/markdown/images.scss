@@ -36,27 +36,31 @@
     overflow: hidden;
 
     > span {
+      @include rtl(float, left, right);
       display: block;
-      float: left;
       width: auto;
       // stylelint-disable-next-line primer/spacing
       padding: 7px;
       // stylelint-disable-next-line primer/spacing
-      margin: 13px 0 0;
+      margin-top: 13px;
+      margin-bottom: 0;
+      @include margin_end(0);
       overflow: hidden;
       // stylelint-disable-next-line primer/borders
       border: $border-width $border-style lighten($gray-300, 5%);
     }
 
     span img {
+      @include rtl(float, left, right);
       display: block;
-      float: left;
     }
 
     span span {
       display: block;
       // stylelint-disable-next-line primer/spacing
-      padding: 5px 0 0;
+      padding-top: 5px;
+      padding-bottom: 0;
+      @include padding_end(0);
       clear: both;
       color: $text-gray-dark;
     }
@@ -70,7 +74,9 @@
     > span {
       display: block;
       // stylelint-disable-next-line primer/spacing
-      margin: 13px auto 0;
+      margin-top: 13px;
+      margin-bottom: 0;
+      @include margin_end(auto);
       overflow: hidden;
       text-align: center;
     }
@@ -87,45 +93,51 @@
     clear: both;
 
     > span {
+      @include rtl(text-align, right, left);
       display: block;
       // stylelint-disable-next-line primer/spacing
-      margin: 13px 0 0;
+      margin-top: 13px;
+      margin-bottom: 0;
+      @include margin_end(0);
       overflow: hidden;
-      text-align: right;
     }
 
     span img {
+      @include rtl(text-align, right, left);
       margin: 0;
-      text-align: right;
     }
   }
 
   span.float-left {
+    @include rtl(float, left, right);
     display: block;
-    float: left;
     // stylelint-disable-next-line primer/spacing
     margin-right: 13px;
     overflow: hidden;
 
     span {
       // stylelint-disable-next-line primer/spacing
-      margin: 13px 0 0;
+      margin-top: 13px;
+      margin-bottom: 0;
+      @include margin_end(0);
     }
   }
 
   span.float-right {
+    @include rtl(float, right, left);
     display: block;
-    float: right;
     // stylelint-disable-next-line primer/spacing
-    margin-left: 13px;
+    @include margin_start(13px);
     overflow: hidden;
 
     > span {
       display: block;
       // stylelint-disable-next-line primer/spacing
-      margin: 13px auto 0;
+      margin-top: 13px;
+      margin-bottom: 0;
+      @include margin_end(auto);
+      @include rtl(text-align, right, left);
       overflow: hidden;
-      text-align: right;
     }
   }
 }

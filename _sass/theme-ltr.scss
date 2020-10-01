@@ -20,6 +20,10 @@ $dir-end: right;
     left: $value;
 }
 
+@mixin end($value) {
+    right: $value;
+}
+
 @mixin margin_start($value) {
     margin-left: $value;
 }

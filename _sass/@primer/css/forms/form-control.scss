@@ -143,7 +143,7 @@ textarea.form-control {
 // For checkboxes and radio button selections.
 .form-checkbox {
   // stylelint-disable-next-line primer/spacing
-  @include padding_left(20px);
+  @include padding_start(20px);
   // stylelint-disable-next-line primer/spacing
   margin: 15px 0;
   vertical-align: middle;

@@ -112,7 +112,7 @@
 
   &.inline {
     // stylelint-disable-next-line primer/spacing
-    @include margin_left(5px);
+    @include margin_start(5px);
 
     position: relative;
     top: -1px;

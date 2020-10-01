@@ -5,11 +5,14 @@
 }
 
 .radio-label {
-  float: left;
+  @include rtl(float, left, right);
   // stylelint-disable-next-line primer/spacing
-  padding: 6px $spacer-3 6px ($spacer-3 + 12px + $spacer-2); // 12px is the size of the radio-input
+  padding-top: 6px;
+  padding-bottom: 6px;
+  @include padding_start($spacer-3);
+  @include padding_end($spacer-3 + 12px + $spacer-2); // 12px is the size of the radio-input
   // stylelint-disable-next-line primer/spacing
-  margin-left: -1px;
+  @include margin_start(-1px);
   font-size: $body-font-size;
   // stylelint-disable-next-line primer/typography
   line-height: 20px; // Specifically not inherit our `<body>` default
@@ -24,20 +27,23 @@
   }
 
   &:first-of-type {
-    margin-left: 0;
-    border-top-left-radius: $border-radius;
-    border-bottom-left-radius: $border-radius;
+    @include margin_start(0);
+    @include rtl_set_property(border-top-left-radius, border-top-right-radius, $border-radius);
+    @include rtl_set_property(border-bottom-left-radius, border-bottom-right-radius, $border-radius);
   }
 
   &:last-of-type {
-    border-top-right-radius: $border-radius;
-    border-bottom-right-radius: $border-radius;
+    @include rtl_set_property(border-top-right-radius, border-top-left-radius, $border-radius);
+    @include rtl_set_property(border-bottom-right-radius, border-bottom-left-radius, $border-radius);
   }
 }
 
 .radio-input {
+  @include rtl(float, left, right);
   z-index: 3;
-  float: left;
   // stylelint-disable-next-line primer/spacing
-  margin: 10px (-$spacer-5) 0 $spacer-3;
+  margin-top: 10px;
+  margin-bottom: 0;
+  @include margin_start($spacer-3);
+  @include margin_end(-$spacer-5);
 }
