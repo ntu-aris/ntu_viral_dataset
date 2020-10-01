@@ -1,3 +1,8 @@
+body {
+  @include rtl(direction, ltr, rtl);
+  
+}
+
 .menu-sm {
   @include start(-85%);
 
