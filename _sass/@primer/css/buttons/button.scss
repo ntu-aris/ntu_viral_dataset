@@ -39,18 +39,18 @@
   }
 
   .octicon {
-    margin-right: $spacer-1;
+    @include margin_end($spacer-1);
     color: $text-gray-light;
     vertical-align: text-bottom;
 
     &:only-child {
-      margin-right: 0;
+      @include margin_end(0);
     }
   }
 
   .Counter {
     // stylelint-disable-next-line primer/spacing
-    margin-left: 2px;
+    @include margin_start(2px);
     color: inherit;
     text-shadow: none;
     vertical-align: top;
@@ -62,7 +62,7 @@
   }
 
   .dropdown-caret {
-    margin-left: $spacer-1;
+    @include margin_start($spacer-1);
     opacity: 0.8;
   }
 }

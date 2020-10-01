@@ -129,8 +129,9 @@ textarea.form-control {
 // Hide the icon that tries to autofill contact info in webkit
 .input-hide-webkit-autofill {
   &::-webkit-contacts-auto-fill-button {
+    @include end(0);
+
     position: absolute;
-    right: 0;
     display: none !important;
     pointer-events: none;
     visibility: hidden;
@@ -142,15 +143,15 @@ textarea.form-control {
 // For checkboxes and radio button selections.
 .form-checkbox {
   // stylelint-disable-next-line primer/spacing
-  padding-left: 20px;
+  @include padding_left(20px);
   // stylelint-disable-next-line primer/spacing
   margin: 15px 0;
   vertical-align: middle;
 
   label {
     em.highlight {
+      @include start(-$spacer-1);
       position: relative;
-      left: -$spacer-1;
       // stylelint-disable-next-line primer/spacing
       padding: 2px $spacer-1;
       font-style: normal;
@@ -162,9 +163,11 @@ textarea.form-control {
 
   input[type="checkbox"],
   input[type="radio"] {
-    float: left;
+    @include rtl(float, left, right);
     // stylelint-disable-next-line primer/spacing
     margin: 5px 0 0 -20px;
+    @include margin_start(-20px);
+
     vertical-align: middle;
   }
 
@@ -202,16 +205,20 @@ textarea.form-control {
   @include clearfix;
 
   .form-group {
-    float: left;
+    @include rtl(float, left, right);
     // stylelint-disable-next-line primer/spacing
-    margin: 0 30px 0 0;
+    margin: 0;
+    @include margin_end(30px);
 
     dt, // TODO: Deprecate
     .form-group-header {
       label {
-        display: inline-block;
         // stylelint-disable-next-line primer/spacing
-        margin: 5px 0 0;
+        margin-top: 5px;
+        margin-bottom: 0;
+        @include margin_end(0);
+
+        display: inline-block;
         color: $text-gray;
       }
 
@@ -223,9 +230,12 @@ textarea.form-control {
   }
 
   .btn {
-    float: left;
+    @include rtl(float, left, right);
     // stylelint-disable-next-line primer/spacing
-    margin: 28px 25px 0 -20px;
+    margin-top: 28px;
+    @include margin_end(25px);
+    @include margin_start(-20px);
+    margin-bottom: 0;
   }
 
   // stylelint-disable-next-line primer/spacing
@@ -249,11 +259,11 @@ input::-webkit-inner-spin-button {
   @include clearfix;
 
   .btn {
-    float: right;
+    @include rtl(float, right, left);
 
     + .btn {
       // stylelint-disable-next-line primer/spacing
-      margin-right: 5px;
+      @include margin_end(5px);
     }
   }
 }
