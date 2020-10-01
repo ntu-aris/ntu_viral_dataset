@@ -1,0 +1,92 @@
+html[dir="rtl"] {
+  // common
+  ul,
+  ol {
+    padding-right: 0;
+  }
+
+  dd {
+    margin-right: 0;
+  }
+
+  // layout
+  .menu-sm {
+    left: unset;
+    right: -$theme-menu-width-sm;
+
+    &.shift {
+      left: unset;
+      right: 0;
+    }
+  }
+  .content-wrap {
+    &.shift {
+      left: unset;
+      right: $theme-menu-width-sm;
+    }
+  }
+
+  @include breakpoint(md) {
+    .menu-md {
+      left: unset;
+      right: 0;
+    }
+
+    .content-wrap {
+      margin-left: unset;
+      margin-right: $theme-menu-width;
+
+      &.shift {
+        left: unset;
+        right: 0;
+      }
+    }
+  }
+
+  // toctree
+  .toctree {
+    .fa {
+      margin-right: unset;
+      margin-left: 2px;
+    }
+    > ul {
+      // the first level links
+      > .toc > a {
+        padding-left: unset;
+        padding-right: $spacer-4 / 2;
+      }
+    }
+  }
+
+  // toc layout
+  .toc {
+    @for $level from 1 through 11 {
+      &.level-#{$level}.current {
+        > a {
+          padding-left: unset;
+          padding-right: $spacer-4 * ($level - 1 + 0.5);
+        }
+
+        .level-#{$level + 1} > a {
+          padding-left: unset;
+          padding-right: $spacer-4 * ($level + 0.5);
+        }
+      }
+    }
+  }
+  // markdown-body
+  .markdown-body {
+    .d-lang {
+      &:after {
+        right: unset;
+        left: 0;
+      }
+    }
+
+    // improved checkbox
+    .task-list-item-checkbox {
+      margin-right: unset;
+      margin-left: 3px;
+    }
+  }
+}

@@ -5,7 +5,7 @@ layout: plugins/compress
 {%- include reset/defaults.liquid -%}
 
 <!DOCTYPE html>
-<html lang="{{ lang }}">
+<html lang="{{ lang }}" dir="{{ direction }}">
     <head>
         {%- include node/metadata.liquid -%}
 
@@ -15,7 +15,7 @@ layout: plugins/compress
 
         {%- include extra/head.html -%}
     </head>
-    <body class="container {% if site.rtl == true %}container-rtl{% endif %}">
+    <body class="container">
         {%- include class/sidebar-wrap.liquid -%}
         {%- include class/content-wrap.liquid -%}
         {%- include class/addons-wrap.liquid  -%}

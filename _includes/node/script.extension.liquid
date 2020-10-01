@@ -3,7 +3,7 @@
     {%- if site.mermaid.custom -%}
         <script src="{{ site.mermaid.custom }}"></script>
     {%- else -%}
-        <script src="{{ cdn }}/assets/js/mermaid.min.js"></script>
+        <script src="{{ base }}/assets/js/mermaid.min.js"></script>
     {%- endif %}
     <script>
         mermaid.initialize({% if site.mermaid.initialize %}{{ site.mermaid.initialize | jsonify }}{% else %}{}{% endif %});

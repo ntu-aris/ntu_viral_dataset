@@ -12,18 +12,14 @@ help:
 	@echo "    dist      Build the theme css and script"
 	@echo "    status    Display status before push"
 	@echo "    theme     Make theme as gem and install"
-	@echo "    site      Build the test site"
+	@echo "    build     Build the test site"
 	@echo "    server    Make a livereload jekyll server to development"
-	@echo "    rouge     Build the rouge scss"
 	@echo "    checkout  Reset the theme minified css and script to last commit"
 
 checkout:
 	@git checkout _config.yml
 	@git checkout assets/js/theme.min.js
 	@git checkout assets/css/theme.min.css
-
-rouge:
-	@rougify style github | sass-convert --to scss > _sass/rougify/github.scss
 
 install:
 	@gem install jekyll bundler
@@ -50,7 +46,7 @@ theme: dist
 	@gem build *.gemspec
 	@gem install *.gem && rm -f *.gem
 
-site: dist
+build: dist
 	@${DEBUG} bundle exec jekyll build --safe --profile
 
 server: dist

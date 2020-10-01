@@ -1,22 +1,22 @@
 // core
-@import "material-design-lite/variables";
-@import "material-design-lite/mixins";
-@import "@primer/css/support";
+@import "lib/material-design-lite/variables";
+@import "lib/material-design-lite/mixins";
+@import "lib/@primer/css/support";
 @import "variables";
 @import "root";
 
-@import "@primer/css/base";
-@import "@primer/css/breadcrumb";
-@import "@primer/css/buttons";
-@import "@primer/css/forms";
-@import "@primer/css/loaders";
-@import "@primer/css/markdown";
-@import "rouge/github";
+@import "lib/@primer/css/base";
+@import "lib/@primer/css/breadcrumb";
+@import "lib/@primer/css/buttons";
+@import "lib/@primer/css/forms";
+@import "lib/@primer/css/loaders";
+@import "lib/@primer/css/markdown";
+@import "lib/rouge/github";
 
 // fonts
 @import "font-face";
-@import "font-awesome/variables";
-@import "font-awesome/icons";
+@import "lib/font-awesome/variables";
+@import "lib/font-awesome/icons";
 
 // theme
 @import "layout";
@@ -30,5 +30,8 @@
 @import "class/markdown-body";
 @import "class/toasts";
 
+// improved
+@import "direction";
+
 // utilities
-@import "@primer/css/utilities";
+@import "lib/@primer/css/utilities";

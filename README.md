@@ -34,12 +34,12 @@ title: Your awesome title
 lang: # default: en
 description: Write an awesome description for your new site here
 
-rtl: true
-
 readme_index:
   with_frontmatter: true
 
 ## optional settings ##
+direction: # default: auto, syntax: [ltr|rtl]
+
 meta:
   key1: value1
   key2: value2

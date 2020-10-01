@@ -31,6 +31,7 @@ $theme-mask-white: transparentize($theme-white, 0.9);
 $theme-mask-black: transparentize($theme-black, 0.9);
 
 // theme menu
+$theme-menu-width-sm: 85%;
 $theme-menu-width: 300px;
 $theme-menu-background: darken($theme-black, 10%);
 $theme-menu-active-background: darken($theme-blue, 15%);

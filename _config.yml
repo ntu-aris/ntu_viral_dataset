@@ -7,10 +7,7 @@ theme: null
 debug:
   compress: true
   dist: false
-  in_develop: true
-  extension: true
-
-rtl: true
+  shortcodes: true
 
 readme_index:
   with_frontmatter: true

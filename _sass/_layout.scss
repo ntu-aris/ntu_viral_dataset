@@ -1,17 +1,12 @@
-body {
-  @include rtl(direction, ltr, rtl);
-}
-
 .menu-sm {
-  @include start(-85%);
-
   position: fixed;
   bottom: 0;
-  width: 85%;
+  left: -$theme-menu-width-sm;
+  width: $theme-menu-width-sm;
   max-height: 100%;
 
   &.shift {
-    @include start(0);
+    left: 0;
   }
 }
 
@@ -31,19 +26,17 @@ body {
 
 .content-wrap {
   &.shift {
-    @include start(85%);
-
     position: fixed;
     top: 0;
     bottom: 0;
+    left: $theme-menu-width-sm;
     min-width: 100%;
   }
 }
 
 @include breakpoint(md) {
   .menu-md {
-    @include start(0);
-
+    left: 0;
     width: $theme-menu-width;
   }
 
@@ -51,6 +44,7 @@ body {
     @extend .menu-md;
 
     .sidebar {
+      // 20px for scroll
       width: $theme-menu-width + 20px;
 
       .header,
@@ -65,12 +59,11 @@ body {
   }
 
   .content-wrap {
-    @include margin_start($theme-menu-width);
+    margin-left: $theme-menu-width;
 
     &.shift {
-      @include start(0);
-
       position: relative;
+      left: 0;
       min-width: 0;
     }
   }
