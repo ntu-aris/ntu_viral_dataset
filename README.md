@@ -65,6 +65,8 @@ translate:
   warning:
   # 404
   not_found:
+  # copyright
+  revision:
   # search
   searching:
   search:

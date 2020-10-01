@@ -67,7 +67,7 @@ jobs:
 
       - name: Merge to master if release v2.*.*
         run: |
-          if [[ ${VERSION} =~ ^2.[0-9]+\.[0-9]+$ ]]; then
+          if [[ ${VERSION} =~ ^2.[0-9]+\.[0-9]+ ]]; then
               git checkout master
               git pull origin v2 && git push
           fi
