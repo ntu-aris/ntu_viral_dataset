@@ -15,9 +15,8 @@
                     {%- assign custom = content_block | replace_first: '><code class="language-', "" | replace_first: '">', "<temp/>" | split: "<temp/>" -%}
                     {%- assign lang   = custom.first -%}
                     {%- assign codes  = custom.last | split: "</code>" | first -%}
-                    {%- assign others = custom.last | split: "</code>" | last  -%}
                     {%- if shortcodes contains lang -%}
-                        {%- include shortcodes/{{ lang }}.liquid -%} {{- others -}}
+                        {%- include shortcodes/{{ lang }}.liquid -%} {{- pre_blocks.last -}}
                     {%- else -%}
                         <pre{{ pre_blocks.first }}</pre> {{ pre_blocks.last }}
                     {%- endif -%}

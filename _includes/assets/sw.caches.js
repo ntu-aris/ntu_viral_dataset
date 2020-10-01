@@ -1,11 +1,11 @@
 self.addEventListener("activate", function (event) {
-  let cacheWhitelist = ["rundocs-{{ version }}"];
+  const current = ["rundocs-{{ version }}"];
 
   event.waitUntil(
     caches.keys().then(function (keyList) {
       return Promise.all(
         keyList.map(function (key) {
-          if (cacheWhitelist.indexOf(key) === -1) {
+          if (current.indexOf(key) === -1) {
             return caches.delete(key);
           }
         })
@@ -15,11 +15,7 @@ self.addEventListener("activate", function (event) {
 });
 
 self.addEventListener("fetch", function (e) {
-  if (
-    /^https:\/\/cdn\.jsdelivr\.net\/gh\/rundocs\/jekyll-rtd-theme@.+/.exec(
-      e.request.url
-    )
-  ) {
+  if (e.request.url.match("rundocs/jekyll-rtd-theme@{{ version }}")) {
     e.respondWith(
       caches.match(e.request).then(function (resp) {
         if (resp !== undefined) {

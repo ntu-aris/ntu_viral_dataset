@@ -1,8 +1,7 @@
 <script>
     window.ui = {
+        collect: new URL("{{ collect }}?v={{ version }}&lang={{ lang }}"),
         title: "{{ site.title }}",
-        lang: "{{ lang }}",
-        version: "{{ version }}",
         baseurl: "{{ site.baseurl }}",
         i18n: {
             search_results: "{{ __.search_results | default: 'Search Results' }}",

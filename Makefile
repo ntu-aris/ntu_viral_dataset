@@ -1,7 +1,7 @@
 DEBUG=JEKYLL_GITHUB_TOKEN=blank PAGES_API_URL=http://0.0.0.0
 
 help:
-	@echo "jekyll-rtd-theme -- Opinionated github flavored standard document theme for open source projects\n"
+	@echo "jekyll-rtd-theme -- Opinionated github flavored standard document theme for open source projects, with few options, but everything!\n"
 	@echo "Usage:"
 	@echo "    make [subcommand]\n"
 	@echo "Subcommands:"
@@ -14,15 +14,16 @@ help:
 	@echo "    theme     Make theme as gem and install"
 	@echo "    site      Build the test site"
 	@echo "    server    Make a livereload jekyll server to development"
-	@echo "    rougify   Build the rouge scss"
+	@echo "    rouge     Build the rouge scss"
 	@echo "    checkout  Reset the theme minified css and script to last commit"
 
 checkout:
+	@git checkout _config.yml
 	@git checkout assets/js/theme.min.js
 	@git checkout assets/css/theme.min.css
 
-rougify:
-	@rougify style github | sass-convert --to scss > _sass/class/highlight.scss
+rouge:
+	@rougify style github | sass-convert --to scss > _sass/rougify/github.scss
 
 install:
 	@gem install jekyll bundler
@@ -30,16 +31,16 @@ install:
 	@bundle install
 
 format:
-	@npx prettier . --check --write
+	@npm run checkout
 
 report:
-	@npx lighthouse http://127.0.0.1:4000
+	@npm run report
 
 clean:
 	@bundle exec jekyll clean
 
 dist: format clean
-	@npx webpack --mode production
+	@npm run build
 
 status: format clean checkout
 	@git status

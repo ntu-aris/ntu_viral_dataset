@@ -31,5 +31,14 @@
     <style>{{ custom_scss | scssify | strip_newlines }}</style>
 {%- endif -%}
 
-{% comment %} icon {% endcomment %}
-<link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/favicon.svg">
+{% comment %} favicon icon {% endcomment %}
+<link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/assets/images/favicon.svg">
+{% comment %} alternate {% endcomment %}
+<link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/images/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="{{ site.baseurl }}/assets/images/favicon-96x96.png" sizes="96x96">
+{% comment %} safari {% endcomment %}
+<link rel="mask-icon" href="{{ site.baseurl }}/assets/images/favicon.svg" color="#2980b9">
+
+{% comment %} apple-touch-icon {% endcomment %}
+<link rel="apple-touch-icon" href="{{ site.baseurl }}/assets/images/apple-touch-icon-300x300.png">

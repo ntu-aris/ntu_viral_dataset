@@ -1,4 +1,19 @@
 .markdown-body {
+  @mixin d-lang() {
+    position: relative;
+
+    &:after {
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-family: $mono-font;
+      font-size: $font-size-small;
+      content: attr(data-lang);
+      padding: 0 5px;
+      color: lighten($text-gray-light, 30%);
+    }
+  }
+
   // 400
   font-weight: $font-weight-normal;
 
@@ -20,7 +35,8 @@
   h3,
   h4,
   h5,
-  h6 {
+  h6,
+  dt {
     font-family: $head-font;
   }
 
@@ -29,9 +45,16 @@
     font-size: $body-font-size;
   }
 
-  // ruby highlight fixed
+  // ruby highlight fixed, TODO: line number display
   figure {
     margin: 0;
+  }
+
+  .anchor {
+    // overwrite to right
+    float: none;
+    padding-right: 0;
+    margin-left: 3px;
   }
 
   // improved
@@ -39,13 +62,13 @@
   tt {
     font-size: $font-size-small;
     border: $border;
-    color: $theme-red;
-    background-color: darken($theme-white, 2%);
+    color: $theme-code-inline;
+    background-color: $theme-code-inline-background;
   }
 
   pre {
     > code {
-      color: $theme-black;
+      color: $theme-code;
     }
   }
 
@@ -53,10 +76,11 @@
   pre {
     font-size: $font-size-small;
     border: $border;
+    background-color: $theme-code-background;
   }
 
-  .highlight pre {
-    background-color: transparent;
+  div.highlighter-rouge {
+    @include d-lang();
   }
 
   // search
@@ -64,5 +88,21 @@
     li {
       list-style: none;
     }
+  }
+
+  // improved checkbox
+  .task-list-item-checkbox {
+    margin-right: 3px;
+  }
+
+  // improved mermaid
+  // .mermaid:not([data-processed="true"])
+  .mermaid {
+    font-size: $font-size-small;
+    font-family: $mono-font;
+    white-space: pre;
+    @include d-lang();
+    // mdl
+    @include shadow-2dp();
   }
 }

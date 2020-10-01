@@ -2,7 +2,7 @@
 sort: 2
 ---
 
-# Admonition Card
+# Toasts Card
 
 THIS IS TOO LONG, NEED UPDATE! HERE IS SOME IDEAS:
 

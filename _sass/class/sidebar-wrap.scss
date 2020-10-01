@@ -32,6 +32,11 @@
 
   > ul {
     // the first level links
+    > .toc > a {
+      padding-left: $spacer-4 / 2;
+    }
+
+    // the first level links not current
     > .toc:not(.current) > a {
       &:hover {
         background: $theme-mask-white;
@@ -78,7 +83,7 @@
   @for $level from 1 through 11 {
     &.level-#{$level}.current {
       > a {
-        padding-left: 1.5em * ($level - 1 + 0.5);
+        padding-left: $spacer-4 * ($level - 1 + 0.5);
         background: var(--toc-#{$level});
       }
 
@@ -88,7 +93,7 @@
       }
 
       .level-#{$level + 1} > a {
-        padding-left: 1.5em * ($level + 0.5);
+        padding-left: $spacer-4 * ($level + 0.5);
       }
     }
   }
