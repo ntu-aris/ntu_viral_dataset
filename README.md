@@ -43,7 +43,7 @@ Documentation that can guide how to create with Github pages, please refer to [r
 | `url`         | user domain or cname |                   |
 | `baseurl`     | repo name            |                   |
 | `lang`        | `en`                 |                   |
-| `direction`   | `auto`               | `[ltr|rtl]`       |
+| `direction`   | `auto`               | `ltr` or `rtl`    |
 | `highlighter` | `rouge`              | Cannot be changed |
 
 ```yml
