@@ -15,13 +15,6 @@
 {%- assign schema_modi = site.time | date_to_xmlschema -%}
 {%- assign schema_surl = page.url  | absolute_url | xml_escape -%}
 
-{% comment %} debug {% endcomment %}
-{%- if site.debug -%}
-    {%- assign base = site.baseurl -%}
-{%- else -%}
-    {%- assign base = "https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@" | append: version -%}
-{%- endif -%}
-
 {% comment %} custom {% endcomment %}
 {%- capture custom_scss -%}
     {%- include assets/custom.scss -%} {{- site.scss -}}
@@ -30,3 +23,10 @@
 {%- capture custom_script -%}
     {%- include assets/custom.js -%} {{- site.script -}}
 {%- endcapture -%}
+
+{% comment %} debug {% endcomment %}
+{%- if site.debug -%}
+    {%- assign base = site.baseurl -%}
+{%- else -%}
+    {%- assign base = "https://cdn.jsdelivr.net/gh/rundocs/jekyll-rtd-theme@" | append: version -%}
+{%- endif -%}

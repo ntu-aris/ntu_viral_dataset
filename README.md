@@ -29,7 +29,7 @@ Documentation that can guide how to create with Github pages, please refer to [r
 - Shortcodes (Toasts card, mermaid)
 - Pages Plugins (emoji, gist, avatar, mentions)
 - Auto generate sidebar
-- [Inline Attribute Lists](https://kramdown.gettalong.org/syntax.html#inline-attribute-lists) (Primer utilities, Font Awesome 4)
+- [Attribute List Definitions](https://kramdown.gettalong.org/syntax.html#attribute-list-definitions) (Primer/css utilities, Font Awesome 4)
 - Service worker (caches)
 - SEO (404, robots.txt, sitemap.xml)
 - Canonical Link (Open Graph, Twitter Card, Schema data)
