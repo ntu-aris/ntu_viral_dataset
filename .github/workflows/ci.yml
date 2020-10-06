@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [v1, v2]
+    branches: [master]
   pull_request:
-    branches: [v1, v2]
+    branches: [master]
 
 jobs:
   checkout:
@@ -64,13 +64,6 @@ jobs:
           body_path: changelog.report.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Merge to master if release v2.*.*
-        run: |
-          if [[ ${VERSION} =~ ^2.[0-9]+\.[0-9]+ ]]; then
-              git checkout master
-              git pull origin v2 && git push
-          fi
 
       - name: Configure gem credentials and Build gemspec!
         run: |
