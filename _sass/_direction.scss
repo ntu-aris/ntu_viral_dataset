@@ -1,5 +1,5 @@
 html[dir="rtl"] {
-  // common
+  // @primer/css/base/typography-base
   ul,
   ol {
     padding-right: 0;
@@ -76,11 +76,18 @@ html[dir="rtl"] {
   }
   // markdown-body
   .markdown-body {
-    .d-lang {
-      &:after {
-        right: unset;
-        left: 0;
-      }
+    .highlight {
+      direction: ltr;
+    }
+    blockquote {
+      border-left: none;
+      border-right: 0.25em $border-style lighten($gray-300, 5%);
+    }
+
+    ul,
+    ol {
+      padding-left: 0;
+      padding-right: 2em;
     }
 
     // improved checkbox
@@ -88,5 +95,13 @@ html[dir="rtl"] {
       margin-right: unset;
       margin-left: 3px;
     }
+  }
+
+  // font
+  .#{$fa-css-prefix}-arrow-circle-left:before {
+    content: $fa-var-arrow-circle-right;
+  }
+  .#{$fa-css-prefix}-arrow-circle-right:before {
+    content: $fa-var-arrow-circle-left;
   }
 }
