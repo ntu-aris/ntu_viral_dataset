@@ -20,8 +20,7 @@
             The
             <a href="{{ site.baseurl }}/">software</a>
             is under the terms of
-            <a href="{{ docs.repository_url }}">{{ docs.license.name }}</a>
-            ({{ docs.license.spdx_id }}).
+            <a href="{{ docs.repository_url }}">{{ docs.license.name | default: "The Unlicense" }}</a>.
         </div>
     </div>
 </div>
