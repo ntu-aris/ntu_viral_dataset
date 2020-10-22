@@ -1,8 +1,8 @@
 ---
-sort: 9
+sort: 10
 ---
 
-# Primer utilities Test
+# Primer Utilities Test
 
 Text can be **bold**, _italic_, or ~~strikethrough~~. [Links](https://github.com) should be blue with no underlines (unless hovered over).
 

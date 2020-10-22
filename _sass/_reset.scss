@@ -1,3 +1,16 @@
+// font
+.font-body {
+  font-family: $body-font;
+  font-weight: $font-weight-normal;
+}
+.font-head {
+  font-family: $head-font;
+  font-weight: $font-weight-bold;
+}
+.font-mono {
+  font-family: $mono-font;
+}
+
 .fa {
   display: inline-block;
   font: normal normal normal 14px/1 "FontAwesome";
