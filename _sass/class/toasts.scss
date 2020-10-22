@@ -28,10 +28,10 @@
   }
 
   &.tip {
-    background-color: lighten($theme-offgreen, 50%);
+    background-color: lighten($theme-green, 50%);
 
     .title {
-      background: lighten($theme-offgreen, 0%);
+      background: lighten($theme-green, 0%);
     }
   }
 

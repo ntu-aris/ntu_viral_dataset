@@ -1,15 +1,12 @@
 // fonts
-$body-font: "Lato", sans-serif;
-$mono-font: monospace;
+$body-font: "Lato", BlinkMacSystemFont, "Segoe UI", Helvetica, sans-serif;
+$mono-font: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 $head-font: "Roboto-Slab", sans-serif;
-
-// reset
-$box-shadow-focus: none;
 
 // theme color
 $theme-blue: #2980b9;
 $theme-red: #e74c3c;
-$theme-offgreen: #1abc9c;
+$theme-green: #1abc9c;
 $theme-orange: #e67e22;
 
 $theme-white: lighten($black, 99%);

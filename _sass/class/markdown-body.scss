@@ -4,8 +4,8 @@
 
     &:after {
       position: absolute;
-      right: 0;
-      top: 0;
+      right: 0px;
+      top: 0px;
       font-family: $mono-font;
       font-size: $font-size-small;
       content: attr(data-lang);
@@ -97,14 +97,17 @@
     margin-right: 3px;
   }
 
-  // improved mermaid
-  // .mermaid:not([data-processed="true"])
-  .mermaid {
-    font-size: $font-size-small;
-    font-family: $mono-font;
-    white-space: pre;
+  // mermaid improved
+  .mermaid-wrap {
     @extend .d-lang;
     // mdl
     @include shadow-2dp();
+
+    // .mermaid:not([data-processed="true"])
+    .mermaid {
+      font-size: $font-size-small;
+      font-family: $mono-font;
+      white-space: pre;
+    }
   }
 }
