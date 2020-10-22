@@ -2,7 +2,7 @@
   "scripts": {
     "report": "lighthouse http://127.0.0.1:4000",
     "build": "webpack --mode production",
-    "checkout": "prettier . --check --write"
+    "format": "prettier . --check --write"
   },
   "dependencies": {
     "@primer/css": "^15.2.0",

@@ -45,7 +45,7 @@ jobs:
       - name: Prettier check and Build theme assets!
         run: |
           npm install
-          npm run checkout && npm run build
+          npm run format && npm run build
 
       - name: Save changes!
         run: |

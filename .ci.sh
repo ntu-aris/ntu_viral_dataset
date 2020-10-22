@@ -1,5 +1,7 @@
 #!/bin/bash
 
+bundle update
+
 rm -rf _sass/lib && mkdir -p _sass/lib
 
 mkdir -p _sass/lib/@primer/css
@@ -30,5 +32,9 @@ cp node_modules/material-design-lite/src/_functions.scss          _sass/lib/mate
 cp node_modules/material-design-lite/src/_mixins.scss             _sass/lib/material-design-lite
 cp node_modules/material-design-lite/src/_variables.scss          _sass/lib/material-design-lite
 
+# mermaid
+rm -f assets/js/mermaid.min.js
+cp node_modules/mermaid/dist/mermaid.min.js assets/js && sed -i '$d' assets/js/mermaid.min.js
+
 # format
-npm run checkout
+npm run format

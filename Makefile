@@ -27,7 +27,7 @@ install:
 	@bundle install
 
 format:
-	@npm run checkout
+	@npm run format
 
 report:
 	@npm run report

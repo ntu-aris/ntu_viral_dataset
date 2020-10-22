@@ -1,4 +1,5 @@
-source "https://rubygems.org" # gems.ruby-china.com
+source "https://gems.ruby-china.com"
+# source "https://rubygems.org"
 
 gemspec
 
