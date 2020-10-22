@@ -1,7 +1,7 @@
 DEBUG=JEKYLL_GITHUB_TOKEN=blank PAGES_API_URL=http://0.0.0.0
 
 help:
-	@echo "jekyll-rtd-theme -- Opinionated github flavored standard document theme for open source projects, with few options, but everything!\n"
+	@echo "jekyll-rtd-theme -- Opinionated standard document theme, with few options, but everything!\n"
 	@echo "Usage:"
 	@echo "    make [subcommand]\n"
 	@echo "Subcommands:"

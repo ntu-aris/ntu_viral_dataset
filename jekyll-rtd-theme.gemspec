@@ -4,7 +4,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["saowang"]
   spec.email         = ["saowang@outlook.com"]
 
-  spec.summary       = "Opinionated github flavored standard document theme for open source projects, with few options, but everything!"
+  spec.summary       = "Opinionated standard document theme, with few options, but everything!"
   spec.license       = "MIT"
   spec.homepage      = "https://github.com/rundocs/jekyll-rtd-theme"
 

@@ -5,11 +5,11 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-    target-branch: "v2"
+    target-branch: "develop"
     versioning-strategy: "lockfile-only"
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "daily"
-    target-branch: "v2"
+    target-branch: "develop"
     versioning-strategy: "increase"

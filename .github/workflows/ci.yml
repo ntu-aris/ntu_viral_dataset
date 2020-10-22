@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [master]
+    branches: [develop]
   pull_request:
-    branches: [master]
+    branches: [develop]
 
 jobs:
   checkout:
@@ -38,7 +38,7 @@ jobs:
       - name: Generate changelog and Auto update version!
         run: |
           LAST_TAG=$(git describe --tags --abbrev=0)
-          git log ${LAST_TAG}..HEAD --no-merges --format="- %h %s @%an" > changelog.report.md
+          git log ${LAST_TAG}..HEAD --no-merges --format="- %h %s @%an" > action.changelog.md
           sed -i "s/${LAST_TAG:1}/${VERSION}/g" jekyll-rtd-theme.gemspec
           sed -i "s/${LAST_TAG:1}/${VERSION}/g" _includes/reset/version.liquid
 
@@ -61,7 +61,7 @@ jobs:
           release_name: ${{ needs.checkout.outputs.version }}
           tag_name: v${{ needs.checkout.outputs.version }}
           commitish: ${{ github.ref }}
-          body_path: changelog.report.md
+          body_path: action.changelog.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

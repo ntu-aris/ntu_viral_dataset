@@ -2,7 +2,7 @@
 name: Bug report
 about: Create a report to help us improve
 title: ""
-labels: ""
+labels: "bug"
 assignees: ""
 ---
 
@@ -10,4 +10,4 @@ assignees: ""
 
 **To Reproduce**
 
-**Site link or repository**
+**Site link or Repository**
