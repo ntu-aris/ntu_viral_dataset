@@ -66,13 +66,9 @@ mermaid:
   custom: # mermaid link
   initialize: # mermaid options, default: {}
 
-# also available via file: _include/assets/custom.scss
 scss:
-
-# also available via file: _include/assets/custom.js
 script:
 
-# also available via file: _data/translate.yml
 translate:
   # shortcodes
   danger:

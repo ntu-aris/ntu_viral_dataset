@@ -21,14 +21,14 @@
 // theme
 @import "layout";
 @import "reset";
-@import "class/container";
-@import "class/sidebar-wrap";
-@import "class/addons-wrap";
-@import "class/content-wrap";
-@import "class/header";
-@import "class/title";
-@import "class/markdown-body";
-@import "class/toasts";
+@import "core/container";
+@import "core/sidebar";
+@import "core/addons";
+@import "core/content";
+@import "core/header";
+@import "core/title";
+@import "core/markdown";
+@import "core/toasts";
 
 // improved
 @import "direction";

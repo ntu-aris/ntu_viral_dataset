@@ -1,0 +1,6 @@
+{% comment %} theme {% endcomment %}
+<link rel="stylesheet" href="{{ base }}/assets/css/theme{% if site.debug.dist != false %}.min{% endif %}.css">
+
+{%- if site.scss.size > 0 -%}
+    <style>{{ site.scss | scssify | strip_newlines }}</style>
+{%- endif -%}

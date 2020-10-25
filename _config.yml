@@ -3,10 +3,10 @@ description: Opinionated standard documentation theme, with few options, but eve
 
 theme: null
 
-# debug:
-#   compress: true
-#   dist: false
-#   shortcodes: true
+debug:
+  compress: true
+  dist: false
+  shortcodes: true
 
 readme_index:
   with_frontmatter: true
@@ -19,9 +19,10 @@ plugins:
 exclude:
   - Makefile
   - CNAME
+  - LICENSE
+  - update.sh
   - Gemfile
   - Gemfile.lock
-  - LICENSE
   - requirements.txt
   - node_modules
   - package.json
