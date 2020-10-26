@@ -32,6 +32,28 @@ cp node_modules/material-design-lite/src/_functions.scss          _sass/lib/mate
 cp node_modules/material-design-lite/src/_mixins.scss             _sass/lib/material-design-lite
 cp node_modules/material-design-lite/src/_variables.scss          _sass/lib/material-design-lite
 
+
+rm -rf assets/css/fonts && mkdir -p assets/css/fonts
+
+# lato-font
+cp -r node_modules/lato-font/fonts/lato-bold/*           assets/css/fonts
+cp -r node_modules/lato-font/fonts/lato-bold-italic/*    assets/css/fonts
+cp -r node_modules/lato-font/fonts/lato-normal/*         assets/css/fonts
+cp -r node_modules/lato-font/fonts/lato-normal-italic/*  assets/css/fonts
+
+# roboto-fontface
+cp node_modules/roboto-fontface/fonts/roboto-slab/Roboto-Slab-Bold.woff      assets/css/fonts
+cp node_modules/roboto-fontface/fonts/roboto-slab/Roboto-Slab-Bold.woff2     assets/css/fonts
+cp node_modules/roboto-fontface/fonts/roboto-slab/Roboto-Slab-Regular.woff   assets/css/fonts
+cp node_modules/roboto-fontface/fonts/roboto-slab/Roboto-Slab-Regular.woff2  assets/css/fonts
+
+# font-awesome
+cp -r node_modules/font-awesome/fonts/* assets/css/fonts && rm -f assets/css/fonts/FontAwesome.otf
+
+# jquery
+rm -f assets/js/jquery.min.js
+cp node_modules/jquery/dist/jquery.min.js assets/js
+
 # mermaid
 rm -f assets/js/mermaid.min.js
 cp node_modules/mermaid/dist/mermaid.min.js assets/js && sed -i '$d' assets/js/mermaid.min.js

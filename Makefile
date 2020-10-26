@@ -1,7 +1,8 @@
 DEBUG=JEKYLL_GITHUB_TOKEN=blank PAGES_API_URL=http://0.0.0.0
+ALIAS=jekyll-rtd-theme
 
 help:
-	@echo "jekyll-rtd-theme -- Opinionated standard documentation theme, with few options, but everything!\n"
+	@echo "HomePage: https://github.com/rundocs/${ALIAS}\n"
 	@echo "Usage:"
 	@echo "    make [subcommand]\n"
 	@echo "Subcommands:"
@@ -42,7 +43,7 @@ status: format clean checkout
 	@git status
 
 theme: dist
-	@gem uninstall jekyll-rtd-theme
+	@gem uninstall ${ALIAS}
 	@gem build *.gemspec
 	@gem install *.gem && rm -f *.gem
 
