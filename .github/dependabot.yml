@@ -13,3 +13,9 @@ updates:
       interval: "daily"
     target-branch: "develop"
     versioning-strategy: "increase"
+  - package-ecosystem: "bundler"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    target-branch: "develop"
+    versioning-strategy: "increase"
