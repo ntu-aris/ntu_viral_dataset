@@ -2,20 +2,13 @@
 layout: tasks/compress
 ---
 
-{%- include rest/variables.liquid -%}
-
-{%- include common/rest/site_pages.liquid -%}
-{%- include common/rest/i18n.liquid -%}
-{%- include common/rest/variables.liquid -%}
-{%- include common/rest/content.liquid -%}
-{%- include common/rest/nav.liquid -%}
-{%- include common/rest/title.liquid -%}
-{%- include common/rest/description.liquid -%}
+{%- include rest/defaults.liquid -%}
+{%- include common/rest/defaults.liquid -%}
 
 <!DOCTYPE html>
 <html lang="{{ lang }}" dir="{{ direction }}">
     <head>
-        {%- include common/meta.liquid -%}
+        {%- include common/metadata.liquid -%}
         {%- include common/title.liquid -%}
         {%- include common/twitter_cards.liquid -%}
         {%- include common/opengraph.liquid -%}
