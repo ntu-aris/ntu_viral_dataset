@@ -65,11 +65,11 @@ google:
 mathjax: # this will prased to json, default: {}
 
 mermaid:
-  custom: # mermaid link
+  custom:     # mermaid link
   initialize: # this will prased to json, default: {}
 
-scss:
-script:
+scss:   # also _includes/extra/styles.scss
+script: # also _includes/extra/script.js
 
 translate:
   # shortcodes
