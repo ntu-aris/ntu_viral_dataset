@@ -1,100 +1,106 @@
-# jekyll-rtd-theme
+# NTU VIRAL: A Visual-Inertial-Ranging-Lidar Dataset for Autonomous Aerial Vehicle of the Future
 
-![CI](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg?branch=develop)
-![jsDelivr](https://data.jsdelivr.com/v1/package/gh/rundocs/jekyll-rtd-theme/badge)
+This site presents the dataset collected on our research Unmanned Aerial Vehicle (UAV) platform, featuring an extensive set of sensors:
 
-Just another documentation theme compatible with GitHub Pages
+* Two 3D lidars
+* Two time-synchronized cameras
+* Multiple Inertial Measurement Units (IMUs)
+* Four Ultra-wideband (UWB) nodes on UAV, ranging to three anchor nodes.
 
-## What it does?
+The comprehensive sensor suite resembles that of an autonomous driving car, but features distinct and challenging characteristics of aerial operations. The flight tests are conducted in a variety of both indoor and outdoor conditions.
 
-This theme is inspired by [sphinx-rtd-theme](https://github.com/readthedocs/sphinx_rtd_theme) and refactored with:
+# Downloads
 
-- [@primer/css](https://github.com/primer/css)
-- [github-pages](https://github.com/github/pages-gem) ([dependency versions](https://pages.github.com/versions/))
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-6ibf{border-color:inherit;font-size:18px;text-align:center;vertical-align:top}
+.tg .tg-v8dz{border-color:inherit;font-size:18px;text-align:left;vertical-align:top}
+.tg .tg-9m02{border-color:inherit;color:#00E;font-size:18px;text-align:center;text-decoration:underline;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-6ibf">Name</th>
+    <th class="tg-6ibf">Download Link</th>
+    <th class="tg-6ibf">Size</th>
+    <th class="tg-6ibf">Duration</th>
+    <th class="tg-6ibf">Remark</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-v8dz">eee_01</td>
+    <td class="tg-6ibf"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/58962" target="_blank" rel="noopener noreferrer">DR-NTU server</a></td>
+    <td class="tg-6ibf">8.7 GB</td>
+    <td class="tg-6ibf">398.7 s</td>
+    <td class="tg-v8dz">Collected at the School of EEE center</td>
+  </tr>
+  <tr>
+    <td class="tg-v8dz">eee_02</td>
+    <td class="tg-9m02"><a href="" target="_blank" rel="noopener noreferrer">DR-NTU server</a></td>
+    <td class="tg-6ibf">7.0 GB</td>
+    <td class="tg-6ibf">321.1 s</td>
+    <td class="tg-v8dz">Collected at the School of EEE center</td>
+  </tr>
+  <tr>
+    <td class="tg-v8dz">eee_03</td>
+    <td class="tg-9m02"><a href="" target="_blank" rel="noopener noreferrer">DR-NTU server</a></td>
+    <td class="tg-6ibf">4.3 GB</td>
+    <td class="tg-6ibf">181.4 s</td>
+    <td class="tg-v8dz">Collected at the School of EEE center</td>
+  </tr>
+  <tr>
+    <td class="tg-v8dz"><span style="font-weight:400;font-style:normal">nya_01</span></td>
+    <td class="tg-9m02"><a href="" target="_blank" rel="noopener noreferrer">DR-NTU server</a></td>
+    <td class="tg-6ibf">8.6 GB</td>
+    <td class="tg-6ibf">396.3 s</td>
+    <td class="tg-v8dz">Collected at the School of Bio. Science</td>
+  </tr>
+  <tr>
+    <td class="tg-v8dz"><span style="font-weight:400;font-style:normal">nya_02</span></td>
+    <td class="tg-9m02"><a href="" target="_blank" rel="noopener noreferrer">DR-NTU server</a></td>
+    <td class="tg-6ibf">9.4 GB</td>
+    <td class="tg-6ibf">428.7 s</td>
+    <td class="tg-v8dz">Collected at the School of Bio. Science</td>
+  </tr>
+  <tr>
+    <td class="tg-v8dz">nya_03</td>
+    <td class="tg-9m02"><a href="" target="_blank" rel="noopener noreferrer">DR-NTU server</a></td>
+    <td class="tg-6ibf">9.0 GB</td>
+    <td class="tg-6ibf">411.2 s</td>
+    <td class="tg-v8dz">Collected at the School of Bio. Science</td>
+  </tr>
+  <tr>
+    <td class="tg-v8dz">sbs_01</td>
+    <td class="tg-9m02"><a href="" target="_blank" rel="noopener noreferrer">DR-NTU server</a></td>
+    <td class="tg-6ibf">7.8 GB</td>
+    <td class="tg-6ibf">354.2 s</td>
+    <td class="tg-v8dz">Collected inside the Nanyang Auditorium</td>
+  </tr>
+  <tr>
+    <td class="tg-v8dz"><span style="font-weight:400;font-style:normal">sbs_02</span></td>
+    <td class="tg-9m02"><a href="" target="_blank" rel="noopener noreferrer">DR-NTU server</a></td>
+    <td class="tg-6ibf">8.2 GB</td>
+    <td class="tg-6ibf">373.3 s</td>
+    <td class="tg-v8dz">Collected inside the Nanyang Auditorium</td>
+  </tr>
+  <tr>
+    <td class="tg-v8dz"><span style="font-weight:400;font-style:normal">sbs_03</span></td>
+    <td class="tg-9m02"><a href="" target="_blank" rel="noopener noreferrer">DR-NTU server</a></td>
+    <td class="tg-6ibf">8.5 GB</td>
+    <td class="tg-6ibf">389.3 s</td>
+    <td class="tg-v8dz">Collected inside the Nanyang Auditorium</td>
+  </tr>
+</tbody>
+</table>
 
-## Quick start
+# Sensor setup
 
-```yml
-remote_theme: rundocs/jekyll-rtd-theme
-```
-
-You can [generate](https://github.com/rundocs/starter-slim/generate) with the same files and folders from [rundocs/starter-slim](https://github.com/rundocs/starter-slim/)
-
-## Usage
-
-Documentation that can guide how to create with Github pages, please refer to [rundocs.io](https://rundocs.io) for details
-
-## Features
-
-- Shortcodes (Toasts card, mermaid)
-- Pages Plugins (emoji, gist, avatar, mentions)
-- Auto generate sidebar
-- [Attribute List Definitions](https://kramdown.gettalong.org/syntax.html#attribute-list-definitions) (Primer/css utilities, Font Awesome 4)
-- Service worker (caches)
-- SEO (404, robots.txt, sitemap.xml)
-- Canonical Link (Open Graph, Twitter Card, Schema data)
-
-## Options
-
-| name          | default value        | description       |
-| ------------- | -------------------- | ----------------- |
-| `title`       | repo name            |                   |
-| `description` | repo description     |                   |
-| `url`         | user domain or cname |                   |
-| `baseurl`     | repo name            |                   |
-| `lang`        | `en`                 |                   |
-| `direction`   | `auto`               | `ltr` or `rtl`    |
-| `highlighter` | `rouge`              | Cannot be changed |
-
-```yml
-# folders sort
-readme_index:
-  with_frontmatter: true
-
-meta:
-  key1: value1
-  key2: value2
-  .
-  .
-  .
-
-google:
-  gtag:
-  adsense:
-
-mathjax: # this will prased to json, default: {}
-
-mermaid:
-  custom:     # mermaid link
-  initialize: # this will prased to json, default: {}
-
-scss:   # also _includes/extra/styles.scss
-script: # also _includes/extra/script.js
-
-translate:
-  # shortcodes
-  danger:
-  note:
-  tip:
-  warning:
-  # 404
-  not_found:
-  # copyright
-  revision:
-  # search
-  searching:
-  search:
-  search_docs:
-  search_results:
-  search_results_found: # the "#" in this translate will replaced with results size!
-  search_results_not_found:
-
-plugins:
-  - jemoji
-  - jekyll-avatar
-  - jekyll-mentions
-```
-
-## The license
-
-The theme is available as open source under the terms of the MIT License
+<p align="left">
+	<img src="../images/VIRAL_DATASET/hardware.png" alt="Hardware Setup" width="50%"/>
+</p>
+<p style="text-align: left;">Aerial Vehicle with its sensors and corresponding coordinate frames </p>
