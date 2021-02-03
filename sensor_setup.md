@@ -5,7 +5,7 @@ sort: 1
 # Sensor setup
 
 <p align="center">
-	<img src="../images/VIRAL_DATASET/hardware.png" alt="Hardware Setup" width="50%"/>
+	<img src="/images/VIRAL_DATASET/hardware.png" alt="Hardware Setup" width="50%"/>
 </p>
 <p style="text-align: center;">The research UAV with its sensors and corresponding coordinate frames </p>
 
