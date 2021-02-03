@@ -1,4 +1,4 @@
-# NTU VIRAL: A Visual-Inertial-Ranging-Lidar Dataset for Autonomous Aerial Vehicle of the Future
+# NTU VIRAL: A Visual-Inertial-Ranging-Lidar Dataset for Autonomous Aerial Vehicle 
 
 This site presents the dataset collected on our research Unmanned Aerial Vehicle (UAV) platform, featuring an extensive set of sensors:
 
@@ -97,10 +97,3 @@ The comprehensive sensor suite resembles that of an autonomous driving car, but 
   </tr>
 </tbody>
 </table>
-
-# Sensor setup
-
-<p align="left">
-	<img src="../images/VIRAL_DATASET/hardware.png" alt="Hardware Setup" width="50%"/>
-</p>
-<p style="text-align: left;">Aerial Vehicle with its sensors and corresponding coordinate frames </p>
