@@ -125,6 +125,9 @@ If you use some resource from this data suite, please cite it as
 </tbody>
 </table>
 
+## Notes:
 For more information on the sensors and usage, please checkout the other sections.
 
 For resources and other works of our group please checkout our [github](https://github.com/ntu-aris).
+
+If you have some inquiry, please raise an [issue](https://github.com/ntu-aris/ntu_viral_dataset/issues) on github.
