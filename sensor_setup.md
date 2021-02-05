@@ -141,7 +141,7 @@ The two cameras are externally triggered to capture images at the same time. For
 
 ## Lidar
 
-The Lidar model used for this dataset is OS1-16 gen 1 from Ouster. Each message under the topic `/os1_cloud_node1/points` or `/os1_cloud_node2/points` corresponds to a full 360&deg; scan, which can be converted to a pointcloud of resolution 16x1024. Notice that besides the common x, y, z, intensity fields, each point in the pointcloud also contains time, reflectivity, ring, noise, range information of the laser firing.
+The Lidar model used for this dataset is OS1-16 gen 1 from Ouster. Each message under the topic `/os1_cloud_node1/points` or `/os1_cloud_node2/points` corresponds to a full 360&deg; scan, which can be converted to a pointcloud of resolution 16x1014. Notice that besides the common x, y, z, intensity fields, each point in the pointcloud also contains time, reflectivity, ring, noise, range information of the laser firing.
 To fully access these information, add the following definition of the Ouster point type to your code:
 
 ```cpp
@@ -188,7 +188,7 @@ void cloudHandler(const sensor_msgs::PointCloud2::ConstPtr &msg)
 ## UWB
 
 The UWB sensors used in this work are the P440 UWB Ranging and Communication sensor by Humatics.
-We have converted the driver's custom message types to ROS messages in the following [package](https://github.com/ntu-aris/uwb_driver). You can simply `git clone` the package to your workspace and do `catkin_make`. The following headers can be included in your code
+We converted the driver's custom message types to ROS messages, with some additional fields. The definitions can be found in the following [package](https://github.com/ntu-aris/uwb_driver). You can simply `git clone` the package to your workspace and do `catkin_make`. The following headers can be included in your code
 
 ```cpp
 #include "uwb_driver/UwbRange.h"
@@ -200,6 +200,18 @@ We have converted the driver's custom message types to ROS messages in the follo
 </p>
 <p style="text-align: center;">Fig 3. Illustration of the ranging scheme </p> <a name="fig-ranging"></a>
 
-[Fig. 3](#fig-harware) illustrates our ranging scheme with 4 onboard UWB ranging nodes, and 3 anchor nodes.
+[Fig. 3](#fig-harware) illustrates our ranging scheme with 4 onboard UWB ranging nodes 200.A, 200.B, 201.A, 201.B, which are call requesters; and 3 anchor nodes with ID number 100, 101, 102, which are called responders. Each range measurement contains the IDs of both requester ID and the responder ID. As can be seen in the above illustration, by our subjective design, the three anchor nodes create a coordinate frame of referece {W}, where the anchor 100 is 1.5 m above the origin, the anchor 100 is 1.5 m above the +x axis, and anchor 101 is at the same height, on the -y side of the space.
 
+Let us take the example of the distance measurement from the onboard node 201.A and the anchor 101 (in the absence of noise) as follows
+<p align="center">
+<a href="https://www.codecogs.com/eqnedit.php?latex=d_{201.A\to&space;101}&space;=&space;\left\|\bf{p}&space;&plus;&space;\bf{R}.\bf{x}_{201.A}&space;-&space;\bf{y}_{101}&space;\right\|" target="_blank"><img src="https://latex.codecogs.com/gif.latex?d_{201.A\to&space;101}&space;=&space;\left\|\bf{p}&space;&plus;&space;\bf{R}.\bf{p}_{201.A}&space;-&space;\bf{p}_{101}&space;\right\|" title="d_{201.A\to 101} = \left\|\bf{p} + \bf{R}.\bf{x}_{201.A} - \bf{y}_{101} \right\|" /></a>
+</p>
 
+In this case <img src="https://latex.codecogs.com/gif.latex?\bf{p}"/> is the position of the UAV's body center, <img src="https://latex.codecogs.com/gif.latex?\bf{R}"/> is its orientation, <img src="https://latex.codecogs.com/gif.latex?\bf{p}_{201.A}"/> is the position of the requester node in the body frame, and <img src="https://latex.codecogs.com/gif.latex?\bf{p}_{101}"/> is the position of the responder node in the frame {W}.
+
+In a typical navigation system, <img src="https://latex.codecogs.com/gif.latex?\bf{p}"/> and <img src="https://latex.codecogs.com/gif.latex?\bf{R}"/> will the the unknown quantities that one needs to estimate, while <img src="https://latex.codecogs.com/gif.latex?\bf{p}_{201.A}"/> and <img src="https://latex.codecogs.com/gif.latex?\bf{p}_{101}"/> are priors that can be retrieved from the `uwb_driver::UwbRange` message. [Fig. 4](#fig-range-msg) shows where these priors can be obtained in a message under the topic `\uwb_endorange_info`.
+
+<p align="center">
+    <img src="./images/uwb_range_msg.jpg" alt="range message" width="25%"/>
+</p>
+<p style="text-align: center;">Fig 4. The content of a range message </p> <a name="fig-range-msg"></a>
