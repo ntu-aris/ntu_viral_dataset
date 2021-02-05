@@ -4,12 +4,19 @@ sort: 1
 
 # Sensor setup
 
+## Overview
+
+The sensor setup is illustrated in [Fig. 1](#fig-harware). The corresponding ROS topics are reported in [Tab. 1](#tab-sensor-and-topic).
+
 <p align="center">
 	<img src="./images/hardware.jpg" alt="Hardware Setup" width="50%"/>
 </p>
-<p style="text-align: center;">The research UAV with its sensors and corresponding coordinate frames </p>
+<p style="text-align: center;">Fig 1. The research UAV with its sensors and corresponding coordinate frames </p>
+<a name="fig-hardware"></a>
 
-The following sensors are employed in on our setup.
+
+<p style="text-align: left;">Table 1. Sensors and their ROS topics</p>
+<a name="tab-sensor-and-topic"></a>
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
@@ -122,3 +129,4 @@ The following sensors are employed in on our setup.
 </tbody>
 </table>
 
+## IMU
