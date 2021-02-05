@@ -127,7 +127,7 @@ The sensor setup is illustrated in [Fig. 1](#fig-harware). The corresponding ROS
 
 ## IMU
 
-The IMU is a 9-DoF inertia sensor. The frame of reference attached to this sensor is considered the _body frame_ of the whole setup.
+The IMU being used here is a 9-DoF inertia sensor. The frame of reference attached to this sensor is considered the _body frame_ of the whole setup.
 
 <p align="center">
     <img src="./images/vn100.jpg" alt="Hardware Setup" width="30%"/>
@@ -184,3 +184,22 @@ void cloudHandler(const sensor_msgs::PointCloud2::ConstPtr &msg)
 // Subscribe to /os1_cloud_node1/points and allocate memory for the pointcloud somewhere in the main function
 // Example: laserCloudIn = pcl::PointCloud<PointXYZIRT>::Ptr(new pcl::PointCloud<PointXYZIRT>());
 ```
+
+## UWB
+
+The UWB sensors used in this work are the P440 UWB Ranging and Communication sensor by Humatics.
+We have converted the driver's custom message types to ROS messages in the following [package](https://github.com/ntu-aris/uwb_driver). You can simply `git clone` the package to your workspace and do `catkin_make`. The following headers can be included in your code
+
+```cpp
+#include "uwb_driver/UwbRange.h"
+#include "uwb_driver/UwbEcho.h"
+```
+
+<p align="center">
+    <img src="./images/ranging_scheme.jpg" alt="Ranging Scheme" width="60%"/>
+</p>
+<p style="text-align: center;">Fig 3. Illustration of the ranging scheme </p> <a name="fig-ranging"></a>
+
+[Fig. 3](#fig-harware) illustrates our ranging scheme with 4 onboard UWB ranging nodes, and 3 anchor nodes.
+
+

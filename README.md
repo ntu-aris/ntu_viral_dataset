@@ -18,7 +18,7 @@ If you use some resource from this data suite, please cite it as
   title={NTU VIRAL: A Visual-Inertial-Ranging-Lidar dataset, from an aerial vehicle viewpoint},
   author={Thien-Minh Nguyen, Shenghai Yuan, Muqing Cao, Yang Lyu, Thien Hoang Nguyen, Lihua Xie},
   journal={arXiv preprint},
-  year={2020}
+  year={2021}
 }
 ```
 
@@ -126,3 +126,5 @@ If you use some resource from this data suite, please cite it as
 </table>
 
 For more information on the sensors and usage, please checkout the other sections.
+
+For resources and other works of our group please checkout our [github](https://github.com/ntu-aris).
