@@ -1,4 +1,4 @@
-[# NTU VIRAL: A Visual-Inertial-Ranging-Lidar Dataset for Autonomous Aerial Vehicle] (https://ntu-aris.github.io/ntu_viral_dataset/)
+# [NTU VIRAL: A Visual-Inertial-Ranging-Lidar Dataset for Autonomous Aerial Vehicle](https://ntu-aris.github.io/ntu_viral_dataset/)
 
 
 This site presents the dataset collected on our research Unmanned Aerial Vehicle (UAV) platform, featuring an extensive set of sensors:
