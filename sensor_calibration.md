@@ -1,7 +1,3 @@
----
-sort: 2
----
-
-# Sensor setup
+# Sensor Calibration
 
 ## Overview
