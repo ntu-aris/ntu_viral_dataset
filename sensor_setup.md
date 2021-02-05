@@ -1,28 +1,24 @@
 ---
 sort: 1
 ---
-
-# Sensor setup
+# Sensors & Usage
 
 ## Overview
 
 The sensor setup is illustrated in [Fig. 1](#fig-harware). The corresponding ROS topics are reported in [Tab. 1](#tab-sensor-and-topic).
 
 <p align="center">
-	<img src="./images/hardware.jpg" alt="Hardware Setup" width="50%"/>
+    <img src="./images/hardware.jpg" alt="Hardware Setup" width="50%"/>
 </p>
-<p style="text-align: center;">Fig 1. The research UAV with its sensors and corresponding coordinate frames </p>
-<a name="fig-hardware"></a>
+<p style="text-align: center;">Fig 1. The research UAV with its sensors and corresponding coordinate frames </p> <a name="fig-hardware"></a>
 
-
-<p style="text-align: left;">Table 1. Sensors and their ROS topics</p>
-<a name="tab-sensor-and-topic"></a>
+<p style="text-align: center;">Table 1. Sensors and their ROS topics</p> <a name="tab-sensor-and-topic"></a>
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
+  overflow:hidden;padding:0px 0px;word-break:normal;}
 .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+  font-weight:normal;overflow:hidden;padding:0px 0px;word-break:normal;}
 .tg .tg-lboi{border-color:inherit;text-align:left;vertical-align:middle}
 .tg .tg-9wq8{border-color:inherit;text-align:center;vertical-align:middle}
 .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
@@ -130,3 +126,57 @@ The sensor setup is illustrated in [Fig. 1](#fig-harware). The corresponding ROS
 </table>
 
 ## IMU
+
+The IMU is a 9-DoF inertia sensor. The frame of reference attached to this sensor is considered the _body frame_ of the whole setup.
+
+<p align="center">
+    <img src="./images/vn100.jpg" alt="Hardware Setup" width="30%"/>
+</p>
+<p style="text-align: center;">Fig 2. The IMU frame of reference </p> <a name="fig-hardware"></a>
+
+Internally, a filter fuses gyroscope, acceleration, and magnetic field measuremnts and outputs the orientation result on the /imu/imu topic. Though our dataset does not have orientation groundtruth, user can consider this orientation estimate as an external referenes.
+
+## Lidar
+
+The Lidar model used for this dataset is OS1-16 gen 1 from Ouster. Each message under the topic /os1_cloud_node1/points or /os1_cloud_node2/points corresponds to a full 360&deg; scan, which can be converted to a pointcloud of resolution 16x1024. Notice that besides the common x, y, z, intensity fields, each point in the pointcloud also contains time, reflectivity, ring, noise, range information of the laser firing.
+To fully access these information, add the following definition of the Ouster point type to your code:
+
+```cpp
+struct PointXYZIRT
+{
+    PCL_ADD_POINT4D;
+    float intensity;
+    uint32_t t;
+    uint16_t reflectivity;
+    uint8_t  ring;          // The channel index
+    uint16_t noise;
+    uint32_t range;         // The distance measurement
+    EIGEN_MAKE_ALIGNED_OPERATOR_NEW
+} EIGEN_ALIGN16;
+
+POINT_CLOUD_REGISTER_POINT_STRUCT(PointXYZIRT,
+                                  (float, x, x)
+                                  (float, y, y)
+                                  (float, z, z)
+                                  (float, intensity, intensity)
+                                  (uint32_t, t, t)
+                                  (uint16_t, reflectivity, reflectivity)
+                                  (uint8_t,  ring, ring)
+                                  (uint16_t, noise, noise)
+                                  (uint32_t, range, range))
+```
+
+Below is an example callback that converts the ros message sensor_msgs/PointCloud2 to an object of type pcl::Pointcloud<PointXYZIRT>
+
+```cpp
+
+// Global variable to store the cloud data
+pcl::PointCloud<PointXYZIRT>::Ptr laserCloudIn;
+
+// Callback of topic /os1_cloud_node1/points
+void cloudHandler(const sensor_msgs::PointCloud2::ConstPtr &msg)
+{
+    laserCloudIn = pcl::PointCloud<PointXYZIRT>::Ptr(new pcl::PointCloud<PointXYZIRT>());
+    pcl::fromROSMsg(*msg, *laserCloudIn);
+}
+```
