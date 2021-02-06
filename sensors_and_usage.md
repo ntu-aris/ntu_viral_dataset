@@ -7,14 +7,16 @@ sort: 1
 
 The sensor setup is illustrated in [Fig. 1](#fig-harware). The corresponding ROS topics are reported in [Tab. 1](#tab-sensor-and-topic).
 
+<a name="fig-hardware"></a>
 <p align="center">
     <img src="./images/hardware.jpg" alt="Hardware Setup" width="50%"/>
 </p>
-<p style="text-align: center;">Fig 1. The research UAV with its sensors and corresponding coordinate frames </p> <a name="fig-hardware"></a>
+<p style="text-align: center;">Fig 1. The research UAV with its sensors and corresponding coordinate frames </p>
 
 <br>
 
-<p style="text-align: center;">Table 1. Sensors and their ROS topics</p> <a name="tab-sensor-and-topic"></a>
+<a name="tab-sensor-and-topic"></a>
+<p style="text-align: center;">Table 1. Sensors and their ROS topics</p>
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
 .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
@@ -205,16 +207,16 @@ We converted the driver's custom message types to ROS messages, with some additi
 
 Let us take the example of the distance measurement from the onboard node 201.A and the anchor 101 (in the absence of noise) as follows
 <p align="center">
-<a href="https://www.codecogs.com/eqnedit.php?latex=d_{201.A\to&space;101}&space;=&space;\left\|\bf{p}&space;&plus;&space;\bf{R}.\bf{x}_{201.A}&space;-&space;\bf{y}_{101}&space;\right\|" target="_blank"><img src="https://latex.codecogs.com/gif.latex?d_{201.A\to&space;101}&space;=&space;\left\|\bf{p}&space;&plus;&space;\bf{R}.\bf{p}_{201.A}&space;-&space;\bf{p}_{101}&space;\right\|" title="d_{201.A\to 101} = \left\|\bf{p} + \bf{R}.\bf{x}_{201.A} - \bf{y}_{101} \right\|" /></a>
+<a href="https://www.codecogs.com/eqnedit.php?latex=d_{201.A\to&space;101}&space;=&space;\left\|\bf{p}&space;&plus;&space;\bf{R}.\bf{x}_{201.A}&space;-&space;\bf{y}_{101}&space;\right\|" target="_blank"><img src="https://latex.codecogs.com/png.latex?d_{201.A\to&space;101}&space;=&space;\left\|\bf{p}&space;&plus;&space;\bf{R}.\bf{p}_{201.A}&space;-&space;\bf{p}_{101}&space;\right\|" title="d_{201.A\to 101} = \left\|\bf{p} + \bf{R}.\bf{x}_{201.A} - \bf{y}_{101} \right\|" /></a>
 </p>
 
-In this case <img src="https://latex.codecogs.com/gif.latex?\bf{p}"/> is the position of the UAV's body center, <img src="https://latex.codecogs.com/gif.latex?\bf{R}"/> is its orientation, <img src="https://latex.codecogs.com/gif.latex?\bf{p}_{201.A}"/> is the position of the requester node in the _body frame_, and <img src="https://latex.codecogs.com/gif.latex?\bf{p}_{101}"/> is the position of the responder node in the user-defined frame {W}.
+In this case <img src="https://latex.codecogs.com/png.latex?\bf{p}"/> is the position of the UAV's body center, <img src="https://latex.codecogs.com/png.latex?\bf{R}"/> is its orientation, <img src="https://latex.codecogs.com/png.latex?\bf{p}_{201.A}"/> is the position of the requester node in the _body frame_, and <img src="https://latex.codecogs.com/png.latex?\bf{p}_{101}"/> is the position of the responder node in the user-defined frame {W}.
 
-In a typical navigation system, <img src="https://latex.codecogs.com/gif.latex?\bf{p}"/> and <img src="https://latex.codecogs.com/gif.latex?\bf{R}"/> will be the unknown quantities that one needs to estimate, while <img src="https://latex.codecogs.com/gif.latex?\bf{p}_{201.A}"/> and <img src="https://latex.codecogs.com/gif.latex?\bf{p}_{101}"/> are priors that can be retrieved from the `uwb_driver::UwbRange` message. [Fig. 4](#fig-range-msg) shows where these priors can be obtained in a message under the topic `\uwb_endorange_info`.
+In a typical navigation system, <img src="https://latex.codecogs.com/png.latex?\bf{p}"/> and <img src="https://latex.codecogs.com/png.latex?\bf{R}"/> will be the unknown quantities that one needs to estimate, while <img src="https://latex.codecogs.com/png.latex?\bf{p}_{201.A}"/> and <img src="https://latex.codecogs.com/png.latex?\bf{p}_{101}"/> are priors that can be retrieved from the `uwb_driver::UwbRange` message. [Fig. 4](#fig-range-msg) shows where these priors can be obtained in a message under the topic `\uwb_endorange_info`.
 
 <p align="center">
     <img src="./images/uwb_range_msg.jpg" alt="range message" width="25%"/>
 </p>
 <p style="text-align: center;">Fig 4. The content of a range message </p> <a name="fig-range-msg"></a>
 
-Note that the anchor positions are calculated by simple triangulation of anchor-to-anchor distance under the topic `\uwb_exorange_info` at the beginning of the data collection test. User can opt to estimating these own their own by subscribing to the topic `\uwb_exorange_info`.
+Note that the anchor positions are calculated by simple triangulation of anchor-to-anchor distance under the topic `\uwb_exorange_info` at the beginning of the data collection test. User can opt to estimating these on their own by subscribing to the topic `\uwb_exorange_info`.
