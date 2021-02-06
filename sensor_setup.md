@@ -134,7 +134,7 @@ The IMU being used here is a 9-DoF inertia sensor. The frame of reference attach
 </p>
 <p style="text-align: center;">Fig 2. The IMU frame of reference </p> <a name="fig-hardware"></a>
 
-Internally, a filter fuses gyroscope, acceleration, and magnetic field measuremnts and outputs the orientation result on the `/imu/imu` topic. Though our dataset does not have orientation groundtruth, user can consider this orientation estimate as an external referenes.
+Internally, a filter fuses gyroscope, acceleration, and magnetic field measuremnts and outputs the orientation result on the `/imu/imu` topic. Though our dataset does not have orientation groundtruth, user can consider this orientation estimate as one.
 
 ## Cameras
 The two cameras are externally triggered to capture images at the same time. For images triggered at the same time, their time stamps are different by **at most 3 ms**. This satisfies the default hardcoded threshold in VINS-Fusion. See our tutorial on how to run VINS-Fusion with the dataset [here]().
@@ -169,7 +169,7 @@ POINT_CLOUD_REGISTER_POINT_STRUCT(PointXYZIRT,
                                   (uint32_t, range, range))
 ```
 
-Below is an example callback that converts the ros message `sensor_msgs/PointCloud2` to an object of type `pcl::Pointcloud<PointXYZIRT>`
+Below is an example callback that converts the ros message `sensor_msgs/PointCloud2` to an object of type `pcl::Pointcloud<PointXYZIRT>` defined above:
 
 ```cpp
 // Global variable to store the cloud data
@@ -178,6 +178,7 @@ pcl::PointCloud<PointXYZIRT>::Ptr laserCloudIn;
 // Callback of topic /os1_cloud_node1/points
 void cloudHandler(const sensor_msgs::PointCloud2::ConstPtr &msg)
 {
+    laserCloudIn->clear();
     pcl::fromROSMsg(*msg, *laserCloudIn);
 }
 
@@ -200,18 +201,20 @@ We converted the driver's custom message types to ROS messages, with some additi
 </p>
 <p style="text-align: center;">Fig 3. Illustration of the ranging scheme </p> <a name="fig-ranging"></a>
 
-[Fig. 3](#fig-harware) illustrates our ranging scheme with 4 onboard UWB ranging nodes 200.A, 200.B, 201.A, 201.B, which are call requesters; and 3 anchor nodes with ID number 100, 101, 102, which are called responders. Each range measurement contains the IDs of both requester ID and the responder ID. As can be seen in the above illustration, by our subjective design, the three anchor nodes create a coordinate frame of referece {W}, where the anchor 100 is 1.5 m above the origin, the anchor 100 is 1.5 m above the +x axis, and anchor 101 is at the same height, on the -y side of the space.
+[Fig. 3](#fig-harware) illustrates our ranging scheme with 4 onboard UWB ranging nodes 200.A, 200.B, 201.A, 201.B, called requesters; and 3 anchor nodes with ID number 100, 101, 102, called responders. Each range measurement contains the IDs of both requester ID and the responder ID. By our subjective design in [Fig. 3](#fig-ranging) above, the three anchor nodes create a coordinate frame of referece {W}, where the anchor 100 is 1.5 m above the origin, the anchor 100 is 1.5 m above the +x axis, and anchor 101 is at the same height and on the -y side of the space.
 
 Let us take the example of the distance measurement from the onboard node 201.A and the anchor 101 (in the absence of noise) as follows
 <p align="center">
 <a href="https://www.codecogs.com/eqnedit.php?latex=d_{201.A\to&space;101}&space;=&space;\left\|\bf{p}&space;&plus;&space;\bf{R}.\bf{x}_{201.A}&space;-&space;\bf{y}_{101}&space;\right\|" target="_blank"><img src="https://latex.codecogs.com/gif.latex?d_{201.A\to&space;101}&space;=&space;\left\|\bf{p}&space;&plus;&space;\bf{R}.\bf{p}_{201.A}&space;-&space;\bf{p}_{101}&space;\right\|" title="d_{201.A\to 101} = \left\|\bf{p} + \bf{R}.\bf{x}_{201.A} - \bf{y}_{101} \right\|" /></a>
 </p>
 
-In this case <img src="https://latex.codecogs.com/gif.latex?\bf{p}"/> is the position of the UAV's body center, <img src="https://latex.codecogs.com/gif.latex?\bf{R}"/> is its orientation, <img src="https://latex.codecogs.com/gif.latex?\bf{p}_{201.A}"/> is the position of the requester node in the body frame, and <img src="https://latex.codecogs.com/gif.latex?\bf{p}_{101}"/> is the position of the responder node in the frame {W}.
+In this case <img src="https://latex.codecogs.com/gif.latex?\bf{p}"/> is the position of the UAV's body center, <img src="https://latex.codecogs.com/gif.latex?\bf{R}"/> is its orientation, <img src="https://latex.codecogs.com/gif.latex?\bf{p}_{201.A}"/> is the position of the requester node in the _body frame_, and <img src="https://latex.codecogs.com/gif.latex?\bf{p}_{101}"/> is the position of the responder node in the user-defined frame {W}.
 
-In a typical navigation system, <img src="https://latex.codecogs.com/gif.latex?\bf{p}"/> and <img src="https://latex.codecogs.com/gif.latex?\bf{R}"/> will the the unknown quantities that one needs to estimate, while <img src="https://latex.codecogs.com/gif.latex?\bf{p}_{201.A}"/> and <img src="https://latex.codecogs.com/gif.latex?\bf{p}_{101}"/> are priors that can be retrieved from the `uwb_driver::UwbRange` message. [Fig. 4](#fig-range-msg) shows where these priors can be obtained in a message under the topic `\uwb_endorange_info`.
+In a typical navigation system, <img src="https://latex.codecogs.com/gif.latex?\bf{p}"/> and <img src="https://latex.codecogs.com/gif.latex?\bf{R}"/> will be the unknown quantities that one needs to estimate, while <img src="https://latex.codecogs.com/gif.latex?\bf{p}_{201.A}"/> and <img src="https://latex.codecogs.com/gif.latex?\bf{p}_{101}"/> are priors that can be retrieved from the `uwb_driver::UwbRange` message. [Fig. 4](#fig-range-msg) shows where these priors can be obtained in a message under the topic `\uwb_endorange_info`.
 
 <p align="center">
     <img src="./images/uwb_range_msg.jpg" alt="range message" width="25%"/>
 </p>
 <p style="text-align: center;">Fig 4. The content of a range message </p> <a name="fig-range-msg"></a>
+
+Note that the anchor positions are calculated by simple triangulation of anchor-to-anchor distance under the topic `\uwb_exorange_info` at the beginning of the data collection test. User can opt to estimating these own their own by subscribing to the topic `\uwb_exorange_info`.
