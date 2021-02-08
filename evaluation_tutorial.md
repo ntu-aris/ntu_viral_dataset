@@ -29,7 +29,7 @@ Below we give some notes on the main components of the evaluation script, which 
 
 ## evaluate_all.m
 
-Most commands in this script is self-expressive, we only take note at the following line in `evaluate_all.m`:
+Most commands in this script are self-expressive, we only take note at the following line in `evaluate_all.m`:
 
 ```matlab
 tests       = dir([this_dir 'result_*']);
@@ -41,7 +41,7 @@ Looking into this script readers can see that it simply checks out the folders s
 ## evaluate_one.m
 
 ### Reading the data from logs
-Most commands in this script is also self-explanatory, we will comment on important sections. First notice the following part
+Most commands in this script are also self-explanatory, we will comment on important sections. First notice the following part
 
 ```matlab
 gndtr_pos_fn     = [exp_path 'leica_pose.csv'];
