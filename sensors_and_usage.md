@@ -212,11 +212,11 @@ Let us take the example of the distance measurement from the onboard node 201.A 
 
 In this case <img src="https://latex.codecogs.com/png.latex?\bf{p}"/> is the position of the UAV's body center, <img src="https://latex.codecogs.com/png.latex?\bf{R}"/> is its orientation, <img src="https://latex.codecogs.com/png.latex?\bf{p}_{201.A}"/> is the position of the requester node in the _body frame_, and <img src="https://latex.codecogs.com/png.latex?\bf{p}_{101}"/> is the position of the responder node in the user-defined frame {W}.
 
-In a typical navigation system, <img src="https://latex.codecogs.com/png.latex?\bf{p}"/> and <img src="https://latex.codecogs.com/png.latex?\bf{R}"/> will be the unknown quantities that one needs to estimate, while <img src="https://latex.codecogs.com/png.latex?\bf{p}_{201.A}"/> and <img src="https://latex.codecogs.com/png.latex?\bf{p}_{101}"/> are priors that can be retrieved from the `uwb_driver::UwbRange` message. [Fig. 4](#fig-range-msg) shows where these priors can be obtained in a message under the topic `\uwb_endorange_info`.
+In a typical navigation system, <img src="https://latex.codecogs.com/png.latex?\bf{p}"/> and <img src="https://latex.codecogs.com/png.latex?\bf{R}"/> will be the unknown quantities that one needs to estimate, while <img src="https://latex.codecogs.com/png.latex?\bf{p}_{201.A}"/> and <img src="https://latex.codecogs.com/png.latex?\bf{p}_{101}"/> are priors that can be retrieved from the `uwb_driver::UwbRange` message. [Fig. 4](#fig-range-msg) shows where these priors can be obtained in a message under the topic `/uwb_endorange_info`.
 
 <p align="center">
     <img src="./images/uwb_range_msg.jpg" alt="range message" width="25%"/>
 </p>
 <p style="text-align: center;">Fig 4. The content of a range message </p> <a name="fig-range-msg"></a>
 
-Note that the anchor positions are calculated by simple triangulation of anchor-to-anchor distance under the topic `\uwb_exorange_info` at the beginning of the data collection test. User can opt to estimating these on their own by subscribing to the topic `\uwb_exorange_info`.
+Note that the anchor positions are calculated by simple triangulation of anchor-to-anchor distance under the topic `/uwb_exorange_info` at the beginning of the data collection test. User can opt to estimating these on their own by subscribing to the topic `/uwb_exorange_info`.

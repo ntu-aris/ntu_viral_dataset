@@ -17,12 +17,13 @@ If you use some resource from this data suite, please cite it as
 @article{nguyen2021ntuviral,
   title={NTU VIRAL: A Visual-Inertial-Ranging-Lidar dataset, from an aerial vehicle viewpoint},
   author={Thien-Minh Nguyen, Shenghai Yuan, Muqing Cao, Yang Lyu, Thien Hoang Nguyen, Lihua Xie},
-  journal={arXiv preprint},
+  journal={Submitted to IJRR},
   year={2021}
 }
 ```
 
 # Downloads
+(The links are currently not enabled yet, but please contact the authors above if you have any inquiry.)
 <a name="tab-download"></a>
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
