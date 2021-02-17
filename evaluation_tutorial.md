@@ -19,6 +19,7 @@ The code was written and verified on Matlab 2020a. Upon downloading, simply run 
 <p style="text-align: center;">Fig 1. The content of the evaluation package, and outputs after running the evaluation script</p>
 
 The package contains multiple Matlab scripts and several log files of the ouput of our SLAM method. Specifically the logs are created by the following commands
+<a name="log-commands"></a>
 ```shell
 timeout $LOG_DUR rostopic echo -p --nostr --noarr /viral_slam/pred_odom > $OUTPUT_DIR/predict_odom.csv &
 timeout $LOG_DUR rostopic echo -p --nostr --noarr /leica/pose/relative  > $OUTPUT_DIR/leica_pose.csv;
@@ -34,7 +35,7 @@ Most commands in this script are self-expressive, we only take note at the follo
 ```matlab
 tests       = dir([this_dir 'result_*']);
 ```
-The above command assumes that we prefix the folders containing the results with `result_` for matlab to chek the available sequence. Readers can change to another indicator as they like.
+The above command assumes that we prefix the folders containing the results with `result_` for matlab to check their presence. Readers can change to another indicator as they like.
 
 Looking into this script readers can see that it simply checks out the folders starting with the same name and iteratively passes the folder name to `evaluate_one.m` to obtain the ATE estimate. Let us delve in to this script in the next part.
 
@@ -61,7 +62,7 @@ t0_ns = gndtr_pos_data(1, 1);
 t = (gndtr_pos_data(:, 1) - t0_ns)/1e9;
 P = gndtr_pos_data(:, 4:6);
 ```
-Thus, it is noted that we assume the groundtruth, estimate, and the prism's coordinates are logged in files of specific names as shown above. Also, we have assumed the that the 1st column of the `leica_pose.csv` file is the timestamp, and column 4, 5, 6 are position estimate. These indices are in accordance with the log of a `geometry_msgs::PoseStamped` topic.
+Thus, it is noted that we assume the groundtruth, estimate, and the prism's coordinates are logged in files of specific names as shown above. Also, we have assumed the that the 1st column of the `leica_pose.csv` file is the timestamp, and column 4, 5, 6 are position estimate. These indices are in accordance with the log of a `geometry_msgs::PoseStamped` topic logged with the aforementioned [rostopic commands](#log-commands).
 
 Similarly we notice the next part
 ```matlab
@@ -73,7 +74,7 @@ P_est =  pose_est_data(:, 4:6);
 Q_est = (pose_est_data(:, [10, 7:9]));
 V_est =  pose_est_data(:, 11:13);
 ```
-Obviously, the first 5 commands extract the position, quaternion and velocity estimates from the log file `predict_odom.csv`. The indices are in accordance with the log of a `nav_msgs::Odometry` topic. This is our preferred message type since it already has definition for position, quaternion and velocity. If the chooses a different message type for their output, the indices should be accordingly revised.
+Obviously, the first 5 commands extract the position, quaternion and velocity estimates from the log file `predict_odom.csv`. The indices are in accordance with the log of a `nav_msgs::Odometry` topic. This is our preferred message type since it already has definition for position, quaternion and velocity. If the user chooses a different message type for their output, the indices should be accordingly revised.
 
 ### Compensating for the offset
 Due to the crystal prism being roughly 0.4 m away from the body frame's center in our [setup](sensors_and_usage#fig-hardware), if we directly take the difference between the body-centered estimate with the prism-centered groundtruth, a 0.4 m 'error' could be introduced to the error. So basically we need to keep the estimate and the grountruth referring to the same object. This needs the orientation information, but since no orienation ground truth is available, we shall convert our estimate to that of the prism's position, using the orientation estimate from our SLAM method, as well as the body-to-prism transform. This is done by the following command
@@ -115,7 +116,7 @@ As explained in our paper, the resampling scheme here is done by checking for th
 
 ### Aligning the two sample sets
 Now that the estimate and ground truth are of the same object and the same time, there remains the coordinate transform to unify the frame of refence. Since the transform between the leica tracker and the SLAM estimate are unknown, in the literature it is common practice to use the transform that actually minimizes the root-mean-square error and use that error as the error of the estimation. The process to find that minimum has a closed-form solution. In this work we implement this algorithm in the Matlab script `traj_align.m`, which is then used in our evalution at this part
-```matlab
+```
 % find the optimal alignment
 [rot_align_est, trans_align_est] = traj_align(P_rsest, P_est);
 
