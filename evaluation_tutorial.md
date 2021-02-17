@@ -14,7 +14,7 @@ The code was written and verified on Matlab 2020a. Upon downloading, simply run 
 
 <a name="fig-viral-eval-files"></a>
 <p align="center">
-    <img src="./images/viral_eval_files.jpg" alt="viral_eval_files.jpg" width="75%"/>
+    <img src="./images/viral_eval_files.jpg" alt="viral_eval_files.jpg" width="90%"/>
 </p>
 <p style="text-align: center;">Fig 1. The content of the evaluation package, and outputs after running the evaluation script</p>
 
