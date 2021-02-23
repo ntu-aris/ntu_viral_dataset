@@ -49,7 +49,7 @@ Then enter the correct chessboard size of 80mm as shown in  [Fig. 3](#matlabcali
 
 There are different options in calibration parameter settings as shown in [Fig. 4](#matlabcalibration3). In this sample case, we aim to discover the 3rd coefficients in the distortion parameter. After selecting the parameter, press the calibrate button on the top
 
-<a name="fig-viral-eval-files"></a>
+<a name="matlabcalibration3"></a>
 <p align="center">
     <img src="./images/matlabcalibration3.PNG" alt="matlabcalibration3.PNG" width="80%"/>
 </p>
@@ -57,7 +57,7 @@ There are different options in calibration parameter settings as shown in [Fig. 
 
 After the calibration, the reprojection error and 3D view will be shown below in [Fig. 5](#matlabcalibration4). You may press the show recertified button to view if the line are indeed cross over to the same feature.
 
-<a name="fig-viral-eval-files"></a>
+<a name="matlabcalibration4"></a>
 <p align="center">
     <img src="./images/matlabcalibration4.PNG" alt="matlabcalibration4.PNG" width="80%"/>
 </p>
@@ -65,7 +65,7 @@ After the calibration, the reprojection error and 3D view will be shown below in
 
 Some of the images yield higher reprojection error, and it is possible to remove part of the images by dragging the line on the reprojection figure to achieve a lower reprojection error  as illustrated in  [Fig. 6](#matlabcalibration5) . 
 
-<a name="fig-viral-eval-files"></a>
+<a name="matlabcalibration5"></a>
 <p align="center">
     <img src="./images/matlabcalibration5.PNG" alt="matlabcalibration5.PNG" width="80%"/>
 </p>
