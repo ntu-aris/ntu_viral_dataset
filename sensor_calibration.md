@@ -23,7 +23,7 @@ The pinhole camera model is used in our provided calibration results(fx, fy, cx,
 You can download our calibration datasets for stereo and inertial sensors from the [github repo](https://github.com/ntu-aris/viral_eval). The chessboard pattern should be enough for the atan model used in PTAM and fisheye camera model. The QR code-based pattern in the visual-inertial calibration dataset should provide enough features for more modern models and appraoches in the literature.
 
 ## Calibration with OPENCV
-Setup
+
 So to find pattern in chess board, we can use the function, cv.findChessboardCorners().
 The chessboard pattern we are using is 9x6 size patten with each square tape measured to be  80mm
 
