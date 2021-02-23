@@ -27,7 +27,7 @@ You can download our calibration datasets for stereo and inertial sensors from t
 ## Calibration with Matlab
 
 Calibration in Matlab is one of eaisest way of getting what you wanted. To start the calibration, you need to run the app by calling 
-```MATLAB
+```Matlab
 stereoCameraCalibrator
 ```
 Then load the image by GUI
@@ -77,8 +77,16 @@ After that you can export the camera paramters to a file.
 Please take note that Matlab notation and Opencv notation are different. To use the Matlab result in Opencv you need to do transpose of the projection matrix and rotation matrix. 
 see this [link](https://stackoverflow.com/questions/46651936/convert-between-matlab-stereoparameters-and-opencv-stereorectify-stereo-calibrat/50925828#50925828) for details
 
+
 To use Matlab to calibrate a fisheye model, you may follow the command line instruction [here](mathworks.com/help/vision/ug/fisheye-calibration-basics.html)
- 
+First call
+```Matlab
+cameraCalibrator
+```
+Then load the image and select the Fisheye.
+At last calibrate and show the result. 
+The camera calibration GUI is very similar to the stereo calibrate case.
+
 ## Calibration with OPENCV
 
 OPENCV calibration is more complicated and often reqires quite sometime to read and understand.
