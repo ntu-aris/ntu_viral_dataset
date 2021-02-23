@@ -34,7 +34,7 @@ Then load the image by GUI
 
 <a name="fig-viral-eval-files"></a>
 <p align="center">
-    <img src="./images/matlabcalibration1.PNG" alt="matlabcalibration1.PNG" width="50%"/>
+    <img src="./images/matlabcalibration1.PNG" alt="matlabcalibration1.PNG" width="80%"/>
 </p>
 <p style="text-align: center;">Fig 2. Matlab stereo calibration process 1</p>
 
@@ -43,7 +43,7 @@ Then enter the correct chessboard size of 80mm
 
 <a name="fig-viral-eval-files"></a>
 <p align="center">
-    <img src="./images/matlabcalibration2.PNG" alt="matlabcalibration2.PNG" width="50%"/>
+    <img src="./images/matlabcalibration2.PNG" alt="matlabcalibration2.PNG" width="40%"/>
 </p>
 <p style="text-align: center;">Fig 3. Matlab stereo calibration process 2</p>
 
@@ -52,7 +52,7 @@ Then you may select the number of the parameter or what to optimize. To start th
 
 <a name="fig-viral-eval-files"></a>
 <p align="center">
-    <img src="./images/matlabcalibration3.PNG" alt="matlabcalibration3.PNG" width="50%"/>
+    <img src="./images/matlabcalibration3.PNG" alt="matlabcalibration3.PNG" width="80%"/>
 </p>
 <p style="text-align: center;">Fig 4. Matlab stereo calibration process 3</p>
 
@@ -60,7 +60,7 @@ After the calibration, the reprojection error and 3D view will be shown below. Y
 
 <a name="fig-viral-eval-files"></a>
 <p align="center">
-    <img src="./images/matlabcalibration4.PNG" alt="matlabcalibration4.PNG" width="50%"/>
+    <img src="./images/matlabcalibration4.PNG" alt="matlabcalibration4.PNG" width="80%"/>
 </p>
 <p style="text-align: center;">Fig 5. Matlab stereo calibration process 4</p>
 
@@ -68,7 +68,7 @@ Some of the images yield higher reprojection error, and it is possible to remove
 
 <a name="fig-viral-eval-files"></a>
 <p align="center">
-    <img src="./images/matlabcalibration5.PNG" alt="matlabcalibration5.PNG" width="50%"/>
+    <img src="./images/matlabcalibration5.PNG" alt="matlabcalibration5.PNG" width="80%"/>
 </p>
 <p style="text-align: center;">Fig 6. Matlab stereo calibration process 5</p>
 
