@@ -5,7 +5,7 @@ sort: 2
 # Sensor Calibration
 
 
-Sensor intrinsic and extrinsic calibrations are some of the most critical factors in getting the higher quality results in the process, such as stereo matching, SLAM, fusion. However, there are different coefficients and models(atan, pinhole, etc.) that one can choose and opt to use in the algorithm. This section aims to provide a sample on how to do the calibration with a different choice of coefficients in this section. 
+Sensor intrinsic and extrinsic calibrations are some of the most critical factors in getting the higher quality results in the process, such as stereo matching, SLAM, fusion. We provided fx, fy, cx, cy, k1, k2, d1 and d2 for both camera. However, there are different coefficients and models(atan, pinhole, etc.) that one can choose and opt to use in the algorithm. This section aims to provide a sample on how to do the calibration with a different choice of coefficients in this section. 
 
 You can download our calibration datasets for stereo and inertial sensors from the [github repo](https://github.com/ntu-aris/viral_eval).
 
@@ -42,4 +42,48 @@ for fname in images:
         cv.imshow('img', img)
         cv.waitKey(500)
 cv.destroyAllWindows()
+```
+
+This script will draw the detected pattern and show it in display window
+
+Now that we have our object points and image points, we are ready to go for calibration. We can use the function, cv.calibrateCamera() which returns the camera matrix, distortion coefficients, rotation and translation vectors etc.
+
+
+```python 
+ret, mtx, dist, rvecs, tvecs = cv.calibrateCamera(objpoints, imgpoints, gray.shape[::-1], None, None)
+```
+
+
+Now, we can take an image and undistort it. OpenCV comes with two methods for doing this. However first, we can refine the camera matrix based on a free scaling parameter using cv.getOptimalNewCameraMatrix().
+
+So, we take a new image (0034.png in this case.)
+
+```python 
+img = cv.imread('0034.png')
+h,  w = img.shape[:2]
+newcameramtx, roi = cv.getOptimalNewCameraMatrix(mtx, dist, (w,h), 1, (w,h))
+```
+
+The easier way is to use the opencv internal function and it returns the undistored image.
+
+```python 
+# undistort
+dst = cv.undistort(img, mtx, dist, None, newcameramtx)
+# crop the image
+x, y, w, h = roi
+dst = dst[y:y+h, x:x+w]
+cv.imwrite('calibresult.png', dst)
+```
+
+The remapping is more complicated method but often used in stereo matching process.
+
+```python 
+# undistort
+mapx, mapy = cv.initUndistortRectifyMap(mtx, dist, None, newcameramtx, (w,h), 5)
+dst = cv.remap(img, mapx, mapy, cv.INTER_LINEAR)
+# crop the image
+x, y, w, h = roi
+dst = dst[y:y+h, x:x+w]
+cv.imshow('dst', dst)
+cv.waitKey()
 ```
