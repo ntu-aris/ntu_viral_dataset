@@ -161,7 +161,7 @@ To obtain the extrinsic, load the left and right image sequence with detected co
 ```python 
 ret, K1, D1, K2, D2, R, T, E, F = cv2.stereoCalibrate(objp, leftp, rightp, K1, D1, K2, D2, image_size, criteria, flag)
 ```
-For extrinsic parameters, there are two ways to obtain. The first is to optimize for intrinsic and extrinsic jointly. The second is to optimize extrinsic only. The first method can often achieve low reprojection error but can have poor stereo matching results when dealing with a large baseline. When there is a large baseline, a large section of the image is not observable on the other camera feed.  The second method often has a larger reprojection error but can deal with a large baseline well. The calibration method and other options are controlled by a list of flags shown below
+For extrinsic parameters, there are two ways to obtain. The first is to optimize for intrinsic and extrinsic jointly. The second is to optimize extrinsic only. The first method can often achieve low reprojection error but can have poor stereo matching results when dealing with a large baseline. When there is a large baseline, a large section of the image is not observable on the other camera feed(e.g the left strom trooper head in [Fig. 4](#matlabcalibration3) ) .  The second method often has a larger reprojection error but can deal with a large baseline well. The calibration method and other options are controlled by a list of flags shown below
 
 
 * CV_CALIB_FIX_INTRINSIC: Tells the stereoCalibrate function to not guess the individual intrinsics for each camera
