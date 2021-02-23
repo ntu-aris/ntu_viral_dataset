@@ -8,7 +8,7 @@ This section aims to provide a sample on how to do the calibration with a differ
 
 Sensor intrinsic and extrinsic calibrations are the most critical factors in getting the higher precision results in the process, such as stereo matching, SLAM, multi-sensor fusion. 
 
-We use a 120(diagonal) degree FOV lens for the stereo camera to ease the process of feature tracking over multiple frames. The 120-degree diagonal FOV is the result of a 100-degree horizontal FOV and 80-degree vertical FOV. And it is [common sense](https://en.wikipedia.org/wiki/Fisheye_lens) that the angle of view of a fisheye lens is usually between 100 and 180 degrees.  So technically, both the [pinhole camera model](https://en.wikipedia.org/wiki/Pinhole_camera_model) and [fisheye model](https://en.wikipedia.org/wiki/Fisheye_lens) can be used.
+We use a 120(diagonal)x100(horizontal)x80(vertical) degree FOV lens for the stereo camera to ease the process of feature tracking over multiple frames. And it is [common sense](https://en.wikipedia.org/wiki/Fisheye_lens) that the angle of view of a fisheye lens is usually between 100 and 180 degrees.  So technically, both the [pinhole camera model](https://en.wikipedia.org/wiki/Pinhole_camera_model) and [fisheye model](https://en.wikipedia.org/wiki/Fisheye_lens) can be used.
 
 
 <a name="fig-viral-eval-files"></a>
