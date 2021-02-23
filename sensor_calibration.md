@@ -3,13 +3,20 @@ sort: 2
 ---
 
 # Sensor Calibration 
-Working in progress
 
-Sensor intrinsic and extrinsic calibrations are some of the most critical factors in getting the higher quality results in the process, such as stereo matching, SLAM, fusion. We use pinhole camera model and calibrate the camera with fx, fy, cx, cy, k1, k2, d1 and d2 for both camera. However, there are different coefficients and models(atan, pinhole, etc.) that one can choose and opt to use in the algorithm. This section aims to provide a sample on how to do the calibration with a different choice of coefficients in this section. 
+###Working in progress
 
-You can download our calibration datasets for stereo and inertial sensors from the [github repo](https://github.com/ntu-aris/viral_eval). The chessboard pattern should be enough for those atan model used in PTAM. The QR code based pattern in the visual inerial calibration dataset should provide enough feature for more modern models.
+This section aims to provide a sample on how to do the calibration with a different coefficient and verify the performance of the calibration results.
 
-## Calibration with opencv
+Sensor intrinsic and extrinsic calibrations are the most critical factors in getting the higher precision results in the process, such as stereo matching, SLAM, multi-sensor fusion. 
+
+We use a 120(diagonal) degree FOV lens for the stereo camera to ease the process of feature tracking over multiple frames. The 120-degree diagonal FOV is the result of a 100-degree horizontal FOV and 80-degree vertical FOV. And it is common sense that the angle of view of a fisheye lens is usually between 100 and 180 degrees.  So technically, both the pinhole camera model and fisheye model should work for our camera.
+
+In our provided calibration results(fx, fy, cx, cy, k1, k2, d1 and d2), the pinhole camera model is used. But, there are different number of coefficients and models(atan, pinhole, etc.) that one may want to use when using some existing algorithm. 
+
+You can download our calibration datasets for stereo and inertial sensors from the [github repo](https://github.com/ntu-aris/viral_eval). The chessboard pattern should be enough for the atan model used in PTAM and fisheye camera model. The QR code based pattern in the visual inerial calibration dataset should provide enough feature for more modern models in the literature.
+
+## Calibration with OPENCV
 Setup
 So to find pattern in chess board, we can use the function, cv.findChessboardCorners().
 The chessboard pattern we are using is 9x6 size patten with each square tape measured to be  80mm
