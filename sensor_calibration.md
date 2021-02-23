@@ -10,12 +10,12 @@ This section aims to provide a sample on how to do the calibration with a differ
 
 Sensor intrinsic and extrinsic calibrations are the most critical factors in getting the higher precision results in the process, such as stereo matching, SLAM, multi-sensor fusion. 
 
-We use a 120(diagonal) degree FOV lens for the stereo camera to ease the process of feature tracking over multiple frames. The 120-degree diagonal FOV is the result of a 100-degree horizontal FOV and 80-degree vertical FOV. And it is common sense that the angle of view of a fisheye lens is usually between 100 and 180 degrees.  So technically, both the [pinhole camera model](https://en.wikipedia.org/wiki/Pinhole_camera_model#:~:text=The%20pinhole%20camera%20model%20describes,are%20used%20to%20focus%20light.) and [fisheye model](https://en.wikipedia.org/wiki/Fisheye_lens) can be used.
+We use a 120(diagonal) degree FOV lens for the stereo camera to ease the process of feature tracking over multiple frames. The 120-degree diagonal FOV is the result of a 100-degree horizontal FOV and 80-degree vertical FOV. And it is [common sense](https://en.wikipedia.org/wiki/Fisheye_lens) that the angle of view of a fisheye lens is usually between 100 and 180 degrees.  So technically, both the [pinhole camera model](https://en.wikipedia.org/wiki/Pinhole_camera_model#:~:text=The%20pinhole%20camera%20model%20describes,are%20used%20to%20focus%20light.) and [fisheye model](https://en.wikipedia.org/wiki/Fisheye_lens) can be used.
 
 
 <a name="fig-viral-eval-files"></a>
 <p align="center">
-    <img src="./images/a-Pinhole-camera-model-b-Fisheye-camera-model_W640.jpg" alt="a-Pinhole-camera-model-b-Fisheye-camera-model_W640.jpg" width="90%"/>
+    <img src="./images/a-Pinhole-camera-model-b-Fisheye-camera-model_W640.jpg" alt="a-Pinhole-camera-model-b-Fisheye-camera-model_W640.jpg" width="50%"/>
 </p>
 <p style="text-align: center;">Fig 1. Pinhole camera model vs Fisheye camera model</p>
 
