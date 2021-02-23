@@ -74,14 +74,14 @@ Some of the images yield higher reprojection error, and it is possible to remove
 
 After that you can export the camera paramters to a file. 
 
-Please take note that Matlab notation and Opencv notation are different. To use the Matlab result in Opencv you need to do transpose of the projection matrix and rotation matrix
-see this [link}(https://stackoverflow.com/questions/46651936/convert-between-matlab-stereoparameters-and-opencv-stereorectify-stereo-calibrat/50925828#50925828) for details
+Please take note that Matlab notation and Opencv notation are different. To use the Matlab result in Opencv you need to do transpose of the projection matrix and rotation matrix. 
+see this [link](https://stackoverflow.com/questions/46651936/convert-between-matlab-stereoparameters-and-opencv-stereorectify-stereo-calibrat/50925828#50925828) for details
 
-
-
+To use Matlab to calibrate a fisheye model, you may follow the command line instruction [here](mathworks.com/help/vision/ug/fisheye-calibration-basics.html)
+ 
 ## Calibration with OPENCV
 
-OPENCV calibration is more complicated and reqires quite sometime to read and understand.
+OPENCV calibration is more complicated and often reqires quite sometime to read and understand.
 
 So to find pattern in chess board, we can use the function, cv.findChessboardCorners().
 The chessboard pattern we are using is 9x6 size patten with each square tape measured to be  80mm
