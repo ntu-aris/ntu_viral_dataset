@@ -2,9 +2,8 @@
 sort: 2
 ---
 
-# Sensor Calibration 
+# Sensor Calibration (Working in progress)
 
-###Working in progress
 
 This section aims to provide a sample on how to do the calibration with a different coefficient and verify the performance of the calibration results.
 
@@ -19,10 +18,9 @@ We use a 120(diagonal) degree FOV lens for the stereo camera to ease the process
 </p>
 <p style="text-align: center;">Fig 1. Pinhole camera model vs Fisheye camera model</p>
 
+The pinhole camera model is used in our provided calibration results(fx, fy, cx, cy, k1, k2, d1 and d2). But, there are many other choices of number of coefficients and models(atan, pinhole, etc.) that one might need when exploring some existing algorithm. 
 
-In our provided calibration results(fx, fy, cx, cy, k1, k2, d1 and d2), the pinhole camera model is used. But, there are different number of coefficients and models(atan, pinhole, etc.) that one may want to use when using some existing algorithm. 
-
-You can download our calibration datasets for stereo and inertial sensors from the [github repo](https://github.com/ntu-aris/viral_eval). The chessboard pattern should be enough for the atan model used in PTAM and fisheye camera model. The QR code based pattern in the visual inerial calibration dataset should provide enough feature for more modern models in the literature.
+You can download our calibration datasets for stereo and inertial sensors from the [github repo](https://github.com/ntu-aris/viral_eval). The chessboard pattern should be enough for the atan model used in PTAM and fisheye camera model. The QR code-based pattern in the visual-inertial calibration dataset should provide enough features for more modern models and appraoches in the literature.
 
 ## Calibration with OPENCV
 Setup
