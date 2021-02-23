@@ -47,7 +47,7 @@ Then enter the correct chessboard size of 80mm
 <p style="text-align: center;">Fig 3. Matlab stereo calibration process 2</p>
 
 
-Then you may select the number of the parameter or what to optimize. To start the calibrate, press the calibration button.
+There are different options in calibration parameter settings. In this sample case, we aim to discover the 3rd coefficients in the distortion parameter. After selecting the parameter, press the calibrate button on the top
 
 <a name="fig-viral-eval-files"></a>
 <p align="center">
