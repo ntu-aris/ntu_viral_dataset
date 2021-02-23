@@ -183,6 +183,17 @@ For extrinsic parameters, there are two ways to obtain. The first is to optimize
 * CV_CALIB_ZERO_TANGENT_DIST: Remove the tangential distortions.
 * CV_CALIB_FIX_PRINCIPAL_POINT, CV_CALIB_FIX_FOCAL_LENGTH, CV_CALIB_FIX_K1, …, CV_CALIB_FIX_K6: With a combination of CV_CALIB_FIX_PRINCIPAL_POINT, CV_CALIB_FIX_FOCAL_LENGTH and * CV_CALIB_FIX_K1,...,CV_CALIB_FIX_K6 you get a little of play about which parameters are fixed and which are optimized again
 
+
+Based on calibrated extrinsics and intrinsics, the individual K1 K2 R1 and R2 can be found with their ROI. The rectified view can be found by
+```python 
+R1, R2, P1, P2, Q, roi_left, roi_right = cv2.stereoRectify(K1, D1, K2, D2, image_size, R, T, flags=cv2.CALIB_ZERO_DISPARITY, alpha=0.9)
+leftMapX, leftMapY = cv2.initUndistortRectifyMap(K1, D1, R1, P1, (width, height), cv2.CV_32FC1)
+left_rectified = cv2.remap(leftFrame, leftMapX, leftMapY, cv2.INTER_LINEAR, cv2.BORDER_CONSTANT)
+rightMapX, rightMapY = cv2.initUndistortRectifyMap(K2, D2, R2, P2, (width, height), cv2.CV_32FC1)
+right_rectified = cv2.remap(rightFrame, rightMapX, rightMapY, cv2.INTER_LINEAR, cv2.BORDER_CONSTANT)
+```
+
+
 ## Verification of stereo calibration (working in progress)
 
 ## Projecting pointclouds into camera image (working in progress)
