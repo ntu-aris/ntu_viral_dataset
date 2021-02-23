@@ -38,7 +38,7 @@ for fname in images:
         corners2 = cv.cornerSubPix(gray,corners, (11,11), (-1,-1), criteria)
         imgpoints.append(corners)
         # Draw and display the corners
-        cv.drawChessboardCorners(img, (7,6), corners2, ret)
+        cv.drawChessboardCorners(img, (9,6), corners2, ret)
         cv.imshow('img', img)
         cv.waitKey(500)
 cv.destroyAllWindows()
