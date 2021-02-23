@@ -8,10 +8,10 @@ This section aims to provide a sample on how to do the calibration with a differ
 
 Sensor intrinsic and extrinsic calibrations are the most critical factors in getting the higher precision results in the process, such as stereo matching, SLAM, multi-sensor fusion. 
 
-We use a 128(diagonal)x96(horizontal)x69(vertical) degree FOV [lens](https://www.lensation.de/pdf/B5M3618C.pdf) for the stereo camera to ease the process of feature tracking over multiple frames. And it is [common sense](https://en.wikipedia.org/wiki/Fisheye_lens) that the angle of view of a fisheye lens is usually between 100 and 180 degrees.  So technically, both the [pinhole camera model](https://en.wikipedia.org/wiki/Pinhole_camera_model) and [fisheye model](https://en.wikipedia.org/wiki/Fisheye_lens) can be used.
+We use a 128(diagonal)x96(horizontal)x69(vertical) degree FOV [lens](https://www.lensation.de/pdf/B5M3618C.pdf) for the stereo camera to ease the process of feature tracking over multiple frames. And it is [common sense](https://en.wikipedia.org/wiki/Fisheye_lens) that the angle of view of a fisheye lens is usually between 100 and 180 degrees.  So technically, both the [pinhole camera model](https://en.wikipedia.org/wiki/Pinhole_camera_model) and [fisheye model](https://en.wikipedia.org/wiki/Fisheye_lens) can be used. The different between fisheye and pinhole can be seen from  [Fig. 1](#a-Pinhole-camera-model-b-Fisheye-camera-model_W640)
 
 
-<a name="fig-viral-eval-files"></a>
+<a name="a-Pinhole-camera-model-b-Fisheye-camera-model_W640"></a>
 <p align="center">
     <img src="./images/a-Pinhole-camera-model-b-Fisheye-camera-model_W640.jpg" alt="a-Pinhole-camera-model-b-Fisheye-camera-model_W640.jpg" width="50%"/>
 </p>
@@ -29,25 +29,25 @@ Calibration in Matlab is one of eaisest way of getting what you wanted. To start
 ```Matlab
 stereoCameraCalibrator
 ```
-Then load the image by GUI
+Then load the image by GUI as illustrated in  [Fig. 2](#matlabcalibration1)
 
-<a name="fig-viral-eval-files"></a>
+<a name="matlabcalibration1"></a>
 <p align="center">
     <img src="./images/matlabcalibration1.PNG" alt="matlabcalibration1.PNG" width="80%"/>
 </p>
 <p style="text-align: center;">Fig 2. Matlab stereo calibration process 1</p>
 
 
-Then enter the correct chessboard size of 80mm
+Then enter the correct chessboard size of 80mm as shown in  [Fig. 3](#matlabcalibration2)
 
-<a name="fig-viral-eval-files"></a>
+<a name="matlabcalibration2"></a>
 <p align="center">
     <img src="./images/matlabcalibration2.PNG" alt="matlabcalibration2.PNG" width="40%"/>
 </p>
 <p style="text-align: center;">Fig 3. Matlab stereo calibration process 2</p>
 
 
-There are different options in calibration parameter settings. In this sample case, we aim to discover the 3rd coefficients in the distortion parameter. After selecting the parameter, press the calibrate button on the top
+There are different options in calibration parameter settings as shown in [Fig. 4](#matlabcalibration3). In this sample case, we aim to discover the 3rd coefficients in the distortion parameter. After selecting the parameter, press the calibrate button on the top
 
 <a name="fig-viral-eval-files"></a>
 <p align="center">
@@ -55,7 +55,7 @@ There are different options in calibration parameter settings. In this sample ca
 </p>
 <p style="text-align: center;">Fig 4. Matlab stereo calibration process 3</p>
 
-After the calibration, the reprojection error and 3D view will be shown below. You may press the show recertified button to view if the line are indeed cross over to the same feature.
+After the calibration, the reprojection error and 3D view will be shown below in [Fig. 5](#matlabcalibration4). You may press the show recertified button to view if the line are indeed cross over to the same feature.
 
 <a name="fig-viral-eval-files"></a>
 <p align="center">
@@ -63,7 +63,7 @@ After the calibration, the reprojection error and 3D view will be shown below. Y
 </p>
 <p style="text-align: center;">Fig 5. Matlab stereo calibration process 4</p>
 
-Some of the images yield higher reprojection error, and it is possible to remove part of the images by dragging the line on the reprojection figure to achieve a lower reprojection error. 
+Some of the images yield higher reprojection error, and it is possible to remove part of the images by dragging the line on the reprojection figure to achieve a lower reprojection error  as illustrated in  [Fig. 6](#matlabcalibration5) . 
 
 <a name="fig-viral-eval-files"></a>
 <p align="center">
