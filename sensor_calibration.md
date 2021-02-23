@@ -129,7 +129,7 @@ Now that we have our object points and image points, we are ready to go for cali
 
 
 ```python 
-ret, mtx, dist, rvecs, tvecs = cv.calibrateCamera(objpoints, imgpoints, gray.shape[::-1], None, None)
+ret, K, D, rvecs, tvecs = cv.calibrateCamera(objpoints, imgpoints, gray.shape[::-1], None, None)
 ```
 
 
@@ -140,34 +140,22 @@ So, we take a new image (0034.png in this case.)
 ```python 
 img = cv.imread('0034.png')
 h,  w = img.shape[:2]
-newcameramtx, roi = cv.getOptimalNewCameraMatrix(mtx, dist, (w,h), 1, (w,h))
+newcameramtx, roi = cv.getOptimalNewCameraMatrix(K, D, (w,h), 1, (w,h))
 ```
 
 The easier way is to use the opencv internal function and it returns the undistored image.
 
 ```python 
 # undistort
-dst = cv.undistort(img, mtx, dist, None, newcameramtx)
+dst = cv.undistort(img, K, D, None, newcameramtx)
 # crop the image
 x, y, w, h = roi
 dst = dst[y:y+h, x:x+w]
 cv.imwrite('calibresult.png', dst)
 ```
 
-The remapping is more complicated method but often used in stereo matching process.
 
-```python 
-# undistort
-mapx, mapy = cv.initUndistortRectifyMap(mtx, dist, None, newcameramtx, (w,h), 5)
-dst = cv.remap(img, mapx, mapy, cv.INTER_LINEAR)
-# crop the image
-x, y, w, h = roi
-dst = dst[y:y+h, x:x+w]
-cv.imshow('dst', dst)
-cv.waitKey()
-```
-
-After this process, you should able to obtain a valid intrinsics.
+After this process, you should able to obtain valid intrinsics that straight line appear to be straight.
 
 To obtain the extrinsic, load the left and right image sequence with detected corners. Run
 ```python 
