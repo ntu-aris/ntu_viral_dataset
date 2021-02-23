@@ -167,7 +167,21 @@ cv.imshow('dst', dst)
 cv.waitKey()
 ```
 
+After this process, you should able to obtain a valid intrinsics.
 
+To obtain the extrinsic, load the left and right image sequence with detected corners. Run
+```python 
+ret, K1, D1, K2, D2, R, T, E, F = cv2.stereoCalibrate(objp, leftp, rightp, K1, D1, K2, D2, image_size, criteria, flag)
+```
+For extrinsic parameters, there are two ways to obtain. The first is to optimize for intrinsic and extrinsic jointly. The second is to optimize extrinsic only. The first method can often achieve low reprojection error but can have poor stereo matching results when dealing with a large baseline. When there is a large baseline, a large section of the image is not observable on the other camera feed.  The second method often has a larger reprojection error but can deal with a large baseline well. The calibration method and other options are controlled by a list of flags shown below
+
+
+*CV_CALIB_FIX_INTRINSIC: Tells the stereoCalibrate function to not guess the individual intrinsics for each camera
+*CV_CALIB_USE_INTRINSIC_GUESS: The intrinsics will be used as guesses but optimized again
+*CV_CALIB_FIX_ASPECT_RATIO: Fixing the aspect ratio.
+*CV_CALIB_SAME_FOCAL_LENGTH: Calibrate the focal length and set Fx and Fy the same calibrated result.
+*CV_CALIB_ZERO_TANGENT_DIST: Remove the tangential distortions.
+*CV_CALIB_FIX_PRINCIPAL_POINT, CV_CALIB_FIX_FOCAL_LENGTH, CV_CALIB_FIX_K1, …, CV_CALIB_FIX_K6: With a combination of CV_CALIB_FIX_PRINCIPAL_POINT, CV_CALIB_FIX_FOCAL_LENGTH and *CV_CALIB_FIX_K1,...,CV_CALIB_FIX_K6 you get a little of play about which parameters are fixed and which are optimized again
 
 ## Verification of stereo calibration (working in progress)
 
