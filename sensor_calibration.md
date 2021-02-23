@@ -22,7 +22,59 @@ The pinhole camera model is used in our provided calibration results(fx, fy, cx,
 
 You can download our calibration datasets for stereo and inertial sensors from the [github repo](https://github.com/ntu-aris/viral_eval). The chessboard pattern should be enough for the atan model used in PTAM and fisheye camera model. The QR code-based pattern in the visual-inertial calibration dataset should provide enough features for more modern models and appraoches in the literature.
 
+
+
+## Calibration with Matlab
+
+Calibration in Matlab is one of eaisest way of getting what you wanted. To start the calibration, you need to run the app by calling 
+```MATLAB
+stereoCameraCalibrator
+```
+Then load the image by GUI
+
+<a name="fig-viral-eval-files"></a>
+<p align="center">
+    <img src="./images/matlabcalibration1.PNG" alt="matlabcalibration1.PNG" width="50%"/>
+</p>
+<p style="text-align: center;">Fig 2. Matlab stereo calibration process 1</p>
+
+
+Then enter the correct chessboard size
+
+<a name="fig-viral-eval-files"></a>
+<p align="center">
+    <img src="./images/matlabcalibration2.PNG" alt="matlabcalibration2.PNG" width="50%"/>
+</p>
+<p style="text-align: center;">Fig 3. Matlab stereo calibration process 2</p>
+
+<a name="fig-viral-eval-files"></a>
+<p align="center">
+    <img src="./images/matlabcalibration3.PNG" alt="matlabcalibration3.PNG" width="50%"/>
+</p>
+<p style="text-align: center;">Fig 4. Matlab stereo calibration process 3</p>
+
+
+<a name="fig-viral-eval-files"></a>
+<p align="center">
+    <img src="./images/matlabcalibration4.PNG" alt="matlabcalibration4.PNG" width="50%"/>
+</p>
+<p style="text-align: center;">Fig 5. Matlab stereo calibration process 4</p>
+
+
+
+<a name="fig-viral-eval-files"></a>
+<p align="center">
+    <img src="./images/matlabcalibration5.PNG" alt="matlabcalibration5.PNG" width="50%"/>
+</p>
+<p style="text-align: center;">Fig 6. Matlab stereo calibration process 5</p>
+
+
+
+
+
 ## Calibration with OPENCV
+
+OPENCV calibration is more complicated and reqires quite sometime to read and understand.
 
 So to find pattern in chess board, we can use the function, cv.findChessboardCorners().
 The chessboard pattern we are using is 9x6 size patten with each square tape measured to be  80mm
@@ -102,7 +154,6 @@ cv.waitKey()
 ```
 
 
-## Calibration with Matlab
 
 ## Verification of stereo calibration
 
