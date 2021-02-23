@@ -10,7 +10,9 @@ Sensor intrinsic and extrinsic calibrations are some of the most critical factor
 You can download our calibration datasets for stereo and inertial sensors from the [github repo](https://github.com/ntu-aris/viral_eval).
 
 ## calibrate_mono.py
-
+Setup
+So to find pattern in chess board, we can use the function, cv.findChessboardCorners().
+The chessboard pattern we are using is 9x6 size patten with each square tape measured to be  80mm
 
 ```python 
 import numpy as np
@@ -29,7 +31,7 @@ for fname in images:
     img = cv.imread(fname)
     gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
     # Find the chess board corners
-    ret, corners = cv.findChessboardCorners(gray, (7,6), None)
+    ret, corners = cv.findChessboardCorners(gray, (9,6), None)
     # If found, add object points, image points (after refining them)
     if ret == True:
         objpoints.append(objp)
