@@ -5,9 +5,9 @@ sort: 2
 # Sensor Calibration 
 Working in progress
 
-Sensor intrinsic and extrinsic calibrations are some of the most critical factors in getting the higher quality results in the process, such as stereo matching, SLAM, fusion. We provided fx, fy, cx, cy, k1, k2, d1 and d2 for both camera. However, there are different coefficients and models(atan, pinhole, etc.) that one can choose and opt to use in the algorithm. This section aims to provide a sample on how to do the calibration with a different choice of coefficients in this section. 
+Sensor intrinsic and extrinsic calibrations are some of the most critical factors in getting the higher quality results in the process, such as stereo matching, SLAM, fusion. We use pinhole camera model and calibrate the camera with fx, fy, cx, cy, k1, k2, d1 and d2 for both camera. However, there are different coefficients and models(atan, pinhole, etc.) that one can choose and opt to use in the algorithm. This section aims to provide a sample on how to do the calibration with a different choice of coefficients in this section. 
 
-You can download our calibration datasets for stereo and inertial sensors from the [github repo](https://github.com/ntu-aris/viral_eval).
+You can download our calibration datasets for stereo and inertial sensors from the [github repo](https://github.com/ntu-aris/viral_eval). The chessboard pattern should be enough for those atan model used in PTAM. The QR code based pattern in the visual inerial calibration dataset should provide enough feature for more modern models.
 
 ## Calibration with opencv
 Setup
