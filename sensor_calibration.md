@@ -2,8 +2,7 @@
 sort: 2
 ---
 
-# Sensor Calibration (Working in progress)
-
+# Sensor Calibration 
 
 This section aims to provide a sample on how to do the calibration with a different coefficient and verify the performance of the calibration results.
 
@@ -170,6 +169,6 @@ cv.waitKey()
 
 
 
-## Verification of stereo calibration
+## Verification of stereo calibration (working in progress)
 
-## Projecting pointclouds into camera image. 
+## Projecting pointclouds into camera image (working in progress)
