@@ -85,9 +85,9 @@ cameraCalibrator
 ```
 then load the image and select the Fisheye. At last calibrate and show the result. The camera calibration GUI is very similar to the stereo calibrate case.
 
-## Calibration with OPENCV
+## Calibration with OpenCV
 
-OPENCV calibration is more complicated and often requires quite sometime to read and understand.
+OpenCV calibration is more complicated and often requires quite sometime to read and understand.
 
 So to find pattern in chess board, we can use the function, `cv.findChessboardCorners()`.
 The chessboard pattern we are using is 9x6 size patten with each square tape measured to be 80mm
