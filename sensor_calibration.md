@@ -8,7 +8,7 @@ This section aims to provide a sample on how to do the calibration with a differ
 
 Sensor intrinsic and extrinsic calibrations are the most critical factors in getting the higher precision results in the process, such as stereo matching, SLAM, multi-sensor fusion. 
 
-We use a 128(diagonal)x96(horizontal)x69(vertical) degree FOV [lens](https://www.lensation.de/pdf/B5M3618C.pdf) for the stereo camera to ease the process of feature tracking over multiple frames. And it is [common sense](https://en.wikipedia.org/wiki/Fisheye_lens) that the angle of view of a fisheye lens is usually between 100 and 180 degrees.  So technically, both the [pinhole camera model](https://en.wikipedia.org/wiki/Pinhole_camera_model) and [fisheye model](https://en.wikipedia.org/wiki/Fisheye_lens) can be used. The different between fisheye and pinhole can be seen from  [Fig. 1](#a-Pinhole-camera-model-b-Fisheye-camera-model_W640)
+We use a 128(diagonal) x 96(horizontal) x 69(vertical) degree FOV [lens](https://www.lensation.de/pdf/B5M3618C.pdf) for the stereo camera to ease the process of feature tracking over multiple frames. By convention, the angle of view of a fisheye lens is expected to be [between 100 and 180 degrees](https://en.wikipedia.org/wiki/Fisheye_lens).  Technically, either the [pinhole camera model](https://en.wikipedia.org/wiki/Pinhole_camera_model) and [fisheye model](https://en.wikipedia.org/wiki/Fisheye_lens) can be used. The different between fisheye and pinhole can be seen from  [Fig. 1](#a-Pinhole-camera-model-b-Fisheye-camera-model_W640)
 
 
 <a name="a-Pinhole-camera-model-b-Fisheye-camera-model_W640"></a>
@@ -17,16 +17,16 @@ We use a 128(diagonal)x96(horizontal)x69(vertical) degree FOV [lens](https://www
 </p>
 <p style="text-align: center;">Fig 1. Pinhole camera model vs Fisheye camera model</p>
 
-The pinhole camera model is used in our provided calibration results(fx, fy, cx, cy, k1, k2, d1 and d2). But, there are many other choices of number of coefficients and models(atan, pinhole, etc.) that one might need when exploring some existing algorithm. 
+The pinhole camera model is used in our provided calibration results (fx, fy, cx, cy, k1, k2, d1, d2). But, there are many other choices of number of coefficients and models (atan, pinhole, etc.) that one might need when exploring some existing algorithms. 
 
-You can download our calibration datasets for stereo and inertial sensors from the [github repo](https://github.com/ntu-aris/viral_eval). The chessboard pattern should be enough for the atan model used in PTAM and fisheye camera model. The QR code-based pattern in the visual-inertial calibration dataset should provide enough features for more modern models and appraoches in the literature.
+You can download our calibration datasets for stereo and inertial sensors from the [github repo](https://github.com/ntu-aris/viral_eval). The chessboard pattern should be enough for the atan model used in PTAM and fisheye camera model. The QR code-based pattern in the visual-inertial calibration dataset should provide enough features for more modern models and approaches in the literature.
 
 
 
-## Calibration with Matlab
+## Calibration with MATLAB
 
-Calibration in Matlab is one of eaisest way of getting what you wanted. To start the calibration, you need to run the app by calling 
-```Matlab
+Calibration in MATLAB is one of eaisest way of getting what you wanted. To start the calibration, you need to run the app by calling 
+```matlab
 stereoCameraCalibrator
 ```
 Then load the image by GUI as illustrated in  [Fig. 2](#matlabcalibration1)
@@ -35,7 +35,7 @@ Then load the image by GUI as illustrated in  [Fig. 2](#matlabcalibration1)
 <p align="center">
     <img src="./images/matlabcalibration1.PNG" alt="matlabcalibration1.PNG" width="80%"/>
 </p>
-<p style="text-align: center;">Fig 2. Matlab stereo calibration process 1</p>
+<p style="text-align: center;">Fig 2. MATLAB stereo calibration process 1</p>
 
 
 Then enter the correct chessboard size of 80mm as shown in  [Fig. 3](#matlabcalibration2)
@@ -44,7 +44,7 @@ Then enter the correct chessboard size of 80mm as shown in  [Fig. 3](#matlabcali
 <p align="center">
     <img src="./images/matlabcalibration2.PNG" alt="matlabcalibration2.PNG" width="40%"/>
 </p>
-<p style="text-align: center;">Fig 3. Matlab stereo calibration process 2</p>
+<p style="text-align: center;">Fig 3. MATLAB stereo calibration process 2</p>
 
 
 There are different options in calibration parameter settings as shown in [Fig. 4](#matlabcalibration3). In this sample case, we aim to discover the 3rd coefficients in the distortion parameter. After selecting the parameter, press the calibrate button on the top
@@ -53,7 +53,7 @@ There are different options in calibration parameter settings as shown in [Fig. 
 <p align="center">
     <img src="./images/matlabcalibration3.PNG" alt="matlabcalibration3.PNG" width="80%"/>
 </p>
-<p style="text-align: center;">Fig 4. Matlab stereo calibration process 3</p>
+<p style="text-align: center;">Fig 4. MATLAB stereo calibration process 3</p>
 
 After the calibration, the reprojection error and 3D view will be shown below in [Fig. 5](#matlabcalibration4). You may press the show recertified button to view if the line are indeed cross over to the same feature.
 
@@ -71,27 +71,26 @@ Some of the images yield higher reprojection error, and it is possible to remove
 </p>
 <p style="text-align: center;">Fig 6. Matlab stereo calibration process 5</p>
 
-After that you can export the camera paramters to a file. 
+After that you can export the camera parameters to a file. 
 
-Please take note that Matlab notation and Opencv notation are different. To use the Matlab result in Opencv you need to do transpose of the projection matrix and rotation matrix. 
-see this [link](https://stackoverflow.com/questions/46651936/convert-between-matlab-stereoparameters-and-opencv-stereorectify-stereo-calibrat/50925828#50925828) for details
+Please take note that Matlab notation and OpenCV notation are different. To use the Matlab result in OpenCV you need to transpose the projection matrix and rotation matrix. 
+See this [link](https://stackoverflow.com/questions/46651936/convert-between-matlab-stereoparameters-and-opencv-stereorectify-stereo-calibrat/50925828#50925828) for details
 
 
 To use Matlab to calibrate a fisheye model, you may follow the command line instruction [here](mathworks.com/help/vision/ug/fisheye-calibration-basics.html)
+
 First call
 ```Matlab
 cameraCalibrator
 ```
-Then load the image and select the Fisheye.
-At last calibrate and show the result. 
-The camera calibration GUI is very similar to the stereo calibrate case.
+then load the image and select the Fisheye. At last calibrate and show the result. The camera calibration GUI is very similar to the stereo calibrate case.
 
 ## Calibration with OPENCV
 
-OPENCV calibration is more complicated and often reqires quite sometime to read and understand.
+OPENCV calibration is more complicated and often requires quite sometime to read and understand.
 
-So to find pattern in chess board, we can use the function, cv.findChessboardCorners().
-The chessboard pattern we are using is 9x6 size patten with each square tape measured to be  80mm
+So to find pattern in chess board, we can use the function, `cv.findChessboardCorners()`.
+The chessboard pattern we are using is 9x6 size patten with each square tape measured to be 80mm
 
 ```python 
 import numpy as np
@@ -125,7 +124,7 @@ cv.destroyAllWindows()
 
 This script will draw the detected pattern and show it in display window
 
-Now that we have our object points and image points, we are ready to go for calibration. We can use the function, cv.calibrateCamera() which returns the camera matrix, distortion coefficients, rotation and translation vectors etc.
+Now that we have our object points and image points, we are ready to go for calibration. We can use the function `cv.calibrateCamera()`, which returns the camera matrix, distortion coefficients, rotation and translation vectors etc.
 
 
 ```python 
@@ -133,7 +132,7 @@ ret, K, D, rvecs, tvecs = cv.calibrateCamera(objpoints, imgpoints, gray.shape[::
 ```
 
 
-Now, we can take an image and undistort it. OpenCV comes with two methods for doing this. However first, we can refine the camera matrix based on a free scaling parameter using cv.getOptimalNewCameraMatrix().
+Now, we can take an image and undistort it. OpenCV comes with two methods for doing this. However first, we can refine the camera matrix based on a free scaling parameter using `cv.getOptimalNewCameraMatrix()`.
 
 So, we take a new image (0034.png in this case.)
 
@@ -155,24 +154,24 @@ cv.imwrite('calibresult.png', dst)
 ```
 
 
-After this process, you should able to obtain valid intrinsics that straight line appear to be straight.
+After this process, you should able to obtain valid intrinsically image pairs, where straight lines do appear straight.
 
-To obtain the extrinsic, load the left and right image sequence with detected corners. Run
+To obtain the extrinsics, first load the left and right image sequence with detected corners, then run
 ```python 
 ret, K1, D1, K2, D2, R, T, E, F = cv2.stereoCalibrate(objp, leftp, rightp, K1, D1, K2, D2, image_size, criteria, flag)
 ```
-For extrinsic parameters, there are two ways to obtain. The first is to optimize for intrinsic and extrinsic jointly. The second is to optimize extrinsic only. The first method can often achieve low reprojection error but can have poor stereo matching results when dealing with a large baseline. When there is a large baseline, a large section of the image is not observable on the other camera feed(e.g the left strom trooper head in [Fig. 4](#matlabcalibration3) ) .  The second method often has a larger reprojection error but can deal with a large baseline well. The calibration method and other options are controlled by a list of flags shown below
+For extrinsic parameters, there are two ways to obtain them. The first one is to optimize for intrinsics and extrinsics jointly. The second is to optimize extrinsics only. The first method can often achieve low reprojection error but can have poor stereo matching results when dealing with a large baseline. When there is a large baseline, a large section of the image is not observable on the other camera feed (e.g the left strom trooper head in [Fig. 4](#matlabcalibration3) ) .  The second method often has a larger reprojection error but can deal with a large baseline well. The calibration method and other options are controlled by a list of flags shown below
 
 
-* CV_CALIB_FIX_INTRINSIC: Tells the stereoCalibrate function to not guess the individual intrinsics for each camera
-* CV_CALIB_USE_INTRINSIC_GUESS: The intrinsics will be used as guesses but optimized again
-* CV_CALIB_FIX_ASPECT_RATIO: Fixing the aspect ratio.
-* CV_CALIB_SAME_FOCAL_LENGTH: Calibrate the focal length and set Fx and Fy the same calibrated result.
-* CV_CALIB_ZERO_TANGENT_DIST: Remove the tangential distortions.
-* CV_CALIB_FIX_PRINCIPAL_POINT, CV_CALIB_FIX_FOCAL_LENGTH, CV_CALIB_FIX_K1, …, CV_CALIB_FIX_K6: With a combination of CV_CALIB_FIX_PRINCIPAL_POINT, CV_CALIB_FIX_FOCAL_LENGTH and * CV_CALIB_FIX_K1,...,CV_CALIB_FIX_K6 you get a little of play about which parameters are fixed and which are optimized again
+* `CV_CALIB_FIX_INTRINSIC`: Tells the stereoCalibrate function to not guess the individual intrinsics for each camera
+* `CV_CALIB_USE_INTRINSIC_GUESS`: The intrinsics will be used as guesses but optimized again
+* `CV_CALIB_FIX_ASPECT_RATIO`: Fixing the aspect ratio.
+* `CV_CALIB_SAME_FOCAL_LENGTH`: Calibrate the focal length and set Fx and Fy the same calibrated result.
+* `CV_CALIB_ZERO_TANGENT_DIST`: Remove the tangential distortions.
+* `CV_CALIB_FIX_PRINCIPAL_POINT`, `CV_CALIB_FIX_FOCAL_LENGTH`, `CV_CALIB_FIX_K1`, …, `CV_CALIB_FIX_K6`: With a combination of `CV_CALIB_FIX_PRINCIPAL_POINT`, `CV_CALIB_FIX_FOCAL_LENGTH` and * `CV_CALIB_FIX_K1`,..., `CV_CALIB_FIX_K6` you get a little of play about which parameters are fixed and which are optimized again
 
 
-Based on calibrated extrinsics and intrinsics, the individual K1 K2 R1 and R2 can be found with their ROI. The rectified view can be found by
+Based on calibrated extrinsics and intrinsics, the coefficients K1 K2 R1 and R2 can be found with their ROI. The rectified view can be found by
 ```python 
 R1, R2, P1, P2, Q, roi_left, roi_right = cv2.stereoRectify(K1, D1, K2, D2, image_size, R, T, flags=cv2.CALIB_ZERO_DISPARITY, alpha=0.9)
 leftMapX, leftMapY = cv2.initUndistortRectifyMap(K1, D1, R1, P1, (width, height), cv2.CV_32FC1)
