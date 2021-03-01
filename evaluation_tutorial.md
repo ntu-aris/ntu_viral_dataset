@@ -10,7 +10,7 @@ sort: 3
 
 You can download an example of how to calculate the _absolute trajectory error_ (ATE) of the position estimate from the [github repo](https://github.com/ntu-aris/viral_eval). [Fig. 1](#fig-viral-eval-files) gives an overview of the package's content.
 
-The code was written and verified on Matlab 2020a. Upon downloading, simply run the script `evaluate_all.m` and the ATE of each trial will be calculated, assembled and printed out on the Command Window. Data plots and numerical results are also saved into the appropriate directories.
+The code was written and verified on MATLAB 2020a. Upon downloading, simply run the script `evaluate_all.m` and the ATE of each trial will be calculated, assembled and printed out on the Command Window. Data plots and numerical results are also saved into the appropriate directories.
 
 <a name="fig-viral-eval-files"></a>
 <p align="center">
@@ -18,7 +18,7 @@ The code was written and verified on Matlab 2020a. Upon downloading, simply run 
 </p>
 <p style="text-align: center;">Fig 1. The content of the evaluation package, and outputs after running the evaluation script</p>
 
-The package contains multiple Matlab scripts and several log files of the ouput of our SLAM method. Specifically the logs are created by the following commands
+The package contains multiple MATLAB scripts and several log files of the ouput of our SLAM method. Specifically the logs are created by calling the following commands before launching the SLAM method
 <a name="log-commands"></a>
 ```shell
 timeout $LOG_DUR rostopic echo -p --nostr --noarr /viral_slam/pred_odom > $OUTPUT_DIR/predict_odom.csv &
@@ -26,7 +26,7 @@ timeout $LOG_DUR rostopic echo -p --nostr --noarr /leica/pose/relative  > $OUTPU
 ```
 where `$LOG_DUR` is essentially be the duration of the bag file (some buffering time should be added) and `$OUTPUT_DIR` is the targeted output directory.
 
-Below we give some notes on the main components of the evaluation script, which would be useful if you seek to adopt this for evaluating your algorithm's output.
+Below we will break down the main parts of the evaluation script, which would be useful if you seek to adopt this for evaluating your algorithm's output.
 
 ## evaluate_all.m
 
@@ -35,14 +35,14 @@ Most commands in this script are self-expressive, we only take note at the follo
 ```matlab
 tests       = dir([this_dir 'result_*']);
 ```
-The above command assumes that we prefix the folders containing the results with `result_` for matlab to check their presence. Readers can change to another indicator as they like.
+The above command assumes that we prefix the folders containing the results with `result_` for MATLAB to check their presence. Readers can change to another indicator as they like by changing the variable `$OUTPUT_DIR` above.
 
-Looking into this script readers can see that it simply checks out the folders starting with the same name and iteratively passes the folder name to `evaluate_one.m` to obtain the ATE estimate. Let us delve in to this script in the next part.
+Looking into this script, readers can see that it simply checks out the folders starting with the same name and iteratively passes the folder name to `evaluate_one.m` to obtain the ATE estimate. Let us delve in to this script in the next part.
 
 ## evaluate_one.m
 
 ### Reading the data from logs
-Most commands in this script are also self-explanatory, we will comment on important sections. First notice the following part
+Most commands in this script are also self-explanatory, thus we will comment on important sections. First notice the following part
 
 ```matlab
 gndtr_pos_fn     = [exp_path 'leica_pose.csv'];
@@ -62,7 +62,7 @@ t0_ns = gndtr_pos_data(1, 1);
 t = (gndtr_pos_data(:, 1) - t0_ns)/1e9;
 P = gndtr_pos_data(:, 4:6);
 ```
-Thus, it is noted that we assume the groundtruth, estimate, and the prism's coordinates are logged in files of specific names as shown above. Also, we have assumed the that the 1st column of the `leica_pose.csv` file is the timestamp, and column 4, 5, 6 are position estimate. These indices are in accordance with the log of a `geometry_msgs::PoseStamped` topic logged with the aforementioned [rostopic commands](#log-commands).
+Thus, it is noted that we assume the groundtruth, estimate, and the prism's coordinates are logged in files of specific names as shown above. Also, we have assumed that the 1st column of the `leica_pose.csv` file is the timestamp, and column 4, 5, 6 are position estimate. These indices are in accordance with the log of a `geometry_msgs::PoseStamped` topic logged with the aforementioned [rostopic commands](#log-commands).
 
 Similarly we notice the next part
 ```matlab
@@ -115,7 +115,7 @@ P_rsest = vecitp(P, t, t_est, rsest_pos_itp_idx);
 As explained in our paper, the resampling scheme here is done by checking for the _temporally preceeding and succeeding groundtruth samples_ of every estimate sample, then use this pair to interpolate the ground truth at the estiamte sample time. If either the preceeding or succeeding groundtruth sample is too far away from the estimate sample time, the estimate sample will be disregarded from the evaluation process.
 
 ### Aligning the two sample sets
-Now that the estimate and ground truth are of the same object and the same time, there remains the coordinate transform to unify the frame of refence. Since the transform between the leica tracker and the SLAM estimate are unknown, in the literature it is common practice to use the transform that actually minimizes the root-mean-square error and use that error as the error of the estimation. The process to find that minimum has a closed-form solution. In this work we implement this algorithm in the Matlab script `traj_align.m`, which is then used in our evalution at this part
+Now that the estimate and ground truth are of the same object and the same time, there remains the coordinate transform to unify the frame of refence. Since the transform between the leica tracker and the SLAM estimate are unknown, in the literature it is common practice to use the transform that actually minimizes the root-mean-square error and use that error as the error of the estimation. The process to find that minimum has a closed-form solution. In this work we implement this algorithm in the MATLAB script `traj_align.m`, which is then used in our evalution at this part
 ```
 % find the optimal alignment
 [rot_align_est, trans_align_est] = traj_align(P_rsest, P_est);
