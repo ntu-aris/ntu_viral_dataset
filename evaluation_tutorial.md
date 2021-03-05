@@ -14,7 +14,7 @@ The code was written and verified on MATLAB 2020a. Upon downloading, simply run 
 
 <a name="fig-viral-eval-files"></a>
 <p align="center">
-    <img src="./images/viral_eval_files.jpg" alt="viral_eval_files.jpg" width="90%"/>
+    <img src="./images/viral_eval_files.png" alt="viral_eval_files.png" width="90%"/>
 </p>
 <p style="text-align: center;">Fig 1. The content of the evaluation package, and outputs after running the evaluation script</p>
 
@@ -84,7 +84,7 @@ Due to the crystal prism being roughly 0.4 m away from the body frame's center i
 trans_B2prism = csvread(trans_B2prism_fn, 0, 0);
 
 % Compensate the position estimate with the prism displacement
-P_est = P_est + quatrotate(Q_est, trans_B2prism);
+P_est = P_est + quatconv(Q_est, trans_B2prism);
 ```
 
 ### Resampling the two sample sets
