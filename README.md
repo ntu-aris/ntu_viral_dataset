@@ -23,7 +23,7 @@ If you use some resource from this data suite, please cite it as
 ```
 
 # Downloads
-<!-- (The links are currently not enabled yet, but please contact the authors above if you have any inquiry.) -->
+
 <a name="tab-download"></a>
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
@@ -125,6 +125,8 @@ If you use some resource from this data suite, please cite it as
   </tr>
 </tbody>
 </table>
+
+(Alternatively, the files above can be downloaded from our [NTU Data Repository page](https://researchdata.ntu.edu.sg/dataset.xhtml?persistentId=doi:10.21979/N9/X39LEK).)
 
 ## Notes:
 For more information on the sensors and how to use the dataset, please checkout the other sections.
