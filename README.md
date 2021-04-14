@@ -104,7 +104,7 @@ If you use some resource from this data suite, please cite it as
   </tr>
   <tr>
     <td class="tg-v8dz"><span style="font-weight:400;font-style:normal">sbs_03</span></td>
-    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/58967" target="_blank" rel="noopener noreferrer">.zip</a></td>
+    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/62639" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">8.5 GB</td>
     <td class="tg-6ibf">389.3 s</td>
     <td class="tg-v8dz">Collected inside the Nanyang Auditorium</td>
