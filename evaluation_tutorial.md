@@ -18,7 +18,7 @@ The code was written and verified on MATLAB 2020a. Upon downloading, simply run 
 </p>
 <p style="text-align: center;">Fig 1. The content of the evaluation package, and outputs after running the evaluation script</p>
 
-The package contains multiple MATLAB scripts and several log files of the ouput of our SLAM method. Specifically the logs are created by calling the following commands before launching the SLAM method
+The package contains multiple MATLAB scripts and several log files of the ouput of our SLAM method. Specifically the logs are created by calling the following commands before launching the SLAM method in a ubuntu terminal.
 <a name="log-commands"></a>
 ```shell
 timeout $LOG_DUR rostopic echo -p --nostr --noarr /viral_slam/pred_odom > $OUTPUT_DIR/predict_odom.csv &
