@@ -55,13 +55,13 @@ There are different options in calibration parameter settings as shown in [Fig. 
 </p>
 <p style="text-align: center;">Fig 4. MATLAB stereo calibration process 3</p>
 
-After the calibration, the reprojection error and 3D view will be shown below in [Fig. 5](#matlabcalibration4). You may press the show recertified button to view if the line are indeed cross over to the same feature.
+After the calibration, the reprojection error and 3D view will be shown below in [Fig. 5](#matlabcalibration4). You may press the show recertified button to view if the lines indeed cross over the same features in the image pair.
 
 <a name="matlabcalibration4"></a>
 <p align="center">
     <img src="./images/matlabcalibration4.PNG" alt="matlabcalibration4.PNG" width="80%"/>
 </p>
-<p style="text-align: center;">Fig 5. Matlab stereo calibration process 4</p>
+<p style="text-align: center;">Fig 5. MATLAB stereo calibration process 4</p>
 
 Some of the images yield higher reprojection error, and it is possible to remove part of the images by dragging the line on the reprojection figure to achieve a lower reprojection error  as illustrated in  [Fig. 6](#matlabcalibration5) . 
 
@@ -69,18 +69,18 @@ Some of the images yield higher reprojection error, and it is possible to remove
 <p align="center">
     <img src="./images/matlabcalibration5.PNG" alt="matlabcalibration5.PNG" width="80%"/>
 </p>
-<p style="text-align: center;">Fig 6. Matlab stereo calibration process 5</p>
+<p style="text-align: center;">Fig 6. MATLAB stereo calibration process 5</p>
 
 After that you can export the camera parameters to a file. 
 
-Please take note that Matlab notation and OpenCV notation are different. To use the Matlab result in OpenCV you need to transpose the projection matrix and rotation matrix. 
+Please take note that MATLAB notation and OpenCV notation are different. To use the MATLAB result in OpenCV you need to transpose the projection matrix and rotation matrix. 
 See this [link](https://stackoverflow.com/questions/46651936/convert-between-matlab-stereoparameters-and-opencv-stereorectify-stereo-calibrat/50925828#50925828) for details
 
 
-To use Matlab to calibrate a fisheye model, you may follow the command line instruction [here](mathworks.com/help/vision/ug/fisheye-calibration-basics.html)
+To use MATLAB to calibrate a fisheye model, you may follow the command line instruction [here](mathworks.com/help/vision/ug/fisheye-calibration-basics.html)
 
 First call
-```Matlab
+```matlab
 cameraCalibrator
 ```
 then load the image and select the Fisheye. At last calibrate and show the result. The camera calibration GUI is very similar to the stereo calibrate case.

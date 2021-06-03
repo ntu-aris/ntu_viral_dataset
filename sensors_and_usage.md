@@ -136,7 +136,7 @@ The IMU being used here is a 9-DoF inertia sensor. The frame of reference attach
 </p>
 <p style="text-align: center;">Fig 2. The IMU frame of reference </p> <a name="fig-hardware"></a>
 
-Internally, a filter fuses gyroscope, acceleration, and magnetic field measuremnts and outputs the orientation result on the `/imu/imu` topic. Though our dataset does not have orientation groundtruth, user can consider this orientation estimate as one.
+Internally, a filter fuses gyroscope, acceleration, and magnetic field measurements and outputs the orientation result on the `/imu/imu` topic. Though our dataset does not have orientation groundtruth, user can consider this orientation estimate as one.
 
 ## Cameras
 The two cameras are externally triggered to capture images at the same time. For images triggered at the same time, their time stamps are different by **at most 3 ms**. This satisfies the default hardcoded threshold in VINS-Fusion. See our tutorial on how to run VINS-Fusion with the dataset [here]().
