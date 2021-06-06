@@ -183,6 +183,13 @@ We have done some experiments of state-of-the-art methods on our the datasets. I
 </tbody>
 </table>
 
+# Related works
+
+The datasets were used in the following papers. Please checkout these works if you are interested.
+
+* [MILIOM: Tightly Coupled Multi-Input Lidar-Inertia Odometry and Mapping](https://ieeexplore.ieee.org/document/9431754)
+* [VIRAL SLAM: Tightly Coupled Camera-IMU-UWB-Lidar SLAM](https://arxiv.org/pdf/2105.03296.pdf)
+
 
 
 # Notes:
