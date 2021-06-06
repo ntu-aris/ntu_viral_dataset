@@ -128,7 +128,58 @@ If you use some resource from this data suite, please cite it as
 
 (Alternatively, the files above can be downloaded from our [NTU Data Repository page](https://researchdata.ntu.edu.sg/dataset.xhtml?persistentId=doi:10.21979/N9/X39LEK).)
 
-## Notes:
+
+# Quick use
+
+We have done some experiments of state-of-the-art methods on our the datasets. If you are seeking to do the same, please check out the following to get the work done quickly.
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-c3ow">Method</th>
+    <th class="tg-c3ow">Repository</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky">Open-VINS</td>
+    <td class="tg-0pky"><a href="https://github.com/brytsknguyen/open_vins"><span style="color:#905">https://github.com/brytsknguyen/open_vins</span></a></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">VINS-Fusion</td>
+    <td class="tg-0pky"><a href="https://github.com/brytsknguyen/VINS-Fusion"><span style="color:#905">https://github.com/brytsknguyen/VINS-Fusion</span></a></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">VINS-Mono</td>
+    <td class="tg-0pky"><a href="https://github.com/brytsknguyen/VINS-Mono"><span style="color:#905">https://github.com/brytsknguyen/VINS-Mono</span></a></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">M-LOAM</td>
+    <td class="tg-0pky"><a href="https://github.com/brytsknguyen/M-LOAM"><span style="color:#905">https://github.com/brytsknguyen/M-LOAM</span></a></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">LIO-SAM</td>
+    <td class="tg-0pky"><a href="https://github.com/brytsknguyen/LIO-SAM"><span style="color:#905">https://github.com/brytsknguyen/LIO-SAM</span></a></td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">A-LOAM</td>
+    <td class="tg-0pky"><a href="https://github.com/brytsknguyen/A-LOAM"><span style="color:#905">https://github.com/brytsknguyen/A-LOAM</span></a></td>
+  </tr>
+</tbody>
+</table>
+
+
+
+# Notes:
 For more information on the sensors and how to use the dataset, please checkout the other sections.
 
 For resources and other works of our group please checkout our [github](https://github.com/ntu-aris).
