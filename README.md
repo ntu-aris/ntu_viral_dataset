@@ -203,4 +203,4 @@ If you have some inquiry, please raise an [issue](https://github.com/ntu-aris/nt
 
 # Licence
 This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/) and is intended for non-commercial academic use.
-If you are interested in using the dataset for commercial purposes please [contact us](mailto:thienminh.nguyen@ntu.edu.sg?subject=[GitHub]%20NTU%20VIRAL%20Inquiry).
+If you are interested in using the dataset for commercial purposes please [contact us](mailto:thienminh.nguyen@ntu.edu.sg?).
