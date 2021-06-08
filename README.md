@@ -199,3 +199,8 @@ For more information on the sensors and how to use the dataset, please checkout 
 For resources and other works of our group please checkout our [github](https://github.com/ntu-aris).
 
 If you have some inquiry, please raise an [issue](https://github.com/ntu-aris/ntu_viral_dataset/issues) on github.
+
+
+# Licence
+This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/) and is intended for non-commercial academic use.
+If you are interested in using the dataset for commercial purposes please contact us.
