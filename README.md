@@ -23,7 +23,7 @@ If you use some resource from this data suite, please cite it as
 @article{nguyen2021ntuviral,
   title={NTU VIRAL: A Visual-Inertial-Ranging-Lidar dataset, from an aerial vehicle viewpoint},
   author={Nguyen, Thien-Minh and Yuan, Shenghai and Cao, Muqing and Lyu, Yang and Nguyen, Thien Hoang and Xie, Lihua},
-  journal={Submitted to IJRR},
+  journal={Internationl Journal of Robotics Research (accepted, to appear)},
   year={2021}
 }
 ```
@@ -203,4 +203,4 @@ If you have some inquiry, please raise an [issue](https://github.com/ntu-aris/nt
 
 # Licence
 This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/) and is intended for non-commercial academic use.
-If you are interested in using the dataset for commercial purposes please [contact us](mailto:thienminh.nguyen@ntu.edu.sg?).
+If you are interested in using the dataset for commercial purposes please [contact us](mailto:aris.eee.ntu@gmail.com).
