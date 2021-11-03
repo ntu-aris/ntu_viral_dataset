@@ -27,6 +27,7 @@ If you use some resource from this data suite, please cite it as
   year={2021}
 }
 ```
+[[PDF](https://drive.google.com/file/d/1Y0HQrWXuZ8yZX-NmZQMrdub_BYYlwk0k/view?usp=sharing)]
 
 # Downloads
 
