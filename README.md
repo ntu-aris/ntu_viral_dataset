@@ -23,11 +23,12 @@ If you use some resource from this data suite, please cite it as
 @article{nguyen2021ntuviral,
   title={NTU VIRAL: A Visual-Inertial-Ranging-Lidar dataset, from an aerial vehicle viewpoint},
   author={Nguyen, Thien-Minh and Yuan, Shenghai and Cao, Muqing and Lyu, Yang and Nguyen, Thien Hoang and Xie, Lihua},
-  journal={Internationl Journal of Robotics Research (accepted, to appear)},
+  journal={Internationl Journal of Robotics Research},
   year={2021}
+  doi={10.1177/02783649211052312}
 }
 ```
-[[PDF](https://github.com/ntu-aris/ntu_viral_dataset/blob/gh-pages/docs/NTU_VIRAL_Dataset_Submission.pdf)]
+[[Journal](URL={https://doi.org/10.1177/02783649211052312})][[Preprint](https://github.com/ntu-aris/ntu_viral_dataset/blob/gh-pages/docs/NTU_VIRAL_Dataset_Submission.pdf)]
 
 # Downloads
 
