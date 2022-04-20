@@ -32,6 +32,10 @@ If you use some resource from this data suite, please cite it as
 
 # Downloads
 
+
+Note: The files below are hosted on [NTU Data Repository](https://researchdata.ntu.edu.sg/dataset.xhtml?persistentId=doi:10.21979/N9/X39LEK).
+If you experience interuption from the NTU Data Reposity, please try downloading the files from this [Onedrive folder](https://entuedu-my.sharepoint.com/:f:/g/personal/shyuan_staff_main_ntu_edu_sg/EvyxXbi1l5tHonBWIQxueBoByr1-E-w7fgRyHNTsCmwFcg).
+
 <a name="tab-download"></a>
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
@@ -133,9 +137,6 @@ If you use some resource from this data suite, please cite it as
   </tr>
 </tbody>
 </table>
-
-(Alternatively, the files above can be downloaded from our [NTU Data Repository page](https://researchdata.ntu.edu.sg/dataset.xhtml?persistentId=doi:10.21979/N9/X39LEK).)
-
 
 # Quick use
 
