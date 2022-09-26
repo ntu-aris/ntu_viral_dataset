@@ -31,6 +31,7 @@ If you use some resource from this data suite, please cite it as
 [[Journal](URL={https://doi.org/10.1177/02783649211052312})][[Preprint](https://github.com/ntu-aris/ntu_viral_dataset/blob/gh-pages/docs/NTU_VIRAL_Dataset_Submission.pdf)]
 
 # Updates
+**26/09/2022**: Extra sequences (rtp_01, rtp_02, rtp_03, tnp_01, tnp_02, tnp_03, spms_01, spms_02, spms_03) in more challenging scenarios are added.
 **12/07/2022**: The ouster pointcloud and IMU messages are found to jitter due to synchronization issues. A script to regularize the ouster pointcloud and imu topics can be downloaded [here](https://github.com/ntu-aris/ntu_viral_dataset/blob/gh-pages/utils/restamp.py).
 
 # Downloads
@@ -83,46 +84,109 @@ If you experience interuption from the NTU Data Reposity, please try downloading
     <td class="tg-v8dz">Collected at the School of EEE central carpark</td>
   </tr>
   <tr>
-    <td class="tg-v8dz"><span style="font-weight:400;font-style:normal">nya_01</span></td>
+    <td class="tg-v8dz">nya_01</td>
     <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/68144" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">8.6 GB</td>
     <td class="tg-6ibf">396.3 s</td>
-    <td class="tg-v8dz">Collected at the School of Bio. Science's front square</td>
+    <td class="tg-v8dz">Collected inside the Nanyang Auditorium</td>
   </tr>
   <tr>
-    <td class="tg-v8dz"><span style="font-weight:400;font-style:normal">nya_02</span></td>
+    <td class="tg-v8dz">nya_02</td>
     <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/68138" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">9.4 GB</td>
     <td class="tg-6ibf">428.7 s</td>
-    <td class="tg-v8dz">Collected at the School of Bio. Science's front square</td>
+    <td class="tg-v8dz">Collected inside the Nanyang Auditorium</td>
   </tr>
   <tr>
     <td class="tg-v8dz">nya_03</td>
     <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/68142" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">9.0 GB</td>
     <td class="tg-6ibf">411.2 s</td>
-    <td class="tg-v8dz">Collected at the School of Bio. Science's front square</td>
+    <td class="tg-v8dz">Collected inside the Nanyang Auditorium</td>
   </tr>
   <tr>
     <td class="tg-v8dz">sbs_01</td>
     <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/68139" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">7.8 GB</td>
     <td class="tg-6ibf">354.2 s</td>
-    <td class="tg-v8dz">Collected inside the Nanyang Auditorium</td>
+    <td class="tg-v8dz">Collected at the School of Bio. Science's front square</td>
   </tr>
   <tr>
-    <td class="tg-v8dz"><span style="font-weight:400;font-style:normal">sbs_02</span></td>
+    <td class="tg-v8dz">sbs_02</td>
     <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/68140" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">8.2 GB</td>
     <td class="tg-6ibf">373.3 s</td>
-    <td class="tg-v8dz">Collected inside the Nanyang Auditorium</td>
+    <td class="tg-v8dz">Collected at the School of Bio. Science's front square</td>
   </tr>
   <tr>
-    <td class="tg-v8dz"><span style="font-weight:400;font-style:normal">sbs_03</span></td>
+    <td class="tg-v8dz">sbs_03</td>
     <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/68143" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">8.5 GB</td>
     <td class="tg-6ibf">389.3 s</td>
-    <td class="tg-v8dz">Collected inside the Nanyang Auditorium</td>
+    <td class="tg-v8dz">Collected at the School of Bio. Science's front square</td>
+  </tr>
+  <tr>
+    <td class="tg-v8dz">rtp_01</td>
+    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/98194" target="_blank" rel="noopener noreferrer">.zip</a></td>
+    <td class="tg-6ibf">5.0 GB</td>
+    <td class="tg-6ibf">354.2 s</td>
+    <td class="tg-v8dz">Collected at the Research Techno Plaza's carpark</td>
+  </tr>
+  <tr>
+    <td class="tg-v8dz">rtp_02</td>
+    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/98191" target="_blank" rel="noopener noreferrer">.zip</a></td>
+    <td class="tg-6ibf">5.2 GB</td>
+    <td class="tg-6ibf">373.3 s</td>
+    <td class="tg-v8dz">Collected at the Research Techno Plaza's carpark</td>
+  </tr>
+  <tr>
+    <td class="tg-v8dz">rtp_03</td>
+    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/98193" target="_blank" rel="noopener noreferrer">.zip</a></td>
+    <td class="tg-6ibf">4.0 GB</td>
+    <td class="tg-6ibf">389.3 s</td>
+    <td class="tg-v8dz">Collected at the Research Techno Plaza's carpark</td>
+  </tr>
+  <tr>
+    <td class="tg-v8dz">tnp_01</td>
+    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/98195" target="_blank" rel="noopener noreferrer">.zip</a></td>
+    <td class="tg-6ibf">8.1 GB</td>
+    <td class="tg-6ibf">354.2 s</td>
+    <td class="tg-v8dz">Collected inside Research Techno Plaza</td>
+  </tr>
+  <tr>
+    <td class="tg-v8dz">tnp_02</td>
+    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/98196" target="_blank" rel="noopener noreferrer">.zip</a></td>
+    <td class="tg-6ibf">6.2 GB</td>
+    <td class="tg-6ibf">373.3 s</td>
+    <td class="tg-v8dz">Collected inside Research Techno Plaza</td>
+  </tr>
+  <tr>
+    <td class="tg-v8dz">tnp_03</td>
+    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/98189" target="_blank" rel="noopener noreferrer">.zip</a></td>
+    <td class="tg-6ibf">5.5 GB</td>
+    <td class="tg-6ibf">389.3 s</td>
+    <td class="tg-v8dz">Collected inside Research Techno Plaza</td>
+  </tr>
+  <tr>
+    <td class="tg-v8dz">spms_01</td>
+    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/98192" target="_blank" rel="noopener noreferrer">.zip</a></td>
+    <td class="tg-6ibf">5.5 GB</td>
+    <td class="tg-6ibf">354.2 s</td>
+    <td class="tg-v8dz">School of Physical and Mathematical Science's Facade</td>
+  </tr>
+  <tr>
+    <td class="tg-v8dz">spms_02</td>
+    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/98190" target="_blank" rel="noopener noreferrer">.zip</a></td>
+    <td class="tg-6ibf">4.0 GB</td>
+    <td class="tg-6ibf">373.3 s</td>
+    <td class="tg-v8dz">School of Physical and Mathematical Science's Facade</td>
+  </tr>
+  <tr>
+    <td class="tg-v8dz">spms_03</td>
+    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/98188" target="_blank" rel="noopener noreferrer">.zip</a></td>
+    <td class="tg-6ibf">5.0 GB</td>
+    <td class="tg-6ibf">389.3 s</td>
+    <td class="tg-v8dz">School of Physical and Mathematical Science's Facade</td>
   </tr>
   <tr>
     <td class="tg-v8dz"><span style="font-weight:400;font-style:normal">calib_stereo</span></td>
