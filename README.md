@@ -20,12 +20,15 @@ The comprehensive sensor suite resembles that of an autonomous driving car, but 
 If you use some resource from this data suite, please cite it as
 
 ```
-@article{nguyen2021ntuviral,
-  title={NTU VIRAL: A Visual-Inertial-Ranging-Lidar dataset, from an aerial vehicle viewpoint},
-  author={Nguyen, Thien-Minh and Yuan, Shenghai and Cao, Muqing and Lyu, Yang and Nguyen, Thien Hoang and Xie, Lihua},
-  journal={Internationl Journal of Robotics Research},
-  year={2021}
-  doi={10.1177/02783649211052312}
+@article{nguyen2022ntu,
+  title={Ntu viral: A visual-inertial-ranging-lidar dataset, from an aerial vehicle viewpoint},
+  author={Nguyen, Thien-Minh and Yuan, Shenghai and Cao, Muqing and Lyu, Yang and Nguyen, Thien H and Xie, Lihua},
+  journal={The International Journal of Robotics Research},
+  volume={41},
+  number={3},
+  pages={270--280},
+  year={2022},
+  publisher={SAGE Publications Sage UK: London, England}
 }
 ```
 [[Journal](URL={https://doi.org/10.1177/02783649211052312})][[Preprint](https://github.com/ntu-aris/ntu_viral_dataset/blob/gh-pages/docs/NTU_VIRAL_Dataset_Submission.pdf)]
