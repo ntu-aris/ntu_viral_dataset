@@ -31,7 +31,7 @@ If you use some resource from this data suite, please cite it as
   publisher={SAGE Publications Sage UK: London, England}
 }
 ```
-[[Journal](URL={https://doi.org/10.1177/02783649211052312})][[Preprint](https://github.com/ntu-aris/ntu_viral_dataset/blob/gh-pages/docs/NTU_VIRAL_Dataset_Submission.pdf)]
+[[Journal](https://journals.sagepub.com/doi/full/10.1177/02783649211052312)][[Preprint](https://github.com/ntu-aris/ntu_viral_dataset/blob/gh-pages/docs/NTU_VIRAL_Dataset_Submission.pdf)]
 
 # Updates
 
