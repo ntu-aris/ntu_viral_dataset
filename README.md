@@ -21,19 +21,21 @@ If you use some resource from this data suite, please cite it as
 
 ```
 @article{nguyen2022ntu,
-  title={NTU VIRAL: A Visual-Inertial-Ranging-Lidar Dataset, From an Aerial Vehicle Viewpoint},
-  author={Nguyen, Thien-Minh and Yuan, Shenghai and Cao, Muqing and Lyu, Yang and Nguyen, Thien H and Xie, Lihua},
-  journal={The International Journal of Robotics Research},
-  volume={41},
-  number={3},
-  pages={270--280},
-  year={2022},
-  publisher={SAGE Publications Sage UK: London, England}
+  title     = {NTU VIRAL: A Visual-Inertial-Ranging-Lidar Dataset, From an Aerial Vehicle Viewpoint},
+  author    = {Nguyen, Thien-Minh and Yuan, Shenghai and Cao, Muqing and Lyu, Yang and Nguyen, Thien H and Xie, Lihua},
+  journal   = {The International Journal of Robotics Research},
+  volume    = {41},
+  number    = {3},
+  pages     = {270--280},
+  year      = {2022},
+  publisher = {SAGE Publications Sage UK: London, England}
 }
 ```
 [[Journal](https://journals.sagepub.com/doi/full/10.1177/02783649211052312)][[Preprint](https://github.com/ntu-aris/ntu_viral_dataset/blob/gh-pages/docs/NTU_VIRAL_Dataset_Submission.pdf)]
 
 # Updates
+
+**05/02/2023**: Update works using the datasets
 
 **26/09/2022**: Extra sequences (rtp_01, rtp_02, rtp_03, tnp_01, tnp_02, tnp_03, spms_01, spms_02, spms_03) in more challenging scenarios are added.
 
@@ -263,9 +265,19 @@ We have done some experiments of state-of-the-art methods on our the datasets. I
     <td class="tg-0pky">Forked from https://github.com/HKUST-Aerial-Robotics/A-LOAM</td>
   </tr>
   <tr>
-    <td class="tg-0pky">FAST_LIO</td>
+    <td class="tg-0pky">FAST-LIO</td>
     <td class="tg-0pky"><a href="https://github.com/Kin-Zhang/FAST_LIO"><span style="color:#905">https://github.com/Kin-Zhang/FAST_LIO</span></a></td>
     <td class="tg-0pky">Kindly provided by Kin-Zhang @ KTH RPL</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">FAST-LIVO</td>
+    <td class="tg-0pky"><a href="https://github.com/hku-mars/FAST-LIVO"><span style="color:#905">https://github.com/hku-mars/FAST-LIVO</span></a></td>
+    <td class="tg-0pky">MARS Lab, HKU</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">SLICT</td>
+    <td class="tg-0pky"><a href="https://github.com/brytsknguyen/SLICT"><span style="color:#905">https://github.com/brytsknguyen/SLICT</span></a></td>
+    <td class="tg-0pky">An NTU-KTH collaboration via Wallenberg-NTU Postdoctoral Fellowship </td>
   </tr>
 </tbody>
 </table>
@@ -273,7 +285,8 @@ We have done some experiments of state-of-the-art methods on our the datasets. I
 # Related works
 
 The datasets were used in the following papers. Please checkout these works if you are interested.
-
+(Please contact us if you would like your work mentioned here).
+* [FAST-LIVO: Fast and Tightly-coupled Sparse-Direct LiDAR-Inertial-Visual Odometry](https://github.com/hku-mars/FAST-LIVO)
 * [VIRAL SLAM: Tightly Coupled Camera-IMU-UWB-Lidar SLAM](https://arxiv.org/pdf/2105.03296.pdf)
 * [MILIOM: Tightly Coupled Multi-Input Lidar-Inertia Odometry and Mapping](https://ieeexplore.ieee.org/document/9431754) (RAL 2021)
 * [LIRO: Tightly Coupled Lidar-Inertia-Ranging Odometry](https://arxiv.org/abs/2010.13072) (ICRA 2021)
