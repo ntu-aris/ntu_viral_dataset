@@ -22,7 +22,7 @@ If you use some resource from this data suite, please cite it as
 ```
 @article{nguyen2022ntu,
   title     = {NTU VIRAL: A Visual-Inertial-Ranging-Lidar Dataset, From an Aerial Vehicle Viewpoint},
-  author    = {Nguyen, Thien-Minh and Yuan, Shenghai and Cao, Muqing and Lyu, Yang and Nguyen, Thien H and Xie, Lihua},
+  author    = {Nguyen, Thien-Minh and Yuan, Shenghai and Cao, Muqing and Lyu, Yang and Nguyen, Thien Hoang and Xie, Lihua},
   journal   = {The International Journal of Robotics Research},
   volume    = {41},
   number    = {3},
