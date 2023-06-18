@@ -280,6 +280,11 @@ We have done some experiments of state-of-the-art methods on our the datasets. I
     <td class="tg-0pky"><a href="https://github.com/brytsknguyen/SLICT"><span style="color:#905">https://github.com/brytsknguyen/SLICT</span></a></td>
     <td class="tg-0pky">An NTU-KTH collaboration via Wallenberg-NTU Postdoctoral Fellowship </td>
   </tr>
+    <tr>
+    <td class="tg-0pky">CLIC</td>
+    <td class="tg-0pky"><a href="https://github.com/brytsknguyen/clic"><span style="color:#905">https://github.com/brytsknguyen/clic</span></a></td>
+    <td class="tg-0pky">Forked from https://github.com/APRIL-ZJU/clic </td>
+  </tr>
 </tbody>
 </table>
 
