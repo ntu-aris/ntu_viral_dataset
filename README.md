@@ -137,63 +137,63 @@ Groundtruth is included in the bag. Do check out [this example](https://github.c
     <td class="tg-v8dz">rtp_01</td>
     <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/98194" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">5.0 GB</td>
-    <td class="tg-6ibf">354.2 s</td>
+    <td class="tg-6ibf">482 s</td>
     <td class="tg-v8dz">Collected at the Research Techno Plaza's carpark</td>
   </tr>
   <tr>
     <td class="tg-v8dz">rtp_02</td>
     <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/98191" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">5.2 GB</td>
-    <td class="tg-6ibf">373.3 s</td>
+    <td class="tg-6ibf">439 s</td>
     <td class="tg-v8dz">Collected at the Research Techno Plaza's carpark</td>
   </tr>
   <tr>
     <td class="tg-v8dz">rtp_03</td>
     <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/98193" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">4.0 GB</td>
-    <td class="tg-6ibf">389.3 s</td>
+    <td class="tg-6ibf">355 s</td>
     <td class="tg-v8dz">Collected at the Research Techno Plaza's carpark</td>
   </tr>
   <tr>
     <td class="tg-v8dz">tnp_01</td>
     <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/98195" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">8.1 GB</td>
-    <td class="tg-6ibf">354.2 s</td>
+    <td class="tg-6ibf">583 s</td>
     <td class="tg-v8dz">Collected inside Research Techno Plaza</td>
   </tr>
   <tr>
     <td class="tg-v8dz">tnp_02</td>
     <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/98196" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">6.2 GB</td>
-    <td class="tg-6ibf">373.3 s</td>
+    <td class="tg-6ibf">457 s</td>
     <td class="tg-v8dz">Collected inside Research Techno Plaza</td>
   </tr>
   <tr>
     <td class="tg-v8dz">tnp_03</td>
     <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/98189" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">5.5 GB</td>
-    <td class="tg-6ibf">389.3 s</td>
+    <td class="tg-6ibf">407 s</td>
     <td class="tg-v8dz">Collected inside Research Techno Plaza</td>
   </tr>
   <tr>
     <td class="tg-v8dz">spms_01</td>
     <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/98192" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">5.5 GB</td>
-    <td class="tg-6ibf">354.2 s</td>
+    <td class="tg-6ibf">446 s</td>
     <td class="tg-v8dz">School of Physical and Mathematical Science's Facade</td>
   </tr>
   <tr>
     <td class="tg-v8dz">spms_02</td>
     <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/98190" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">4.0 GB</td>
-    <td class="tg-6ibf">373.3 s</td>
+    <td class="tg-6ibf">398 s</td>
     <td class="tg-v8dz">School of Physical and Mathematical Science's Facade</td>
   </tr>
   <tr>
     <td class="tg-v8dz">spms_03</td>
     <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/98188" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">5.0 GB</td>
-    <td class="tg-6ibf">389.3 s</td>
+    <td class="tg-6ibf">386 s</td>
     <td class="tg-v8dz">School of Physical and Mathematical Science's Facade</td>
   </tr>
   <tr>
