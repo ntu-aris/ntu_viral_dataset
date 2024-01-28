@@ -48,6 +48,8 @@ If you experience interuption from the NTU Data Reposity, please try downloading
 
 Groundtruth is included in the bag. Do check out [this example](https://github.com/brytsknguyen/VINS-Mono/blob/392c8c5732d31445b266b9ca2e2f38a5a4d82d55/vins_estimator/launch/run_one_bag_ntuviral.sh#L68) on how to extract the data into the csv format.
 
+We note that many users forget to check for the 0.4m offset from the IMU to the prism, which is where ground truth is measured. Please check out [the tutorial](https://ntu-aris.github.io/ntu_viral_dataset/evaluation_tutorial.html#compensating-for-the-offset) to properly use the ground truth.
+
 <a name="tab-download"></a>
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0;}
