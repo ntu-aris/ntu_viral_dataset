@@ -87,6 +87,15 @@ trans_B2prism = csvread(trans_B2prism_fn, 0, 0);
 P_est = P_est + quatconv(Q_est, trans_B2prism);
 ```
 
+The extrinsic of the prism in the body frame is as follows:
+
+```
+T_B_prism: [ 1.0,  0.0,  0.0, -0.293656,
+             0.0,  1.0,  0.0, -0.012288,
+             0.0,  0.0,  1.0, -0.273095,
+             0.0,  0.0,  0.0,  1.000000 ]
+```
+
 ### Resampling the two sample sets
 
 Next, since the groundtruth and the estimate are sampled at different times. We have to resampled both of them so that one estimate sample corresponds to one groundtruth sample, which is done here
