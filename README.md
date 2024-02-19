@@ -269,7 +269,7 @@ We have done some experiments of state-of-the-art methods on our the datasets. I
   </tr>
   <tr>
     <td class="tg-0pky">FAST-LIO</td>
-    <td class="tg-0pky"><a href="https://github.com/Kin-Zhang/FAST_LIO"><span style="color:#905">https://github.com/Kin-Zhang/FAST_LIO</span></a></td>
+    <td class="tg-0pky"><a href="https://github.com/brytsknguyen/FAST_LIO"><span style="color:#905">https://github.com/brytsknguyen/FAST_LIO</span></a></td>
     <td class="tg-0pky">Forked from MARS Lab, HKU</td>
   </tr>
   <tr>
