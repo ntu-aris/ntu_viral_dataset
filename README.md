@@ -46,9 +46,11 @@ If you use some resource from this data suite, please cite it as
 Note: The files below are hosted on [NTU Data Repository](https://researchdata.ntu.edu.sg/dataset.xhtml?persistentId=doi:10.21979/N9/X39LEK).
 If you experience interuption from the NTU Data Reposity, please try downloading the files from this [Onedrive folder](https://entuedu-my.sharepoint.com/:f:/g/personal/shyuan_staff_main_ntu_edu_sg/EvyxXbi1l5tHonBWIQxueBoByr1-E-w7fgRyHNTsCmwFcg).
 
-Groundtruth is included in the bag. Do check out [this example](https://github.com/brytsknguyen/VINS-Mono/blob/392c8c5732d31445b266b9ca2e2f38a5a4d82d55/vins_estimator/launch/run_one_bag_ntuviral.sh#L68) on how to extract the data into the csv format.
+Groundtruth is included in the bag. Or you can download them in csv formats here: [https://github.com/ntu-aris/ntuviral_gt](https://github.com/ntu-aris/ntuviral_gt).
 
-We note that many users forget to check for the 0.4m offset from the IMU to the prism, which is where ground truth is measured. Please check out [the tutorial](https://ntu-aris.github.io/ntu_viral_dataset/evaluation_tutorial.html#compensating-for-the-offset) to properly use the ground truth.
+We note that many users forget to check for the 0.4m offset from the IMU to the prism, which is where ground truth is measured.
+To help evaluating things more easily, we have written a jupyter and MATLAB scripts to help with the evalution.
+Please check out [the tutorial](https://ntu-aris.github.io/ntu_viral_dataset/evaluation_tutorial.html#compensating-for-the-offset) for their use.
 
 <a name="tab-download"></a>
 <style type="text/css">

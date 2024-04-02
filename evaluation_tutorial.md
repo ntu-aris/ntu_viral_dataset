@@ -4,9 +4,19 @@ sort: 3
 
 # Evaluation Tutorial
 
-(It is recommended that readers take a look at [our paper]() to understand the idea underlying this tutorial.)
+(It is recommended that readers take a look at [our paper](https://github.com/ntu-aris/ntu_viral_dataset/blob/gh-pages/docs/NTU_VIRAL_Dataset_Submission.pdf) to understand the idea underlying this tutorial.)
+
 
 ## Just try it!
+
+### Jupyter notebook released!
+
+A new jupyter notebook for those who just wants result can be found here: 
+
+If you are interested in learning some intricacies, please read through the tutorial below!
+
+
+### MATLAB
 
 You can download an example of how to calculate the _absolute trajectory error_ (ATE) of the position estimate from the [github repo](https://github.com/ntu-aris/viral_eval). [Fig. 1](#fig-viral-eval-files) gives an overview of the package's content.
 
