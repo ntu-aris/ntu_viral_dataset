@@ -11,14 +11,21 @@ sort: 3
 
 ### Jupyter notebook released!
 
-A new jupyter notebook for those who just wants result can be found here: 
+A new jupyter notebook for those who just want result can be found [here](https://github.com/ntu-aris/ntu_viral_dataset/blob/gh-pages/ntuviral_evaluate.ipynb).
 
-If you are interested in learning some intricacies, please read through the tutorial below!
+<a name="fig-viral-eval-files"></a>
+<p align="center">
+    <img src="./images/evaluation_ipynb.jpg" alt="evaluation_ipynb.jpg" width="50%"/>
+</p>
+<p style="text-align: center;">Fig 1. Output of the Jupyter script.</p>
 
+The script will take care of the intricacies in evaluating odometry output with external ground truth. If you are interested in learning more about these intricacies, please read through the tutorial below!
 
 ### MATLAB
 
-You can download an example of how to calculate the _absolute trajectory error_ (ATE) of the position estimate from the [github repo](https://github.com/ntu-aris/viral_eval). [Fig. 1](#fig-viral-eval-files) gives an overview of the package's content.
+This is the original evaluation script for NTU VIRAL.
+
+You can download an example of how to calculate the _absolute trajectory error_ (ATE) of the position estimate from the [github repo](https://github.com/ntu-aris/viral_eval). [Fig. 2](#fig-viral-eval-files) gives an overview of the package's content.
 
 The code was written and verified on MATLAB 2020a. Upon downloading, simply run the script `evaluate_all.m` and the ATE of each trial will be calculated, assembled and printed out on the Command Window. Data plots and numerical results are also saved into the appropriate directories.
 
@@ -26,7 +33,7 @@ The code was written and verified on MATLAB 2020a. Upon downloading, simply run 
 <p align="center">
     <img src="./images/viral_eval_files.png" alt="viral_eval_files.png" width="90%"/>
 </p>
-<p style="text-align: center;">Fig 1. The content of the evaluation package, and outputs after running the evaluation script</p>
+<p style="text-align: center;">Fig 2. The content of the evaluation package, and outputs after running the evaluation script</p>
 
 The package contains multiple MATLAB scripts and several log files of the ouput of our SLAM method. Specifically the logs are created by calling the following commands before launching the SLAM method in a ubuntu terminal.
 <a name="log-commands"></a>
