@@ -6,6 +6,7 @@
 
 # [NTU VIRAL: A Visual-Inertial-Ranging-Lidar Dataset for Autonomous Aerial Vehicle](https://ntu-aris.github.io/ntu_viral_dataset/)
 
+> 📦 **Latest complete dataset:** Download **NTU VIRAL DATASET**, including all 18 sequences, calibration data and ground truth, from [Hugging Face](https://huggingface.co/datasets/Yuan-Shenghai/NTU-VIRAL-DATASET).
 
 This site presents the datasets collected from our research Unmanned Aerial Vehicle (UAV) platform, featuring an extensive set of sensors:
 
@@ -43,10 +44,10 @@ If you use some resource from this data suite, please cite it as
 
 # Downloads
 
-Note: The files below are hosted on [NTU Data Repository](https://researchdata.ntu.edu.sg/dataset.xhtml?persistentId=doi:10.21979/N9/X39LEK).
-If you experience interuption from the NTU Data Reposity, please try downloading the files from this [Onedrive folder](https://entuedu-my.sharepoint.com/:f:/g/personal/shyuan_staff_main_ntu_edu_sg/EvyxXbi1l5tHonBWIQxueBoByr1-E-w7fgRyHNTsCmwFcg).
+The primary download links below point to [NTU VIRAL DATASET on Hugging Face](https://huggingface.co/datasets/Yuan-Shenghai/NTU-VIRAL-DATASET). The original source remains [NTU Data Repository](https://doi.org/10.21979/N9/X39LEK).
+An additional original-source mirror is available in this [OneDrive folder](https://entuedu-my.sharepoint.com/:f:/g/personal/shyuan_staff_main_ntu_edu_sg/EvyxXbi1l5tHonBWIQxueBoByr1-E-w7fgRyHNTsCmwFcg).
 
-Groundtruth is included in the bag. Or you can download them in csv formats here: [https://github.com/ntu-aris/ntuviral_gt](https://github.com/ntu-aris/ntuviral_gt).
+Groundtruth is included in the bag. Or you can download them in csv formats here: [ground-truth CSVs on Hugging Face](https://huggingface.co/datasets/Yuan-Shenghai/NTU-VIRAL-DATASET/tree/main/ground_truth).
 
 We note that many users forget to check for the 0.4m offset from the IMU to the prism, which is where ground truth is measured.
 To help evaluating things more easily, we have written a jupyter and MATLAB scripts to help with the evalution.
@@ -76,140 +77,140 @@ Please check out [the tutorial](https://ntu-aris.github.io/ntu_viral_dataset/eva
 <tbody>
   <tr>
     <td class="tg-v8dz">eee_01</td>
-    <td class="tg-6ibf"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/68133" target="_blank" rel="noopener noreferrer">.zip</a></td>
+    <td class="tg-6ibf"><a href="https://huggingface.co/datasets/Yuan-Shenghai/NTU-VIRAL-DATASET/resolve/main/sequences/eee_01.zip?download=true" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">8.7 GB</td>
     <td class="tg-6ibf">398.7 s</td>
     <td class="tg-v8dz">Collected at the School of EEE central carpark</td>
   </tr>
   <tr>
     <td class="tg-v8dz">eee_02</td>
-    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/68131" target="_blank" rel="noopener noreferrer">.zip</a></td>
+    <td class="tg-9m02"><a href="https://huggingface.co/datasets/Yuan-Shenghai/NTU-VIRAL-DATASET/resolve/main/sequences/eee_02.zip?download=true" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">7.0 GB</td>
     <td class="tg-6ibf">321.1 s</td>
     <td class="tg-v8dz">Collected at the School of EEE central carpark</td>
   </tr>
   <tr>
     <td class="tg-v8dz">eee_03</td>
-    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/68132" target="_blank" rel="noopener noreferrer">.zip</a></td>
+    <td class="tg-9m02"><a href="https://huggingface.co/datasets/Yuan-Shenghai/NTU-VIRAL-DATASET/resolve/main/sequences/eee_03.zip?download=true" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">4.3 GB</td>
     <td class="tg-6ibf">181.4 s</td>
     <td class="tg-v8dz">Collected at the School of EEE central carpark</td>
   </tr>
   <tr>
     <td class="tg-v8dz">nya_01</td>
-    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/68144" target="_blank" rel="noopener noreferrer">.zip</a></td>
+    <td class="tg-9m02"><a href="https://huggingface.co/datasets/Yuan-Shenghai/NTU-VIRAL-DATASET/resolve/main/sequences/nya_01.zip?download=true" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">8.6 GB</td>
     <td class="tg-6ibf">396.3 s</td>
     <td class="tg-v8dz">Collected inside the Nanyang Auditorium</td>
   </tr>
   <tr>
     <td class="tg-v8dz">nya_02</td>
-    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/68138" target="_blank" rel="noopener noreferrer">.zip</a></td>
+    <td class="tg-9m02"><a href="https://huggingface.co/datasets/Yuan-Shenghai/NTU-VIRAL-DATASET/resolve/main/sequences/nya_02.zip?download=true" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">9.4 GB</td>
     <td class="tg-6ibf">428.7 s</td>
     <td class="tg-v8dz">Collected inside the Nanyang Auditorium</td>
   </tr>
   <tr>
     <td class="tg-v8dz">nya_03</td>
-    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/68142" target="_blank" rel="noopener noreferrer">.zip</a></td>
+    <td class="tg-9m02"><a href="https://huggingface.co/datasets/Yuan-Shenghai/NTU-VIRAL-DATASET/resolve/main/sequences/nya_03.zip?download=true" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">9.0 GB</td>
     <td class="tg-6ibf">411.2 s</td>
     <td class="tg-v8dz">Collected inside the Nanyang Auditorium</td>
   </tr>
   <tr>
     <td class="tg-v8dz">sbs_01</td>
-    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/68139" target="_blank" rel="noopener noreferrer">.zip</a></td>
+    <td class="tg-9m02"><a href="https://huggingface.co/datasets/Yuan-Shenghai/NTU-VIRAL-DATASET/resolve/main/sequences/sbs_01.zip?download=true" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">7.8 GB</td>
     <td class="tg-6ibf">354.2 s</td>
     <td class="tg-v8dz">Collected at the School of Bio. Science's front square</td>
   </tr>
   <tr>
     <td class="tg-v8dz">sbs_02</td>
-    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/68140" target="_blank" rel="noopener noreferrer">.zip</a></td>
+    <td class="tg-9m02"><a href="https://huggingface.co/datasets/Yuan-Shenghai/NTU-VIRAL-DATASET/resolve/main/sequences/sbs_02.zip?download=true" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">8.2 GB</td>
     <td class="tg-6ibf">373.3 s</td>
     <td class="tg-v8dz">Collected at the School of Bio. Science's front square</td>
   </tr>
   <tr>
     <td class="tg-v8dz">sbs_03</td>
-    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/68143" target="_blank" rel="noopener noreferrer">.zip</a></td>
+    <td class="tg-9m02"><a href="https://huggingface.co/datasets/Yuan-Shenghai/NTU-VIRAL-DATASET/resolve/main/sequences/sbs_03.zip?download=true" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">8.5 GB</td>
     <td class="tg-6ibf">389.3 s</td>
     <td class="tg-v8dz">Collected at the School of Bio. Science's front square</td>
   </tr>
   <tr>
     <td class="tg-v8dz">rtp_01</td>
-    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/98194" target="_blank" rel="noopener noreferrer">.zip</a></td>
+    <td class="tg-9m02"><a href="https://huggingface.co/datasets/Yuan-Shenghai/NTU-VIRAL-DATASET/resolve/main/sequences/rtp_01.zip?download=true" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">5.0 GB</td>
     <td class="tg-6ibf">482 s</td>
     <td class="tg-v8dz">Collected at the Research Techno Plaza's carpark</td>
   </tr>
   <tr>
     <td class="tg-v8dz">rtp_02</td>
-    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/98191" target="_blank" rel="noopener noreferrer">.zip</a></td>
+    <td class="tg-9m02"><a href="https://huggingface.co/datasets/Yuan-Shenghai/NTU-VIRAL-DATASET/resolve/main/sequences/rtp_02.zip?download=true" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">5.2 GB</td>
     <td class="tg-6ibf">439 s</td>
     <td class="tg-v8dz">Collected at the Research Techno Plaza's carpark</td>
   </tr>
   <tr>
     <td class="tg-v8dz">rtp_03</td>
-    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/98193" target="_blank" rel="noopener noreferrer">.zip</a></td>
+    <td class="tg-9m02"><a href="https://huggingface.co/datasets/Yuan-Shenghai/NTU-VIRAL-DATASET/resolve/main/sequences/rtp_03.zip?download=true" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">4.0 GB</td>
     <td class="tg-6ibf">355 s</td>
     <td class="tg-v8dz">Collected at the Research Techno Plaza's carpark</td>
   </tr>
   <tr>
     <td class="tg-v8dz">tnp_01</td>
-    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/98195" target="_blank" rel="noopener noreferrer">.zip</a></td>
+    <td class="tg-9m02"><a href="https://huggingface.co/datasets/Yuan-Shenghai/NTU-VIRAL-DATASET/resolve/main/sequences/tnp_01.zip?download=true" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">8.1 GB</td>
     <td class="tg-6ibf">583 s</td>
     <td class="tg-v8dz">Collected inside Research Techno Plaza</td>
   </tr>
   <tr>
     <td class="tg-v8dz">tnp_02</td>
-    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/98196" target="_blank" rel="noopener noreferrer">.zip</a></td>
+    <td class="tg-9m02"><a href="https://huggingface.co/datasets/Yuan-Shenghai/NTU-VIRAL-DATASET/resolve/main/sequences/tnp_02.zip?download=true" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">6.2 GB</td>
     <td class="tg-6ibf">457 s</td>
     <td class="tg-v8dz">Collected inside Research Techno Plaza</td>
   </tr>
   <tr>
     <td class="tg-v8dz">tnp_03</td>
-    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/98189" target="_blank" rel="noopener noreferrer">.zip</a></td>
+    <td class="tg-9m02"><a href="https://huggingface.co/datasets/Yuan-Shenghai/NTU-VIRAL-DATASET/resolve/main/sequences/tnp_03.zip?download=true" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">5.5 GB</td>
     <td class="tg-6ibf">407 s</td>
     <td class="tg-v8dz">Collected inside Research Techno Plaza</td>
   </tr>
   <tr>
     <td class="tg-v8dz">spms_01</td>
-    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/98192" target="_blank" rel="noopener noreferrer">.zip</a></td>
+    <td class="tg-9m02"><a href="https://huggingface.co/datasets/Yuan-Shenghai/NTU-VIRAL-DATASET/resolve/main/sequences/spms_01.zip?download=true" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">5.5 GB</td>
     <td class="tg-6ibf">446 s</td>
     <td class="tg-v8dz">School of Physical and Mathematical Science's Facade</td>
   </tr>
   <tr>
     <td class="tg-v8dz">spms_02</td>
-    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/98190" target="_blank" rel="noopener noreferrer">.zip</a></td>
+    <td class="tg-9m02"><a href="https://huggingface.co/datasets/Yuan-Shenghai/NTU-VIRAL-DATASET/resolve/main/sequences/spms_02.zip?download=true" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">4.0 GB</td>
     <td class="tg-6ibf">398 s</td>
     <td class="tg-v8dz">School of Physical and Mathematical Science's Facade</td>
   </tr>
   <tr>
     <td class="tg-v8dz">spms_03</td>
-    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/98188" target="_blank" rel="noopener noreferrer">.zip</a></td>
+    <td class="tg-9m02"><a href="https://huggingface.co/datasets/Yuan-Shenghai/NTU-VIRAL-DATASET/resolve/main/sequences/spms_03.zip?download=true" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">5.0 GB</td>
     <td class="tg-6ibf">386 s</td>
     <td class="tg-v8dz">School of Physical and Mathematical Science's Facade</td>
   </tr>
   <tr>
     <td class="tg-v8dz"><span style="font-weight:400;font-style:normal">calib_stereo</span></td>
-    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/58998" target="_blank" rel="noopener noreferrer">.zip</a></td>
+    <td class="tg-9m02"><a href="https://huggingface.co/datasets/Yuan-Shenghai/NTU-VIRAL-DATASET/resolve/main/calibration/calib_stereo.zip?download=true" target="_blank" rel="noopener noreferrer">.zip</a></td>
     <td class="tg-6ibf">49 MB</td>
     <td class="tg-6ibf"> - </td>
     <td class="tg-v8dz">Image pairs for intrinsic calibration</td>
   </tr>
   <tr>
     <td class="tg-v8dz"><span style="font-weight:400;font-style:normal">calib_stereo_imu</span></td>
-    <td class="tg-9m02"><a href="https://researchdata.ntu.edu.sg/api/access/datafile/58978" target="_blank" rel="noopener noreferrer">.bag</a></td>
+    <td class="tg-9m02"><a href="https://huggingface.co/datasets/Yuan-Shenghai/NTU-VIRAL-DATASET/resolve/main/calibration/calib_stereo_imu.bag?download=true" target="_blank" rel="noopener noreferrer">.bag</a></td>
     <td class="tg-6ibf">0.96 GB</td>
     <td class="tg-6ibf">131.7 s</td>
     <td class="tg-v8dz">Bag file for stereo camera - IMU calibration using Kalibr</td>
