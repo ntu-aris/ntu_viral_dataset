@@ -1,0 +1,1617 @@
+{
+  "checked_on": "2026-10-26",
+  "dataset_bibtex_key": "nguyen2022ntu",
+  "bibliography": "REFERENCES.bib",
+  "resources": [
+    {
+      "name": "OpenVINS",
+      "code": "https://github.com/brytsknguyen/open_vins",
+      "bibtex_keys": [
+        "Geneva2020ICRA"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://pgeneva.com/downloads/papers/Geneva2020ICRA.pdf",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "Geneva2020ICRA": 12
+      }
+    },
+    {
+      "name": "VINS-Fusion",
+      "code": "https://github.com/brytsknguyen/VINS-Fusion",
+      "bibtex_keys": [
+        "code_VINS_Fusion_brytsknguyen_VINS_Fusion",
+        "paper_VINS_Fusion",
+        "paper_VINS_Mono"
+      ],
+      "references": [
+        {
+          "label": "Related paper",
+          "url": "https://doi.org/10.1109/IROS.2018.8593603",
+          "type": "paper"
+        },
+        {
+          "label": "VINS-Mono",
+          "url": "https://arxiv.org/abs/1708.03852",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_VINS_Fusion_brytsknguyen_VINS_Fusion": 21,
+        "paper_VINS_Fusion": 722,
+        "paper_VINS_Mono": 732
+      }
+    },
+    {
+      "name": "VINS-Mono",
+      "code": "https://github.com/brytsknguyen/VINS-Mono",
+      "bibtex_keys": [
+        "code_VINS_Mono_brytsknguyen_VINS_Mono",
+        "paper_VINS_Mono"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/1708.03852",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_VINS_Mono_brytsknguyen_VINS_Mono": 29,
+        "paper_VINS_Mono": 732
+      }
+    },
+    {
+      "name": "M-LOAM",
+      "code": "https://github.com/brytsknguyen/M-LOAM",
+      "bibtex_keys": [
+        "code_M_LOAM_brytsknguyen_M_LOAM",
+        "paper_M_LOAM"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2010.14294",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_M_LOAM_brytsknguyen_M_LOAM": 37,
+        "paper_M_LOAM": 744
+      }
+    },
+    {
+      "name": "LIO-SAM",
+      "code": "https://github.com/brytsknguyen/LIO-SAM",
+      "bibtex_keys": [
+        "liosam2020shan"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2007.00258",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "liosam2020shan": 45
+      }
+    },
+    {
+      "name": "A-LOAM",
+      "code": "https://github.com/brytsknguyen/A-LOAM",
+      "bibtex_keys": [
+        "code_A_LOAM_brytsknguyen_A_LOAM",
+        "paper_A_LOAM"
+      ],
+      "references": [
+        {
+          "label": "Related paper",
+          "url": "https://roboticsproceedings.org/rss10/p07.pdf",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_A_LOAM_brytsknguyen_A_LOAM": 55,
+        "paper_A_LOAM": 753
+      }
+    },
+    {
+      "name": "FAST-LIO",
+      "code": "https://github.com/brytsknguyen/FAST_LIO",
+      "bibtex_keys": [
+        "code_FAST_LIO_brytsknguyen_FAST_LIO",
+        "paper_FAST_LIO"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2010.08196",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_FAST_LIO_brytsknguyen_FAST_LIO": 63,
+        "paper_FAST_LIO": 762
+      }
+    },
+    {
+      "name": "FAST-LIVO",
+      "code": "https://github.com/hku-mars/FAST-LIVO",
+      "bibtex_keys": [
+        "zheng2022fast"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2203.00893",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "zheng2022fast": 71
+      }
+    },
+    {
+      "name": "FAST-LIVO — Experimental time-offset variant",
+      "code": "https://github.com/RuizhiChang/FAST-LIVO-DiffTime",
+      "bibtex_keys": [
+        "code_variant_RuizhiChang_FAST_LIVO_DiffTime"
+      ],
+      "references": [
+        {
+          "label": "Software notes",
+          "url": "https://github.com/RuizhiChang/FAST-LIVO-DiffTime#readme",
+          "type": "software"
+        }
+      ],
+      "variant": true,
+      "bibtex_lines": {
+        "code_variant_RuizhiChang_FAST_LIVO_DiffTime": 771
+      }
+    },
+    {
+      "name": "SLICT",
+      "code": "https://github.com/brytsknguyen/SLICT",
+      "bibtex_keys": [
+        "nguyen2023slict",
+        "nguyen2024eigen"
+      ],
+      "references": [
+        {
+          "label": "SLICT",
+          "url": "https://arxiv.org/abs/2211.03900",
+          "type": "paper"
+        },
+        {
+          "label": "SLICT2 / Eigen",
+          "url": "https://doi.org/10.1109/LRA.2024.3391049",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "nguyen2023slict": 79,
+        "nguyen2024eigen": 91
+      }
+    },
+    {
+      "name": "CLIC",
+      "code": "https://github.com/brytsknguyen/clic",
+      "bibtex_keys": [
+        "lv2023continuous"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2302.07456",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "lv2023continuous": 103
+      }
+    },
+    {
+      "name": "FAST-LIVO2",
+      "code": "https://github.com/hku-mars/FAST-LIVO2",
+      "bibtex_keys": [
+        "code_FAST_LIVO2_hku_mars_FAST_LIVO2",
+        "paper_FAST_LIVO2"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2408.14035",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_FAST_LIVO2_hku_mars_FAST_LIVO2": 112,
+        "paper_FAST_LIVO2": 779
+      }
+    },
+    {
+      "name": "FAST-LIVO2 — ROS 2 port",
+      "code": "https://github.com/U-AMC/FAST-LIVO2-ROS2",
+      "bibtex_keys": [
+        "code_variant_U_AMC_FAST_LIVO2_ROS2"
+      ],
+      "references": [
+        {
+          "label": "Software notes",
+          "url": "https://github.com/U-AMC/FAST-LIVO2-ROS2#readme",
+          "type": "software"
+        }
+      ],
+      "variant": true,
+      "bibtex_lines": {
+        "code_variant_U_AMC_FAST_LIVO2_ROS2": 788
+      }
+    },
+    {
+      "name": "FAST-LIVO2 — SC_FAST_LIVO2 front end; external PGO required",
+      "code": "https://github.com/jxk6575/SC_FAST_LIVO2",
+      "bibtex_keys": [
+        "code_variant_jxk6575_SC_FAST_LIVO2"
+      ],
+      "references": [
+        {
+          "label": "Software notes",
+          "url": "https://github.com/jxk6575/SC_FAST_LIVO2#readme",
+          "type": "software"
+        }
+      ],
+      "variant": true,
+      "bibtex_lines": {
+        "code_variant_jxk6575_SC_FAST_LIVO2": 796
+      }
+    },
+    {
+      "name": "GLIM",
+      "code": "https://github.com/koide3/glim",
+      "bibtex_keys": [
+        "code_GLIM_koide3_glim",
+        "paper_GLIM"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://doi.org/10.1016/j.robot.2024.104750",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_GLIM_koide3_glim": 120,
+        "paper_GLIM": 804
+      }
+    },
+    {
+      "name": "Ct-LVI",
+      "code": "https://github.com/peterWon/Ct-LVI",
+      "bibtex_keys": [
+        "code_Ct_LVI_peterWon_Ct_LVI",
+        "paper_Ct_LVI"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://doi.org/10.1109/TCSVT.2023.3335989",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_Ct_LVI_peterWon_Ct_LVI": 128,
+        "paper_Ct_LVI": 815
+      }
+    },
+    {
+      "name": "Traj-LO",
+      "code": "https://github.com/kevin2431/Traj-LO",
+      "bibtex_keys": [
+        "zheng2024traj"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://doi.org/10.1109/LRA.2024.3352360",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "zheng2024traj": 136
+      }
+    },
+    {
+      "name": "Traj-LO — AdaTrajLo fork retaining NTU config",
+      "code": "https://github.com/deepuav/AdaTrajLo",
+      "bibtex_keys": [
+        "code_variant_deepuav_AdaTrajLo"
+      ],
+      "references": [
+        {
+          "label": "Software notes",
+          "url": "https://github.com/deepuav/AdaTrajLo#readme",
+          "type": "software"
+        }
+      ],
+      "variant": true,
+      "bibtex_lines": {
+        "code_variant_deepuav_AdaTrajLo": 827
+      }
+    },
+    {
+      "name": "SE3-LIO",
+      "code": "https://github.com/url-kaist/se3-lio",
+      "bibtex_keys": [
+        "shin2026icra"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2603.16118",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "shin2026icra": 150
+      }
+    },
+    {
+      "name": "GenZ-LIO",
+      "code": "https://github.com/cocel-postech/genz-lio",
+      "bibtex_keys": [
+        "lee2026genzlio"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2603.16273",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "lee2026genzlio": 158
+      }
+    },
+    {
+      "name": "D-LIOM",
+      "code": "https://github.com/peterWon/D-LIOM",
+      "bibtex_keys": [
+        "code_D_LIOM_peterWon_D_LIOM",
+        "paper_D_LIOM"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://doi.org/10.1109/TMM.2022.3168423",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_D_LIOM_peterWon_D_LIOM": 166,
+        "paper_D_LIOM": 835
+      }
+    },
+    {
+      "name": "LIR-LIVO",
+      "code": "https://github.com/IF-A-CAT/LIR-LIVO",
+      "bibtex_keys": [
+        "code_LIR_LIVO_IF_A_CAT_LIR_LIVO",
+        "paper_LIR_LIVO"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2502.08676",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_LIR_LIVO_IF_A_CAT_LIR_LIVO": 174,
+        "paper_LIR_LIVO": 846
+      }
+    },
+    {
+      "name": "DL-VINS-Factory",
+      "code": "https://github.com/limshoonkit/DL-VINS-Factory-ROS2",
+      "bibtex_keys": [
+        "lim2026dlvinsfactorymodularframeworklearned"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2607.01757",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "lim2026dlvinsfactorymodularframeworklearned": 182
+      }
+    },
+    {
+      "name": "Coco-LIC",
+      "code": "https://github.com/APRIL-ZJU/Coco-LIC",
+      "bibtex_keys": [
+        "lang2023coco"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2309.09808",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "lang2023coco": 192
+      }
+    },
+    {
+      "name": "Coco-LIC — LICO-mid360 fork retaining NTU config",
+      "code": "https://github.com/piluohong/LICO-mid360",
+      "bibtex_keys": [
+        "code_variant_piluohong_LICO_mid360"
+      ],
+      "references": [
+        {
+          "label": "Software notes",
+          "url": "https://github.com/piluohong/LICO-mid360#readme",
+          "type": "software"
+        }
+      ],
+      "variant": true,
+      "bibtex_lines": {
+        "code_variant_piluohong_LICO_mid360": 855
+      }
+    },
+    {
+      "name": "CTE-MLO",
+      "code": "https://github.com/shenhm516/CTE-MLO",
+      "bibtex_keys": [
+        "10900545"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://doi.org/10.1109/TFR.2025.3543142",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "10900545": 201
+      }
+    },
+    {
+      "name": "SLAM–UWB calibration and fusion",
+      "code": "https://github.com/ntdathp/slam-uwb-calibration",
+      "bibtex_keys": [
+        "nguyen2025coordinate"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2510.05992",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "nguyen2025coordinate": 213
+      }
+    },
+    {
+      "name": "Official MATLAB evaluation",
+      "code": "https://github.com/ntu-aris/viral_eval",
+      "bibtex_keys": [
+        "code_Official_MATLAB_evaluation"
+      ],
+      "references": [
+        {
+          "label": "Software notes",
+          "url": "https://github.com/ntu-aris/viral_eval#readme",
+          "type": "software"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_Official_MATLAB_evaluation": 863
+      }
+    },
+    {
+      "name": "Official UWB driver",
+      "code": "https://github.com/ntu-aris/uwb_driver",
+      "bibtex_keys": [
+        "code_Official_UWB_driver"
+      ],
+      "references": [
+        {
+          "label": "Software notes",
+          "url": "https://github.com/ntu-aris/uwb_driver#readme",
+          "type": "software"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_Official_UWB_driver": 871
+      }
+    },
+    {
+      "name": "Calibrex",
+      "code": "https://github.com/rsasaki0109/Calibrex",
+      "bibtex_keys": [
+        "code_Calibrex_rsasaki0109_Calibrex"
+      ],
+      "references": [
+        {
+          "label": "Software notes",
+          "url": "https://github.com/rsasaki0109/Calibrex#readme",
+          "type": "software"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_Calibrex_rsasaki0109_Calibrex": 223
+      }
+    },
+    {
+      "name": "L2Calib",
+      "code": "https://github.com/APRIL-ZJU/learn-to-calibrate",
+      "bibtex_keys": [
+        "li2025l2calib"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2508.06330",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "li2025l2calib": 231
+      }
+    },
+    {
+      "name": "ORB-SLAM3",
+      "code": "https://github.com/UZ-SLAMLab/ORB_SLAM3",
+      "bibtex_keys": [
+        "code_ORB_SLAM3_thien94_orb_slam3_ros",
+        "paper_ORB_SLAM3"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2007.11898",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_ORB_SLAM3_thien94_orb_slam3_ros": 239,
+        "paper_ORB_SLAM3": 879
+      }
+    },
+    {
+      "name": "ORB-SLAM3 — CARES stereo-inertial adapter",
+      "code": "https://github.com/ulo-robotics/CARES",
+      "bibtex_keys": [
+        "code_variant_ulo_robotics_CARES"
+      ],
+      "references": [
+        {
+          "label": "Software notes",
+          "url": "https://github.com/ulo-robotics/CARES#readme",
+          "type": "software"
+        }
+      ],
+      "variant": true,
+      "bibtex_lines": {
+        "code_variant_ulo_robotics_CARES": 891
+      }
+    },
+    {
+      "name": "SVO Pro",
+      "code": "https://github.com/uzh-rpg/rpg_svo_pro_open",
+      "bibtex_keys": [
+        "code_SVO_Pro_VerruckterWissenschaftler_VIOATA",
+        "paper_SVO_Pro"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://doi.org/10.1109/TRO.2016.2623335",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_SVO_Pro_VerruckterWissenschaftler_VIOATA": 247,
+        "paper_SVO_Pro": 899
+      }
+    },
+    {
+      "name": "OKVIS2",
+      "code": "https://github.com/ethz-mrl/okvis2",
+      "bibtex_keys": [
+        "code_OKVIS2_limshoonkit_DL_VINS_Factory_ROS2",
+        "paper_OKVIS2"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2202.09199",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_OKVIS2_limshoonkit_DL_VINS_Factory_ROS2": 255,
+        "paper_OKVIS2": 911
+      }
+    },
+    {
+      "name": "D²SLAM (single vehicle)",
+      "code": "https://github.com/HKUST-Aerial-Robotics/D2SLAM",
+      "bibtex_keys": [
+        "10582478"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://ieeexplore.ieee.org/document/10582478",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "10582478": 263
+      }
+    },
+    {
+      "name": "DLO",
+      "code": "https://github.com/vectr-ucla/direct_lidar_odometry",
+      "bibtex_keys": [
+        "chen2022direct"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://ieeexplore.ieee.org/document/9681177",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "chen2022direct": 276
+      }
+    },
+    {
+      "name": "KISS-ICP",
+      "code": "https://github.com/PRBonn/kiss-icp",
+      "bibtex_keys": [
+        "vizzo2023ral"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://www.ipb.uni-bonn.de/wp-content/papercite-data/pdf/vizzo2023ral.pdf",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "vizzo2023ral": 288
+      }
+    },
+    {
+      "name": "GenZ-ICP",
+      "code": "https://github.com/cocel-postech/genz-icp",
+      "bibtex_keys": [
+        "lee2024genzicp"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://ieeexplore.ieee.org/document/10753079",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "lee2024genzicp": 301
+      }
+    },
+    {
+      "name": "GenZ-ICP — MapsHD ROS 2 guide",
+      "code": "https://github.com/MapsHD/benchmark-GenZ-ICP-to-HDMapping",
+      "bibtex_keys": [
+        "code_variant_MapsHD_benchmark_GenZ_ICP_to_HDMapping"
+      ],
+      "references": [
+        {
+          "label": "Software notes",
+          "url": "https://github.com/MapsHD/benchmark-GenZ-ICP-to-HDMapping#readme",
+          "type": "software"
+        }
+      ],
+      "variant": true,
+      "bibtex_lines": {
+        "code_variant_MapsHD_benchmark_GenZ_ICP_to_HDMapping": 920
+      }
+    },
+    {
+      "name": "MAD-ICP",
+      "code": "https://github.com/rvp-group/mad-icp",
+      "bibtex_keys": [
+        "ferrari2024mad"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://ieeexplore.ieee.org/document/10669999",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "ferrari2024mad": 314
+      }
+    },
+    {
+      "name": "DualQuat-LOAM",
+      "code": "https://github.com/AUROVA-LAB/aurova_odom",
+      "bibtex_keys": [
+        "VELASCO_DualQuat_loam_2025"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://doi.org/10.1016/j.robot.2025.105009",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "VELASCO_DualQuat_loam_2025": 323
+      }
+    },
+    {
+      "name": "Onion-LO",
+      "code": "https://github.com/huashu996/Onion-LO",
+      "bibtex_keys": [
+        "11129609"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://doi.org/10.1109/LRA.2025.3600143",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "11129609": 336
+      }
+    },
+    {
+      "name": "MOLA-LO",
+      "code": "https://github.com/MOLAorg/mola_lidar_odometry",
+      "bibtex_keys": [
+        "blanco2025mola_lo"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://doi.org/10.1177/02783649251316881",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "blanco2025mola_lo": 349
+      }
+    },
+    {
+      "name": "FAST-LIO2",
+      "code": "https://github.com/hku-mars/FAST_LIO",
+      "bibtex_keys": [
+        "code_FAST_LIO2_engcang_SLAM_application",
+        "paper_FAST_LIO2"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2107.06829",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_FAST_LIO2_engcang_SLAM_application": 362,
+        "paper_FAST_LIO2": 928
+      }
+    },
+    {
+      "name": "FAST-LIO2 — Surfel map / Eigen implementation (ROS 1 and ROS 2)",
+      "code": "https://github.com/engcang/Surfel-FAST-LIO2-Eigen",
+      "bibtex_keys": [
+        "code_variant_engcang_Surfel_FAST_LIO2_Eigen"
+      ],
+      "references": [
+        {
+          "label": "Software notes",
+          "url": "https://github.com/engcang/Surfel-FAST-LIO2-Eigen#readme",
+          "type": "software"
+        }
+      ],
+      "variant": true,
+      "bibtex_lines": {
+        "code_variant_engcang_Surfel_FAST_LIO2_Eigen": 937
+      }
+    },
+    {
+      "name": "FAST-LIO2 — FLiVIS community variant",
+      "code": "https://github.com/allenthreee/FLiVIS",
+      "bibtex_keys": [
+        "code_variant_allenthreee_FLiVIS"
+      ],
+      "references": [
+        {
+          "label": "Software notes",
+          "url": "https://github.com/allenthreee/FLiVIS#readme",
+          "type": "software"
+        }
+      ],
+      "variant": true,
+      "bibtex_lines": {
+        "code_variant_allenthreee_FLiVIS": 945
+      }
+    },
+    {
+      "name": "DLIO",
+      "code": "https://github.com/vectr-ucla/direct_lidar_inertial_odometry",
+      "bibtex_keys": [
+        "chen2022dlio"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://ieeexplore.ieee.org/document/10160508",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "chen2022dlio": 370
+      }
+    },
+    {
+      "name": "iG-LIO",
+      "code": "https://github.com/zijiechenrobotics/ig_lio",
+      "bibtex_keys": [
+        "10380742"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://ieeexplore.ieee.org/document/10380742",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "10380742": 380
+      }
+    },
+    {
+      "name": "LOG-LIO",
+      "code": "https://github.com/tiev-tongji/LOG-LIO",
+      "bibtex_keys": [
+        "huang2023log"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2307.09531",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "huang2023log": 392
+      }
+    },
+    {
+      "name": "LOG-LIO2",
+      "code": "https://github.com/tiev-tongji/LOG-LIO2",
+      "bibtex_keys": [
+        "code_LOG_LIO2_tiev_tongji_LOG_LIO2",
+        "paper_LOG_LIO2"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2405.01316",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_LOG_LIO2_tiev_tongji_LOG_LIO2": 404,
+        "paper_LOG_LIO2": 953
+      }
+    },
+    {
+      "name": "LIO-EKF",
+      "code": "https://github.com/YibinWu/LIO-EKF",
+      "bibtex_keys": [
+        "wu2024icra"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2311.09887",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "wu2024icra": 412
+      }
+    },
+    {
+      "name": "Hybrid-VoxelMap",
+      "code": "https://github.com/haiyang2022/Hybrid-VoxelMap",
+      "bibtex_keys": [
+        "HybridVoxelMap2026"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://doi.org/10.1109/LRA.2025.3632730",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "HybridVoxelMap2026": 420
+      }
+    },
+    {
+      "name": "BIEVR-LIO-ESIKF",
+      "code": "https://github.com/engcang/BIEVR-LIO-ESIKF",
+      "bibtex_keys": [
+        "code_BIEVR_LIO_ESIKF_engcang_BIEVR_LIO_ESIKF"
+      ],
+      "references": [
+        {
+          "label": "Software notes",
+          "url": "https://github.com/engcang/BIEVR-LIO-ESIKF#readme",
+          "type": "software"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_BIEVR_LIO_ESIKF_engcang_BIEVR_LIO_ESIKF": 432
+      }
+    },
+    {
+      "name": "FMCW-LIO (Ouster mode)",
+      "code": "https://github.com/IMRL/FMCW-LIO",
+      "bibtex_keys": [
+        "zhao2024fmcw-lio"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://doi.org/10.1109/LRA.2024.3396636",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "zhao2024fmcw-lio": 440
+      }
+    },
+    {
+      "name": "Surfel-LIO",
+      "code": "https://github.com/93won/lidar_inertial_odometry",
+      "bibtex_keys": [
+        "choi2025surfellio"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2512.03397",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "choi2025surfellio": 452
+      }
+    },
+    {
+      "name": "Super-LIO",
+      "code": "https://github.com/Liansheng-Wang/Super-LIO",
+      "bibtex_keys": [
+        "wang2026superlio"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://doi.org/10.1109/LRA.2026.3653372",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "wang2026superlio": 462
+      }
+    },
+    {
+      "name": "R-VoxelMap",
+      "code": "https://github.com/NKU-MobFly-Robotics/R-VoxelMap",
+      "bibtex_keys": [
+        "code_R_VoxelMap_NKU_MobFly_Robotics_R_VoxelMap",
+        "paper_R_VoxelMap"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2601.12377",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_R_VoxelMap_NKU_MobFly_Robotics_R_VoxelMap": 474,
+        "paper_R_VoxelMap": 962
+      }
+    },
+    {
+      "name": "D-LIO (TSDF)",
+      "code": "https://github.com/robotics-upo/D-LIO",
+      "bibtex_keys": [
+        "11248856"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://doi.org/10.1109/LRA.2025.3632615",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "11248856": 482
+      }
+    },
+    {
+      "name": "lidarslam_ros2 / RKO-LIO",
+      "code": "https://github.com/rsasaki0109/lidar_slam_ros2",
+      "bibtex_keys": [
+        "code_lidarslam_ros2_RKO_LIO_rsasaki0109_lidar_slam_ros2"
+      ],
+      "references": [
+        {
+          "label": "Software notes",
+          "url": "https://github.com/rsasaki0109/lidar_slam_ros2#readme",
+          "type": "software"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_lidarslam_ros2_RKO_LIO_rsasaki0109_lidar_slam_ros2": 495
+      }
+    },
+    {
+      "name": "MA-LIO",
+      "code": "https://github.com/minwoo0611/MA-LIO",
+      "bibtex_keys": [
+        "jung2023asynchronous"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2305.16792",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "jung2023asynchronous": 503
+      }
+    },
+    {
+      "name": "LOCUS 2.0",
+      "code": "https://github.com/NeBula-Autonomy/LOCUS",
+      "bibtex_keys": [
+        "reinke2022iros"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2205.11784",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "reinke2022iros": 512
+      }
+    },
+    {
+      "name": "FAST-LIO-MULTI",
+      "code": "https://github.com/engcang/FAST_LIO_MULTI",
+      "bibtex_keys": [
+        "code_FAST_LIO_MULTI_engcang_FAST_LIO_MULTI"
+      ],
+      "references": [
+        {
+          "label": "Software notes",
+          "url": "https://github.com/engcang/FAST_LIO_MULTI#readme",
+          "type": "software"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_FAST_LIO_MULTI_engcang_FAST_LIO_MULTI": 524
+      }
+    },
+    {
+      "name": "SR-LIVO",
+      "code": "https://github.com/ZikangYuan/sr_livo",
+      "bibtex_keys": [
+        "yuan2024sr"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2312.16800",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "yuan2024sr": 532
+      }
+    },
+    {
+      "name": "R3LIVE",
+      "code": "https://github.com/hku-mars/r3live",
+      "bibtex_keys": [
+        "code_R3LIVE_ulo_robotics_CARES",
+        "paper_R3LIVE"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2109.07982",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_R3LIVE_ulo_robotics_CARES": 543,
+        "paper_R3LIVE": 971
+      }
+    },
+    {
+      "name": "ImMesh",
+      "code": "https://github.com/hku-mars/ImMesh",
+      "bibtex_keys": [
+        "code_ImMesh_hku_mars_ImMesh",
+        "paper_ImMesh"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2301.05206",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_ImMesh_hku_mars_ImMesh": 551,
+        "paper_ImMesh": 981
+      }
+    },
+    {
+      "name": "GS-LIVM",
+      "code": "https://github.com/xieyuser/GS-LIVM",
+      "bibtex_keys": [
+        "xie2024gslivm"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2410.17084",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "xie2024gslivm": 559
+      }
+    },
+    {
+      "name": "LM-LVIL",
+      "code": "https://github.com/asdleng/LiDAR-Visual-Inertial-Localization",
+      "bibtex_keys": [
+        "code_LM_LVIL_asdleng_LiDAR_Visual_Inertial_Localization",
+        "paper_LM_LVIL"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://doi.org/10.1109/JSEN.2024.3415170",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_LM_LVIL_asdleng_LiDAR_Visual_Inertial_Localization": 567,
+        "paper_LM_LVIL": 993
+      }
+    },
+    {
+      "name": "Ring FALS",
+      "code": "https://github.com/tiev-tongji/RingFalsNormal",
+      "bibtex_keys": [
+        "code_Ring_FALS_tiev_tongji_RingFalsNormal"
+      ],
+      "references": [
+        {
+          "label": "Software notes",
+          "url": "https://github.com/tiev-tongji/RingFalsNormal#readme",
+          "type": "software"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_Ring_FALS_tiev_tongji_RingFalsNormal": 575
+      }
+    },
+    {
+      "name": "BALM 2.0",
+      "code": "https://github.com/hku-mars/BALM",
+      "bibtex_keys": [
+        "code_BALM_2_0_hku_mars_BALM",
+        "paper_BALM_2_0"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2209.08854",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_BALM_2_0_hku_mars_BALM": 583,
+        "paper_BALM_2_0": 1005
+      }
+    },
+    {
+      "name": "VIOATA benchmark framework",
+      "code": "https://github.com/VerruckterWissenschaftler/VIOATA",
+      "bibtex_keys": [
+        "ishchuk2026viota"
+      ],
+      "references": [
+        {
+          "label": "Software notes",
+          "url": "https://github.com/VerruckterWissenschaftler/VIOATA#readme",
+          "type": "software"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "ishchuk2026viota": 591
+      }
+    },
+    {
+      "name": "MOLA ROS 1 bag reader",
+      "code": "https://github.com/MOLAorg/mola_input_rosbag1",
+      "bibtex_keys": [
+        "code_MOLA_ROS_1_bag_reader_MOLAorg_mola_input_rosbag1"
+      ],
+      "references": [
+        {
+          "label": "Software notes",
+          "url": "https://github.com/MOLAorg/mola_input_rosbag1#readme",
+          "type": "software"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_MOLA_ROS_1_bag_reader_MOLAorg_mola_input_rosbag1": 600
+      }
+    },
+    {
+      "name": "Official FAST-LIO2 sample trajectories",
+      "code": "https://github.com/ntu-aris/fastlio2_sample",
+      "bibtex_keys": [
+        "code_Official_FAST_LIO2_sample_trajectories"
+      ],
+      "references": [
+        {
+          "label": "Software notes",
+          "url": "https://github.com/ntu-aris/fastlio2_sample#readme",
+          "type": "software"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_Official_FAST_LIO2_sample_trajectories": 1014
+      }
+    },
+    {
+      "name": "RESPLE",
+      "code": "https://github.com/ASIG-X/RESPLE",
+      "bibtex_keys": [
+        "cao2025resple"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://doi.org/10.1109/LRA.2025.3604758",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "cao2025resple": 608
+      }
+    },
+    {
+      "name": "LIO-SMF",
+      "code": "https://github.com/Zhu-YQ/LIO-SMF",
+      "bibtex_keys": [
+        "zhu2026liosmf"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2605.09383",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "zhu2026liosmf": 619
+      }
+    },
+    {
+      "name": "BIEVR-SuperOdometry-DataExploitation",
+      "code": "https://github.com/engcang/BIEVR-SuperOdometry-DataExploitation",
+      "bibtex_keys": [
+        "code_BIEVR_SuperOdometry_DataExploitation_engcang_BIEVR_SuperOdometry_DataExploitation"
+      ],
+      "references": [
+        {
+          "label": "Software notes",
+          "url": "https://github.com/engcang/BIEVR-SuperOdometry-DataExploitation#readme",
+          "type": "software"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_BIEVR_SuperOdometry_DataExploitation_engcang_BIEVR_SuperOdometry_DataExploitation": 629
+      }
+    },
+    {
+      "name": "Faster-LIO",
+      "code": "https://github.com/gaoxiang12/faster-lio",
+      "bibtex_keys": [
+        "9718203"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://doi.org/10.1109/LRA.2022.3152830",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "9718203": 637
+      }
+    },
+    {
+      "name": "I2EKF-LO",
+      "code": "https://github.com/YWL0720/I2EKF-LO",
+      "bibtex_keys": [
+        "code_I2EKF_LO_marcinmatecki_I2EKF_LO_to_HDMapping",
+        "paper_I2EKF_LO"
+      ],
+      "references": [
+        {
+          "label": "Paper",
+          "url": "https://arxiv.org/abs/2407.02190",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_I2EKF_LO_marcinmatecki_I2EKF_LO_to_HDMapping": 649,
+        "paper_I2EKF_LO": 1022
+      }
+    },
+    {
+      "name": "PINI-SLAM",
+      "code": "https://github.com/ohmohmpr/PINI",
+      "bibtex_keys": [
+        "code_PINI_SLAM_ohmohmpr_PINI",
+        "paper_PINI_SLAM"
+      ],
+      "references": [
+        {
+          "label": "Author paper",
+          "url": "https://drive.google.com/file/d/1gY25pfbnZ_KeUwcbUAccAKJr72j1Wias/view?usp=sharing",
+          "type": "paper"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_PINI_SLAM_ohmohmpr_PINI": 657,
+        "paper_PINI_SLAM": 1031
+      }
+    },
+    {
+      "name": "livo_recon",
+      "code": "https://github.com/bblinn2017/livo_recon",
+      "bibtex_keys": [
+        "code_livo_recon_bblinn2017_livo_recon"
+      ],
+      "references": [
+        {
+          "label": "Software notes",
+          "url": "https://github.com/bblinn2017/livo_recon#readme",
+          "type": "software"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_livo_recon_bblinn2017_livo_recon": 665
+      }
+    },
+    {
+      "name": "AdaCt",
+      "code": "https://github.com/FPSE12/AdaCt",
+      "bibtex_keys": [
+        "code_AdaCt_FPSE12_AdaCt"
+      ],
+      "references": [
+        {
+          "label": "Software notes",
+          "url": "https://github.com/FPSE12/AdaCt#readme",
+          "type": "software"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_AdaCt_FPSE12_AdaCt": 673
+      }
+    },
+    {
+      "name": "FSICP — experimental",
+      "code": "https://github.com/Pana1v/fft-slice-odometry",
+      "bibtex_keys": [
+        "code_FSICP_experimental_Pana1v_fft_slice_odometry"
+      ],
+      "references": [
+        {
+          "label": "Software notes",
+          "url": "https://github.com/Pana1v/fft-slice-odometry#readme",
+          "type": "software"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_FSICP_experimental_Pana1v_fft_slice_odometry": 681
+      }
+    },
+    {
+      "name": "PointCloudProjection",
+      "code": "https://github.com/brytsknguyen/PointCloudProjection",
+      "bibtex_keys": [
+        "code_PointCloudProjection_brytsknguyen_PointCloudProjection"
+      ],
+      "references": [
+        {
+          "label": "Software notes",
+          "url": "https://github.com/brytsknguyen/PointCloudProjection#readme",
+          "type": "software"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_PointCloudProjection_brytsknguyen_PointCloudProjection": 689
+      }
+    },
+    {
+      "name": "traj_eval",
+      "code": "https://github.com/zzwu29/traj_eval",
+      "bibtex_keys": [
+        "code_traj_eval_zzwu29_traj_eval"
+      ],
+      "references": [
+        {
+          "label": "Software notes",
+          "url": "https://github.com/zzwu29/traj_eval#readme",
+          "type": "software"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_traj_eval_zzwu29_traj_eval": 697
+      }
+    },
+    {
+      "name": "bagx",
+      "code": "https://github.com/rsasaki0109/bagx",
+      "bibtex_keys": [
+        "code_bagx_rsasaki0109_bagx"
+      ],
+      "references": [
+        {
+          "label": "Software notes",
+          "url": "https://github.com/rsasaki0109/bagx#readme",
+          "type": "software"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "code_bagx_rsasaki0109_bagx": 705
+      }
+    },
+    {
+      "name": "localization_zoo evaluation adapters",
+      "code": "https://github.com/rsasaki0109/localization_zoo",
+      "bibtex_keys": [
+        "sasaki_localization_zoo"
+      ],
+      "references": [
+        {
+          "label": "Software notes",
+          "url": "https://github.com/rsasaki0109/localization_zoo#readme",
+          "type": "software"
+        }
+      ],
+      "variant": false,
+      "bibtex_lines": {
+        "sasaki_localization_zoo": 713
+      }
+    }
+  ],
+  "method_and_resource_count": 77,
+  "variant_count": 9,
+  "bibtex_entry_count": 110,
+  "verification": "Resource-to-citation mapping checked against author repositories, author paper pages and publisher DOI metadata. Dataset citation remains first."
+}
